@@ -1,0 +1,17 @@
+services:
+  web:
+    image: ghcr.io/darthvauban/vfx-course-platform:${IMAGE_TAG:?IMAGE_TAG is required}
+    restart: unless-stopped
+    init: true
+    networks:
+      proxy:
+        aliases:
+          - vfx-course-platform-web
+    labels:
+      com.darthvauban.project: vfx-course-platform
+
+networks:
+  proxy:
+    external: true
+    name: stream-lab_default
+

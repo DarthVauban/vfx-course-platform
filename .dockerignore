@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+deploy
+node_modules
+*.log
+.env
+.env.*
+
