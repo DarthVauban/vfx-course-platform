@@ -1,0 +1,21 @@
+# Installed as a separate site block in /root/stream-lab/Caddyfile.
+# The existing stream.mt-panel.sbs block is not replaced by this file.
+
+vfx.mt-panel.sbs {
+    encode zstd gzip
+
+    reverse_proxy vfx-course-platform-web:8080
+
+    header {
+        -Server
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    log {
+        output stdout
+        format console
+    }
+}
+

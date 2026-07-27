@@ -14,3 +14,5 @@
 - Shared proxy network: `stream-lab_default`
 
 Deployment перевіряє healthcheck нового контейнера та повертається до попереднього image у разі помилки. Він не виконує глобальне очищення Docker і не керує контейнерами проєкту `stream-lab`.
+
+Після серверного healthcheck workflow додатково перевіряє production endpoint `https://vfx.mt-panel.sbs/health`. Caddy-блок, встановлений у наявний reverse proxy, збережений для відновлення в `deploy/Caddyfile.vfx`.

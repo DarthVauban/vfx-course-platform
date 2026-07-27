@@ -99,3 +99,16 @@ jobs:
              docker login ghcr.io -u '${GITHUB_ACTOR}' --password-stdin
              chmod 700 deploy.sh
              ./deploy.sh '${GITHUB_SHA}'"
+
+      - name: Verify production HTTPS
+        run: |
+          set -Eeuo pipefail
+          curl \
+            --fail \
+            --show-error \
+            --silent \
+            --retry 12 \
+            --retry-all-errors \
+            --retry-delay 5 \
+            --max-time 10 \
+            https://vfx.mt-panel.sbs/health
