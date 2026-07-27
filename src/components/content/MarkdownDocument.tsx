@@ -1,7 +1,7 @@
 import {
   Children,
   isValidElement,
-  useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type AnchorHTMLAttributes,
@@ -117,7 +117,7 @@ export function MarkdownDocument({
   const { state, setChecklistItem } = useCourseProgress();
   const checkedItems = state.checklistItems[document.id] ?? [];
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = articleRef.current;
     if (!root) return;
 
@@ -127,24 +127,57 @@ export function MarkdownDocument({
         ".task-list-item input[type='checkbox']",
       ),
     );
-    const cleanups: Array<() => void> = [];
-
     inputs.forEach((input, index) => {
       input.disabled = false;
       input.checked = checked.has(index);
+      input.dataset.checklistIndex = String(index);
       input.setAttribute(
         "aria-label",
         `Checklist пункт ${index + 1} у ${document.title}`,
       );
-
-      const handleChange = () => {
-        setChecklistItem(document.id, index, input.checked);
-      };
-      input.addEventListener("change", handleChange);
-      cleanups.push(() => input.removeEventListener("change", handleChange));
+      input
+        .closest(".task-list-item")
+        ?.classList.toggle("is-checked", input.checked);
     });
 
-    return () => cleanups.forEach((cleanup) => cleanup());
+    const handleChange = (event: Event) => {
+      const input = event.target;
+      if (
+        !(input instanceof HTMLInputElement) ||
+        input.type !== "checkbox" ||
+        !input.closest(".task-list-item")
+      ) {
+        return;
+      }
+
+      const itemIndex = Number(input.dataset.checklistIndex);
+      if (!Number.isInteger(itemIndex)) return;
+
+      input
+        .closest(".task-list-item")
+        ?.classList.toggle("is-checked", input.checked);
+      setChecklistItem(document.id, itemIndex, input.checked);
+    };
+
+    const handleTaskClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest("input, a, button, pre, code")) return;
+
+      const taskItem = target.closest(".task-list-item");
+      if (!taskItem || !root.contains(taskItem)) return;
+      taskItem
+        .querySelector<HTMLInputElement>("input[type='checkbox']")
+        ?.click();
+    };
+
+    root.addEventListener("change", handleChange);
+    root.addEventListener("click", handleTaskClick);
+
+    return () => {
+      root.removeEventListener("change", handleChange);
+      root.removeEventListener("click", handleTaskClick);
+    };
   }, [checkedItems, document.id, document.title, markdown, setChecklistItem]);
 
   const MarkdownLink = createMarkdownLink(document);
@@ -175,7 +208,7 @@ export function MarkdownDocument({
               </div>
             );
           },
-          input(props) {
+          input({ checked: _checked, disabled: _disabled, node: _node, ...props }) {
             return <input {...props} />;
           },
         }}

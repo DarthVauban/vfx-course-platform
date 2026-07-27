@@ -397,10 +397,30 @@
   gap: 10px;
   padding: 9px 10px;
   border-radius: 8px;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background 150ms ease,
+    opacity 150ms ease;
 }
 
-.markdown-body .task-list-item:hover {
+.markdown-body .task-list-item:hover,
+.markdown-body .task-list-item:focus-within {
   background: rgba(255, 255, 255, 0.025);
+}
+
+.markdown-body .task-list-item.is-checked {
+  color: #72788f;
+  background: rgba(107, 227, 168, 0.035);
+  text-decoration: line-through;
+  text-decoration-color: rgba(107, 227, 168, 0.48);
+  text-decoration-thickness: 1.5px;
+}
+
+.markdown-body .task-list-item.is-checked strong,
+.markdown-body .task-list-item.is-checked a,
+.markdown-body .task-list-item.is-checked code {
+  color: #858ba0;
 }
 
 .markdown-body .task-list-item input {
