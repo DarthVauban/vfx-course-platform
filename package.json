@@ -1,0 +1,46 @@
+{
+  "name": "vfx-course-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "content:generate": "node scripts/generate-course-data.mjs",
+    "predev": "npm run content:generate",
+    "dev": "vite --host 0.0.0.0",
+    "prebuild": "npm run content:generate",
+    "build": "tsc -b && vite build",
+    "pretest": "npm run content:generate",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "github-slugger": "^2.0.0",
+    "lucide-react": "^1.27.0",
+    "mermaid": "^11.16.0",
+    "minisearch": "^7.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "7.18.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "jsdom": "^29.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5",
+    "vitest": "^4.1.10"
+  }
+}
