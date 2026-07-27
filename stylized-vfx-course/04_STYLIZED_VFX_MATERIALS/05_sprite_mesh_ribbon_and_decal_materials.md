@@ -20,7 +20,7 @@
 - тестувати decal projection на floor, wall, corner і moving receiver;
 - відмовлятися від renderer, якщо він не відповідає silhouette або gameplay cue.
 
-Доказ: одна validation scene з чотирма renderer families, не менше восьми failure-case screenshots і decision record.
+Доказ: одна validation scene з чотирма renderer families, не менше восьми failure-case screenshots і журнал рішень.
 
 ## 3. Орієнтовний час
 
@@ -55,7 +55,7 @@
 | Trail UV | Coordinates уздовж length і width ribbon | U від head до tail, V через width |
 | Renderer binding | Зв’язок renderer property із Niagara attribute | Color ← Particles.Color |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Один material graph не робить effect універсальним. Renderer визначає geometry і спосіб, яким shape потрапляє на екран:
 
@@ -151,7 +151,7 @@ Decal — окремий domain. Він проектує material outputs у vol
 - projection може потрапити на floor і wall одночасно;
 - гострий кут розтягує shape;
 - receiver settings можуть забороняти decals;
-- translucent decal cost залежить від screen coverage і receivers;
+- translucent decal cost залежить від покриття екрана і receivers;
 - Decal material не є Niagara Sprite material.
 
 У UE 5.8 доступні DBuffer/decal workflows, але exact `Decal Blend Mode`, доступні inputs і Substrate interaction залежать від project renderer/settings. Для core course використовуйте non-Substrate path і перевірте конкретний 5.8.x build:
@@ -192,7 +192,7 @@ DebugColor = float3(frac(U × 4), V, 0)
 
 ### Decal angle
 
-Projection direction майже паралельний surface → footprint розтягується. Якщо effect має бути круглим на будь-якій arbitrary surface, потрібне orientation logic або інший representation.
+Projection direction майже паралельний surface → footprint розтягується. Якщо effect має бути круглим на будь-якій arbitrary surface, потрібне orientation logic або інший спосіб подання.
 
 ## 10. Controlled experiments
 
@@ -216,7 +216,7 @@ Projection direction майже паралельний surface → footprint р�
 3. camera pitch: 0°, 35°, 70°;
 4. actor rotation: 0°, 90°.
 
-Запишіть, який representation зберігає intended ground-plane silhouette.
+Запишіть, який спосіб подання зберігає запланований силует на площині землі.
 
 ### CE04-05-C — Ribbon UV checker
 
@@ -234,7 +234,7 @@ Project decal на:
 
 Відмітьте unintended receivers і angle stretching.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Створіть shared function
 
@@ -413,7 +413,7 @@ Zones:
 | Screen coverage |  |  |  |  |
 | Unintended receivers | n/a | n/a | n/a |  |
 
-`n/a` тут означає, що конкретний test не відповідає representation; це не дозволено як заміна невиконаного relevant test.
+`n/a` тут означає, що конкретний test не відповідає цьому способу подання; це не дозволено як заміна невиконаного relevant test.
 
 ## 12. Точні назви nodes, properties і connections
 
@@ -561,7 +561,7 @@ Exact labels/defaults у UE 5.8.x:
 - 2-layer overlap;
 - cost/readability note.
 
-Виберіть primary representation для melee slash і захистіть рішення п’ятьма конкретними спостереженнями.
+Виберіть основний спосіб подання для melee slash і захистіть рішення п’ятьма конкретними спостереженнями.
 
 ## 16. Додаткова складніша вправа
 
@@ -611,7 +611,7 @@ Exact labels/defaults у UE 5.8.x:
 | Particle Color не підключено | Niagara color changes ignored | RGB/A connections і renderer binding |
 | Two Sided на всіх materials | Зайва cost/дивні backfaces | Лише thin geometry, що потребує |
 | Decal volume надто глибокий | Wall/props отримують telegraph | Обмежте volume/receiver scope |
-| Sort priority як універсальний fix | Інші views ламаються | Зменшіть overlap, split representation, test matrix |
+| Sort priority як універсальний fix | Інші views ламаються | Зменшіть overlap, розділіть спосіб подання, test matrix |
 
 ## 19. Troubleshooting
 
@@ -632,14 +632,14 @@ Exact labels/defaults у UE 5.8.x:
 
 ## 20. Performance considerations
 
-- Translucent screen coverage і layer count — головні risks для Sprite/Ribbon/Mesh VFX.
+- Translucent покриття екрана і layer count — головні risks для Sprite/Ribbon/Mesh VFX.
 - Large soft sprites можуть бути дорожчі за маленький mesh, навіть якщо мають лише два triangles.
 - Mesh vertex cost зростає з topology та WPO, pixel cost — з coverage/two-sided layers.
 - Ribbon cost зростає з segment count, width, overlapping turns і material complexity.
-- Decal cost залежить від projection volume, screen coverage, receivers і chosen decal path.
+- Decal cost залежить від projection volume, покриття екрана, receivers і chosen decal path.
 - Shared functions покращують architecture, але не роблять graph безкоштовним.
 - Static features створюють permutations; не множте switches без policy.
-- Low tier має зменшувати layers/coverage/segments та вимикати cosmetic branches, зберігаючи gameplay cue.
+- Low tier має зменшувати layers/coverage/segments та вимикати cosmetic branches, зберігаючи ігрову підказку.
 - Capture робіть з production camera, однаковою exposure і representative effect count.
 
 Numeric target budgets:
@@ -649,7 +649,7 @@ Numeric target budgets:
 ## 21. Запитання для самоперевірки
 
 1. Чому Material Function не замінює окремий Decal parent?
-2. Яка ключова різниця між Sprite і Mesh representation?
+2. Яка ключова різниця між поданням через Sprite і через Mesh?
 3. Де налаштовується Ribbon UV generation?
 4. Чому DepthFade може шкодити ground contact cue?
 5. Які дані material очікує від Particle Color?
@@ -683,7 +683,7 @@ Numeric target budgets:
 - [ ] Particle Color contract однаковий у Surface templates.
 - [ ] Є three-background blend test.
 - [ ] Є intentional failure і remediation.
-- [ ] Low tier зберігає gameplay cue.
+- [ ] Low tier зберігає ігрову підказку.
 
 ## 24. Mastery criteria
 

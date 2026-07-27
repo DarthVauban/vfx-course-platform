@@ -31,7 +31,7 @@
 | Controlled experiments | 0.5 | 0.5 |
 | Guided troubleshooting | 0.75 | 0.75 |
 | Baseline capture | 0.5 | 0.5 |
-| Самостійна transfer-вправа й self-review | 0.25 | 0.25 |
+| Самостійна transfer-вправа й самооцінювання | 0.25 | 0.25 |
 | `BLOCK_ASSESSMENT.md` | 3.0 | 3.0 |
 | **Разом** | **6.0** | **5.0 (83.3%)** |
 
@@ -48,7 +48,7 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Практичний приклад | Glossary |
+| Англійський термін | Українське пояснення | Практичний приклад | Glossary |
 |---|---|---|---|
 | Symptom | Спостережуваний прояв, а не пояснення причини | “Imported cube у 100 разів менший за reference” | [Symptom](../02_GLOSSARY.md#symptom) |
 | Hypothesis | Перевірюване припущення про причину | “Actor Scale приховує source mismatch” | [Hypothesis](../02_GLOSSARY.md#hypothesis) |
@@ -60,7 +60,7 @@
 | Bottleneck | Частина frame, яка найбільше обмежує результат | Game, Draw або GPU time | [Bottleneck](../02_GLOSSARY.md#bottleneck) |
 | Median | Середнє за порядком значення, стійкіше до одного spike | Median із 8.2, 8.6, 10.1 = 8.6 | [Median](../02_GLOSSARY.md#median) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX artist постійно працює у системі з багатьма причинами одного symptom. “Ефект зник” може означати:
 
@@ -243,7 +243,7 @@ Relative change (%) = (B_ms - A_ms) / A_ms × 100
 - Дочекайся завершення background work і повтори.
 - **Висновок:** timestamp/context важливіші за один screenshot числа.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L01-04 — Від symptom до baseline
 
@@ -307,7 +307,7 @@ Relative change (%) = (B_ms - A_ms) / A_ms × 100
 17. **Склади block readiness note.**  
     Познач, які skills готові до independent assessment, а які потребують repeat.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Material Graph і Niagara stack не створюються.
 
@@ -382,19 +382,19 @@ Exact menu paths, output fields, keyboard shortcuts і counters у build 5.8.x: 
 ### EX-L01-04-A
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Для кожного symptom спочатку доведи scope: instance, map чи source. Не починай із fix.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 Дублікат map/asset, перезапуск, Outliner, Details/Transform, запис CameraActor, Texture Asset Editor, source filename, Reimport і screenshots до/після.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Expected → Observed → reproduction after restart → known-good comparison → scope → hypothesis → one change → after evidence → reopen → regression checklist.
 </details>
@@ -404,19 +404,19 @@ Expected → Observed → reproduction after restart → known-good comparison �
 ### EX-L01-04-B
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Головний deliverable — не “краще число”, а protocol, який дає зіставні numbers.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 CameraActor, fixed mode/resolution/scalability, warm-up, `stat unit`, 3 samples, median, relative-change formula, session notes.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Record conditions → warm A → capture A1–A3 → change one variable → warm B → capture B1–B3 → sort and median → repeat second run → compare variation → limited conclusion.
 </details>
@@ -437,7 +437,7 @@ Record conditions → warm A → capture A1–A3 → change one variable → war
 
 ## 19. Troubleshooting
 
-| Симптом | Діагностичний тест | Причина | Fix | Перевірка |
+| Симптом | Діагностичний тест | Причина | Виправлення | Перевірка |
 |---|---|---|---|---|
 | `stat unit` не видно | Перевір command entry й build mode | Console/overlay disabled або command не виконано | Звірити official Stat Commands і current build | Overlay fields visible |
 | GPU field zero/absent | Перевір renderer/build/config | Counter unavailable або not representative | Не вигадувати value; записати unavailable, використати later GPU tools | Report чесно позначає gap |
@@ -549,7 +549,7 @@ Record conditions → warm A → capture A1–A3 → change one variable → war
 **Рекомендований скриншот 3 — `stat unit` baseline**  
 Що відкрити: `L_VFX_Baseline` з CameraActor.  
 Що повинно бути видно: overlay fields і fixed scene.  
-Яку область виділити: overlay та назву test map; не обрізати context повністю.
+Яку область виділити: overlay та назвна тестовій мапі; не обрізати context повністю.
 
 **Рекомендований скриншот 4 — A/B report**  
 Що відкрити: raw samples table.  

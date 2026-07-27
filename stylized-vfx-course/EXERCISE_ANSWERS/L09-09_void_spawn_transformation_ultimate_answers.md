@@ -29,7 +29,7 @@ World portal позначає місце появи; attached shell переда
 ### Типові неправильні рішення
 
 - Portal прикріплено до персонажа.
-- Shell залишено у world space.
+- Shell залишено у світовому просторі.
 - Незалежні clocks дрейфують після зміни duration.
 - Миттєвий kill обрізає transformation.
 - Повторне використання pool зберігає застарілий PhaseIndex.

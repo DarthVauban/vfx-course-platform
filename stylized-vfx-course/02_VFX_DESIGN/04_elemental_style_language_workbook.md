@@ -50,12 +50,12 @@
 | **Edge rhythm** | Повторюваний pattern hard/soft, continuous/broken, regular/irregular edges |
 | **Material cue** | Shape/motion clue, що нагадує burning, flowing, fracturing, growing тощо |
 | **Non-color identity** | Впізнаваність у white silhouette або grayscale |
-| **Elemental translation** | Перепроєктування archetype під іншу grammar зі збереженням gameplay function |
+| **Elemental translation** | Перепроєктування archetype під іншу grammar зі збереженням ігрової функції |
 | **Recolor** | Зміна palette без зміни design logic |
 | **Cross-confusion** | Ситуація, коли дві elemental languages виглядають однаково без labels/color |
 | **Constraint pair** | Правило «використовуй X, уникай Y», яке утримує language |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Elemental variation часто провалюється так:
 
@@ -124,7 +124,7 @@ Variation не пройшла, якщо після:
 
 Мінімальна elemental translation змінює:
 
-- одну primary shape rule;
+- одне правило основної форми;
 - одну edge rule;
 - одну motion path/acceleration rule;
 - одну temporal rule;
@@ -132,7 +132,7 @@ Variation не пройшла, якщо після:
 
 ## 8.3. Fire language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Tapered tongues, wedges, split teardrops; major axis переважно upward або forward-up |
 | Secondary shapes | Small ember points, forked tips, broken hot fragments |
@@ -150,7 +150,7 @@ Fire temporal signature: **ignite → split/flicker → rise → fragment**.
 
 ## 8.4. Water language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Rounded arcs, ribbons, droplets, concave sheets; continuous flow direction |
 | Secondary shapes | Beads, spray fans, small bubbles/mist only where scale supports |
@@ -168,7 +168,7 @@ Water signature: **gather → sweep/curl → splash → droplets/recede**.
 
 ## 8.5. Ice language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Faceted wedges, crystalline clusters, straight shards, angular radial plates |
 | Secondary shapes | Smaller shards, frost lines, sparse granular snow accents |
@@ -186,7 +186,7 @@ Ice signature: **grow → lock/hold → fracture → ballistic settle**.
 
 ## 8.6. Electricity language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Thin branching zigzags, broken paths, sharp forks, separated bright nodes |
 | Secondary shapes | Short sparks, tiny branch echoes, point accents |
@@ -204,7 +204,7 @@ Electricity signature: **charge or silence → instant branch pulse → echo →
 
 ## 8.7. Wind language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Open crescents, S-curves, tapered streamlines, spirals with visible gaps |
 | Secondary shapes | Wisps, thin trailing arcs, optional environmental particles such as dust/leaves made from own assets |
@@ -222,7 +222,7 @@ Wind signature: **suction → sweep/orbit → overshoot → trailing air evidenc
 
 ## 8.8. Earth language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Low wide blocks, slabs, trapezoids, ground wedges, chunky radial segments |
 | Secondary shapes | Rock chunks, crack lines, compact dust puffs |
@@ -240,7 +240,7 @@ Earth signature: **compress → blunt impulse → ballistic rise/fall → settle
 
 ## 8.9. Nature language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Branching stems, spirals, petal/leaf-like lobes, growth rings without copied symbols |
 | Secondary shapes | Buds, seeds, spores, small leaves/petals from own simple assets |
@@ -258,7 +258,7 @@ Nature signature: **sprout → branch/unfurl → bloom → drift/seed**.
 
 ## 8.10. Light language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Clean rays, halos, radial sectors, aligned geometric planes, open symmetric motifs |
 | Secondary shapes | Small ordered points, thin rings, controlled ray fragments |
@@ -276,7 +276,7 @@ Light signature: **align/converge → precise reveal → ordered expansion/hold 
 
 ## 8.11. Darkness/void language
 
-| Система | Concrete constraints |
+| Система | Конкретні обмеження |
 |---|---|
 | Primary shapes | Inward spirals, holes, occluding wedges, broken silhouettes, offset rings, compressed void cores |
 | Secondary shapes | Edge fragments pulled inward, delayed echoes, warped streaks |
@@ -406,7 +406,7 @@ Void:       pull inward → silence → displaced release → echo
 
 **Очікування:** різниця працює без icon props.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Зафіксуй один archetype
 
@@ -547,7 +547,7 @@ Color відповідає identity, але не замінює grammar. Зро�
 | Light | magic circle / targeting telegraph / elemental burst |
 | Darkness/void | spawn / transformation / character ultimate |
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 Це design lesson: Material nodes і Niagara modules не використовуються.
 
@@ -680,7 +680,7 @@ Element-specific timing ranges наведені в секціях 8.3–8.11. Ц
 4. Side-by-side grayscale playback.
 5. Structural-distance audit.
 6. Camera/performance notes.
-7. Короткий rationale, чому це одна gameplay function, але три elements.
+7. Короткий rationale, чому це одна ігрова функція, але три elements.
 
 **Acceptance criteria:**
 
@@ -688,7 +688,7 @@ Element-specific timing ranges наведені в секціях 8.3–8.11. Ц
 - contact/activation читається однаково надійно;
 - motion/timing/residue відповідають grammar;
 - жодна version не повторює exact silhouette іншої;
-- performance risks сформульовані без вигаданих budgets.
+- ризики продуктивності сформульовані без вигаданих budgets.
 
 # 17. Три рівні підказок
 
@@ -811,7 +811,7 @@ Element-specific timing ranges наведені в секціях 8.3–8.11. Ц
 4. cross-confusion pairs score 2 переглянуто й виправлено;
 5. три animatics працюють у real time і grayscale;
 6. student може пояснити, чому palette swap не є translation;
-7. performance risks і `must keep/can simplify/optional` позначено;
+7. ризики продуктивності і `must keep/can simplify/optional` позначено;
 8. виконано щонайменше 18 із 20 checklist пунктів.
 
 # 25. Підсумок

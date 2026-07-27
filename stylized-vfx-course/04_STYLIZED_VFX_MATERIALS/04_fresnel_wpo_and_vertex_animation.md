@@ -38,14 +38,14 @@
 | Навичка | Де | Швидка перевірка |
 |---|---|---|
 | Scalar/vector math, Dot, Power | [L03-02](../03_MATERIAL_FOUNDATIONS/02_material_math_and_remapping.md) | Поясніть, як exponent змінює 0–1 mask |
-| Coordinate spaces і normals | [L03-04](../03_MATERIAL_FOUNDATIONS/04_uv_coordinates_and_coordinate_spaces.md) | Відрізніть object, local і world space |
+| Coordinate spaces і normals | [L03-04](../03_MATERIAL_FOUNDATIONS/04_uv_coordinates_and_coordinate_spaces.md) | Відрізніть object, local і світовий простір |
 | Blend/depth/overdraw | [L03-07](../03_MATERIAL_FOUNDATIONS/07_material_domains_blending_depth_and_overdraw.md) | Перевірте translucent material на трьох backgrounds |
 | HDR color hierarchy | [L04-03](03_gradient_mapping_hdr_and_stylized_color.md) | Відокремте color від intensity |
 | Mesh із коректними UV/normals | Власний asset або Engine primitive | Normals спрямовані очікувано, scale застосований |
 
 ## 5. Нові терміни
 
-| English term | Пояснення | Практичний приклад |
+| Англійський термін | Пояснення | Практичний приклад |
 |---|---|---|
 | Fresnel | Маска, залежна від кута між surface normal і напрямком до камери | Rim на сфері або energy shell |
 | World Position Offset, WPO | Vertex-stage зміщення render vertices перед rasterization | Пульсація cone або ring mesh |
@@ -54,7 +54,7 @@
 | Bounds | Об’єм, за яким renderer вирішує, чи об’єкт видимий | WPO виходить за static bounds і mesh рано зникає |
 | View-dependent | Результат змінюється з позицією/напрямком camera | Fresnel rim «переїжджає» під час orbit |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Sprite добре працює для camera-facing shape, але mesh потрібен, коли ефект має об’єм, точну дугу, кільце, cone, shockwave shell або readable silhouette з кількох ракурсів. Без shader deformation та vertex data кожна варіація вимагатиме нової geometry або анімації.
 
@@ -222,7 +222,7 @@ Vertex A: 0 at trimmed edge → 1 in body
 
 Очікування: A змінює phase через translation, B зберігає pattern відносно mesh UV.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Підготуйте mesh test
 
@@ -583,7 +583,7 @@ Multiply_WPO.Result → Material.World Position Offset
 - Не збільшуйте topology лише заради detail, який не змінює silhouette.
 - Large bounds зменшують culling efficiency; надто малі bounds дають popping.
 - Debug branches не мають залишатися у shipping parent без причини.
-- Порівнюйте `Shader Complexity`, material stats, overdraw view і GPU capture на target hardware.
+- Порівнюйте `Shader Complexity`, material stats, overdraw view і GPU capture на цільовому обладнанні.
 
 Числовий budget для vertices, instructions або milliseconds:
 
@@ -626,7 +626,7 @@ Multiply_WPO.Result → Material.World Position Offset
 - [ ] Collision limitation записано.
 - [ ] Calm/Burst/NoRim — instances одного parent.
 - [ ] Debug feature видаляється або компілюється static для final.
-- [ ] Є performance evidence, а не лише суб’єктивний вигляд.
+- [ ] Є докази продуктивності, а не лише суб’єктивний вигляд.
 
 ## 24. Mastery criteria
 

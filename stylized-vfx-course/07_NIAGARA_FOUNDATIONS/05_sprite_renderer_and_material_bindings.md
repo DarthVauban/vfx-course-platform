@@ -41,7 +41,7 @@ M/S practice блока: **2 години з обов’язкових 4**.
 - **Material Random** — per-particle scalar для material random path.
 - **Cutout** — tighter sprite geometry from opacity source для зниження empty overdraw.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Simulation може бути правильною, але sprite лишиться білим, квадратним, sideways або невидимим, якщо renderer/material contract зламано. Production-ready emitter документує source кожного visible property, material compatibility, sorting rationale і performance risk. Це дозволяє shader artist та Niagara artist змінювати свої частини без прихованої домовленості.
 
@@ -127,7 +127,7 @@ Pivot Sprite:
 (0,1) bottom-left   (1,1) bottom-right
 ```
 
-Оцінка peak area sprite для 24 cards `(5×32 cm)` не є вартістю пікселів; overdraw визначають screen coverage, overlap і blend.
+Оцінка peak area sprite для 24 cards `(5×32 cm)` не є вартістю пікселів; overdraw визначають покриття екрана, overlap і blend.
 
 ## 10. Контрольовані експерименти
 
@@ -140,7 +140,7 @@ Pivot Sprite:
 7. Перемкніть `Sub UV Blending Enabled` off/on на половині frame.
 8. Використовуйте Material Cutout лише після перевірки atlas/opacity; порівняйте Shader Complexity/coverage.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Повний stack
 
@@ -220,7 +220,7 @@ Normalized Age Binding = Particles.NormalizedAge
 
 Spark cards вилітають у межах cone, згинаються вниз, спрямовуються вздовж velocity й згасають до death. Core material реагує на зміну dynamic channel B. Particle count досягає peak 24. Bounds охоплюють видиму arc; Collision не додано.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 `Sprite Renderer`; `Dynamic Material Parameters`; `Add Velocity in Cone`; `Alignment`; `Velocity Aligned`; `Facing Mode`; `Face Camera`; `Pivot in UVSpace`; `Sort Mode`; `Sort Only When Translucent`; `Sub Image Size`; `Sub UV Blending Enabled`; all bindings listed in section 11; material flag `Use with Niagara Sprites`; material expressions `Particle Color`, `Dynamic Parameter`.
 
@@ -304,7 +304,7 @@ Epic prose contains singular `Particle.Velocity`/`Particle.SpriteSize` in two ro
 | погане translucent overlap | sort/material/coverage | порівняйте None проти View Depth, зменште overlap |
 | ранній cull | bounds | захопіть крайні точки arc і відповідально розширте |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Вартість Sprite значною мірою залежить від screen area, overlap і blend.
 - Sorting не безкоштовний; обґрунтовуйте його видимим покращенням.
@@ -381,4 +381,4 @@ URL перевірено 2026-07-27. **Потребує ручної перев�
 3. Path material graph Particle Color + Dynamic Parameter.
 4. A/B Unaligned/Velocity Aligned і pivot.
 5. Contact sheet frames SubUV 4×4 плюс settings renderer.
-6. Захоплення bounds і peak particle count.
+6. Знімок меж і пікової кількості частинок.

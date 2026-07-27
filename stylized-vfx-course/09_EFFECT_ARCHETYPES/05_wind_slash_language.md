@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель slash/wind/combo | 0.75 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
-| Stage 2 — етичне reference study | 0.0 | 1.25 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.0 | 1.25 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Gameplay/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.0** | **5.0** | **1.0** |
 
@@ -55,7 +55,7 @@
 | Combo cadence | Timing relationship між multiple attacks |
 | Negative-space cut | Intentional gap, що лишає arc повітряною й directional |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Sword slash має підсилювати animation, а не закривати її. Slash arc може рухатися independently і потребує readable direction/size. Wind identity залежить від thin tapered shapes, gaps і drifting flow; green/cyan tint сам по собі створює generic magic crescent.
 
@@ -74,7 +74,7 @@ slash arc = force that leaves the blade
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** weapon ribbon + один released crescent.
 2. **Reference study:** normalized arc angle, thickness ratio, reveal/contact/fade і combo spacing; лише own assets.
@@ -141,9 +141,9 @@ flowchart LR
 - Порівняйте щільний суцільний crescent із tapered split arc + wisps.
 - Wind має читатися з форми й руху.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Wind_SwordSlash` із `NE_BladeRibbon`, `NE_Contact`, `NE_Wisps`.
 2. Передайте `User.BladeBase`, `User.BladeTip`, `User.AttackActive`, colors і width.
@@ -153,7 +153,7 @@ flowchart LR
 6. Arc — один mesh, lifetime `.32`, reveal `0→1` за `.14`, fade `.18`; scale `1→1.18`.
 7. Edge streaks: burst 8, velocity уздовж tangent slash `350–700`; wisps: burst 6, life `.5–.8`, drag/curl.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть source/date референсу й лише виміряні пропорції.
 2. Занотуйте arc angle, thickness:length, reveal/contact/fade та інтервали combo.
@@ -161,7 +161,7 @@ flowchart LR
 4. Заборонено traced contour, extracted texture або точну впізнавану signature.
 5. Запишіть три відхилення й provenance.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Побудуйте `NS_L09_Wind_SlashCombo_Calligraphy` із трьох hits.
 2. Hit 1: rising split hook; Hit 2: короткий falling counter-cut; Hit 3: широка S arc.
@@ -172,7 +172,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact animation/socket parameter update path, ribbon reset/lifecycle, persistent ordering, mesh orientation and material dynamic parameter bindings звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User для sword slash
 
@@ -308,7 +308,7 @@ SlashTexture.R × Band × ParticleColor.RGB × Emissive(5) → Emissive
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Ribbon постійно створює частинки | Idle loops/довгі connectors | Gate/reset атаки |
 | Slash перекриває персонажа | Animation нечитабельна | Вужчий/зміщений/коротший alpha |
@@ -331,7 +331,7 @@ SlashTexture.R × Band × ParticleColor.RGB × Emissive(5) → Emissive
 | Contact accent запізнюється | Animation timeline | Align spawn/notify test |
 | Combo clutter | Solo кожного hit | Зменште overlap/dissipation |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Sword ribbon | Шари Arc | Wisps/streaks |
 |---|---|---|---|

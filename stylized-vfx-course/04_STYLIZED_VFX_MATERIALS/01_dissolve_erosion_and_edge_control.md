@@ -45,14 +45,14 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Практичний приклад | Glossary |
+| Англійський термін | Українське пояснення | Практичний приклад | Glossary |
 |---|---|---|---|
 | Dissolve threshold | Межа, з якою порівнюється mask | `Mask > 0.35` лишається visible | [Dissolve](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 | Erosion | Зменшення visible region через рух threshold | Threshold 0→1 поступово «з’їдає» shape | [Erosion](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 | Edge band | Діапазон mask values біля threshold | Values 0.27–0.35 утворюють glow edge | [Edge mask](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 | Temporal stability | Відсутність небажаного flicker під час зміни параметра | Edge рухається плавно при Dissolve 0→1 | [Glossary](../02_GLOSSARY.md) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Dissolve — не «ефект зникнення», а універсальний спосіб керувати reveal, erosion, burn-away, charge fill, magical assembly, smoke breakup і end-of-life. У production одна й та сама logic часто має працювати на Sprite, Mesh і Ribbon materials.
 
@@ -103,7 +103,7 @@ Outer = smoothstep((d - w) - s, (d - w) + s, m)
 Edge  = saturate(Outer - Body)
 ```
 
-`w` — `EdgeWidth`. Якщо `w = 0.08`, edge займає приблизно 0.08 mask-value range, а не 8% screen-space width. У ділянках із steep texture gradient він буде візуально тоншим; у flat gradient — ширшим. Це очікувано.
+`w` — `EdgeWidth`. Якщо `w = 0.08`, edge займає приблизно 0.08 mask-value range, а не 8% ширина в екранному просторі. У ділянках із steep texture gradient він буде візуально тоншим; у flat gradient — ширшим. Це очікувано.
 
 ### Final opacity
 
@@ -117,7 +117,7 @@ Opacity = saturate(Body + Edge)
 
 ### Vertex і pixel work
 
-У цьому graph texture sampling, `SmoothStep`, subtraction і color composition виконуються як pixel calculations. Вони повторюються для covered pixels. На великій кількості overlapping Translucent sprites головний ризик — overdraw, а не лише кількість math nodes.
+У цьому graph вибірка текстури, `SmoothStep`, subtraction і color composition виконуються як pixel calculations. Вони повторюються для covered pixels. На великій кількості overlapping Translucent sprites головний ризик — overdraw, а не лише кількість math nodes.
 
 ## 9. Візуальні й математичні приклади
 
@@ -166,14 +166,14 @@ flowchart LR
 ### CE-L04-01-02 — Softness і minification
 
 - **Гіпотеза:** `Softness=0` або майже 0 дає жорсткіший, але менш стабільний distant edge.
-- **Незмінні умови:** одна card у test map, одна camera path.
+- **Незмінні умови:** одна card на тестовій мапі, одна camera path.
 - **Змінювана величина:** `Softness`.
 - **Values:** 0.001, 0.015, 0.05.
 - **Дії:** зробіть три Material Instances і capture з близької/далекої camera.
 - **Очікувано:** 0.05 розмиває graphic band; 0.001 може alias/flicker залежно від texture/mips.
-- **Висновок:** оберіть найменше значення, стабільне в gameplay camera.
+- **Висновок:** оберіть найменше значення, стабільне в ігровій камері.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L04-01 — Reusable dissolve function і test material
 
@@ -415,19 +415,19 @@ DissolveFn.CombinedMask → MaterialOutput.Opacity Mask
 ### EX-L04-01-A
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Function очікує white regions як «вищі». Побудуйте value, що максимальне в center і зменшується до edges.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні nodes</summary>
+<summary>Підказка 2 — потрібні nodes</summary>
 
 `TextureCoordinate`, `Constant2Vector (0.5,0.5)`, `Subtract`, `Length`, `Multiply` для radius scale, `OneMinus`, `Saturate`, `MF_VFX_DissolveEdge`.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 `CenteredUV = UV−0.5`; `Radial = saturate(1−length(CenteredUV)×2)`; Radial → Mask; function Combined → Opacity, Body/Edge → Emissive branches.
 </details>
@@ -437,19 +437,19 @@ Function очікує white regions як «вищі». Побудуйте value,
 ### EX-L04-01-B
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Не змінюйте texture mask; змініть threshold per vertex/pixel data так, щоб R=1 отримував більший або менший effective Dissolve.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні nodes</summary>
+<summary>Підказка 2 — потрібні nodes</summary>
 
 `Vertex Color`, `Multiply`, `Add` або `Subtract`, Scalar Parameter `VertexBiasStrength`, function call.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 `Bias = VertexColor.R × VertexBiasStrength`; `EffectiveDissolve = Dissolve + Bias`. Якщо tip зникає в неправильному order, інвертуйте R або замініть Add на Subtract й поясніть sign.
 </details>
@@ -499,7 +499,7 @@ Test protocol:
 2. Одна camera, resolution і background.
 3. Translucent vs Masked parent.
 4. Shader Complexity + GPU capture.
-5. Запишіть before/after; не перетворюйте результат на універсальний budget.
+5. Запишіть до й після; не перетворюйте результат на універсальний budget.
 
 ## 21. Запитання для самоперевірки
 

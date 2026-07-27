@@ -13,9 +13,9 @@
 - синхронізацію через Animation Notifies/Notify State та Blueprint;
 - reusable contract Niagara/User Parameters;
 - High/Medium/Low variants;
-- виміряне performance evidence;
+- зібрані докази продуктивності;
 - gameplay, neutral-view і technical breakdown package;
-- чесний 100-point self-review із category floors.
+- чесне 100-бальне самооцінювання із category floors.
 
 Результати: `NS_P11_Melee_WeaponTrail`, `NS_P11_Melee_SlashArc`, `NS_P11_Melee_Impact`, `NS_P11_Melee_GroundResponse`, `BP_P11_MeleeComboController`, `L_P11_Melee_Portfolio`, `LS_P11_Melee_Capture`.
 
@@ -49,14 +49,14 @@ M/S ledger: **1 година; cumulative 1/6 годин блоку**.
 - **Anticipation** — cue перед дією, що готує direction і weight.
 - **Ground response** — effect, розміщений та орієнтований за ground trace під час важкого contact.
 - **Notify State** — timed animation event із begin/end window.
-- **Gameplay readability** — гравець читає direction, timing, hit і hazard через gameplay camera.
+- **Gameplay readability** — гравець читає direction, timing, hit і hazard через ігрову камеру.
 - **Authorship statement** — точний перелік створеного вами й використаних external assets.
 - **Category floor** — мінімальний бал категорії rubric; polish не може приховати критичну слабкість.
 - **Neutral capture** — non-cinematic test view, який показує timing, layers і defects.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
-Melee-комбо одночасно перевіряє майже всі базові обов’язки real-time VFX artist: timing, silhouette, sockets, local/world space, contact data, material/Niagara architecture і вартість повторного gameplay. Відполірований beauty shot без точного contact або reusable integration не є production-ready доказом.
+Melee-комбо одночасно перевіряє майже всі базові обов’язки real-time VFX artist: timing, silhouette, sockets, локальний/світовий простір, contact data, material/Niagara architecture і вартість повторного gameplay. Відполірований beauty shot без точного contact або reusable integration не є production-ready доказом.
 
 Ця piece може показати релевантні професійні навички, але завершення її або курсу **не гарантує працевлаштування**. Обмежуйте claims лише роботою й evidence, які можете показати.
 
@@ -129,7 +129,7 @@ In scope: three-hit VFX, trail/slash/impact/ground systems, Notify/Blueprint hoo
 | M2 Integration | notify windows, hit data і ground trace стабільно працюють повторно |
 | M3 Art pass | оригінальні textures/materials/Niagara layers завершені |
 | M4 Polish | пройдено hierarchy, palette і camera readability |
-| M5 Performance | відтворювані before/after, H/M/L і bounds |
+| M5 Performance | відтворювані до й після, H/M/L і bounds |
 | M6 Presentation | gameplay/neutral captures і повний breakdown |
 
 ### Production checklist
@@ -175,7 +175,7 @@ In scope: three-hit VFX, trail/slash/impact/ground systems, Notify/Blueprint hoo
 - front/side/top neutral captures із fixed exposure;
 - один slow playback для timing analysis, позначений як `slowed`;
 - default і H/M/L comparison;
-- before/after optimization за однакових умов;
+- до й після optimization за однакових умов;
 - читабельні captions: назва piece, engine build, role, tools, target scenario;
 - cinematic-only shot не використовується як доказ gameplay performance.
 
@@ -187,8 +187,8 @@ In scope: three-hit VFX, trail/slash/impact/ground systems, Notify/Blueprint hoo
 4. material graphs/functions/instances і data contracts;
 5. повні Niagara stacks і renderer bindings;
 6. Blueprint/Animation Notify integration diagram;
-7. performance before/after evidence за однакових умов;
-8. High/Medium/Low table зі збереженими gameplay cues;
+7. дані про продуктивність до й після за однакових умов;
+8. High/Medium/Low table зі збереженими ігровими підказками;
 9. limitations і next iteration.
 
 ### Completion criteria / Definition of Done
@@ -225,9 +225,9 @@ gameplay contact > slash silhouette > weapon trail > sparks/debris > residue
 5. Перевірте black/mid/white backgrounds і desaturated view.
 6. Запустіть комбо тричі з pooled/reused components; знайдіть stale parameters.
 7. Порівняйте H/M/L з однакової camera й contact frame.
-8. Створіть overlap stress і зафіксуйте before/after material/particle optimization.
+8. Створіть overlap stress і зафіксуйте до й після material/particle optimization.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Архітектура проєкту
 
@@ -282,7 +282,7 @@ Emitter Sparks: Burst 18/24/32 → Initialize/Shape/Add Velocity → State/Gravi
 Emitter Shards: Burst 3/5/8 → Initialize/Shape/Velocity/Orientation → State/Gravity/Drag/Solve/Orientation → Mesh
 ```
 
-Усі layers працюють у world space, мають seeds і прив’язані до hit direction/normal. Hit 3 більший, але не просто множить усі counts: він додає lower-frequency shards і довший decay.
+Усі layers працюють у світовому просторі, мають seeds і прив’язані до hit direction/normal. Hit 3 більший, але не просто множить усі counts: він додає lower-frequency shards і довший decay.
 
 ### `NS_P11_Melee_GroundResponse`
 
@@ -306,7 +306,7 @@ Spawn transform вирівнює local Z за `HitResult.ImpactNormal`; position
 
 Остаточні values визначайте з profiling; percentages — starting hypotheses, а не budgets.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Точні core labels:
 
@@ -349,7 +349,7 @@ Spawn transform вирівнює local Z за `HitResult.ImpactNormal`; position
 
 ### `EX-L11-01-A` — Оригінальне альтернативне комбо
 
-Створіть незалежне комбо `два light + один heavy` з іншими motion language, palette і timing map. Використайте лише principle-level references, нові seeds і щонайменше одну власну texture або mesh, якої немає у guided piece. Збережіть повний portfolio contract, 100-point rubric і H/M/L.
+Створіть незалежне комбо `два light + один heavy` з іншою мовою руху, palette і timing map. Використайте лише principle-level references, нові seeds і щонайменше одну власну texture або mesh, якої немає у guided piece. Збережіть повний portfolio contract, 100-point rubric і H/M/L.
 
 [Повне рішення A](../EXERCISE_ANSWERS/L11-01_stylized_melee_combo_portfolio_piece_answers.md#ex-l11-01-a)
 
@@ -357,7 +357,7 @@ Spawn transform вирівнює local Z за `HitResult.ImpactNormal`; position
 
 ### `EX-L11-01-B` — Gameplay/performance remediation
 
-Навмисно створіть або знайдіть по одній реальній weakness: contact timing, silhouette occlusion, stale pooled parameter і High-tier overdraw. Виправте root causes, створіть before/after captures за однакових умов і чесно оновіть self-score.
+Навмисно створіть або знайдіть по одній реальній weakness: contact timing, silhouette occlusion, stale pooled parameter і High-tier overdraw. Усуньте першопричини, створіть знімки до й після за однакових умов і чесно оновіть self-score.
 
 [Повне рішення B](../EXERCISE_ANSWERS/L11-01_stylized_melee_combo_portfolio_piece_answers.md#ex-l11-01-b)
 
@@ -437,13 +437,13 @@ Spawn transform вирівнює local Z за `HitResult.ImpactNormal`; position
 
 ## 23. Self-check checklist
 
-- [ ] Creative brief і ethical reference board існують.
+- [ ] Creative brief і етична добірка референсів існують.
 - [ ] Повні technical requirements/constraints записані.
 - [ ] Пройдено сім milestones.
 - [ ] Contacts, trail, impacts і ground response працюють від gameplay.
 - [ ] Усі VFX assets оригінальні; інші assets credited.
 - [ ] H/M/L cue parity зафіксовано.
-- [ ] Performance target/config і before/after evidence існують.
+- [ ] Performance target/config і докази до й після існують.
 - [ ] Mandatory breakdown materials повні.
 - [ ] Кожна rubric category досягла floor; total `≥80`.
 - [ ] Limitations і statement про відсутність job guarantee додані.
@@ -476,10 +476,10 @@ URL перевірено 2026-07-27. **Потребує ручної перев�
 
 1. Ethical reference-principles board із sources і notes «використано/не скопійовано».
 2. Animation timeline із трьома contact/Notify windows.
-3. Layer/timing map і silhouettes із gameplay camera.
+3. Layer/timing map і silhouettes з ігрової камери.
 4. Власні textures/channel sheet і material graphs.
 5. Повні Niagara stacks/bindings для trail, slash, impact і ground response.
 6. Blueprint/Notify/hit-data integration diagram.
 7. H/M/L same-frame contact comparison.
-8. Performance before/after із точними capture conditions.
+8. Performance до й після із точними capture conditions.
 9. Gameplay і neutral final frames та authorship statement.

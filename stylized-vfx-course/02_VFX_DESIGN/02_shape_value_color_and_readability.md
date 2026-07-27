@@ -1,18 +1,18 @@
 # 1. Назва
 
-## Урок 02.02 — Shape, value, color, negative space і gameplay readability
+## Урок 02.02 — Shape, value, color, negative space і читабельність під час гри
 
 # 2. Результат уроку
 
 Після уроку ти зможеш:
 
 - перетворити layer breakdown на цілісну screen-space композицію;
-- обрати shape family відповідно до gameplay intent;
+- обрати shape family відповідно до ігрового задуму;
 - побудувати primary, secondary та accent hierarchy;
 - використовувати negative space як активну частину silhouette;
 - створити three-value plan до вибору кольору;
 - призначити dominant, supporting і accent colors за функцією;
-- оцінити screen-space footprint у gameplay camera;
+- оцінити розмір на екрані в ігровій камері;
 - перевірити design на різних backgrounds, scale і camera angles;
 - створити три композиційні boards, які передають різний характер однієї дії.
 
@@ -55,7 +55,7 @@
 | **Macro-read** | Сприйняття великих форм за короткий час або на малому scale | Чи читається board на 25% zoom? |
 | **Camera envelope** | Набір ракурсів і дистанцій, де effect має працювати | Чи design стабільний поза hero angle? |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Навіть технічно складний effect провалюється, якщо гравець не розуміє:
 
@@ -89,7 +89,7 @@ Shape, value і color — не косметичний polish. Це канали 
 |---|---|---|
 | Wedge / chevron | Напрямок, прорізання, прискорення | Надто тонкий shape зникає на distance |
 | Arc / crescent | Swing, orbit, sweep | Може зливатися з weapon trail |
-| Radial ring / burst | Impact, area, release | Великий screen coverage |
+| Radial ring / burst | Impact, area, release | Велике покриття екрана |
 | Column / vertical spike | Ascension, summon, authority | Перекриває character silhouette |
 | Cluster / cloud | Volume, smoke, corruption | Слабкий direction |
 | Ribbon / S-curve | Flow, grace, continuity | Camera-dependent overlap |
@@ -175,7 +175,7 @@ Hard edges привертають увагу. Soft edges створюють atmo
 
 - `Near`: найбільший допустимий gameplay size;
 - `Nominal`: основна дистанція;
-- `Far`: effect ще має повідомляти gameplay event.
+- `Far`: effect ще має повідомляти про ігрову подію.
 
 Стартовий test set для власного level:
 
@@ -291,7 +291,7 @@ Empty lane попереду primary допомагає читати direction. �
 
 **Очікування:** слабкі edges або близькі values зникнуть лише в частині contexts; це показує, де потрібні outline, value shift, scale або cleanup.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Сформулюй gameplay sentence
 
@@ -303,12 +303,12 @@ Empty lane попереду primary допомагає читати direction. �
 
 ## Етап 2 — Створи camera frame
 
-1. Візьми власний screenshot test level.
+1. Візьми власний знімок тестової сцени.
 2. Зменш saturation або зроби grayscale copy.
 3. Познач character, weapon, target, reticle/UI-safe area.
 4. Намалюй effect bounding box.
 
-## Етап 3 — Побудуй primary silhouette
+## Етап 3 — Побудуй основний силует
 
 1. Обери одну shape family.
 2. Використай одну solid white shape.
@@ -380,7 +380,7 @@ Empty lane попереду primary допомагає читати direction. �
 | Background separation |  |  |  |
 | Screen coverage justified |  |  |  |
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 Material nodes і Niagara modules у цьому design lesson не використовуються.
 
@@ -410,7 +410,7 @@ Material nodes і Niagara modules у цьому design lesson не викори�
 ### Unreal Engine 5.8
 
 - `Level Editor Viewport`
-- `CameraActor` або gameplay camera, уже створена в test level
+- `CameraActor` або gameplay camera, уже створена у тестовій сцені
 - `Field Of View` — не змінювати між variants усередині одного comparison
 - `High Resolution Screenshot` — тільки для власного test level
 
@@ -562,7 +562,7 @@ Material nodes і Niagara modules у цьому design lesson не викори�
 
 # 20. Performance considerations
 
-- Велика visual mass часто означає більший translucent screen coverage, але фактичну вартість треба виміряти.
+- Велика візуальна маса часто означає більше покриття екрана прозорими елементами, але фактичну вартість треба виміряти.
 - Soft glow, smoke й broad gradients можуть створювати overdraw навіть при малій кількості particles.
 - Вузький crisp shape інколи передає direction дешевше, ніж багато streak particles.
 - Декоративний color noise не виправляє value hierarchy, зате може вимагати додаткових layers/textures.

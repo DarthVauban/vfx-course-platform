@@ -5,8 +5,8 @@
 ## Правила
 
 - Заборонено використовувати покроковий course tutorial або solution.
-- Дозволено official documentation, власний glossary і порожній технічний notebook.
-- Assets з guided practice не можна копіювати як основу, якщо assessment не дозволяє це явно.
+- Дозволено офіційну документацію, власний glossary і порожній технічний notebook.
+- Assets з керованої практики не можна копіювати як основу, якщо assessment не дозволяє це явно.
 - Reference assets мають бути власними або правомірно використаними.
 - Усі required files, captures і measurements здаються разом.
 
@@ -28,7 +28,7 @@
 | Технічна correctness | 15 |
 | Independent decisions і transfer | 15 |
 
-### 3. Troubleshooting і performance evidence — 10
+### 3. Усунення проблем і докази продуктивності — 10
 
 - 4 — root-cause record;
 - 4 — valid measurements/test conditions;
@@ -46,10 +46,10 @@
 - Кожна з чотирьох великих категорій: `≥ 60%`.
 - Critical fail незалежно від total:
   - practical task не запускається;
-  - gameplay cue небезпечний або неправдивий;
+  - ігрова підказка небезпечна або неправдива;
   - чужі proprietary assets представлені як власні;
   - unresolved infinite spawn/lifecycle issue;
-  - performance evidence сфальсифіковано або умови приховано.
+  - докази продуктивності сфальсифіковано або умови приховано.
 
 ## Повторне проходження
 

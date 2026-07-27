@@ -45,7 +45,7 @@
 - **Normalized vector** — direction із length приблизно `1`.
 - **Dot product** — міра alignment двох vectors.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Threshold перетворює noise у dissolve, distance — у circle/ring, dot — у directional cone або facing mask. Ці operations створюють shapes без нової texture для кожної variation. Вони також є базою SDF-like masks уроку 03.05.
 
@@ -171,7 +171,7 @@ Length(UV - Center)
 
 Порівняйте Dot centered UV з Direction до/після Normalize. Без Normalize magnitude впливає на result; після Normalize переважно лишається angle.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph — `M_L03_03_ThresholdLab`
 
@@ -257,7 +257,7 @@ FinalHDR.Output → MaterialOutput.Emissive Color
 - Selector: `ShowDirection=0` обирає circle, `1` — direction; проміжні values виконують blend.
 - Color: selected mask масштабує HDR debug color.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 | Output | Очікуваний результат |
 |---|---|
@@ -286,7 +286,7 @@ flowchart TD
     SEL --> OUT["Color × intensity"]
 ```
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `Floor`, `Ceil`, `Frac`
 - `Step`, `SmoothStep`

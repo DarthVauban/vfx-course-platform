@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель beam/ribbon/electric | 1.0 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
-| Stage 2 — етичне reference study | 0.25 | 1.5 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.25 | 1.5 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Endpoint/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.5** | **5.5** | **1.0** |
 
@@ -56,7 +56,7 @@
 | Staccato timing | Короткі on/off energy bursts |
 | Endpoint pinning | Збереження exact first/last points попри noise |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Beam — це gameplay relationship: він має чітко з’єднувати правильні source і target. Noise, що рухає endpoints, — не style, а неправильна information. Electricity додає high-frequency angular deviation і staccato rhythm, але width, contrast і branches не повинні закривати target contact.
 
@@ -73,7 +73,7 @@ Ribbon trail відрізняється від beam:
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** один noisy core beam, outer ribbon, source/target bursts і short after-trail.
 2. **Reference study:** виміряйте normalized segment count, core:outer width, on/off rhythm, branch count і pulse travel; використовуйте лише own assets.
@@ -147,9 +147,9 @@ flowchart LR
 - Зробіть захоплення з білим матеріалом і вимкненим audio.
 - Самоперевірка визначає active/damage windows лише за VFX.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Electric_Beam` із `NE_Charge`, `NE_BeamCore`, `NE_BeamOuter`, `NE_Branches`, `NE_TargetBurst`, `NE_RibbonTrail`.
 2. Відкрийте source/target, width, amplitude, colors, activation і seed.
@@ -161,7 +161,7 @@ flowchart LR
 8. `NE_RibbonTrail`: записує рух source протягом `.22 s`, width `18→0`.
 9. Перевірте нерухомі endpoints, рухомий target, швидкий retarget і disable.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть source/title/date; описуйте лише співвідношення.
 2. Запишіть width core:outer, contrast branch/main, тривалість on/off і напрямок pulse.
@@ -169,7 +169,7 @@ flowchart LR
 4. Заборонено frame tracing, extracted flipbook, copied shader graph або точний силует branch.
 5. Запишіть три навмисні відхилення.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Electric_Beam_Braided`.
 2. Згенеруйте три paths навколо осі з фазами `0°,120°,240°`; зведіть їх у endpoints.
@@ -180,7 +180,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Niagara Beam Emitter Setup/Spawn Beam/Update Beam module names, ribbon/beam attributes, execution order, renderer bindings and target-update path звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -323,7 +323,7 @@ Outer uses Emissive 4 and wider opacity
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Noise в endpoints | Source/target плавають | Envelope endpoint |
 | Забагато однакових branches | Основний beam неясний | Ієрархія contrast/length branches |
@@ -346,7 +346,7 @@ Outer uses Emissive 4 and wider opacity
 | Pulse reversed | Ribbon U orientation | Invert U або pulse direction |
 | Bounds cull | Перемістіть target на max range | Dynamic/tight validated bounds |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Основні paths/points | Branches | Trail/support |
 |---|---:|---:|---|
@@ -359,7 +359,7 @@ Outer uses Emissive 4 and wider opacity
 - Overdraw матеріалу Ribbon зростає з width і довжиною на екрані.
 - Перевірте 1, 5 і 12 одночасних beams на коротких і довгих дистанціях.
 - Low скорочує braid/branches раніше за core connection.
-- Політика bounds має охоплювати діапазон рухомої цілі без fixed bounds розміром зі світ.
+- Політика bounds має охоплювати діапазон рухомої цілі без фіксованих меж розміром зі світ.
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact beam/ribbon renderer cost metrics, tessellation behavior, bounds update and scalability controls звірте у встановленому build.
 

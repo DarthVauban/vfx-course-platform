@@ -32,7 +32,7 @@
 # 4. Prerequisites
 
 - Пройдено `G01`.
-- Є UE 5.8 VFX test level із зафіксованою gameplay camera.
+- Є UE 5.8 тестова VFX-сцена із зафіксованою ігровою камерою.
 - Студент уміє створити й зберегти простий документ у Photoshop або Krita.
 - Прочитано правила роботи з референсами в `03_STUDY_AND_SELF_REVIEW.md`.
 
@@ -43,7 +43,7 @@
 | **Reference study** | Аналіз принципів чужої роботи без вилучення або повторного використання assets | Який принцип руху або композиції можна сформулювати словами? |
 | **Layer decomposition** | Поділ ефекту на елементи з окремою функцією | Що зникне з повідомлення ефекту, якщо прибрати цей шар? |
 | **Primary shape** | Найважливіша форма, яка першою передає дію | Чи видно напрямок і тип дії лише за silhouette? |
-| **Secondary shape** | Форма, яка уточнює обсяг, енергію або матеріальність | Чи допомагає вона primary shape, а не конкурує з нею? |
+| **Secondary shape** | Форма, яка уточнює обсяг, енергію або матеріальність | Чи допомагає вона основну форму, а не конкурує з нею? |
 | **Accent** | Короткий, контрастний елемент у ключовий момент | Чи підсилює він contact/impact frame? |
 | **Supporting particles** | Дрібні частинки, що пояснюють scale, direction або material behavior | Чи читається ефект без них? |
 | **Residue** | Залишковий шар після main action | Чи підтверджує він місце контакту й завершення дії? |
@@ -53,7 +53,7 @@
 | **Inference** | Обґрунтоване, але неперевірене припущення про реалізацію | «Arc, імовірно, є camera-facing mesh». |
 | **Design principle** | Узагальнене правило, придатне для іншої роботи | «Найяскравіший accent збігається з contact». |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Junior VFX artist рідко отримує завдання «зроби точно цей effect». Частіше є gameplay intent, mood, кілька референсів і технічні обмеження. Якщо аналіз зводиться до «бачу синій спалах — зроблю синій спалах», результат буде поверховим і залежним від tutorial.
 
@@ -61,7 +61,7 @@ Junior VFX artist рідко отримує завдання «зроби точ
 
 1. **Керованість.** Кожний шар можна створити, перевірити й оптимізувати окремо.
 2. **Оригінальність.** Ти переносиш принцип, а не копіюєш конкретний contour, texture або timing.
-3. **Production thinking.** Ще до Niagara можна помітити надмірний screen coverage, дублювання шарів і потенційно дорогі елементи.
+3. **Production thinking.** Ще до Niagara можна помітити надмірне покриття екрана, дублювання шарів і потенційно дорогі елементи.
 
 Це також мова спілкування з gameplay, animation і art direction: замість «ефект не такий» можна сказати «primary arc запізнюється відносно contact, а residue перекриває наступну дію».
 
@@ -186,7 +186,7 @@ Junior VFX artist рідко отримує завдання «зроби точ
 - `O` — багато overlapping layers;
 - `D` — довга duration або багато active Systems.
 
-Ці мітки не є performance verdict. Вони визначають, що пізніше треба виміряти на target hardware.
+Ці мітки не є performance verdict. Вони визначають, що пізніше треба виміряти на цільовому обладнанні.
 
 # 9. Візуальні або математичні приклади
 
@@ -278,7 +278,7 @@ coverage ≈ 280000 / 2073600 ≈ 0.135 = 13.5%
 **Контрольована змінна:** temporal staggering.  
 **Очікування:** варіант B має чіткіший rhythm і менше візуального злипання.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Сформулюй питання
 
@@ -319,11 +319,11 @@ Usage rule: observation only; no extracted assets.
 
 ## Етап 4 — П’ять переглядів
 
-1. **Message pass:** одне речення про gameplay event.
-2. **Silhouette pass:** primary/secondary shapes без кольору.
+1. **Message pass:** одне речення про ігрову подію.
+2. **Silhouette pass:** основні й другорядні форми без кольору.
 3. **Value/color pass:** dominant, accent і dark support.
 4. **Timing pass:** Start/Peak/End кожного layer.
-5. **Camera/cost pass:** screen coverage, overlap і ризики.
+5. **Camera/cost pass:** покриття екрана, overlap і ризики.
 
 Не змішуй записи різних passes.
 
@@ -358,7 +358,7 @@ Usage rule: observation only; no extracted assets.
 
 Познач кожний layer кодами `S/N/R/C/L/O/D`. Для кожного ризику напиши майбутню перевірку, наприклад:
 
-> `S`: перевірити translucent coverage у gameplay camera на High/Medium/Low.
+> `S`: перевірити translucent coverage в ігровій камері на High/Medium/Low.
 
 ## Етап 9 — Сформулюй три principles
 
@@ -379,7 +379,7 @@ Usage rule: observation only; no extracted assets.
 - унікальний symbol;
 - унікальну послідовність деталей.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 У цьому design lesson Material nodes і Niagara modules не використовуються. Використовуються такі точні інструменти:
 
@@ -554,13 +554,13 @@ Usage rule: observation only; no extracted assets.
 
 Design analysis не замінює profiling, але може зменшити ризик до implementation:
 
-- великий translucent screen-space footprint позначай як `S`;
+- великий translucent розмір на екрані позначай як `S`;
 - тривалі overlapping residue layers — як `O` і `D`;
 - hundreds of visible sparks не рахуй буквально з compressed footage; познач як `N` і перевір пізніше;
 - dynamic-looking glow не доводить наявність dynamic light;
 - cinematic motion blur може приховувати реальну складність silhouette;
 - effect, який читається лише через дуже високу яскравість, може вимагати дорожчого screen coverage замість сильнішого design;
-- рання перевірка на gameplay camera часто дозволяє видалити decorative layers;
+- рання перевірка на ігровій камері часто дозволяє видалити decorative layers;
 - numerical budgets визначаються тільки на representative PC/console hardware і representative scene.
 
 Performance evidence цього уроку — не milliseconds, а коректно сформульований список risk → future measurement.
@@ -586,7 +586,7 @@ Performance evidence цього уроку — не milliseconds, а корек�
 5. Щоб порівнювати rhythm effects різної абсолютної duration і переносити proportions без копіювання кадрів.
 6. Наприклад silhouette, proportions, motion path, timing rhythm, residue behavior, value distribution.
 7. Він перевіряє value hierarchy, але не показує hue contrast, material identity і повний temporal behavior.
-8. Потенційно великий translucent screen-space footprint, який треба виміряти пізніше.
+8. Потенційно великий translucent розмір на екрані, який треба виміряти пізніше.
 9. Footage не показує actual profiler data, target hardware, hidden particles, simulation type або material cost.
 
 # 23. Self-check checklist
@@ -623,7 +623,7 @@ Reference analysis — це перетворення footage на перевір
 
 # 26. Зв’язок із наступними уроками
 
-В уроці `02_shape_value_color_and_readability.md` layer table перетвориться на композиційний plan. Ти навчишся керувати silhouette, negative space, value hierarchy, dominant/accent color і screen coverage, а не лише називати layers.
+В уроці `02_shape_value_color_and_readability.md` layer table перетвориться на композиційний plan. Ти навчишся керувати silhouette, negative space, value hierarchy, dominant/accent color і покриття екрана, а не лише називати layers.
 
 # 27. Офіційні джерела
 
@@ -631,7 +631,7 @@ Reference analysis — це перетворення footage на перевір
 - Epic Games. [Measuring Performance in Niagara](https://dev.epicgames.com/documentation/en-us/unreal-engine/measuring-performance-in-niagara). UE 5.8. Пояснює, чому design-stage cost hypotheses потрібно підтверджувати вимірюванням.
 - Epic Games. [Introduction to Performance Profiling and Configuration](https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-performance-profiling-and-configuration-in-unreal-engine). UE 5.8. Контекст representative profiling.
 - Epic Games. [Guidelines for Optimizing Rendering for Real Time](https://dev.epicgames.com/documentation/en-us/unreal-engine/guidelines-for-optimizing-rendering-for-real-time-in-unreal-engine). UE 5.8. Загальні rendering trade-offs.
-- Для самого reference study використовуй лише офіційно опубліковане developer/publisher gameplay footage. Записуй конкретне джерело у власному `Reference Breakdown Sheet`; не вилучай assets.
+- Для самого аналізу референсів використовуй лише офіційно опубліковане developer/publisher gameplay footage. Записуй конкретне джерело у власному `Reference Breakdown Sheet`; не вилучай assets.
 
 # 28. Рекомендовані скриншоти або схеми
 

@@ -70,7 +70,7 @@ SoftP.Output → Fn.Softness
 
 ### Performance
 
-Немає Texture Sample, але є per-pixel math. На великому Translucent overlap cost усе одно визначається screen coverage і повторним shading.
+Немає Texture Sample, але є per-pixel math. На великому Translucent overlap cost усе одно визначається покриття екрана і повторним shading.
 
 ## EX-L04-01-B — Vertex-biased mesh erosion
 

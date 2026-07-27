@@ -9,7 +9,7 @@
 - описати повний lifecycle effect від anticipation до residue;
 - перетворити static composition board на normalized timing chart;
 - планувати Start/Peak/End для primary, secondary, accent і residue layers;
-- використовувати staggered timing та delayed secondary motion;
+- використовувати staggered timing та відкладений другорядний рух;
 - відрізняти position, scale, rotation, opacity і shape change;
 - застосовувати ease-in, ease-out, overshoot, settle і directional reversal;
 - створювати smear shapes і stepped animation без втрати gameplay clarity;
@@ -25,7 +25,7 @@
 | Частина | Час |
 |---|---:|
 | Phase model і normalized time | 30 хв |
-| Motion curves і secondary motion | 35 хв |
+| Криві руху й другорядний рух | 35 хв |
 | Smear, stepped і hybrid motion | 25 хв |
 | Controlled experiments | 45 хв |
 | Guided practice | 2 години |
@@ -59,7 +59,7 @@
 | **2D/3D hybrid** | Поєднання camera-oriented shapes і world-space volume | Macro shape читається, а parallax дає depth |
 | **Motion path** | Геометричний шлях position/orientation | Line, arc, spiral, radial, orbit |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX існує в часі. Static screenshot може виглядати красиво, але gameplay effect провалюється, якщо:
 
@@ -67,11 +67,11 @@ VFX існує в часі. Static screenshot може виглядати кра
 - contact не збігається з animation;
 - усі layers peak одночасно;
 - residue перекриває наступний combo hit;
-- secondary motion починається раніше за cause;
+- другорядний рух починається раніше за cause;
 - effect читається лише в slow motion;
 - швидка shape зникає між frames або з певної camera.
 
-Timing є частиною gameplay readability і відчуття weight. Один і той самий shape може здаватися light, heavy, electric або watery лише через різні acceleration, pauses, overshoot і dissipation.
+Timing є частиною читабельності під час гри і відчуття weight. Один і той самий shape може здаватися light, heavy, electric або watery лише через різні acceleration, pauses, overshoot і dissipation.
 
 # 7. Теорія простими словами
 
@@ -364,7 +364,7 @@ Density має spatial і temporal аспекти. Багато layers не по
 
 **Очікування:** thin plane втрачає area на гострому angle; потрібен camera-facing layer, thickness або complementary world-space volume.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Визнач duration і contact
 
@@ -477,7 +477,7 @@ Curve character:
 Camera risk:
 ```
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 Niagara modules у цьому design lesson не створюються. Точні implementation modules з’являться в блоках 07–09.
 
@@ -594,7 +594,7 @@ Niagara modules у цьому design lesson не створюються. Точ�
 - Hit 2 змінює direction або elevation;
 - Hit 3 має distinct anticipation/pause і найбільший response;
 - residue попереднього hit не може приховувати наступний contact;
-- загальний screen coverage перевіряється в overlap frames;
+- загальне покриття екрана перевіряється в overlap frames;
 - не копіювати конкретну combo animation з reference.
 
 **Deliverables:**
@@ -681,7 +681,7 @@ Niagara modules у цьому design lesson не створюються. Точ�
 2. Навіщо використовувати normalized time?
 3. Назви п’ять окремих motion channels.
 4. Що робить ease-out?
-5. Коли secondary motion є causal?
+5. Коли другорядний рух є causal?
 6. Чим smear shape відрізняється від випадково розтягнутої shape?
 7. Чому stepped animation не означає обов’язкове зниження engine tick rate?
 8. Який ризик має residue у combo?
@@ -697,7 +697,7 @@ Niagara modules у цьому design lesson не створюються. Точ�
 5. Коли його start і direction логічно випливають із primary event.
 6. Він intentional, aligned із motion vector, короткий, tapered і спрощує details.
 7. Stepped look — це held visual states у часі; engine може продовжувати оновлюватися кожний frame.
-8. Накопичення active layers, screen coverage і occlusion наступного contact.
+8. Накопичення active layers, покриття екрана і occlusion наступного contact.
 9. Через довший/чіткіший anticipation, pause, scale/value contrast, distinct direction і response.
 10. Момент, коли найбільше дорогих або великих layers одночасно видимі; його треба профілювати.
 

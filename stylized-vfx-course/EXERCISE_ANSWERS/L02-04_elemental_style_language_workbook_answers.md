@@ -1,6 +1,6 @@
 # Рішення до уроку 02.04
 
-Відкривай цей файл лише після власного 3×3 workbook, самостійної blind/self-review процедури й трьох hints. Model solution використовує нейтральний target-centered burst і не відтворює конкретні proprietary effects.
+Відкривай цей файл лише після власного 3×3 workbook, самостійної blind/самооцінювання процедури й трьох hints. Model solution використовує нейтральний target-centered burst і не відтворює конкретні proprietary effects.
 
 ## EX-L02-04-A
 
@@ -132,7 +132,7 @@ Neutral base: симетричний circular burst, лінійне розшир
 
 ### 9. Результат самостійного blind recognition
 
-У static solid-white review правильно названо 8/9. Ice/Earth спочатку позначено як «crystal/rock pair», але motion strip розділив їх. Це проходить acceptance criteria: 7+ static і всі 9 після motion.
+У static solid-white review правильно названо 8/9. Ice/Earth спочатку позначено як «crystal/rock pair», але motion strip розділив їх. Це проходить критерії приймання: 7+ static і всі 9 після motion.
 
 ### 10. Camera/background notes
 
@@ -199,7 +199,7 @@ Gameplay function, bounding envelope і contact point однакові. Identity
 ### 16. Verification
 
 1. Приховати labels і color.
-2. Збережи panels з neutral filenames, зроби паузу щонайменше на одну навчальну сесію й перемішай їх перед self-review.
+2. Збережи panels з neutral filenames, зроби паузу щонайменше на одну навчальну сесію й перемішай їх перед самооцінювання.
 3. Провести static naming.
 4. Провести motion naming.
 5. Перевірити pair matrix.
@@ -327,7 +327,7 @@ Hue swap test: призначення green/purple/cyan навмання не з
 - failure: dark core disappears on dark background;
 - revision: контрольований mid-value rim і малий зміщений bright accent; не заповнювати core фіолетовим.
 
-### 8. Чому це одна gameplay function
+### 8. Чому це одна ігрова функція
 
 У всіх:
 
@@ -364,7 +364,7 @@ Color можна повністю вимкнути.
 - Один crescent у трьох colors.
 - Nature = Wind + leaf sprites.
 - Void = Wind + distortion + purple.
-- Contact timestamps настільки різні, що gameplay function змінюється.
+- Contact timestamps настільки різні, що ігрова функція змінюється.
 - Nature стає strongest лише через більшу кількість petals.
 
 ### 12. Verification

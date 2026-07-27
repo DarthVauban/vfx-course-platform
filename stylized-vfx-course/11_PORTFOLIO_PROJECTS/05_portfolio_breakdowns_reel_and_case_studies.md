@@ -2,18 +2,18 @@
 
 ## 1. Назва
 
-**Evidence-first portfolio delivery: чотири case studies, короткий reel, downloadable package та interview walkthrough.**
+**Evidence-first portfolio delivery: чотири описи проєктів, короткий reel, downloadable package та interview walkthrough.**
 
 ## 2. Результат уроку
 
 Ви перетворите чотири завершені portfolio pieces на перевірюваний presentation package:
 
-- `Resonant Edge`, `Triune Relay`, `Glassbloom Ward`, `Rift Crown` мають окремі case studies;
+- `Resonant Edge`, `Triune Relay`, `Glassbloom Ward`, `Rift Crown` мають окремі описи проєктів;
 - кожна piece показана у gameplay й neutral view;
 - selection і reel не приховують слабку роботу монтажем;
 - captions фіксують role, authorship, engine/build, target і playback;
-- кожен case study містить reference principles, layer/timing, textures, materials, Niagara, Blueprint і performance evidence;
-- before/after та H/M/L показані за однакових умов;
+- кожен опис проєкту містить reference principles, layer/timing, textures, materials, Niagara, Blueprint і докази продуктивності;
+- до й після та H/M/L показані за однакових умов;
 - downloadable package має зрозумілі filenames, manifest і credits;
 - ви можете чесно пройти 3–5-хвилинний interview walkthrough кожної роботи;
 - block assessment завершено в межах часу цього уроку.
@@ -30,12 +30,12 @@
 - 30 хв практики — cross-project evidence inventory і shot list;
 - 60 хв практики — gameplay/neutral capture та edit;
 - 60 хв практики — M/S practice: фінальний polish material/Niagara breakdown views;
-- 45 хв практики — чотири compact case studies;
+- 45 хв практики — чотири compact описи проєктів;
 - 45 хв практики — reel, downloadable package, assessment review і interview rehearsal.
 
 M/S ledger: **1 година; cumulative 6/6 годин блоку**.
 
-[Block assessment](BLOCK_ASSESSMENT.md) виконується всередині цих 6 годин; **додаткові години не додаються**. Практичні captures/case studies цього уроку є assessment evidence, а не другою окремою роботою.
+[Block assessment](BLOCK_ASSESSMENT.md) виконується всередині цих 6 годин; **додаткові години не додаються**. Практичні captures/описи проєктів цього уроку є assessment evidence, а не другою окремою роботою.
 
 ## 4. Prerequisites
 
@@ -59,15 +59,15 @@ M/S ledger: **1 година; cumulative 6/6 годин блоку**.
 - **Interview walkthrough** — коротке усне пояснення decision → implementation → evidence → limitation.
 - **Unverifiable claim** — твердження на кшталт «AAA-ready» або «console optimized» без визначеного target й доказу.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
-Навіть сильний effect важко оцінити, якщо reel не показує gameplay context, роль незрозуміла, graph обрізаний, а optimization існує лише як слово. Presentation — це технічна комунікація: під час self-review вона допомагає швидко відокремити вашу роботу від чужих assets, побачити problem solving і перевірити claims; optional reviewer може повторити той самий аудит.
+Навіть сильний effect важко оцінити, якщо reel не показує gameplay context, роль незрозуміла, graph обрізаний, а optimization існує лише як слово. Presentation — це технічна комунікація: під час самооцінювання вона допомагає швидко відокремити вашу роботу від чужих assets, побачити problem solving і перевірити claims; optional reviewer може повторити той самий аудит.
 
 Portfolio може підвищити ясність вашої заявки, але курс, reel або score **не гарантують працевлаштування, interview чи offer**. Не вигадуйте командні credits, platform results, client names або production claims.
 
 ## 7. Теорія простими словами
 
-Для кожної piece заповніть self-review card із чотирма відповідями; optional reviewer може прочитати ту саму card, але не є умовою проходження:
+Для кожної piece заповніть картку самооцінювання із чотирма відповідями; optional reviewer може прочитати ту саму card, але не є умовою проходження:
 
 1. **Що мав прочитати гравець?**
 2. **Що саме створили ви?**
@@ -85,7 +85,7 @@ Reel відповідає «чи хочу я дивитися далі?». Case 
 - gameplay readability;
 - visual/technical quality;
 - відмінність від інших pieces;
-- completeness of integration, H/M/L і performance evidence;
+- completeness of integration, H/M/L і докази продуктивності;
 - authorship clarity;
 - relevance до бажаного real-time VFX напряму.
 
@@ -99,7 +99,7 @@ Reel відповідає «чи хочу я дивитися далі?». Case 
 - neutral front/side/top або еквівалентні technical views;
 - layer-isolation/timing view;
 - H/M/L parity;
-- before/after optimization за identical conditions;
+- до й після optimization за identical conditions;
 - material graph, Niagara stack і Blueprint/data diagram;
 - recorded resolution, frame rate, build/profile і playback label.
 
@@ -162,7 +162,7 @@ Playback: real time
 8. full Niagara stacks і User Parameter contract;
 9. Blueprint/gameplay integration;
 10. історія iteration: problem → evidence → change;
-11. performance target, identical before/after і H/M/L;
+11. performance target, зіставні матеріали до й після і H/M/L;
 12. honest limitations і next iteration.
 
 ### Before/after standard
@@ -206,7 +206,7 @@ README містить version/date, navigation, playback requirements, file size
 
 ### Presentation acceptance / Definition of Done
 
-Package завершений, коли всі чотири pieces окремо мають `≥80/100` і floors, gameplay/neutral capture, complete breakdown, H/M/L, performance evidence, credits і limitations; reel captions точні; links/files відкриваються; download structure зрозуміла; assessment `≥80/100`; жодного proprietary asset або unverifiable claim.
+Package завершений, коли всі чотири pieces окремо мають `≥80/100` і floors, gameplay/neutral capture, complete breakdown, H/M/L, докази продуктивності, credits і limitations; reel captions точні; links/files відкриваються; download structure зрозуміла; assessment `≥80/100`; жодного proprietary asset або unverifiable claim.
 
 ## 9. Візуальні або математичні приклади
 
@@ -244,7 +244,7 @@ claim → target/condition → capture or graph → measured result → limitati
 7. Відкладіть case study до наступного review pass, відкрийте exported version без author notes, запустіть таймер на 90 s і до відкриття notes письмово дайте дві відповіді: що ви створили та яку проблему вирішили. Використайте той самий deterministic checklist; optional reviewer може повторити тест.
 8. Проведіть interview walkthrough із двома follow-up: «чому?» і «який доказ?».
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Заморозьте assessment versions
 
@@ -290,7 +290,7 @@ Piece
 - одна readability issue у neutral view;
 - version-lock після regression capture.
 
-### Крок 5 — Зберіть чотири case studies
+### Крок 5 — Зберіть чотири описи проєктів
 
 Використайте однакові 12 sections, але не однакову історію. Для кожної назвіть конкретний gameplay problem, biggest iteration і limitation. Graph screenshots мають бути достатньо великими або розбитими на labeled panels.
 
@@ -310,13 +310,13 @@ Piece
 
 ### Крок 8 — Пройдіть assessment
 
-Виконайте test, practical cross-project review, troubleshooting/performance і self-review із [BLOCK_ASSESSMENT.md](BLOCK_ASSESSMENT.md). Це частина lesson schedule; **жодного додаткового часу**.
+Виконайте test, practical cross-project review, troubleshooting/performance і самооцінювання із [BLOCK_ASSESSMENT.md](BLOCK_ASSESSMENT.md). Це частина lesson schedule; **жодного додаткового часу**.
 
 ### Крок 9 — Репетиція interview
 
 Запишіть один take на 3–5 хв для кожної piece. Вилучіть unverifiable superlatives, скоротіть chronology, додайте evidence/limitation. Не заучуйте рекламний текст; вмійте відкрити потрібний graph/capture.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - still capture: console commands `Shot`, `HighResShot`;
 - Sequencer: `Level Sequence`, `Cine Camera Actor`, `Camera Cuts`;
@@ -348,7 +348,7 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 - Inventory: усі missing/failed artifacts явно позначені.
 - Capture: gameplay і neutral views походять із final version.
 - M/S polish: graphs/stacks/material response читабельні без зміни scope.
-- Case studies: відкладений self-review за deterministic checklist підтверджує intent, role, architecture, evidence і limitation.
+- Case studies: відкладене самооцінювання за deterministic checklist підтверджує intent, role, architecture, evidence і limitation.
 - Reel: strongest work first, timing/playback правдиві, captions readable.
 - Delivery: package відкривається й не містить confidential/unlicensed files.
 - Interview: кожен claim має evidence або чесне обмеження.
@@ -392,9 +392,9 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 - slow motion не labeled;
 - «solo/original/optimized/console-ready» без evidence;
 - role приховує third-party character/animation/environment;
-- before/after має іншу camera/exposure/settings;
+- до й після має іншу camera/exposure/settings;
 - performance доводиться encoded video або MRQ shot;
-- case studies повторюють process diary без decisions;
+- описи проєктів повторюють process diary без decisions;
 - package містить broken links, unlicensed source assets або private data.
 
 ## 19. Troubleshooting
@@ -405,7 +405,7 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 | незрозуміла роль | first caption/credits | вказати exact authored і third-party items |
 | effect виглядає повільним | playback/export fps | відновити real time або label slowed |
 | graphs нечитабельні | size/duration/crop | розбити на 2–3 labeled panels |
-| before/after нечесний | condition manifest | повторити з однаковою camera/build/profile |
+| до й після нечесний | condition manifest | повторити з однаковою camera/build/profile |
 | smooth video без proof | target profiler evidence | додати gameplay capture/counters окремо |
 | package не відкривається | relative links/formats | fix links, common formats, README navigation |
 
@@ -421,12 +421,12 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 
 ## 21. Запитання для самоперевірки
 
-1. Чим відрізняються reel і case study?
+1. Чим відрізняються reel і опис проєкту?
 2. Які два final views обов’язкові для кожної piece?
 3. Що має містити first caption?
 4. Чому MRQ shot не є performance proof?
-5. Які умови має зберігати before/after?
-6. Які 12 частин має case study?
+5. Які умови має зберігати до й після?
+6. Які 12 частин має опис проєкту?
 7. Що записують у authorship table?
 8. Як поводитися з unverifiable claim?
 9. Що перевіряє interview walkthrough?
@@ -434,7 +434,7 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 
 ## 22. Відповіді
 
-1. Reel швидко відбирає увагу; case study доводить intent, architecture, evidence й authorship.
+1. Reel швидко відбирає увагу; опис проєкту доводить intent, architecture, evidence й authorship.
 2. Real-time gameplay і neutral technical view.
 3. Piece, role, actual build/target, third-party disclosure і playback.
 4. Offline/controlled rendering не вимірює target gameplay runtime.
@@ -448,8 +448,8 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 ## 23. Self-check checklist
 
 - [ ] Усі чотири pieces пройшли individual `≥80` і floors.
-- [ ] Кожна має gameplay, neutral, H/M/L і before/after.
-- [ ] Чотири 12-section case studies завершені.
+- [ ] Кожна має gameplay, neutral, H/M/L і до й після.
+- [ ] Чотири 12-section описи проєктів завершені.
 - [ ] Reel показує всі pieces і точні role/playback captions.
 - [ ] Authorship/license table повний.
 - [ ] Performance claims мають target evidence.
@@ -460,15 +460,15 @@ Exact UE 5.8 UI labels, screenshot paths, MRQ settings, codec availability і re
 
 ## 24. Mastery criteria
 
-Ви можете відібрати й подати real-time VFX без перебільшень: швидко показати gameplay value, точно розкрити свою роль, пояснити material/Niagara/Blueprint architecture, продемонструвати identical performance evidence, визнати limitations і передати чотири case studies у зрозумілому downloadable package.
+Ви можете відібрати й подати real-time VFX без перебільшень: швидко показати gameplay value, точно розкрити свою роль, пояснити material/Niagara/Blueprint architecture, продемонструвати identical докази продуктивності, визнати limitations і передати чотири описи проєктів у зрозумілому downloadable package.
 
 ## 25. Підсумок
 
-Фінальний portfolio — це не набір beauty shots, а доказовий ланцюг від gameplay intent до implementation, profiling і чесного authorship. Чотири різні pieces разом показують timing, reuse, persistent state, large-scale orchestration і production communication.
+Фінальний portfolio — це не набір beauty shots, а доказовий ланцюг від ігрового задуму до implementation, profiling і чесного authorship. Чотири різні pieces разом показують timing, reuse, persistent state, large-scale orchestration і production communication.
 
 ## 26. Зв’язок із наступними уроками
 
-Це фінальний урок основної програми. Після [block assessment](BLOCK_ASSESSMENT.md) виконуйте targeted remediation лише слабких тем, оновлюйте versioned captures/case studies і зберігайте source/license/performance records разом із package.
+Це фінальний урок основної програми. Після [block assessment](BLOCK_ASSESSMENT.md) виконуйте targeted remediation лише слабких тем, оновлюйте versioned captures/описи проєктів і зберігайте source/license/performance records разом із package.
 
 ## 27. Офіційні джерела
 
@@ -489,6 +489,6 @@ URL перевірено 2026-07-27. **Потребує ручної перев�
 4. Один повний 12-section case-study wireframe.
 5. Чотири authorship/source/license tables.
 6. Gameplay/neutral/HML grids для всіх pieces.
-7. Чотири identical before/after performance panels.
+7. Чотири зіставні матеріали до й після performance panels.
 8. Downloadable directory/manifest screenshot.
 9. Interview evidence map: claim → artifact → limitation.

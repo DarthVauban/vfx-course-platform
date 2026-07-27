@@ -9,7 +9,7 @@
 - побудувати silhouette, value, color і negative-space hierarchy;
 - спроєктувати causal timing та motion;
 - виконати elemental translation, а не recolor;
-- знайти readability/performance risks і виправити design.
+- знайти readability/ризики продуктивності і виправити design.
 
 ## Час
 
@@ -24,7 +24,7 @@
 | Wind design | 35 хв |
 | Timing animatic | 30 хв |
 | Ice translation | 20 хв |
-| Failure correction, performance notes, self-review | 10 хв |
+| Failure correction, performance notes, самооцінювання | 10 хв |
 
 Якщо потрібна accessibility pause, зупини timer між частинами й зафіксуй фактичний active time.
 
@@ -41,7 +41,7 @@
    - tracing reference contours;
    - копіювання exact symbols, palettes або timing;
    - отримання готової composition від іншої людини або LLM.
-4. LLM можна використати **після** завершення для critique за шаблоном із `03_STUDY_AND_SELF_REVIEW.md`, але response додається до appendix і не замінює власний self-review.
+4. LLM можна використати **після** завершення для critique за шаблоном із `03_STUDY_AND_SELF_REVIEW.md`, але response додається до appendix і не замінює власне самооцінювання.
 5. Запиши start/end time, використані дозволені матеріали та будь-які interruption.
 
 ## Пакет здачі
@@ -69,10 +69,10 @@ B02_ASSESSMENT/
 1. Чим `observation` відрізняється від `inference`? Наведи по одному прикладу для VFX footage.
 2. Чому назва «sprite layer» слабша за «короткий contact accent» у layer breakdown?
 3. Effect триває 1.25 с, а contact розташований у normalized time `t=0.40`. На якій секунді відбувається contact?
-4. Назви дві функції negative space у combat effect.
+4. Назви дві функції негативного простору у combat effect.
 5. Чому різниця лише в hue недостатня для gameplay-critical states?
 6. Що таке tangency і як її виправити?
-7. Чому delayed secondary motion має починатися після cause? Наведи приклад.
+7. Чому відкладений другорядний рух має починатися після cause? Наведи приклад.
 8. Чим `overshoot` відрізняється від `settle`?
 9. Назви мінімум п’ять structural categories, які треба змінити, щоб elemental translation не була recolor.
 10. Назви по дві non-color ознаки, що розрізняють:
@@ -83,7 +83,7 @@ B02_ASSESSMENT/
 
 ## Creative brief
 
-Third-person anime-style action game для PC/console. Projectile влучає в target на середній gameplay distance. Потрібно створити **оригінальний Wind Impact**, а потім перекласти його в **Ice Impact** без зміни gameplay function.
+Third-person anime-style action game для PC/console. Projectile влучає в target на середній gameplay distance. Потрібно створити **оригінальний Wind Impact**, а потім перекласти його в **Ice Impact** без зміни ігрової функції.
 
 Constraints:
 
@@ -149,7 +149,7 @@ Wind має читатися через open shape, suction/sweep і delayed air
 
 ## Завдання D — Ice translation, 16 балів
 
-Збережи gameplay function, camera, target point і bounding envelope. Перебудуй Wind design у Ice, змінивши щонайменше:
+Збережи ігрову функцію, camera, target point і bounding envelope. Перебудуй Wind design у Ice, змінивши щонайменше:
 
 - primary shape;
 - edge rhythm;
@@ -162,7 +162,7 @@ Ice має містити `grow → hold → fracture → settle`. Просто 
 
 Додай `structural-distance audit` і side-by-side grayscale comparison.
 
-# Частина 3 — Troubleshooting і performance evidence, 10 балів
+# Частина 3 — Усунення проблем і докази продуктивності, 10 балів
 
 Проведи:
 
@@ -298,7 +298,7 @@ Ice має містити `grow → hold → fracture → settle`. Просто 
 | Shape/value/color | Створити три white silhouettes і пройти самостійний blind 25% test після паузи, приховування labels та shuffle |
 | Timing/motion | Перебудувати один animatic із contact-first planning і staggered peaks |
 | Elemental translation | Перекласти той самий brief у `Earth`, змінивши 5+ categories |
-| Troubleshooting | Провести background/camera tests і показати two before/after fixes |
+| Troubleshooting | Провести background/camera tests і показати two до й після fixes |
 | Self-review | Переписати review з посиланнями на конкретні frames/boards |
 
 Повторна практична спроба використовує інший official reference і `Earth` замість `Ice`, щоб перевірити transfer, а не memorization.

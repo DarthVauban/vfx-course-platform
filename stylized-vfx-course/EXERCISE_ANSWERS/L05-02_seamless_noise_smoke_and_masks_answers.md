@@ -85,7 +85,7 @@ Large sample несе silhouette; remapped high-frequency sample лише мод
 
 - Raw `A×B`, де обидві masks переважно темні.
 - Однаковий tiling/speed для обох branches.
-- Small detail займає всю value hierarchy.
+- Small detail займає всю ієрархію світлоти.
 - Seam repair зроблено після downsample лише в одному axis.
 - Texture використовує sRGB decode.
 

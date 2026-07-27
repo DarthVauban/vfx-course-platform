@@ -23,7 +23,7 @@
 
 - урок 07.03 завершено;
 - правильний force/solver order;
-- розуміння local/world space;
+- розуміння локального й світового просторів;
 - sprite material, який помітно показує non-uniform size.
 
 ## 5. Нові терміни
@@ -40,7 +40,7 @@
 - **Alignment** — як осі sprite орієнтуються в цій площині.
 - **Velocity Aligned** — alignment mode, у якому sprite довга вісь слідує velocity.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Curl дає organic turbulence, attraction збирає silhouette, vortex створює читабельне обертання. Але однаково важливо показати motion: square sprite приховує direction, elongated velocity-aligned card робить trajectory зрозумілою. Production artist має відрізнити motion simulation від renderer orientation і не «лікувати» одне іншим.
 
@@ -110,7 +110,7 @@ direction = normalize(AttractorPosition - Particles.Position)
 7. `Face Camera` проти встановленого custom facing mode; відновіть Face Camera.
 8. Перемістіть solver вище field, запишіть warning і відновіть порядок.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 Групи System: `System Properties`; порожній `System Spawn`; `System Update > System State`.
 
@@ -179,7 +179,7 @@ Normalized Age Binding = Particles.NormalizedAge
 
 Захопіть top/front views у `.5`, `1.5`, `2.4 s`.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 `Curl Noise Force`; `Noise Strength`; `Noise Frequency`; `Point Attraction Force`; `Attractor Position`; `Attraction Strength`; `Attraction Radius`; `Falloff Exponent`; `Kill Radius`; `Vortex Force`; `Vortex Force Amount`; `Vortex Axis`; `Drag`; `Solve Forces and Velocity`; `Alignment`; `Velocity Aligned`; `Facing Mode`; `Face Camera`; `Velocity Binding`.
 
@@ -248,7 +248,7 @@ Exact optional Vortex origin/pull fields і curl sampling dropdown **потре�
 
 ## 19. Пошук несправностей
 
-| Симптом | Check | Fix |
+| Симптом | Check | Виправлення |
 |---|---|---|
 | Curl прямий | strength, solver, baked field | 72/.02, field до solver |
 | Attraction не впливає | radius/origin/space | radius 300, origin zero у Simulation |
@@ -257,7 +257,7 @@ Exact optional Vortex origin/pull fields і curl sampling dropdown **потре�
 | cards боком | Alignment/binding/вісь size | Velocity Aligned, `Particles.Velocity` |
 | cards мерехтять у центрі | velocity≈0 | не оцінюйте points із нульовою speed |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Sampling Curl field коштує більше за просту аналітичну gravity; default baked mode є baseline.
 - Кожний додатковий field виконується для кожної живої частинки за кожний tick.

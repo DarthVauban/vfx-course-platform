@@ -6,7 +6,7 @@
 | ID уроку | L05-03 |
 | Артефакти | `T_Slash_Crescent_1024`, `T_Spark_Star_512`, `T_MagicCircle_1024` |
 | UE validator | `M_PS_CombatTextureViewer` |
-| Критерій опанування | Оригінальний combat texture sheet із чистими silhouettes, alpha і gameplay readability |
+| Критерій опанування | Оригінальний combat texture sheet із чистими silhouettes, alpha і читабельність під час гри |
 
 ## 2. Результат уроку
 
@@ -52,7 +52,7 @@
 | Combat texture sheet | Узгоджений набір slash/spark/symbol assets |
 | Edge dilation | Продовження логічного RGB за alpha edge для filtering |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Combat textures несуть напрямок, силу й timing ще до Niagara animation. Slash без taper виглядає як arc decal; spark без value hierarchy — як зірочка; magic circle без spacing hierarchy перетворюється на дрібний текст.
 
@@ -140,7 +140,7 @@ flowchart LR
 - Перевірте на black/white/magenta і в UE.
 - Очікування: glow читається в Emissive, silhouette контролюється alpha, fringe відсутній.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L05-03-A — Slash `T_Slash_Crescent_1024`
 
@@ -150,7 +150,7 @@ flowchart LR
 4. Warp 3×3: upper tip `+34 px Y`, lower tip `−20 px Y`; не ламайте smooth arc.
 5. Add mask; large soft black brush `180 px`, opacity `100%`, taper обидва ends.
 6. Duplicate arc, contract inward до `82%`, Levels `60/0.75/210` для hot core.
-7. Додайте L05-02 noise як clipped breakup із opacity `25%`; primary silhouette лишається continuous.
+7. Додайте L05-02 noise як clipped breakup із opacity `25%`; основний силует лишається continuous.
 8. Padding: мінімум `16 px` від nontransparent pixels до border.
 
 ### GP-L05-03-B — Spark `T_Spark_Star_512`
@@ -180,7 +180,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Blend Mode/Shading Model property layout, alpha import detection, Compression Settings і mip UI звірте у встановленому build.
 
-## 12. Точні назви nodes, modules, settings і connections
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 Material properties:
 
@@ -313,7 +313,7 @@ TextureSample_Combat.A → MaterialOutput.Opacity
 - Slash, spark і circle не мають автоматично бути RGBA: mask-only assets можуть використовувати one-channel/packing workflow після validation.
 - Transparent padding збільшує covered quad area, overdraw і wasted texels. Обрізайте bounds, але лишайте filter-safe padding.
 - Dense magic circle lines shimmer-ять у mips; performance/quality fix — design simplification або controlled mip behavior, не безмежне resolution.
-- Emissive intensity не збільшує texture memory, але bloom може розширити perceived screen footprint; оцінюйте final scene.
+- Emissive intensity не збільшує памʼять текстур, але bloom може розширити perceived screen footprint; оцінюйте final scene.
 
 ## 21. Запитання для самоперевірки
 
@@ -332,7 +332,7 @@ TextureSample_Combat.A → MaterialOutput.Opacity
 2. Inner ellipse вирізає частину outer; зміщення визначає thickness distribution.
 3. Він прибирає clip-art symmetry і створює visual direction.
 4. Передбачуваний кутовий ритм повторів навколо center.
-5. Щоб перевірити gameplay readability та злиття тонких деталей.
+5. Щоб перевірити читабельність під час гри та злиття тонких деталей.
 6. Soft RGB дає glow, а tighter alpha контролює silhouette/coverage.
 7. Великий порожній quad витрачає texels і може збільшувати translucent covered area.
 8. Downloaded/proprietary brushes, symbols, fonts/glyphs як чужий artwork і photobash.
@@ -358,7 +358,7 @@ TextureSample_Combat.A → MaterialOutput.Opacity
 4. Materials compile і показують R/A contract.
 5. Texture resolutions виправдані gameplay capture.
 6. Немає proprietary/source-license problem.
-7. Щонайменше 7/8 self-check answers правильні.
+7. Щонайменше 7/8 відповіді самоперевірки правильні.
 8. Performance note містить bounds/overdraw і memory estimate.
 
 ## 25. Підсумок

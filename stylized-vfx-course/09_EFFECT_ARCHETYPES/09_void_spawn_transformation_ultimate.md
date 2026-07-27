@@ -27,9 +27,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Багатофазна/void architecture | 0.75 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 0.75 | 0.25 |
-| Stage 2 — етичне reference study | 0.0 | 0.5 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 0.75 | 0.75 |
+| Етап 1 — технічна реконструкція | 0.25 | 0.75 | 0.25 |
+| Етап 2 — етичний аналіз референсів | 0.0 | 0.5 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 0.75 | 0.75 |
 | `BLOCK_ASSESSMENT` | 0.0 | 3.0 | 0.0 |
 | **Разом** | **1.0** | **5.0** | **1.0** |
 
@@ -59,7 +59,7 @@
 | Silhouette shell | Attached layer, що змінює character outline без replacement gameplay mesh |
 | Residual void | Тривалий low-contrast aftermath |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Ultimate тестує architecture, art direction і restraint. Він поєднує telegraph, character state, motion hierarchy, camera readability, bounds і concurrency. Spawn і transformation мають лишатися readable до final release; інакше ultimate стає bright unrelated explosion.
 
@@ -78,7 +78,7 @@ Void — не лише black/purple. Negative space, asymmetry, inward motion і
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** portal spawn, attached transformation shell, suction/charge, false calm, release і residue.
 2. **Reference study:** лише normalized phase ratios, silhouette coverage, inward/outward speed і contrast; own assets.
@@ -147,9 +147,9 @@ flowchart LR
 - Змініть загальну duration з 2.7 на 1.8/4.0 s.
 - Зовнішні дані Phase зберігають синхронізацію release; незалежні clocks emitters виявляють drift.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Void_Sequence`: `NE_Portal`, `NE_Suction`, `NE_Shell`, `NE_OrbitShards`, `NE_Telegraph`, `NE_Collapse`, `NE_Release`, `NE_Residue`.
 2. Відкрийте center/owner transform/radius/phase/charge/release/colors/seed.
@@ -160,7 +160,7 @@ flowchart LR
 7. Release: Flash 1 `.08`, burst petals 3, streaks 18, wave 1; точний damage time.
 8. Residue: ground eclipse `.9–1.3 s`, низька alpha, потім повне завершення.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть доступні для законного перегляду source/date й лише пропорції фаз.
 2. Запишіть покриття силуету, duration suction, contrast calm:release і ratio residue.
@@ -168,18 +168,18 @@ flowchart LR
 4. Заборонено скопійований силует персонажа, sigil, extracted flipbook/audio/shader.
 5. Запишіть provenance і три відхилення.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Void_Sequence_Eclipse`.
 2. Використайте зміщений eclipse плюс три fractured petals, а не центрований round portal.
 3. Timeline: reveal `.32`, suction `1.05`, calm `.18`, release A `.10`, gap `.06`, release B `.24`.
 4. Motes рухаються inward spiral 2.5 оберти; release інвертує спіраль і чергує напрямок petals.
 5. Палітра: near-black, pale mint Core, rose-violet Edge.
-6. Порівняйте technical/reference/original і виконайте перевірку H/M/L із gameplay camera.
+6. Порівняйте technical/reference/original і виконайте перевірку H/M/L з ігрової камери.
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact attached/world transform behavior, phase parameter update pins, shell/material bindings, trigger edge/reset, renderer support, bounds and pooling lifecycle звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -325,7 +325,7 @@ DynamicParameter.X/Y → Phase/Reveal controls
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Лише purple recolor | Загальна магія | Inward/calm/inversion/asymmetry |
 | Незалежні clocks | Drift release | Зовнішній phase contract |
@@ -348,7 +348,7 @@ DynamicParameter.X/Y → Phase/Reveal controls
 | Distortion надто costly | Material tier/profile | Remove/reduce у M/L |
 | Ultimate culls | Full phase bounds | Перевірте world + attached ranges |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Spawn/transform | Charge | Release/residue |
 |---|---|---|---|

@@ -16,7 +16,7 @@
 - побудувати radial shockwave, aligned to ground/impact normal;
 - синхронізувати ring, fracture spokes, shards, frost mist and residue;
 - зробити shatter response directional and staged, а не random debris burst;
-- провести ethical reference study with own assets only;
+- провести етичний аналіз референсів використовуючи лише власні ресурси;
 - створювати оригінальний варіант зі зміною форми, таймінгу, руху й кольору;
 - вибирати кількість meshes/sprites, політику collision, bounds і скорочення за tiers;
 - документувати #05 з явним покриттям обов’язкової реакції shatter.
@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель shockwave/ice/shatter | 1.0 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
-| Stage 2 — етичне reference study | 0.25 | 1.5 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.25 | 1.5 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Performance/gameplay перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.5** | **5.5** | **1.0** |
 
@@ -55,9 +55,9 @@
 | Fracture spoke | Angular radial line від center до outward break |
 | Settle phase | Low-motion state після shard action |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
-Shockwave повідомляє area, radius і timing. Якщо ring красиво expands, але не збігається з gameplay radius, він вводить в оману. Ice додає brittle material logic: коротку compression, sharp snap, rigid pieces і cold residue. Shards не можуть бути декоративною random cloud; їхній direction і delay мають виглядати спричиненими wave.
+Shockwave повідомляє area, radius і timing. Якщо ring красиво expands, але не збігається з ігровим радіусом, він вводить в оману. Ice додає brittle material logic: коротку compression, sharp snap, rigid pieces і cold residue. Shards не можуть бути декоративною random cloud; їхній direction і delay мають виглядати спричиненими wave.
 
 Reference ethics лишається суворою: спостерігайте radius ratios, phases і shard density; ніколи не extract-іть crack decals, meshes, flipbooks або shader data. Кожний artifact у project походить зі student Blocks 05–06.
 
@@ -73,7 +73,7 @@ Ring показує gameplay radius. Spokes пояснюють fracture. Shards 
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** circular ground ring, 12 spokes, 24 shards і mist.
 2. **Reference study:** лише normalized timeline і ratios; rebuild з original masks/meshes.
@@ -85,7 +85,7 @@ Ring показує gameplay radius. Spokes пояснюють fracture. Shards 
 
 ### Відображення радіуса
 
-Якщо gameplay radius дорівнює `User.RadiusCm=450`, mesh, authored з diameter 100 cm, потребує scale за actual imported dimensions. Не припускайте unit scale: виміряйте mesh bounds. User radius керує visual target; overshoot документується, зазвичай ≤5% для telegraph-like accuracy.
+Якщо ігровий радіус дорівнює `User.RadiusCm=450`, mesh, authored з diameter 100 cm, потребує scale за actual imported dimensions. Не припускайте unit scale: виміряйте mesh bounds. User radius керує visual target; overshoot документується, зазвичай ≤5% для telegraph-like accuracy.
 
 ### Причинність shatter
 
@@ -141,9 +141,9 @@ flowchart LR
 - Порівняйте smooth circle/random particles із hex/facets/snap/rigid shards.
 - Варіант Ice має лишатися впізнаваним.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Ice_Shockwave`: `NE_Compress`, `NE_Wave`, `NE_Spokes`, `NE_Shards`, `NE_Mist`.
 2. Відкрийте center/normal/radius/colors/seed.
@@ -154,7 +154,7 @@ flowchart LR
 7. `NE_Mist`: burst 10 у `.35`, lifetime `.8–1.3`, speed `30–90`, sprite size `50–140`.
 8. Вирівняйте basis ring/spokes за `User.ImpactNormal`; перевірте нахили 0°, 20°, 35°.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Не захоплюйте вихідні assets; запишіть пропорції фаз і ролі шарів.
 2. Виміряйте нормалізовану до 1.0 тривалість wave, затримку shard і масштаб shard:radius.
@@ -162,7 +162,7 @@ flowchart LR
 4. У таблиці provenance перелічіть вихідні документи й файли mesh.
 5. Запишіть щонайменше три відхилення від референсу.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Ice_Shockwave_HexBreak`.
 2. Замініть круглі mesh/mask власним broken hex ring.
@@ -173,7 +173,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact delayed spawn setup, mesh orientation bindings, surface-normal basis modules, angular velocity inputs, collision modules and deterministic sector indexing звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -297,7 +297,7 @@ Bindings: MeshOrientation/Scale, SpriteSize, Position і Color із відпов
 
 ### EX-L09-03-A
 
-1. **Hint 1:** gameplay radius є contract; dimensions ring mesh треба виміряти.
+1. **Hint 1:** ігровий радіус є contract; dimensions ring mesh треба виміряти.
 2. **Hint 2:** drive scale від User.RadiusCm; delay shards до початку fracture front.
 3. **Hint 3:** `.12 s` compression, `.42 s` wave до radius, shard burst у `.18 s`; debug circle порівнює peak outer edge у `.54 s`.
 
@@ -336,7 +336,7 @@ Bindings: MeshOrientation/Scale, SpriteSize, Position і Color із відпов
 | Radius не збігається через scale | Imported mesh bounds | Обчисліть actual scale |
 | Mist знижує readability | Alpha/size/delay | Lower/delay/fade |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Wave/spokes | Shards | Mist/collision |
 |---|---|---:|---|

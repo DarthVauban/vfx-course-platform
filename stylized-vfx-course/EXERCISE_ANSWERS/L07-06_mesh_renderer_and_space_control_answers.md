@@ -1,6 +1,6 @@
 # Рішення вправ — 07.06 Mesh Renderer і spaces
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-06-A
 
@@ -99,7 +99,7 @@ Render
 
 Перевірте local +X у `SM_VFX_Beam_01`. За yaw System 90° needles рухаються вздовж world +Y, лишаючись local до component. Перемістіть component: наявні local particles слідують за frame component. У дублікаті з Local Space false уже народжені частинки зберігають world trajectories.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Якщо local +X у beam mesh не є forward, виправте source/import або використайте задокументовану initial corrective orientation; не обертайте мовчки System для кожного використання. Неправильно: zero velocity, Facing Default, world/local actors із різними transforms, collision або вимірювання в перспективі без axes.
 

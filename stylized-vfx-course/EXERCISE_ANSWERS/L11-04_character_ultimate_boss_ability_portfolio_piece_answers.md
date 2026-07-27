@@ -18,7 +18,7 @@
 - `Residue 1.4 s`: тьмяні directional grooves без active-hazard pulse;
 - grayscale identity: wedge/needle/forward fan, а не кругла crown/radial ring.
 
-Range, angle, direction і phase durations надходять із gameplay data. Ability не змінює damage/collision. Reference board містить lawful nautical compass mechanics, sand ripple photography і stage-light wedges; жодного copied game glyph або proprietary asset.
+Range, angle, direction і phase durations надходять з ігрових даних. Ability не змінює damage/collision. Reference board містить lawful nautical compass mechanics, sand ripple photography і stage-light wedges; жодного copied game glyph або proprietary asset.
 
 ### 2. Assets і data schema
 
@@ -98,7 +98,7 @@ Exact material angle math, orientation bindings і User setters **Потребу
 | residue | grooves+dust | grooves+less dust | short grooves |
 | data/timing | identical | identical | identical |
 
-Вимірювання: baseline cast, gameplay route, один cast + вісім combat effects + три residues, phase isolation, H/M/L. У звіті вказані actual captured values з target build; жодного твердження «console optimized» без target evidence.
+Вимірювання: baseline cast, gameplay route, один cast + вісім combat effects + три residues, phase isolation, H/M/L. У звіті вказані actual captured values із цільової збірки; жодного твердження «console optimized» без target evidence.
 
 ### 5. Критерії приймання й presentation
 
@@ -106,7 +106,7 @@ Exact material angle math, orientation bindings і User setters **Потребу
 - aim direction змінюється без hand-authored reposition;
 - cancel до commit і post-commit rule працюють;
 - Low зберігає sector, countdown, commit, contact і end-state;
-- gameplay/neutral captures, source/authorship log, own assets, materials, Niagara stacks, Blueprint contract, profiling before/after і limitations завершені;
+- gameplay/neutral captures, source/authorship log, own assets, materials, Niagara stacks, Blueprint contract, profiling до й після і limitations завершені;
 - self-score `≥80/100`, кожна категорія вище floor.
 
 ## EX-L11-04-B
@@ -163,10 +163,10 @@ Exact profiler availability, typed setters, state/timer labels і Effect Type op
 
 ### 3. Identical before/after package
 
-| Evidence | Незмінна умова | Критерій проходження |
+| Докази | Незмінна умова | Критерій проходження |
 |---|---|---|
 | boundary/debug overlay | той самий radius, transform, camera | edges відповідають documented tolerance |
-| contact frames | той самий gameplay event і playback rate | visible late hit відсутній |
+| contact frames | ту саму ігрову подію і playback rate | visible late hit відсутній |
 | exit readability | той самий combat stack/exposure | player і safe direction видимі |
 | phase profiler | ті самі target/build/duration | measured bottleneck зменшено |
 | H/M/L comparison | ті самі cast/data/camera | усі critical cues збережені |
@@ -183,4 +183,4 @@ Exact profiler availability, typed setters, state/timer labels і Effect Type op
 
 ### 5. Критерій приймання
 
-Ремедіація завершена, коли radius/timing відповідають authoritative gameplay data, exit route видимий, stress test виконує declared target, H/M/L не втрачають critical cues, before/after умови ідентичні, а всі слабкі rubric categories досягли floor.
+Ремедіація завершена, коли radius/timing відповідають фактичним ігровим даним, exit route видимий, stress test виконує declared target, H/M/L не втрачають critical cues, до й після умови ідентичні, а всі слабкі rubric categories досягли floor.

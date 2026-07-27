@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель telegraph/light/burst | 0.75 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
-| Stage 2 — етичне reference study | 0.0 | 1.25 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.0 | 1.25 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Gameplay/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.0** | **5.0** | **1.0** |
 
@@ -55,7 +55,7 @@
 | Prismatic split | Кероване розділення вторинних color/rays |
 | Safe readability | Telegraph visible на різних backgrounds без obscuring actors |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Telegraph — це gameplay communication перед spectacle. Якщо він неправдиво показує radius або timing, players не можуть приймати fair decisions. Magic circle дає identity/structure; burst дає payoff. Light language є ordered і precise, а не просто yellow bloom.
 
@@ -74,7 +74,7 @@ Magic circle повідомляє вид spell. Boundary показує where. C
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** magic circle, boundary, four countdown ticks і radial light burst.
 2. **Reference study:** виміряйте charge duration, urgency curve, radius contrast і burst layering; лише own assets.
@@ -143,9 +143,9 @@ flowchart LR
 - Порівняйте рівномірні rotation/brightness із прискореними ticks та aperture, що стискається.
 - Самоперевірка прогнозує момент impact із вимкненим audio.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Light_TelegraphBurst`: `NE_Circle`, `NE_Boundary`, `NE_Ticks`, `NE_ChargeMotes`, `NE_BurstFlash`, `NE_Rays`, `NE_Pillars`, `NE_Residue`.
 2. Відкрийте center/normal/radius/Charge01/IsTriggered/colors/seed.
@@ -156,7 +156,7 @@ flowchart LR
 7. На trigger: Flash 1 `.09 s`; rays 12 `.25–.4`; pillars 6 `.35`; residue ring `.8`.
 8. Перевірте radius/time/background/gameplay camera.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть source/date референсу; не імпортуйте з нього файлів.
 2. Запишіть duration charge, тон boundary:interior, криву tick і пропорції шарів burst.
@@ -164,7 +164,7 @@ flowchart LR
 4. Перелічіть оригінальні symbols і спосіб побудови.
 5. Задокументуйте три відхилення.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Light_TelegraphBurst_Prism`.
 2. Замініть concentric circle на triangular aperture всередині broken hex.
@@ -175,7 +175,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact external Charge01 update timing, Blueprint parameter pins, periodic/threshold burst implementation, renderer orientation, material dynamic parameter binding and spawn-at-location options звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -317,7 +317,7 @@ Boundary uses clean radial/mesh edge; bloom is secondary
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Візуальний timer незалежний | Burst зарано або запізно | Авторитетний Charge01 |
 | Boundary лише з bloom | Губиться на світлій поверхні | Чистий edge тону/форми |
@@ -340,7 +340,7 @@ Boundary uses clean radial/mesh edge; bloom is secondary
 | Ground мерехтить | Offset/depth | Surface bias/вибір material |
 | Втрата на bright ground | Bloom-off view | Value/outline contrast |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Telegraph | Burst | Вторинні шари |
 |---|---|---|---|

@@ -1,8 +1,8 @@
-# 03.01 — Shader з абсолютного нуля: calculations, values і color data
+# 03.01 — Shader з абсолютного нуля: calculations, values і дані кольору
 
 ## 1. Назва
 
-**Shader з абсолютного нуля: calculations, values і color data.**
+**Shader з абсолютного нуля: calculations, values і дані кольору.**
 
 Урок вводить Material Editor як програму, що обчислює значення для поверхні, а не як набір «магічних» ефектів. Усі наступні графи спиратимуться на цей mental model.
 
@@ -19,7 +19,7 @@
 - використати HDR-значення в `Emissive Color`;
 - створити й перевірити три мінімальні debug materials без готових functions.
 
-Ключовий deliverable: `M_L03_01_ScalarDebug`, `M_L03_01_VectorDebug` і `M_L03_01_ValueTypeDebug`, а також таблиця спостережень для діапазонів і color data.
+Ключовий результат: `M_L03_01_ScalarDebug`, `M_L03_01_VectorDebug` і `M_L03_01_ValueTypeDebug`, а також таблиця спостережень для діапазонів і дані кольору.
 
 ## 3. Орієнтовний час
 
@@ -29,8 +29,8 @@
 - 45 хв — vertex і pixel calculations;
 - 45 хв — value types, channels і masks;
 - 45 хв — linear, sRGB, HDR та Emissive;
-- 60 хв — controlled experiments;
-- 150 хв — guided practice;
+- 60 хв — контрольовані експерименти;
+- 150 хв — керована практика;
 - 90 хв — exercises A/B і self-check.
 
 ## 4. Prerequisites
@@ -58,7 +58,7 @@
 - **HDR** — color/intensity data, що може перевищувати `1`.
 - **Emissive Color** — material input для світного color contribution; значення понад `1` можуть створювати яскравий HDR output.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Real-time VFX майже завжди керує числами: lifetime, opacity, color, UV, distortion, dissolve threshold, particle attributes. Якщо сприймати node лише за назвою, помилка перетворюється на вгадування. Якщо бачити тип і діапазон даних, можна передбачити результат до compile.
 
@@ -136,12 +136,12 @@ Alpha — четвертий channel, не синонім прозорості. 
 
 ### Linear і sRGB
 
-Shader math має виконуватися над linear values. sRGB — спосіб кодувати display-oriented color так, щоб ефективніше використовувати precision для сприйняття людиною. Unreal texture setting `sRGB` повідомляє, чи texture sample слід декодувати як color data.
+Shader math має виконуватися над linear values. sRGB — спосіб кодувати display-oriented color так, щоб ефективніше використовувати precision для сприйняття людиною. Unreal texture setting `sRGB` повідомляє, чи texture sample слід декодувати як дані кольору.
 
 Робоче правило:
 
 - painted color/albedo-like color зазвичай імпортується як sRGB color;
-- masks, packed channels, normals і числові data textures не повинні проходити sRGB color decoding;
+- masks, упаковані канали, normals і числові data textures не повинні проходити sRGB color decoding;
 - остаточне setting завжди перевіряється за semantic data, не за extension файлу.
 
 ### HDR та Emissive
@@ -202,7 +202,7 @@ mask = 1.0  → effect contributes 100%
 
 Порівняйте plane із 4 vertices та subdivided plane. Не будуйте WPO. Намалюйте, де існують vertex samples і де існують screen pixels. Поясніть, чому high-frequency vertex animation потребує достатньої geometry density.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph A — `M_L03_01_ScalarDebug`
 
@@ -231,7 +231,7 @@ DebugValue.Output → MaterialOutput.Emissive Color
 
 Єдина branch передає одне число в color input. Material Editor поширює scalar на RGB, тому preview стає grayscale. Graph навмисно мінімальний: якщо output неправильний, причина не захована в іншій math.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 1. Не під’єднуючи node, переконайтеся, що preview Unlit material чорний.
 2. Після connection `0.5` має дати рівномірний gray.
@@ -261,7 +261,7 @@ DebugColor.RGB → MaterialOutput.Emissive Color
 
 RGB components задають color. A зберігається в parameter, але не використовується. Це демонструє, що semantic meaning виникає через connection.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 1. Set R/G/B по черзі в `1`, інші в `0`.
 2. Set A в `0`, потім `1`; visible RGB має лишитися тим самим.
@@ -296,7 +296,7 @@ ComposeRGB.Output → MaterialOutput.Emissive Color
 
 `AppendVector` не змішує values; він ставить components поруч. `(0.2,0.7)` плюс `0.1` утворюють `(0.2,0.7,0.1)`.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 1. Preview `RGValues` як node preview: два components самі не мають повного RGB semantic.
 2. Preview `ComposeRGB`: очікуйте green-dominant color.
@@ -310,7 +310,7 @@ flowchart LR
     D --> E["Emissive Color"]
 ```
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Використані exact Material Editor names:
 
@@ -338,7 +338,7 @@ Study range не є production clamp. Його мета — побачити val
 
 ## 14. Очікуваний результат кожного етапу
 
-| Етап | Evidence | Очікуваний результат |
+| Етап | Докази | Очікуваний результат |
 |---|---|---|
 | Properties | screenshot Details | усі три materials — Surface/Opaque/Unlit |
 | Scalar graph | graph + preview | uniform grayscale, керований `DebugValue` |

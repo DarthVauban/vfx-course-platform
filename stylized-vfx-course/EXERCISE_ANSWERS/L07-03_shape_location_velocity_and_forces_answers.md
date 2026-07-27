@@ -1,6 +1,6 @@
 # Рішення вправ — 07.03 Shape, velocity, forces і spaces
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-03-A
 
@@ -54,7 +54,7 @@ Renderer: `MI_VFX_FoundationSprite`; Face Camera; velocity-aligned, якщо д�
 
 Приблизна вершина центральної частинки без drag: `t≈260/500=.52 s`, `z≈67.6 cm`. Drag знижує вершину. Це очікування, а не точний oracle solver.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 `Box Location` specialized module is valid if `Shape Location` does not expose Box in installed build. **Потребує ручної перевірки в Unreal Engine 5.8.** Wrong: Gravity after solver, random negative Z, collision added, infinite rate, or box scale applied through System actor between captures. Cost is 24 CPU particles with two simple per-particle update modules; sprite coverage remains relevant.
 
@@ -99,6 +99,6 @@ Render: Sprite Renderer
 
 Усі bindings Sprite Renderer використовують `Particles.Position`, `Color`, `Velocity`, `SpriteRotation`, `SpriteSize`, `NormalizedAge`. Подайте захоплення зверху з world axes, component axes і стрілками. Поверніть actor до yaw 0: обидва мають вирівнятися за +X.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Допустима альтернатива використовує два окремі actors System, один Local і один World, з ідентичними assets; докази transform мають бути явними. Неправильно: обертати лише один actor, використовувати випадковий напрямок From Point, порівнювати перспективу без axis gizmo або змінювати `Local Space` після spawn і називати це чистим baseline. Експеримент дешевий; його цінність — семантична правильність.

@@ -15,9 +15,9 @@
 - deactivation `.6 s`: plates складаються до spine, veins гаснуть згори вниз;
 - palette: dark bronze base, warm green edge і один pale-gold contact accent;
 - grayscale identity: широкі angular plates і vertical motion замість круглих glass petals/orbits;
-- gameplay intent: defense state читається з 3–12 m без закриття feet, weapon або hostile telegraph.
+- ігровий задум: defense state читається з 3–12 m без закриття feet, weapon або hostile telegraph.
 
-Lawful reference board містить botanical leaf folding, hammered-metal edges і stage-light silhouettes. Для кожного item записані source/creator/date/principle; жодного game screenshot, frame trace або extracted asset.
+Добірка дозволених референсів містить botanical leaf folding, hammered-metal edges і stage-light silhouettes. Для кожного item записані source/creator/date/principle; жодного game screenshot, frame trace або extracted asset.
 
 ### 2. Assets і parameter contract
 
@@ -96,7 +96,7 @@ GroundFold: Burst 1 → scale diamond `1→0`
 5. 1/4/8 actors і чотири simultaneous activations профільовано за fixed target conditions;
 6. H/M/L зберігають activation, active state і deactivation.
 
-Submission містить reference principles, timing/state map, original asset sheets, material graphs, усі Niagara stacks, Blueprint contract, performance before/after, tiers, authorship і limitations. Приклад score дійсний лише за наявності evidence: `86/100`, кожна category вище floor.
+Submission містить reference principles, timing/state map, original asset sheets, material graphs, усі Niagara stacks, Blueprint contract, показники продуктивності до й після, tiers, authorship і limitations. Приклад score дійсний лише за наявності evidence: `86/100`, кожна category вище floor.
 
 ## EX-L11-03-B
 
@@ -184,4 +184,4 @@ Exact Effect Type/scalability options and component reset pins **Потребу�
 
 ### 5. Критерій приймання
 
-Remediation пройдено, коли десять rapid sequences утворюють рівно один valid state path, два actors ніколи не share data, weapon/feet/hostile cue лишаються видимими, tests 1/4/8 виконують declared target, усі три tiers зберігають state identity, а before/after conditions однакові й disclosed.
+Remediation пройдено, коли десять rapid sequences утворюють рівно один valid state path, два actors ніколи не share data, weapon/feet/hostile cue лишаються видимими, tests 1/4/8 виконують declared target, усі три tiers зберігають state identity, а умови до й після однакові й disclosed.

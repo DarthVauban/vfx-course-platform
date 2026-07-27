@@ -67,7 +67,7 @@ Opacity = saturate(BodyMask)
 
 ### Performance
 
-Залиште один texture sample і одну WPO wave. Якщо rim не потрібен на Low tier, вимикайте Fresnel branch static switch, а не множником після повного обчислення. Найперше зменшуйте translucent screen coverage, потім topology й optional ALU.
+Залиште одну вибірку текстури і одну WPO wave. Якщо rim не потрібен на Low tier, вимикайте Fresnel branch static switch, а не множником після повного обчислення. Найперше зменшуйте покриття екрана прозорими елементами, потім topology й optional ALU.
 
 ## EX04-04-B — Два deformation modes
 
@@ -149,7 +149,7 @@ Collision не слідує за WPO; gameplay hit area задається ок�
 
 ### Performance
 
-Порівнюйте compiled material stats, а не кількість видимих boxes у graph. Radial branch додає subtract, normalize та transform. Якщо silhouette difference непомітна в production camera, залиште normal mode. Numeric budget затверджується лише на target platform/hardware.
+Порівнюйте compiled material stats, а не кількість видимих boxes у graph. Radial branch додає subtract, normalize та transform. Якщо silhouette difference непомітна в production camera, залиште normal mode. Numeric budget затверджується лише на цільовій платформі/hardware.
 
 ## Підсумкова rubric, 100 балів
 

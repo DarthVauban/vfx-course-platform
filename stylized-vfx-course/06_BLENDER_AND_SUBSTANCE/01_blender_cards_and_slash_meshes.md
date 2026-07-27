@@ -15,7 +15,7 @@
 - створити camera-readable card/slash kit без зайвої modelling complexity;
 - підготувати meshes до глибшого UV/export workflow уроку 06.03.
 
-Ключовий deliverable — два Blender assets: `SM_VFX_Card_01` і `SM_VFX_Slash_01`, а також silhouette/angle test sheet.
+Ключовий результат — два Blender assets: `SM_VFX_Card_01` і `SM_VFX_Slash_01`, а також silhouette/angle test sheet.
 
 # 3. Орієнтовний час
 
@@ -36,7 +36,7 @@
 - Є базова орієнтація в Blender: navigation, selection, save.
 - Доступний Blender; installed version записано в навчальному журналі.
 - Є власна slash texture з блока 05 для майбутнього UV test.
-- У UE 5.8 є VFX test level, але export виконується лише в 06.03.
+- У UE 5.8 є тестова VFX-сцена, але export виконується лише в 06.03.
 
 # 5. Нові терміни
 
@@ -57,7 +57,7 @@
 | **Silhouette density** | Скільки topology реально впливає на зовнішній contour |
 | **Degenerate geometry** | Face/triangle з нульовою або майже нульовою площею |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX mesh — не miniature environment model. Його задача:
 
@@ -275,7 +275,7 @@ Projected width плоскої card приблизно зменшується, �
 
 **Очікування:** front/back orientation повинна бути deliberate до export.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Частина A — Card
 
@@ -383,7 +383,7 @@ L06_01_vfx_meshes_v02.blend
 
 Не export до UE: export contract будується в 06.03.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 ### Blender tools і modes
 
@@ -564,7 +564,7 @@ Units тут є authoring convention. Фактичний size/orientation transf
 - Cross-cards додають angle coverage, але також overlapping translucent area.
 - Long thin triangles можуть давати нестабільну interpolation/deformation.
 - Degenerate faces не дають visible benefit і ускладнюють import.
-- Для Low variant спочатку зберігай primary silhouette, а не micro curvature.
+- Для Low variant спочатку зберігай основний силует, а не micro curvature.
 - У 06.03 зафіксуй triangle count до/після triangulation та UE import.
 
 # 21. Запитання для самоперевірки
@@ -580,7 +580,7 @@ Units тут є authoring convention. Фактичний size/orientation transf
 
 # 22. Відповіді
 
-1. Object Mode змінює object transform; Edit Mode змінює mesh data в local space.
+1. Object Mode змінює object transform; Edit Mode змінює mesh data у локальному просторі.
 2. Коли card плоский, static і не потребує bend/WPO/vertex gradient.
 3. Вони контролюють curvature, width profile, silhouette й майбутню deformation.
 4. Це може створити overlapping vertices або degenerate triangles.

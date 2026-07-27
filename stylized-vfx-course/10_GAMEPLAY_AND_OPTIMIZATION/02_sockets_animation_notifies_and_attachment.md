@@ -19,7 +19,7 @@
 - побудувати weapon/character action з charge, trail та impact;
 - довести correctness gameplay-camera capture, а не лише animation preview.
 
-Ключовий deliverable — `AM_L10_Attack` + `BP_L10_NotifyBridge` з socket-validated VFX timeline.
+Ключовий результат — `AM_L10_Attack` + `BP_L10_NotifyBridge` з socket-validated VFX timeline.
 
 # 3. Орієнтовний час
 
@@ -64,7 +64,7 @@
 | **Re-entry** | animation або action запускається знову до завершення попереднього VFX path |
 | **Interruption** | animation виходить до очікуваного notify або end |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Socket визначає, **де** має бути effect; notify визначає, **коли** він змінюється.
 
@@ -156,7 +156,7 @@ Epic документує `Play Niagara Particle Effect` для non-looping syst
 - `Attached`;
 - `Socket Name`.
 
-Якщо `Attached=false`, effect може з’явитися на transform socket, але лишитися у world space. Якщо значення true, effect слідує за socket протягом своєї duration.
+Якщо `Attached=false`, effect може з’явитися на transform socket, але лишитися у світовому просторі. Якщо значення true, effect слідує за socket протягом своєї duration.
 
 Exact Notify names/properties: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
@@ -176,7 +176,7 @@ Exact available notify-state menu entries and property names: **Потребує
 
 | Path | Перевага | Обмеження |
 |---|---|---|
-| Built-in Play Niagara | швидка синхронізація one-shot | обмежені custom gameplay data та ownership |
+| Built-in Play Niagara | швидка синхронізація one-shot | обмежені custom ігрові дані та ownership |
 | Timed Niagara | start і end за duration | interruption і re-entry усе одно потребують validation |
 | Skeleton Notify event | reusable named event для Anim BP | логіку розділено між assets |
 | Custom AnimNotify/State | reusable complex contract | більше engineering і maintenance |
@@ -274,7 +274,7 @@ width_reference = distance(SocketBase, SocketTip)
 
 ## Experiment A — wrong parent
 
-Виконай attachment request до `fx_weapon_tip` спочатку на CharacterMesh, а потім на WeaponMesh. Запиши, який component знаходить socket і яку world position отримано.
+Виконай attachment request до `fx_weapon_tip` спочатку на CharacterMesh, а потім на WeaponMesh. Запиши, який component знаходить socket і яку позицію у світовому просторі отримано.
 
 ## Experiment B — transform rule
 
@@ -292,7 +292,7 @@ width_reference = distance(SocketBase, SocketTip)
 
 Виконай run на 0.5×, 1× і 1.5× та натисни attack двічі до завершення першого action. Підтвердь кількості start/end і значення ActionID.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## A. Socket audit
 
@@ -338,7 +338,7 @@ Contact frame обирають за видимим контактом weapon і�
 - Attached = false для world impact;
 - offsets = zero baseline.
 
-Після contact перемісти персонажа. Impact має лишитися у world space.
+Після contact перемісти персонажа. Impact має лишитися у світовому просторі.
 
 ## E. Trail window
 
@@ -395,7 +395,7 @@ VFX_CancelAction(ActionID)
 
 Запиши один take із видимими axes sockets і один clean take.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 - `Skeleton Tree`
 - `Add Socket`
@@ -463,7 +463,7 @@ Exact labels: **Потребує ручної перевірки в Unreal Engin
 
 - щонайменше три sockets або attach points;
 - один one-shot Notify і один Notify State;
-- contact impact лишається у world space;
+- contact impact лишається у світовому просторі;
 - trail слідує за weapon;
 - явний ownership через ActionID;
 - tests на 0.5×, 1× і 1.5×;
@@ -475,7 +475,7 @@ Exact labels: **Потребує ручної перевірки в Unreal Engin
 - схема socket hierarchy;
 - timeline notify;
 - Blueprint bridge;
-- capture з gameplay camera;
+- capture з ігрової камери;
 - evidence interruption і re-entry.
 
 **Acceptance criteria:**
@@ -505,7 +505,7 @@ Exact labels: **Потребує ручної перевірки в Unreal Engin
 **Deliverables:**
 
 - чотири captures із failures;
-- таблиця root causes;
+- таблиця першопричин;
 - виправлені hierarchy і timeline;
 - карта cleanup для action state;
 - regression checklist.
@@ -611,7 +611,7 @@ Exact UI/options: **Потребує ручної перевірки в Unreal E
 - [ ] Три sockets задокументовано.
 - [ ] Axes показано й перевірено.
 - [ ] Attachment rule перевірено.
-- [ ] Contact лишається у world space.
+- [ ] Contact лишається у світовому просторі.
 - [ ] Trail attached.
 - [ ] One-shot notify побудовано.
 - [ ] Notify State побудовано.
@@ -620,7 +620,7 @@ Exact UI/options: **Потребує ручної перевірки в Unreal E
 - [ ] Interruption перевірено.
 - [ ] Unequip перевірено.
 - [ ] 0.5×, 1× і 1.5× перевірено.
-- [ ] Capture з gameplay camera записано.
+- [ ] Capture з ігрової камери записано.
 - [ ] Після cooldown немає orphan effect.
 
 # 24. Mastery criteria
@@ -632,7 +632,7 @@ Exact UI/options: **Потребує ручної перевірки в Unreal E
 3. notify timing відповідає видимому action;
 4. state має failsafe cleanup;
 5. re-entry дає deterministic результат;
-6. gameplay-camera pass успішний;
+6. перевірка з ігрової камери успішна;
 7. EX-L10-02-A проходить щонайменше 6 із 7 критеріїв.
 
 # 25. Підсумок

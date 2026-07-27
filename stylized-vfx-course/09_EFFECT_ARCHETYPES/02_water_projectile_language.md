@@ -16,7 +16,7 @@
 - відокремити gameplay projectile authority від visual Niagara;
 - створити readable projectile head і ribbon/droplet trail;
 - передати water language через cohesion, pulse, drag and breakup;
-- провести reference study без extracting projectile/trail assets;
+- провести аналіз референсів без extracting projectile/trail assets;
 - створити original four-axis variation, не recolor;
 - передати speed/forward/radius data через User Parameters;
 - підготувати H/M/L variants і test path із поворотами/teleport/deactivation.
@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Projectile authority і water language | 1.0 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
-| Stage 2 — етичне reference study | 0.25 | 1.5 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.25 | 1.5 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Lifecycle/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.5** | **5.5** | **1.0** |
 
@@ -55,7 +55,7 @@
 | Teleport discontinuity | Випадковий довгий ribbon segment після position jump |
 | Graceful deactivation | Stop spawning, дати trail завершитися, потім destroy/reuse |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Projectile — це рухома gameplay-обіцянка: player читає position, direction, speed, danger і element. Head не може відставати від collision; trail не повинен закривати target або лишати world-spanning lines після teleport.
 
@@ -75,7 +75,7 @@ Gameplay actor рухається. Niagara має представляти це�
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** sphere/capsule head, один ribbon, droplets і periodic wake rings.
 2. **Reference study:** виміряйте head:trail ratio, taper, pulse interval, bend delay і breakup density. Screenshots не вставляються в textures, extracted shader/mesh заборонені.
@@ -149,27 +149,27 @@ flowchart LR
 - B: reset/deactivate перед relocation.
 - Зафіксуйте long-segment failure і safe lifecycle.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Water_Projectile` з `NE_Head`, `NE_Ribbon`, `NE_Droplets`, `NE_Wake`.
 2. Expose-ніть position/velocity/forward/radius/colors і `User.IsTraveling`.
 3. Attach System до authoritative test projectile; gameplay collision лишається поза Niagara.
 4. Head: один persistent mesh/sprite, lifetime прив’язаний до System, stretch залежить від speed.
-5. Ribbon: spawn у world space 45/s, life `.35 s`, width `34→3 cm`, color alpha `0→1→0`.
+5. Ribbon: spawn у світовому просторі 45/s, life `.35 s`, width `34→3 cm`, color alpha `0→1→0`.
 6. Droplets: 18/s, lifetime `.35–.7`, velocity проти forward `80–220` плюс random `120`, gravity `−380`.
 7. Wake: burst одного ring кожні `.16 s`, lifetime `.28`, size `24→80`, alpha fade.
 8. На hit задайте `User.IsTraveling=false`; припиніть travel spawning і дайте ribbon/droplets завершитися.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть source/title/date і поясніть, чому reference legal-viewable.
 2. Спостерігайте лише ratios: head diameter, trail length у head units, pulse spacing, bend lag, droplet count.
 3. Реконструюйте зі своїми `T_Noise`, `T_Ramp_Water`, `SM_Ring` і material graphs.
 4. Додайте provenance rows і три deliberate deviations.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Duplicate-ніть у `NS_L09_Water_Projectile_TideCrescent`.
 2. Shape head стає двома mirrored crescent cards навколо authority point.
@@ -180,7 +180,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Spawn System Attached pins, attachment transform rules, ribbon link/order bindings, spawn-per-unit alternatives and component deactivation/pooling behavior звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -331,7 +331,7 @@ Panner(Noise, Speed .08,.02) × EdgeMask → subtle breakup
 | Помилка | Симптом | Виправлення |
 |---|---|---|
 | Niagara володіє hit | Розсинхронізація gameplay/VFX | Зовнішня авторитетність |
-| Увесь System у local space | Trail рухається з head | Emitter історії у world space |
+| Увесь System у локальному просторі | Trail рухається з head | Emitter історії у світовому просторі |
 | Миттєве знищення | Trail обрізається | Зупинити spawn, потім fade/release |
 | Рідкий ribbon | Кутові проміжки | Перевірка щільності spawn/path |
 | Надмір droplets | Немає фокусної head | Зменшити count/contrast |
@@ -351,7 +351,7 @@ Panner(Noise, Speed .08,.02) × EdgeMask → subtle breakup
 | Curve faceted | Segment distance test | Підвищте rate або suitable spawn-per-distance |
 | Bounds cull на curves | Full path/bounds view | Validated bounds margin |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Head | Ribbon | Droplets | Wake |
 |---|---|---|---:|---:|
@@ -406,7 +406,7 @@ Panner(Noise, Speed .08,.02) × EdgeMask → subtle breakup
 ## 24. Критерії опанування
 
 1. Head і collision authority збігаються.
-2. Trail передає direction і speed у gameplay camera.
+2. Trail передає direction і speed в ігровій камері.
 3. Немає teleport line або clipped deactivation.
 4. Water identity проходить grayscale test.
 5. Ethical reference/provenance пройдено.

@@ -254,7 +254,7 @@ Regression: default і один non-default User variant, emitter у Solo плю
 
 Довідка з performance:
 
-- Scale 2 не змінює counts, але збільшує screen coverage sprite/ribbon і size/bounds mesh.
+- Scale 2 не змінює counts, але збільшує покриття екрана sprite/ribbon і size/bounds mesh.
 - Обґрунтована optimization має зберігати brief і розкривати змінену variable.
 - Універсальні мілісекунди не є частиною ключа.
 

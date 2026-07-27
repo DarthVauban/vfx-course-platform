@@ -284,7 +284,7 @@ Original good asset збережено як control.
 
 **Single-variable test:** individual exported R/G PNGs порівняно з packed R/G preview; material wiring не змінено.
 
-**Finding:** swap існував у `RGBA Merge`, бо packed channels були неправильні вже у external viewer.
+**Finding:** swap існував у `RGBA Merge`, бо упаковані канали були неправильні вже у external viewer.
 
 **Fix:**
 
@@ -380,7 +380,7 @@ RGBA original зберігається лише як exercise evidence, не я�
 
 - Failures відтворено на duplicate assets, тому control лишився надійним.
 - Кожний test змінював одну variable.
-- Source contract виправлено біля root cause, а не compensated downstream.
+- Source contract виправлено біля першопричини, а не compensated downstream.
 - Color-space test використовував mid-gray, де gamma difference видно найкраще.
 - Spark redesign врахував actual mip footprint.
 - Packing decision прив’язаний до use together/resolution/compression/mips, а не до правила «packing завжди краще».
@@ -416,4 +416,4 @@ RGBA original зберігається лише як exercise evidence, не я�
 
 ### 12. Performance
 
-Redesign додає окремий spark texture sample лише там, де потрібні sparks; main slash material не читає його. Main pack зберігає shared sample для breakup/streak/fade. Реальний memory format, streaming та sampler impact: **Потребує ручної перевірки в Unreal Engine 5.8.** Рішення приймається після target-platform stats, але exercise правильно формує hypothesis та validation plan.
+Redesign додає окрему вибірку текстури іскор лише там, де потрібні sparks; main slash material не читає його. Main pack зберігає shared sample для breakup/streak/fade. Реальний memory format, streaming та sampler impact: **Потребує ручної перевірки в Unreal Engine 5.8.** Рішення приймається після target-platform stats, але exercise правильно формує hypothesis та validation plan.

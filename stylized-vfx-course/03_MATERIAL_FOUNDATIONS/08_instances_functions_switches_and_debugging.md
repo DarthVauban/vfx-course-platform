@@ -50,7 +50,7 @@
 - **Isolation debugging** — тимчасовий output однієї intermediate branch.
 - **Parameter contract** — name, type, default, valid range і semantic meaning.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Без architecture кожен effect копіює graph і дрейфує. Надмірний «universal master» має десятки switches/permutations і стає важким. Мета — маленькі, зрозумілі families:
 
@@ -157,7 +157,7 @@ flowchart LR
 5. Навмисно disconnect mask; дотримуйтеся debugging order.
 6. Додайте orphan expensive-looking branch без connection; розрізніть graph clutter і compiled contribution, але приберіть її для clarity audit.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Function — `MF_L03_08_Remap01`
 
@@ -285,7 +285,7 @@ Static switch semantic: A is selected when parameter True, B when False. **По�
 
 `ScaledUV`, texture R, CircleMask, output UseTexture, result Remap, output Invert, FinalOpacity, HDRColor. Після кожного capture відновлюйте exact root.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `FunctionInput`, `FunctionOutput`, `MaterialFunctionCall`
 - `StaticSwitchParameter`

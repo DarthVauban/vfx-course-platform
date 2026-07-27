@@ -1,6 +1,6 @@
 # Рішення вправ — 07.05 Sprite Renderer і bindings
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-05-A
 
@@ -79,7 +79,7 @@ Velocity alignment робить балістичний напрямок чита
 
 ### Перевірка й performance
 
-Peak alive `36`; reset відтворює той самий seeded pattern у записаному build; color і Core реагують; cards згасають до death; bounds охоплюють найдальший spark. Перевірте Shader Complexity на темному й світлому фонах. Якщо bottleneck є screen coverage, а не simulation, першим важелем буде зменшення size/overlap.
+Peak alive `36`; reset відтворює той самий seeded pattern у записаному build; color і Core реагують; cards згасають до death; bounds охоплюють найдальший spark. Перевірте Shader Complexity на темному й світлому фонах. Якщо bottleneck є покриття екрана, а не simulation, першим важелем буде зменшення size/overlap.
 
 ## EX-L07-05-B
 
@@ -131,7 +131,7 @@ Exact Sub UV Animation input labels **потребують ручної пере
 
 За ввімкненого blending дробові фази інтерполюють сусідні frames. Вимкніть blending для захоплення точного порядку cells, а потім відновіть його.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Пряма крива, що записує `Particles.SubImageIndex`, допустима, але `Sub UV Animation` є зрозумілішим foundation module. Неправильно: grid 16×1, припущення column-major, material sampling усього atlas без SubUV coordinates, random start або ігнорування alpha bleed.
 

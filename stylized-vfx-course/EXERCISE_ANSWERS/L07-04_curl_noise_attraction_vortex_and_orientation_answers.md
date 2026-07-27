@@ -1,6 +1,6 @@
 # Рішення вправ — 07.04 Motion fields і orientation
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-04-A
 
@@ -87,6 +87,6 @@ Renderer A: `Alignment=Unaligned`; Renderer B: `Alignment=Velocity Aligned`; д�
 
 У `t≈1.2 s` позначте десять частинок із виразно ненульовим velocity. У B довгі осі слідують за projected velocity; у A осі слідують за поведінкою SpriteRotation/facing, а не за поточним velocity. Обертайте camera: Face Camera зберігає cards видимими, а відмінність alignment A/B лишається.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Один emitter із двома Sprite Renderers може порівнювати renderer modes, але overlapping cards створюють візуальну неоднозначність; бажані парні emitters. Неправильно: різні seeds, квадратні sprites, різні materials, custom facing або порівняння в центрі з нульовою speed. Подвійний rendering коштує вдвічі більше sprite draw data у діагностиці; приберіть дублікат після доказу.

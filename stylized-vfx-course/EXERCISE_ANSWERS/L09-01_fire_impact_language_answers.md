@@ -20,7 +20,7 @@ User.SecondaryColor=(2,.15,.02,1)
 2. `NE_Sparks`: Burst 16, lifetime `.22–.42`, sprite `(4–7,34–68)`, velocity `650–1050 cm/s` у конусі 28° зі зміщенням у напрямку атаки й додатній півсфері normal; gravity `−420`, drag `1.7`; орієнтація за velocity.
 3. `NE_Core`: Burst 4, lifetime `.14–.22`, sprite 28–52, speed 180–360, drag 5.
 4. Найгірший сумарний burst: 21 частинка, тобто менше 24.
-5. Прив’яжіть `Particles.Color/SpriteSize`; використайте world space; deterministic seed 9011.
+5. Прив’яжіть `Particles.Color/SpriteSize`; використайте світовий простір; deterministic seed 9011.
 6. Зробіть захоплення з білим матеріалом, а потім кольорове.
 7. Medium: Flash + 10 Sparks + 3 Core. Low: Flash + 6 Sparks.
 8. Перевірте Bounds за максимальною траєкторією spark; захопіть один і 20 одночасних hits.

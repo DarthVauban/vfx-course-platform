@@ -1,6 +1,6 @@
 # Рішення вправ — 07.02 Spawn, lifetime, normalized age і curves
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-02-A
 

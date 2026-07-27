@@ -20,7 +20,7 @@
 - підтримати High/Medium/Low semantic profile без трьох divergent Blueprints;
 - запобігати stale target/color/scale при pooling або persistent reuse.
 
-Ключовий deliverable — `BPC_VFXGameplayBridge` із двома spawn modes, typed request contract та moving-target demo.
+Ключовий результат — `BPC_VFXGameplayBridge` із двома spawn modes, typed request contract та moving-target demo.
 
 # 3. Орієнтовний час
 
@@ -64,7 +64,7 @@
 | **Parameter schema** | names, types, units, spaces і defaults |
 | **Quality profile input** | semantic вибір H/M/L, переданий через reusable API |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Hard-coded Blueprint працює для одного screenshot, але production потребує:
 
@@ -122,7 +122,7 @@ Exact supported typed setter names and parameter types: **Потребує ру�
 
 ## 8.2 Position vs Vector3
 
-У Niagara workflows, що враховують large world, `Position` семантично відрізняється від `Vector3`. Не використовуй direction parameter для зберігання довільної world position лише через те, що обидва типи показують три числа.
+У Niagara workflows, що враховують large world, `Position` семантично відрізняється від `Vector3`. Не використовуй direction parameter для зберігання довільної позиції у світовому просторі лише через те, що обидва типи показують три числа.
 
 Правила:
 
@@ -154,7 +154,7 @@ else:
 | World target point → component local | Inverse Transform Position |
 | World direction → component local | Inverse Transform Direction |
 
-Якщо Niagara System використовує local space, явно конвертуй inputs або відкрий очікувані local inputs. Не виправляй space mismatch довільним rotation.
+Якщо Niagara System використовує локальний простір, явно конвертуй inputs або відкрий очікувані local inputs. Не виправляй space mismatch довільним rotation.
 
 ## 8.5 Target types
 
@@ -341,7 +341,7 @@ Target рухається після activation:
 
 Передай однакові transform, color, target і timing з profile H/M/L. Readability і timing мають зберігатися, а content density — змінюватися лише за визначеною policy.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## A. Створи спільні enums і struct
 
@@ -475,7 +475,7 @@ Low: зберегти telegraph, core і contact, прибрати дорогі 
 
 Запиши stale state і active components після cooldown.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 - `Set Niagara Variable (Position)`
 - `Set Niagara Variable (Vector3)`

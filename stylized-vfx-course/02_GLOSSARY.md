@@ -4,20 +4,20 @@
 
 English terms у цьому файлі збігаються з назвами, які ви шукаєте в Unreal Engine та інших DCC tools. У колонці «Перше використання» наведено перший урок, де термін стає практичною навичкою. Посилання веде на файл уроку; використовуйте пошук усередині файла, якщо anchor змінився після оновлення документації.
 
-Визначення тут короткі. Повна mental model, exact settings і вправи розміщені в уроках.
+Визначення тут короткі. Повна ментальна модель, exact settings і вправи розміщені в уроках.
 
 ## Unreal Engine і production workflow
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Asset | Збережений ресурс проєкту: Material, Texture, Static Mesh, Niagara System тощо. | `M_VFX_Sprite_Master` — Material asset. | [01.01](01_UE_FOUNDATIONS/01_course_setup_and_ue58_workflow.md) |
-| Actor | Об’єкт, який можна розмістити в Level; може містити Components. | `BP_VFX_TestRig` у test map. | [01.01](01_UE_FOUNDATIONS/01_course_setup_and_ue58_workflow.md) |
+| Actor | Об’єкт, який можна розмістити в Level; може містити Components. | `BP_VFX_TestRig` на тестовій мапі. | [01.01](01_UE_FOUNDATIONS/01_course_setup_and_ue58_workflow.md) |
 | Component | Функціональна частина Actor. | `Niagara Component` відтворює System усередині Blueprint Actor. | [01.01](01_UE_FOUNDATIONS/01_course_setup_and_ue58_workflow.md) |
 | Project | Контейнер code, settings, content і maps для однієї Unreal application. | `SVFX_Course_58.uproject`. | [01.01](01_UE_FOUNDATIONS/01_course_setup_and_ue58_workflow.md) |
 | Level / Map | Сцена з Actors, camera context, lighting і test geometry. | `L_VFX_Test_Neutral`. | [01.03](01_UE_FOUNDATIONS/03_vfx_test_level_and_import_pipeline.md) |
 | Content Browser | Панель перегляду, створення, пошуку й організації Assets. | Знайти всі `NS_` assets у `/Game/SVFX/`. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
 | Content Drawer | Тимчасово висувний доступ до Content Browser у нижній частині Editor. | Імпортувати `T_VFX_Slash_A.png`. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
-| Viewport | Вікно перегляду сцени або asset preview. | Перевірити impact із gameplay camera. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
+| Viewport | Вікно перегляду сцени або asset preview. | Перевірити impact з ігрової камери. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
 | Details panel | Контекстна панель properties вибраного Actor, Component, node або asset. | Змінити `Auto Activate` у Niagara Component. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
 | Outliner | Ієрархічний список Actors поточного Level. | Знайти `BP_VFX_TestRig_01`. | [01.02](01_UE_FOUNDATIONS/02_editor_navigation_and_asset_workflow.md) |
 | Blueprint | Visual scripting system і тип asset для gameplay logic. | Передати `User.ImpactColor` у Niagara System. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
@@ -34,7 +34,7 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Художня мова stylized VFX
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Reference | Візуальне або технічне джерело для аналізу, не asset для копіювання. | Gameplay capture із timestamp. | [02.01](02_VFX_DESIGN/01_reference_analysis_and_layer_breakdown.md) |
 | Layer breakdown | Поділ effect на шари за функцією, timing і renderer. | Core flash, arc, sparks, debris, smoke, residue. | [02.01](02_VFX_DESIGN/01_reference_analysis_and_layer_breakdown.md) |
@@ -49,7 +49,7 @@ English terms у цьому файлі збігаються з назвами, �
 | Value hierarchy | Порядок візуальної важливості, створений співвідношенням світлого й темного. | Contact point найяскравіший, residue слабший. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
 | Dominant color | Колір, що займає найбільшу смислову частину effect. | Cyan у water projectile. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
 | Accent color | Менша контрастна color area для focal point. | Warm yellow core у cyan lightning. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
-| Screen coverage | Частка кадру, яку займає effect із gameplay camera. | Boss ultimate має більшу coverage, ніж basic hit. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
+| Screen coverage | Частка кадру, яку займає effect з ігрової камери. | Boss ultimate має більшу coverage, ніж basic hit. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
 | Gameplay readability | Здатність effect швидко й правильно повідомити action, danger, direction і ownership. | Telegraph точно показує небезпечну area. | [02.02](02_VFX_DESIGN/02_shape_value_color_and_readability.md) |
 | Anticipation | Фаза підготовки, яка попереджає про main action. | Energy стискається перед burst. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Activation | Початок переходу зі спокою в активний effect. | Поява runes перед cast. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
@@ -59,7 +59,7 @@ English terms у цьому файлі збігаються з назвами, �
 | Accent frame | Дуже короткий кадр/beat із перебільшеною формою або value. | Білий star flash на один frame. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Dissipation | Контрольоване згасання й розпад forms. | Smoke розширюється, слабшає й зникає. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Staggered timing | Запуск layers із невеликими offsets, а не одночасно. | Core у 0.00 s, sparks у 0.03 s, smoke у 0.08 s. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
-| Delayed secondary motion | Secondary motion, що відстає від primary через інерцію або стилізацію. | Ribbon tip доганяє sword path. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
+| Відкладений другорядний рух | Другорядний рух, що відстає від primary через інерцію або стилізацію. | Ribbon tip доганяє sword path. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Overshoot | Коротке перевищення target state перед поверненням. | Ring розширюється до 110%, потім сідає на 100%. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Smear shape | Витягнута форма, що підкреслює швидкий motion між positions. | Wide slash streak. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
 | Stepped animation | Навмисне утримання shape кілька frames із дискретними змінами. | Anime spark змінює 4 намальовані silhouettes. | [02.03](02_VFX_DESIGN/03_timing_motion_and_animation_phases.md) |
@@ -70,7 +70,7 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Material Editor і shader math
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Shader | Програма/набір calculations, що визначає, як geometry обробляється й виглядає під час rendering. | Material Graph компілюється у shader code. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | Vertex calculation | Операція, виконана для vertices; може змінювати position або передавати data далі. | `World Position Offset` рухає vertices mesh. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
@@ -85,7 +85,7 @@ English terms у цьому файлі збігаються з назвами, �
 | Alpha | Четвертий channel або окреме значення opacity/coverage; значення залежить від workflow. | Texture alpha керує `Opacity`. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | 0–1 range | Нормалізований діапазон від 0 до 1. | `Lerp` із alpha 0.25 дає 25% B. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | Linear color | Color values, пропорційні світловій енергії; потрібні для коректної математики. | Multiply двох linear colors. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
-| sRGB | Нелінійне color encoding для display-oriented color textures. | Color ramp зазвичай імпортується як color data. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
+| sRGB | Нелінійне color encoding для display-oriented color textures. | Color ramp зазвичай імпортується як дані кольору. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | HDR | Значення color/intensity вище display 0–1, що можуть створювати сильний Emissive/bloom. | Emissive intensity 8.0. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | Emissive Color | Material input, що задає self-lit output; для Unlit VFX це основний color output. | Gradient × intensity → `Emissive Color`. | [03.01](03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md) |
 | Add | Сума A + B. | Об’єднати дві non-overlapping masks. | [03.02](03_MATERIAL_FOUNDATIONS/02_material_math_and_remapping.md) |
@@ -140,7 +140,7 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Stylized VFX materials і runtime data
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Dissolve | Поступова зміна visibility через порівняння mask і threshold. | Shape зникає від noise threshold. | [04.01](04_STYLIZED_VFX_MATERIALS/01_dissolve_erosion_and_edge_control.md) |
 | Erosion | Звуження/роз’їдання visible mask. | Smoke shape розпадається по краях. | [04.01](04_STYLIZED_VFX_MATERIALS/01_dissolve_erosion_and_edge_control.md) |
@@ -148,9 +148,9 @@ English terms у цьому файлі збігаються з назвами, �
 | Distortion | Зміщення sample coordinates для візуального викривлення. | Heat haze offsets scene/texture lookup. | [04.02](04_STYLIZED_VFX_MATERIALS/02_distortion_flow_and_fake_refraction.md) |
 | Flow map | Texture, channels якої кодують 2D direction/offset field. | Water streak рухається вздовж curved direction. | [04.02](04_STYLIZED_VFX_MATERIALS/02_distortion_flow_and_fake_refraction.md) |
 | Fake refraction | Стилізоване screen/texture distortion без повної фізичної моделі. | Soft water lens. | [04.02](04_STYLIZED_VFX_MATERIALS/02_distortion_flow_and_fake_refraction.md) |
-| Gradient ramp | 1D/2D texture або function, що перетворює grayscale value на color/value sequence. | 0–1 heat value → purple→orange→white. | [04.03](04_STYLIZED_VFX_MATERIALS/03_gradient_mapping_hdr_and_stylized_color.md) |
+| Gradient ramp | 1D/2D texture або function, що перетворює значення у градаціях сірого на color/value sequence. | 0–1 heat value → purple→orange→white. | [04.03](04_STYLIZED_VFX_MATERIALS/03_gradient_mapping_hdr_and_stylized_color.md) |
 | Fresnel | View-dependent response, часто сильніший на grazing angles. | Rim glow на aura sphere. | [04.04](04_STYLIZED_VFX_MATERIALS/04_fresnel_wpo_and_vertex_animation.md) |
-| World Position Offset / WPO | Material input, що зміщує mesh vertices у world space. | Пульсуючий ring mesh. | [04.04](04_STYLIZED_VFX_MATERIALS/04_fresnel_wpo_and_vertex_animation.md) |
+| World Position Offset / WPO | Material input, що зміщує mesh vertices у світовому просторі. | Пульсуючий ring mesh. | [04.04](04_STYLIZED_VFX_MATERIALS/04_fresnel_wpo_and_vertex_animation.md) |
 | Vertex Color | RGBA data, збережені на mesh vertices або передані renderer-ом для material control. | R керує WPO, G — edge fade. | [04.04](04_STYLIZED_VFX_MATERIALS/04_fresnel_wpo_and_vertex_animation.md) |
 | Decal Material | Material для projected effect на surface. | Ground crack або scorch mark. | [04.05](04_STYLIZED_VFX_MATERIALS/05_sprite_mesh_ribbon_and_decal_materials.md) |
 | Particle Color | Material Expression/particle attribute path для color/alpha від Niagara renderer. | Niagara curve змінює Material color over life. | [04.06](04_STYLIZED_VFX_MATERIALS/06_niagara_material_data_and_runtime_parameters.md) |
@@ -160,7 +160,7 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Texture authoring і mesh pipeline
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Grayscale | Зображення з одним value dimension від black до white. | Dissolve/noise mask. | [05.01](05_PHOTOSHOP_VFX_TEXTURES/01_photoshop_vfx_texture_workflow.md) |
 | Alpha channel | Додатковий grayscale channel для selection/transparency/mask data. | Slash silhouette у PNG/TGA alpha. | [05.01](05_PHOTOSHOP_VFX_TEXTURES/01_photoshop_vfx_texture_workflow.md) |
@@ -177,7 +177,7 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Niagara
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Niagara System | Контейнер повного effect, що поєднує Emitters і system-level settings. | `NS_Impact_Fire_A`. | [07.01](07_NIAGARA_FOUNDATIONS/01_niagara_system_emitter_module_and_stack.md) |
 | Emitter | Частина System, що створює й оновлює particles для однієї responsibility. | Emitter sparks або core flash. | [07.01](07_NIAGARA_FOUNDATIONS/01_niagara_system_emitter_module_and_stack.md) |
@@ -218,10 +218,10 @@ English terms у цьому файлі збігаються з назвами, �
 
 ## Gameplay integration і performance
 
-| English term | Українське пояснення | Практичний приклад | Перше використання |
+| Англійський термін | Українське пояснення | Практичний приклад | Перше використання |
 |---|---|---|---|
 | Niagara Component | Scene Component, що інстанціює й контролює Niagara System. | Component на character Blueprint. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
-| Spawn System at Location | Blueprint function для one-shot System у world transform. | Impact у hit location. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
+| Spawn System at Location | Blueprint function для one-shot System у світовій системі координат. | Impact у hit location. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
 | Spawn System Attached | Blueprint function для System, прикріпленого до Scene Component/socket. | Aura на character pelvis. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
 | Activation / Deactivation | Запуск / припинення active Niagara Component lifecycle. | Start/stop looping charge effect. | [10.01](10_GAMEPLAY_AND_OPTIMIZATION/01_niagara_components_spawning_and_lifecycle.md) |
 | Pooling | Повторне використання Niagara Components замість постійних allocations/GC. | Часті weapon impacts. | [10.03](10_GAMEPLAY_AND_OPTIMIZATION/03_blueprint_parameters_targets_and_reuse.md) |
@@ -233,7 +233,7 @@ English terms у цьому файлі збігаються з назвами, �
 | Profiling | Вимірювання resource cost у визначених test conditions. | Before/after capture на target-like scene. | [10.04](10_GAMEPLAY_AND_OPTIMIZATION/04_cpu_gpu_profiling_and_cost_budgets.md) |
 | Performance budget | Локальний допустимий cost для feature/scene/platform, підтверджений measurement. | Weapon FX budget у конкретній combat scene. | [10.04](10_GAMEPLAY_AND_OPTIMIZATION/04_cpu_gpu_profiling_and_cost_budgets.md) |
 | High/Medium/Low profiles | Варіанти quality/cost, що зберігають gameplay meaning із різною деталізацією. | Low видаляє accents, але лишає telegraph boundary. | [10.05](10_GAMEPLAY_AND_OPTIMIZATION/05_scalability_platform_profiles_and_presentation.md) |
-| Definition of Done | Спостережувані умови, після яких asset/project справді завершено. | 80/100, no critical fail, H/M/L і breakdown готові. | [11.01](11_PORTFOLIO_PROJECTS/01_stylized_melee_combo_portfolio_piece.md) |
+| Definition of Done | Спостережувані умови, після яких asset/project справді завершено. | 80/100, без критичних помилок, H/M/L і breakdown готові. | [11.01](11_PORTFOLIO_PROJECTS/01_stylized_melee_combo_portfolio_piece.md) |
 
 ## Маркер непідтвердженого факту
 

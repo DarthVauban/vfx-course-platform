@@ -32,7 +32,7 @@ Envelope зануляє noise на endpoints, тому style не спотвор
 ### Типові неправильні рішення
 
 - Constant noise offset зсуває endpoints.
-- Закешований у world space target спричиняє lag.
+- Закешований у світовому просторі target спричиняє lag.
 - Branches такі ж яскраві й широкі, як основний beam.
 - Ribbon order/link не ініціалізовано.
 - Low зберігає glow, але втрачає точне core connection.

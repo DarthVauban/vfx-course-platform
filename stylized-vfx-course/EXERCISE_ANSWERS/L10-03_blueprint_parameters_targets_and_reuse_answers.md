@@ -134,7 +134,7 @@ ActionID → {
 Кожний justified update:
 
 1. validate component;
-2. читає current world position;
+2. читає поточну позицію у світовому просторі;
 3. обчислює safe direction/distance;
 4. set `User.TargetPosition`, `User.Direction`, `User.Distance`;
 5. cache `LastValidPosition`.
@@ -169,7 +169,7 @@ Exact typed setter and completion callback: **Потребує ручної пе
 - event-driven transform samples, якщо project supports;
 - frozen endpoint.
 
-Запиши visual error, Game Thread/Blueprint/Niagara timing та request count на target hardware/build. Universal interval не обирається.
+Запиши visual error, Game Thread/Blueprint/Niagara timing та request count на цільовому обладнанні/build. Universal interval не обирається.
 
 ### 6. Reuse reset
 

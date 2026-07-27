@@ -134,9 +134,9 @@ Spatial ownership, re-entry та exit задані явно. Parameters заст
 
 20-run test записує active systems до та після cooldown. Він не встановлює universal limit. Pooling відкладається, доки representative capture не покаже allocation/GC pressure.
 
-### 12. Перевірка acceptance criteria
+### 12. Перевірка критеріїв приймання
 
-Усі 7 acceptance criteria виконано.
+Усі 7 критеріїв приймання виконано.
 
 ---
 
@@ -222,7 +222,7 @@ Model-рішення:
 
 ### 8. Чому це працює
 
-Кожний failure має окрему вісь: data reset, reference ownership або lifecycle exit. Single-variable tests не дозволяють downstream workaround приховати root cause.
+Кожний failure має окрему вісь: data reset, reference ownership або lifecycle exit. Single-variable tests не дозволяють downstream workaround приховати першопричину.
 
 ### 9. Альтернативи
 

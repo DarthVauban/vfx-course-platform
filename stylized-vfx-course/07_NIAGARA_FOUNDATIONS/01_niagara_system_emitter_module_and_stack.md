@@ -26,8 +26,8 @@ Deliverable: `NS_L07_01_StackTrace`, `NE_L07_01_TraceSprite`, test map `L_L07_01
 - 45 хв — execution groups та порядок stack;
 - 30 хв — namespaces;
 - 30 хв — Parameter Map mental model;
-- 60 хв — controlled experiments;
-- 120 хв — guided practice;
+- 60 хв — контрольовані експерименти;
+- 120 хв — керована практика;
 - 60 хв — вправи A/B та self-check.
 
 ## 4. Передумови
@@ -52,7 +52,7 @@ Deliverable: `NS_L07_01_StackTrace`, `NE_L07_01_TraceSprite`, test map `L_L07_01
 - **Sim Target** — місце particle simulation: CPU або GPU.
 - **Determinism** — керована генерація random sequence для повторюваного тесту в зафіксованому build і setup.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Niagara effect ламається не лише через «неправильне число». Частіше значення записане не в тому group, записане після того, як його вже прочитали, має не той namespace або renderer дивиться на інший attribute. У production вам потрібно швидко відповісти на чотири питання:
 
@@ -173,7 +173,7 @@ t = 1.50: Age reaches Lifetime; Particle State marks particle dead
 3. Particle народжується з initial value, але до render поточного update проходить через пізніший write.
 4. Зафіксуйте, чому «значення в Initialize Particle» не обов’язково є фінальним.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — assets
 
@@ -242,7 +242,7 @@ Epic Sprite Renderer reference має дві неузгоджені singular/plu
 
 Перезапустіть simulation тричі. Capture має показувати три particles, які виникають разом і зникають приблизно через `1.5 s`. Додайте build number, full stack screenshot і Parameter Map trace table.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Використані labels:
 
@@ -339,7 +339,7 @@ Template presence і category path можуть відрізнятися. **По
 | stack dependency warning | stage/order | прийміть `Fix Issue`, потім звірте contract |
 | 3 resets різні | seed, ranges, auto-play timing | determinism on, seed 101, fixed values, однаковий reset protocol |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Три CPU particles — свідомо малий diagnostic budget; не робіть висновок про high-count workload.
 - Cost має simulation і rendering частини. CPU simulation не означає CPU rendering sprites.
@@ -420,7 +420,7 @@ Niagara — це впорядкований data-flow runtime. System коорд
 - [Particle Update Group Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/particle-update-group-reference-for-niagara-effects-in-unreal-engine)
 - [Render Module Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-module-reference-for-niagara-effects-in-unreal-engine)
 
-URL перевірено 2026-07-27. Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+URL перевірено 2026-07-27. Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## 28. Перелік рекомендованих скриншотів або схем
 

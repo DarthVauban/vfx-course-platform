@@ -18,7 +18,7 @@
 
 Під час practical assessment заборонено:
 
-- відкривати lesson guided practice;
+- відкривати lesson керована практика;
 - відкривати `EXERCISE_ANSWERS`;
 - використовувати покрокові video/text tutorials;
 - копіювати готовий assessment project;
@@ -196,7 +196,7 @@ Exact FBX/Interchange defaults: **Потребує ручної перевірк
 | Persistence, source linkage й reproducibility evidence | 10 |
 | **Разом** | **60** |
 
-# Частина 3 — Troubleshooting і performance evidence, 10 балів
+# Частина 3 — Усунення проблем і докази продуктивності, 10 балів
 
 ## Fault injection
 
@@ -254,7 +254,7 @@ Exact FBX/Interchange defaults: **Потребує ручної перевірк
 3. Folder-tree screenshot.
 4. Test-stage screenshot із camera framing.
 5. Texture й mesh validation screenshots.
-6. Короткий self-review:
+6. Коротке самооцінювання:
    - що вдалося без нотаток;
    - де була потрібна офіційна документація;
    - яка одна навичка потребує remediation;
@@ -265,7 +265,7 @@ Exact FBX/Interchange defaults: **Потребує ручної перевірк
 | Safety/migration note | 2 |
 | Naming/path audit | 3 |
 | Evidence complete й підписане | 3 |
-| Чесний actionable self-review | 2 |
+| Чесне змістовне самооцінювання | 2 |
 | **Разом** | **10** |
 
 # Rubric зі 100 балів

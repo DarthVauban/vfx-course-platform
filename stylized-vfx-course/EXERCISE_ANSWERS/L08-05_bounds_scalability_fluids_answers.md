@@ -213,7 +213,7 @@ Texture atlas
 
 ### Рекомендація
 
-Для portfolio R&D: live-дослідження Beta допустиме, якщо має відповідне маркування. Для ключового gameplay cue: використовуй перевірене стандартне представлення Niagara/material; flipbook — лише після перевірки texture memory/overdraw/import. Ніколи не роби Beta Fluids єдиним deliverable.
+Для portfolio R&D: live-дослідження Beta допустиме, якщо має відповідне маркування. Для ключового gameplay cue: використовуй перевірене стандартне представлення Niagara/material; flipbook — лише після перевірки памʼяті текстур/overdraw/import. Ніколи не роби Beta Fluids єдиним deliverable.
 
 ### Рубрика (опційно)
 

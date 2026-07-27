@@ -1,8 +1,8 @@
-# 03.04 — UV, pivot, рух і coordinate spaces
+# 03.04 — UV, pivot, рух і системи координат
 
 ## 1. Назва
 
-**UV, pivot, рух і coordinate spaces: де саме живуть shader values.**
+**UV, pivot, рух і системи координат: де саме живуть shader values.**
 
 ## 2. Результат уроку
 
@@ -21,9 +21,9 @@
 
 - 45 хв — UV/tiling/offset;
 - 35 хв — pivot/Panner/Rotator;
-- 40 хв — coordinate spaces;
+- 40 хв — системи координат;
 - 90 хв — experiments;
-- 180 хв — guided practice;
+- 180 хв — керована практика;
 - 90 хв — exercises/review.
 
 ## 4. Prerequisites
@@ -48,7 +48,7 @@
 - **Position** — point; translation впливає.
 - **Direction/vector** — offset/direction; translation не повинна впливати.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 UV transforms рухають noise, slash texture, beam flow та dissolve. Coordinate spaces визначають, чи pattern:
 
@@ -158,9 +158,9 @@ UV*2 + 0.1 = 0.25*2 + 0.1 = 0.6
 4. **Panner sign:** перевірте speed `(0.2,0)`, `(-0.2,0)`, `(0,0.2)`.
 5. **Spaces:** застосуйте material variants, що показують UV, fractional pattern world position, distance object-to-world і screen position; переміщуйте object і camera окремо.
 
-World values мають великий діапазон. Для наочного debug застосовуйте scaling і `Frac`, а не подавайте raw world position безпосередньо як фінальний художній колір.
+World values мають великий діапазон. Для наочного debug застосовуйте scaling і `Frac`, а не подавайте необроблену позицію у світовому просторі безпосередньо як фінальний художній колір.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph — `M_L03_04_UVDiagnostic`
 
@@ -229,7 +229,7 @@ UVasRGB.Output → MaterialOutput.Emissive Color
 - Selector: порівнює motion modes.
 - Debug display: Frac лишає repeated coordinates видимими; Append перетворює RG на RGB.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 | Output | Очікуваний результат |
 |---|---|
@@ -251,7 +251,7 @@ UVasRGB.Output → MaterialOutput.Emissive Color
 
 Точний mapping і вибір output для `ScreenPosition`: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `TextureCoordinate`, `Panner`, `Rotator`, `Time`
 - `Absolute World Position`
@@ -286,7 +286,7 @@ Coordinate debug scale for centimeters-to-pattern: start `0.01`; це art/debug 
 | Panner | continuous drift |
 | Rotator | rotation навколо `.5,.5` |
 | Space board | рух object і camera виявляє attachment behavior |
-| Evidence | шість intermediate captures і notes щодо movement |
+| Докази | шість intermediate captures і notes щодо movement |
 
 ## 15. Самостійна вправа
 
@@ -337,7 +337,7 @@ Coordinate debug scale for centimeters-to-pattern: start `0.01`; це art/debug 
 - Rotation виконується навколо `(0,0)`, хоча очікується center.
 - VectorParameter RGBA під’єднано туди, де очікується float2, без masking.
 - Sign speed Panner неправильно прочитано через orientation V.
-- Raw world position подано у color, через що preview нестабільний або saturated.
+- необроблену позицію у світовому просторі подано у color, через що preview нестабільний або saturated.
 - Direction трансформовано як position.
 - World-space pattern названо «object local».
 - Graph залежить від незадокументованого component ScreenPosition.
@@ -370,7 +370,7 @@ Coordinate debug scale for centimeters-to-pattern: start `0.01`; це art/debug 
 5. Як формується Panner motion?
 6. Чим position відрізняється від direction при transform?
 7. Що станеться з world-locked pattern, коли object рухається?
-8. Чому raw world position незручна як color?
+8. Чому необроблена позиція у світовому просторі незручна як color?
 9. Коли screen space корисний?
 10. Які UE 5.8 facts треба manual-check?
 

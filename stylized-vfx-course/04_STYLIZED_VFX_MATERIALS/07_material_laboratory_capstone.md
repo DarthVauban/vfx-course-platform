@@ -19,7 +19,7 @@
 - проведете data-path, bounds, depth, sorting та overdraw validation;
 - підготуєте High/Medium/Low feature policy;
 - пройдете block assessment;
-- сформуєте shader breakdown, який можна включити в portfolio case study.
+- сформуєте shader breakdown, який можна включити в опис проєкту для портфоліо.
 
 Доказ: повний package, dependency diagram, connection specifications, 12-shot validation sheet і до/після performance report.
 
@@ -48,7 +48,7 @@ Assessment hours включені в цей урок і не додаються 
 - [L04-05](05_sprite_mesh_ribbon_and_decal_materials.md) — renderer templates;
 - [L04-06](06_niagara_material_data_and_runtime_parameters.md) — data scopes/bindings.
 
-Підготуйте clean test level, [Material Graph Review](../CHECKLISTS/MATERIAL_GRAPH_REVIEW.md) і [Performance Pass](../CHECKLISTS/PERFORMANCE_PASS.md).
+Підготуйте чисту тестову сцену, [Material Graph Review](../CHECKLISTS/MATERIAL_GRAPH_REVIEW.md) і [Performance Pass](../CHECKLISTS/PERFORMANCE_PASS.md).
 
 ## 5. Нові терміни
 
@@ -60,10 +60,10 @@ Assessment hours включені в цей урок і не додаються 
 | Parameter namespace | Naming pattern, що відображає meaning/range/scope |
 | Validation matrix | Повторюваний набір scenes/cameras/debug tests |
 | Cost report | Порівняння visual goal, shader stats, overdraw і runtime evidence |
-| Golden instance | Мінімальна reference instance з safe defaults |
+| Golden instance | Мінімальна reference instance з безпечними початковими значеннями |
 | Feature creep | Додавання controls без підтвердженого use case |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 У production матеріал оцінюють не лише за beauty frame. Він має:
 
@@ -141,7 +141,7 @@ Function доречна, якщо:
 - compile-time Material Domain/Blend;
 - effect-specific random constants;
 - undocumented texture assumptions;
-- side effects або ambiguous channel packing.
+- side effects або ambiguous пакування каналів.
 
 ### Static switch policy
 
@@ -190,7 +190,7 @@ Material stats — лише частина cost. Потрібні:
 2. Shader Complexity/overdraw view;
 3. screen coverage;
 4. representative effect count;
-5. GPU timing на target hardware;
+5. GPU timing на цільовому обладнанні;
 6. visual comparison High/Low;
 7. notes про bounds/culling.
 
@@ -226,7 +226,7 @@ Medium: body + edge + one noise
 Low:    body + stable opacity/color cue
 ```
 
-Low лишає timing, hue family, primary silhouette і gameplay area.
+Low лишає timing, hue family, основний силует і gameplay area.
 
 ## 10. Controlled experiments
 
@@ -267,7 +267,7 @@ Baseline
 
 Capture кожен крок з однакової camera. Визначте, який feature дає найменший visual gain на найбільшу cost.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Напишіть architecture brief
 
@@ -301,7 +301,7 @@ Validation cameras/backgrounds:
 
 Виконайте exact renderer properties з L04-05. Для кожного parent:
 
-- одна texture sampling branch;
+- одна гілка вибірки текстури;
 - shared color/shape function;
 - Particle Color для Surface particle parents;
 - named runtime scalar path;
@@ -418,7 +418,7 @@ Exact stats UI/profiling command:
 
 ### Крок 10 — Block assessment
 
-Виконайте [BLOCK_ASSESSMENT.md](BLOCK_ASSESSMENT.md) без solutions. Мінімум 80/100 і no critical fail.
+Виконайте [BLOCK_ASSESSMENT.md](BLOCK_ASSESSMENT.md) без solutions. Мінімум 80/100 і без критичних помилок.
 
 ## 12. Точні nodes, properties і connection specification
 
@@ -553,7 +553,7 @@ Timebox: 4 години. Запишіть, де specification була недо�
 - зменште measured cost;
 - зафіксуйте відкинуті features;
 - не підробляйте gain зміною camera/exposure/count;
-- надайте before/after captures і report.
+- надайте знімки до й після і report.
 
 ## 17. Три рівні підказок
 
@@ -658,7 +658,7 @@ Version-specific UI:
 
 1. Який правильний dependency direction?
 2. Що належить function, а що parent?
-3. Чому safe defaults важливі?
+3. Чому безпечні початкові значення важливі?
 4. Коли static switch виправданий?
 5. Чому shared function не гарантує дешевший shader?
 6. Які чотири cue properties Low tier не має змінювати?
@@ -678,18 +678,18 @@ Version-specific UI:
 7. UV, raw shape, body, edge, color coordinate, runtime input, opacity, pre-HDR emissive.
 8. Screen coverage, layers, blending, renderer geometry і runtime count визначають actual GPU cost.
 9. Показати відмінності в shape, motion/timing intent, value/color hierarchy і renderer use, не лише palette.
-10. Locked conditions, before/after visual, stats/overdraw/GPU measure, removed feature і cue consequence.
+10. Locked conditions, зображення до й після, stats/overdraw/GPU measure, removed feature і cue consequence.
 
 ## 23. Self-check checklist
 
 - [ ] Dependency diagram збігається з actual assets.
 - [ ] Canonical functions не duplicated.
-- [ ] Five golden parents/instances мають safe defaults.
+- [ ] Five golden parents/instances мають безпечні початкові значення.
 - [ ] Parameter groups/names/ranges documented.
 - [ ] Fire/Ice/Void мають різну language, не тільки hue.
 - [ ] Runtime paths мають fallback.
 - [ ] Validation matrix містить backgrounds/depth/sorting/camera.
-- [ ] High/Medium/Low зберігають gameplay cue.
+- [ ] High/Medium/Low зберігають ігрову підказку.
 - [ ] Performance comparison locked і reproducible.
 - [ ] Assessment ≥80 без critical fail.
 
@@ -702,7 +702,7 @@ Gate G04 пройдено, якщо:
 3. Sprite, Mesh, Ribbon, Decal parents мають explicit contracts;
 4. Particle Color і named runtime scalar працюють;
 5. golden fallback visible;
-6. renderer failure cases задокументовані;
+6. renderer випадки відмови задокументовані;
 7. High/Low cue parity пройдена;
 8. shader-cost report містить actual evidence;
 9. EX04-07-A і Block Assessment ≥80/100;

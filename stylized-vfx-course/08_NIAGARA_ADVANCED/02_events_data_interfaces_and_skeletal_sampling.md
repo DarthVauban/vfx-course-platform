@@ -21,7 +21,7 @@
 - передавати source component як User Parameter;
 - діагностувати invalid source, sampling region, space і skinning issues.
 
-Доказ: paired event/event-free effect, animated skeletal sampling capture і decision record.
+Доказ: paired event/event-free effect, animated skeletal sampling capture і журнал рішень.
 
 ## 3. Орієнтовний час
 
@@ -61,7 +61,7 @@
 | Skinning | Перетворення authored mesh vertices кістками поточної pose |
 | Particle Attribute Reader, PAR | Data Interface/pattern для читання attributes іншого emitter |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Events здаються природним способом «particle створює particle», але мають ціну й limits. Для простого impact flash відомого timing Event може бути зайвим. Для child sparks у точних collision points CPU Event може бути виправданим.
 
@@ -285,7 +285,7 @@ Remove/unset skeletal component User Parameter. System повинен:
 - передбачувано hide/fallback/disable emitter;
 - показувати debug marker/log у test build.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Частина A — CPU Location Event
 
@@ -549,7 +549,7 @@ Sprite Renderer
 - Variant B: відомі impact point/timing запускають незалежний secondary emitter;
 - однаковий target visual output;
 - representative concurrency;
-- decision record для одного обраного production approach.
+- журнал рішень для одного обраного production approach.
 
 ## 16. Додаткова складніша вправа
 
@@ -698,7 +698,7 @@ User source assigned?
 5. skeletal particles sample-ять animated source;
 6. немає uncontrolled random resampling;
 7. invalid source має safe behavior;
-8. DI/Event performance evidence задокументовано;
+8. DI/Event докази продуктивності задокументовано;
 9. EX08-02-A ≥80/100.
 
 ## 25. Підсумок

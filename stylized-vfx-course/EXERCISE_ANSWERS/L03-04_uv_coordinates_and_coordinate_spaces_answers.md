@@ -1,4 +1,4 @@
-# Рішення вправ — 03.04 UV і coordinate spaces
+# Рішення вправ — 03.04 UV і системи координат
 
 ## EX-L03-04-A
 
@@ -129,7 +129,7 @@ AppendScreen.Output → MaterialOutput.Emissive Color
 
 - Одночасне переміщення об'єкта й камери.
 - Різні mesh UV.
-- Raw world position без scale/Frac.
+- необроблену позицію у світовому просторі без scale/Frac.
 - Помилкова назва object distance як «local coordinates».
 
 ### Продуктивність

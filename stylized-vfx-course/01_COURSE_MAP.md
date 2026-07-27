@@ -2,7 +2,7 @@
 
 ## Призначення карти
 
-Цей файл визначає обов’язковий порядок проходження 66 повних уроків, часовий бюджет, прямі prerequisites, практичні результати, блокові контрольні роботи та умови завершення курсу. Курс розрахований на самостійне competency-based навчання: наступний блок відкривається лише після проходження mastery gate попереднього блока.
+Цей файл визначає обов’язковий порядок проходження 66 повних уроків, часовий бюджет, прямі prerequisites, практичні результати, блокові контрольні роботи та умови завершення курсу. Курс розрахований на самостійне компетентнісне навчання: наступний блок відкривається лише після проходження критерію переходу попереднього блока.
 
 Назви Unreal Engine UI, Material nodes, Niagara modules, параметрів і технічних елементів у матеріалах курсу залишаються англійською. Основна мова пояснень — українська.
 
@@ -12,7 +12,7 @@
 - `01.01` — блок 01, урок 01.
 - `G01` — mastery gate блока 01 пройдено.
 - У prerequisites наведено прямі залежності; усі транзитивні залежності успадковуються.
-- `M/S practice` — зарезервована частина практики, яка безпосередньо розвиває material/shader skills.
+- `M/S practice` — зарезервована частина практики, яка безпосередньо розвиває навички роботи з матеріалами й шейдерами.
 - `BLOCK_ASSESSMENT.md` у кожній тематичній папці є окремим контрольним файлом, але не рахується як урок. Час на нього вже включено в практичний час останнього уроку відповідного блока.
 
 ## Загальний обсяг і баланс
@@ -43,7 +43,7 @@
 
 | Джерело | Години | Що рахується |
 |---|---:|---|
-| Блок 03 | 51.5 | Material Graph, shader math, UV, procedural masks, texture sampling, material properties, debugging |
+| Блок 03 | 51.5 | Material Graph, shader math, UV, procedural masks, вибірка текстури, material properties, debugging |
 | Блок 04 | 44.5 | Dissolve, distortion, flow, gradient mapping, Fresnel, WPO, renderer materials, runtime parameters |
 | Блок 05 | 14 | Створення texture inputs із обов’язковою перевіркою через UE materials |
 | Блок 06 | 5 | UV, normals, vertex colors і procedural textures, перевірені в material pipeline |
@@ -62,16 +62,16 @@
 | Рекомендований | 9 год/тиждень | приблизно 51 тиждень |
 | Обережний | 7 год/тиждень | 66 тижнів |
 
-Повторне проходження слабких тем може збільшити тривалість. Це нормальна частина competency-based підходу й не є причиною пропускати mastery criteria.
+Повторне проходження слабких тем може збільшити тривалість. Це нормальна частина competency-based підходу й не є причиною пропускати критерії засвоєння.
 
 Рекомендований тижневий цикл:
 
-1. 1–2 години — читання, mental model і контрольовані експерименти.
-2. 5–8 годин — guided practice та самостійна варіація.
-3. 1 година — performance check, self-review і навчальний журнал.
-4. Після перерви понад два тижні — повторний self-check останнього завершеного уроку до продовження.
+1. 1–2 години — читання, формування ментальної моделі і контрольовані експерименти.
+2. 5–8 годин — керована практика та самостійна варіація.
+3. 1 година — перевірка продуктивності, самооцінювання і навчальний журнал.
+4. Після перерви понад два тижні — виконайте повторну самоперевірку останнього завершеного уроку до продовження.
 
-## Загальна політика mastery gates
+## Загальна політика критеріїв переходу
 
 Кожний `BLOCK_ASSESSMENT.md` містить завершений теоретичний тест, практичну контрольну роботу, умови виконання, 100-бальну rubric і remediation path.
 
@@ -81,7 +81,7 @@
 |---|---:|
 | Теоретичний тест | 20 |
 | Практична контрольна робота | 60 |
-| Troubleshooting і performance evidence | 10 |
+| Усунення проблем і докази продуктивності | 10 |
 | Self-review, naming і документація | 10 |
 | **Разом** | **100** |
 
@@ -93,7 +93,7 @@
 - дозволені офіційна документація, glossary, власні короткі нотатки та самостійно створені assets;
 - категорію нижче 60% потрібно повторити через окрему transfer-вправу;
 - повторна спроба використовує інші стартові дані або інший brief;
-- блок вважається завершеним лише після збереження результату, self-review і performance evidence.
+- блок вважається завершеним лише після збереження результату, самооцінювання й підготовки доказів продуктивності.
 
 ---
 
@@ -103,23 +103,23 @@
 **Обсяг:** 4 уроки, 22 години — 6.5 T / 15.5 P.  
 **Результат блока:** студент має відтворюваний UE 5.8 VFX sandbox, базовий asset workflow, test level і звичку документувати помилки та performance baseline.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 01.01 | `01_course_setup_and_ue58_workflow.md` | Старт у UE 5.8: проєкт і безпечний перехід з UE 5.5 | 2/3 | Немає | Чистий UE 5.8 VFX sandbox, backup і журнал перевірки міграції |
 | 01.02 | `02_editor_navigation_and_asset_workflow.md` | Editor та дисципліна VFX-асетів | 1.5/3.5 | 01.01 | Узгоджена Content-структура, naming convention і audit тестових assets |
-| 01.03 | `03_vfx_test_level_and_import_pipeline.md` | VFX test level, камера та pipeline імпорту | 2/4 | 01.02 | Стандартизований test level та перевірені імпорти texture/mesh |
+| 01.03 | `03_vfx_test_level_and_import_pipeline.md` | тестова VFX-сцена, камера та pipeline імпорту | 2/4 | 01.02 | Стандартизований test level та перевірені імпорти texture/mesh |
 | 01.04 | `04_debugging_iteration_and_performance_baseline.md` | Цикл ітерації, діагностика й baseline продуктивності | 1/5 | 01.03 | Відтворюваний iteration loop, troubleshooting log і baseline capture |
 
 ### `01_UE_FOUNDATIONS/BLOCK_ASSESSMENT.md`
 
 - **Тест, 20 балів:** версії проєкту, Editor navigation, asset naming, import pipeline, test-level discipline і базова performance термінологія.
-- **Практична робота, 60 балів:** з порожнього проєкту створити задану Content-структуру, test level і camera setup; імпортувати texture та mesh; підготувати scene preset для порівняння ефектів.
+- **Практична робота, 60 балів:** з порожнього проєкту створити задану Content-структуру й тестову сцену і camera setup; імпортувати texture та mesh; підготувати scene preset для порівняння ефектів.
 - **Troubleshooting/performance, 10 балів:** знайти й виправити три навмисні помилки імпорту або організації; записати початковий baseline.
 - **Self-review, 10 балів:** додати журнал рішень, naming audit і короткий migration note.
 
-**Mastery gate G01:** test level відкривається без помилок, assets мають передбачувані назви й розташування, імпорт перевірено в сцені, а baseline можна повторити за власними нотатками.
+**Mastery gate G01:** тестова сцена відкривається без помилок, assets мають передбачувані назви й розташування, імпорт перевірено в сцені, а baseline можна повторити за власними нотатками.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 4 lesson deliverables;
 - assessment ≥80/100 без слабкої категорії;
@@ -131,29 +131,29 @@
 
 **Папка:** `02_VFX_DESIGN/`  
 **Обсяг:** 4 уроки, 24 години — 6.5 T / 17.5 P.  
-**Результат блока:** студент уміє розкласти ефект на шари, спроєктувати shape/value/color hierarchy, описати timing і сформувати різні motion languages для стихій.
+**Результат блока:** студент уміє розкласти ефект на шари, спроєктувати ієрархію форми, світлоти й кольору, описати timing і сформувати різні мови руху для стихій.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
-| 02.01 | `01_reference_analysis_and_layer_breakdown.md` | Етичний аналіз референсів і декомпозиція ефекту | 2/4 | G01 | Layer breakdown професійного референсу без копіювання proprietary assets |
-| 02.02 | `02_shape_value_color_and_readability.md` | Shape, value, color, negative space і gameplay readability | 2/4 | 02.01 | Три композиційні boards із різною ієрархією форм |
+| 02.01 | `01_reference_analysis_and_layer_breakdown.md` | Етичний аналіз референсів і декомпозиція ефекту | 2/4 | G01 | Layer breakdown професійного референсу без копіювання пропрієтарних ресурсів |
+| 02.02 | `02_shape_value_color_and_readability.md` | Shape, value, color, negative space і читабельність під час гри | 2/4 | 02.01 | Три композиційні boards із різною ієрархією форм |
 | 02.03 | `03_timing_motion_and_animation_phases.md` | Timing, motion і фази anime-ефекту | 1.5/4.5 | 02.02 | Timing sheet та animatic від anticipation до residue |
 | 02.04 | `04_elemental_style_language_workbook.md` | Система проєктування стихійної shape і motion language | 1/5 | 02.03 | Оригінальна style bible для дев’яти стихій, а не recolor-матриця |
 
 ### `02_VFX_DESIGN/BLOCK_ASSESSMENT.md`
 
-- **Тест, 20 балів:** primary/secondary shapes, accents, supporting particles, residue, negative space, value hierarchy, color hierarchy, screen coverage і timing phases.
+- **Тест, 20 балів:** основні й другорядні форми, accents, supporting particles, residue, negative space, value hierarchy, color hierarchy, покриття екрана і timing phases.
 - **Практична робота, 60 балів:** за незнайомим відеореференсом створити layer decomposition, silhouette/value plan, color plan, timing chart і оригінальну варіацію.
-- **Troubleshooting/performance, 10 балів:** знайти проблеми читабельності на gameplay camera, зменшити зайве screen coverage і повторно перевірити silhouette.
+- **Troubleshooting/performance, 10 балів:** знайти проблеми читабельності на ігровій камері, зменшити зайве покриття екрана і повторно перевірити silhouette.
 - **Self-review, 10 балів:** аргументувати, що взято як design principle, а що свідомо змінено для уникнення копіювання.
 
 **Mastery gate G02:** ефект читається у grayscale і silhouette, має зрозумілу ієрархію, завершений timing arc та самостійну художню інтерпретацію.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 4 design deliverables;
 - assessment ≥80/100;
-- студент може без готового breakdown назвати всі функціональні шари й пояснити, як форма, колір і timing підтримують gameplay readability.
+- студент може без готового breakdown назвати всі функціональні шари й пояснити, як форма, колір і timing підтримують читабельність під час гри.
 
 ---
 
@@ -164,32 +164,32 @@
 **M/S practice:** 51.5 години.  
 **Результат блока:** студент починає з абсолютного нуля й уміє будувати, читати, перевіряти та оптимізувати базові VFX Material Graphs.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
-| 03.01 | `01_shader_mental_model_and_value_types.md` | Shader з абсолютного нуля: calculations, values і color data | 3/5 | G02 | Debug material для Scalar, Vector2/3/4, RGB, 0–1, values outside 0–1, linear/sRGB і HDR |
+| 03.01 | `01_shader_mental_model_and_value_types.md` | Shader з абсолютного нуля: calculations, values і дані кольору | 3/5 | G02 | Debug material для Scalar, Vector2/3/4, RGB, 0–1, values outside 0–1, linear/sRGB і HDR |
 | 03.02 | `02_material_math_and_remapping.md` | Material math і remapping | 2.5/5.5 | 03.01 | Візуальна бібліотека Add, Subtract, Multiply, Divide, Lerp, Clamp, Saturate, OneMinus, Power, Abs, Sign, Min і Max |
 | 03.03 | `03_procedural_math_and_threshold_masks.md` | Thresholds і процедурна математика масок | 2.5/5.5 | 03.02 | Mask laboratory для Floor, Ceil, Frac, Step, SmoothStep, Distance, Length, Dot Product і Normalize |
-| 03.04 | `04_uv_coordinates_and_coordinate_spaces.md` | UV, pivot, рух і coordinate spaces | 2/6 | 03.03 | UV diagnostic material із tiling, offset, pivot, Panner, Rotator та local/world/object/camera/screen comparisons |
+| 03.04 | `04_uv_coordinates_and_coordinate_spaces.md` | UV, pivot, рух і системи координат | 2/6 | 03.03 | UV diagnostic material із tiling, offset, pivot, Panner, Rotator та local/world/object/camera/screen comparisons |
 | 03.05 | `05_procedural_shapes_polar_and_sdf_masks.md` | Gradients, polar coordinates і SDF-подібні форми | 2/6 | 03.04 | Параметрична бібліотека circle, ring, line, arc, sector, polar і repeating masks |
-| 03.06 | `06_texture_sampling_channels_and_flipbooks.md` | Texture sampling, channels, compression і flipbooks | 2/6 | 03.05 | Texture set із alpha/grayscale masks, channel packing, compression, mip/bleed tests, noise, directional noise і SubUV |
+| 03.06 | `06_texture_sampling_channels_and_flipbooks.md` | Texture sampling, channels, compression і flipbooks | 2/6 | 03.05 | Texture set із alpha/grayscale masks, пакування каналів, compression, mip/bleed tests, noise, directional noise і SubUV |
 | 03.07 | `07_material_domains_blending_depth_and_overdraw.md` | Material properties, depth і translucency | 2/6 | 03.06 | Порівняльна сцена Material Domain, Blend Modes, Shading Models, Unlit, Emissive, Opacity/Opacity Mask, Two Sided, Depth Fade, Scene Depth і Pixel Depth |
 | 03.08 | `08_instances_functions_switches_and_debugging.md` | Reusable material architecture і shader debugging | 1.5/5.5 | 03.07 | Material Functions, Instances, Static Switches, permutation audit і reusable architecture |
 | 03.09 | `09_material_foundations_control_project.md` | Контрольний проєкт фундаменту Material Editor | 1/6 | 03.08 | Три матеріали, відтворені з письмових specifications без готового graph |
 
 ### `03_MATERIAL_FOUNDATIONS/BLOCK_ASSESSMENT.md`
 
-- **Тест, 20 балів:** shader mental model, value types, 0–1, linear/sRGB/HDR, arithmetic, thresholds, vector operations, UV, coordinate spaces, texture sampling і material properties.
+- **Тест, 20 балів:** shader mental model, value types, 0–1, linear/sRGB/HDR, arithmetic, thresholds, vector operations, UV, системи координат, texture sampling і material properties.
 - **Практична робота, 60 балів:** створити з чистого graph procedural mask material, texture-driven animated material і depth-aware translucent або masked VFX material.
 - **Troubleshooting/performance, 10 балів:** показати intermediate debug outputs, виправити UV/alpha/depth issue і порівняти Shader Complexity.
 - **Self-review, 10 балів:** надати однозначний connection list і пояснити кожну математичну гілку.
 
 **Mastery gate G03:** усі три graphs працюють, кожна операція пояснена, проміжні outputs перевіряються окремо, а матеріали не залежать від непрозорого готового function.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 9 lesson deliverables;
 - assessment ≥80/100;
-- студент із чистого Material Graph відтворює задану маску, UV transform і texture sample pipeline;
+- студент із чистого Material Graph відтворює задану маску, UV transform і конвеєр вибірки текстури;
 - усі 51.5 години практики блока зараховані до M/S ledger.
 
 ---
@@ -201,7 +201,7 @@
 **M/S practice:** 44.5 години.  
 **Результат блока:** студент будує reusable stylized VFX material family для Sprite, Mesh, Ribbon і Decal Renderers та керує нею з Niagara/Blueprint.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 04.01 | `01_dissolve_erosion_and_edge_control.md` | Dissolve, erosion і керований edge mask | 2/6 | G03 | Reusable dissolve function із контрольованим edge і temporal tests |
 | 04.02 | `02_distortion_flow_and_fake_refraction.md` | Distortion, flow maps і fake refraction | 2/6 | 04.01 | Читабельні heat/water distortion variants із flow control |
@@ -218,9 +218,9 @@
 - **Troubleshooting/performance, 10 балів:** виправити sorting/depth/binding issue; надати Shader Complexity і overdraw comparison до/після оптимізації.
 - **Self-review, 10 балів:** parameter naming, architecture diagram, connection lists і documented limitations.
 
-**Mastery gate G04:** Material Laboratory дозволяє створити щонайменше три візуально різні effects без дублювання core graph, приймає runtime data й має документований performance pass.
+**Mastery gate G04:** Material Laboratory дозволяє створити щонайменше три візуально різні effects без дублювання core graph, приймає runtime data й має задокументовану перевірку продуктивності.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 7 lesson deliverables;
 - assessment ≥80/100;
@@ -233,27 +233,27 @@
 
 **Папка:** `05_PHOTOSHOP_VFX_TEXTURES/`  
 **Обсяг:** 5 уроків, 28 годин — 5 T / 23 P.  
-**M/S practice:** 14 годин через обов’язкову перевірку texture inputs у UE materials.  
+**M/S practice:** 14 годин через обов’язкову перевірку вхідних текстур у UE materials.  
 **Результат блока:** студент без розвинених painting skills створює функціональні grayscale, alpha, packed і flipbook textures для VFX.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 05.01 | `01_photoshop_vfx_texture_workflow.md` | Photoshop/Krita workflow для VFX-текстур з нуля | 1.5/4.5 | G04 | Grayscale/alpha exercise із document setup, layers, masks, Levels, Curves, brushes, transform і warp |
 | 05.02 | `02_seamless_noise_smoke_and_masks.md` | Seamless noise, smoke і utility masks | 1/5 | 05.01 | Seamless noise/smoke texture set |
 | 05.03 | `03_slash_spark_and_magic_circle_textures.md` | Slash, spark і magic circle textures | 1/5 | 05.02 | Оригінальний combat texture sheet |
-| 05.04 | `04_ramps_distortion_and_channel_packing.md` | Gradient ramps, distortion і channel packing | 1/4 | 05.03 | Packed utility texture та UE material validation |
+| 05.04 | `04_ramps_distortion_and_channel_packing.md` | Gradient ramps, distortion і пакування каналів | 1/4 | 05.03 | Packed utility texture та UE material validation |
 | 05.05 | `05_flipbook_export_and_ue_texture_validation.md` | Flipbook preparation, export і UE texture settings | 0.5/4.5 | 05.04 | Готовий VFX texture atlas/flipbook pack без edge bleeding |
 
 ### `05_PHOTOSHOP_VFX_TEXTURES/BLOCK_ASSESSMENT.md`
 
-- **Тест, 20 балів:** grayscale/alpha logic, Levels/Curves, masks, seamless construction, channel packing, export, UE texture settings і flipbook preparation.
-- **Практична робота, 60 балів:** з чистих документів створити slash, spark, smoke/noise, magic-circle, gradient-ramp і distortion assets та packed texture.
-- **Troubleshooting/performance, 10 балів:** виправити seam, halo або mip bleeding; перевірити texture memory і sampling у UE.
+- **Тест, 20 балів:** grayscale/alpha logic, Levels/Curves, masks, seamless construction, пакування каналів, export, UE texture settings і flipbook preparation.
+- **Практична робота, 60 балів:** з чистих документів створити slash, spark, smoke/noise, magic-circle, gradient-ramp і distortion assets та упаковану текстуру.
+- **Troubleshooting/performance, 10 балів:** виправити seam, halo або mip bleeding; перевірити памʼять текстур і sampling у UE.
 - **Self-review, 10 балів:** naming, source-file organization, export table і Krita equivalents для використаних Photoshop tools.
 
 **Mastery gate G05:** усі textures читаються в grayscale, мають чисті alpha edges, правильно імпортуються й працюють у Material Laboratory.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 5 lesson deliverables;
 - assessment ≥80/100;
@@ -269,7 +269,7 @@
 **M/S practice:** 5 годин.  
 **Результат блока:** студент створює тільки потрібну VFX artist геометрію та процедурні textures, коректно переносить їх до UE.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 06.01 | `01_blender_cards_and_slash_meshes.md` | VFX cards, planes і slash meshes у Blender | 1.5/3.5 | G05 | Camera-readable slash/card mesh kit |
 | 06.02 | `02_blender_cones_rings_beams_and_debris.md` | Cones, rings, beams і simple debris | 1/4 | 06.01 | Модульний VFX geometry kit |
@@ -280,13 +280,13 @@
 ### `06_BLENDER_AND_SUBSTANCE/BLOCK_ASSESSMENT.md`
 
 - **Тест, 20 балів:** VFX topology needs, UV, normals, vertex colors, pivots, transforms, scale, triangulation, FBX та Substance graph operations.
-- **Практична робота, 60 балів:** створити slash mesh, ring або beam, simple debris і reusable procedural texture без готових source assets.
+- **Практична робота, 60 балів:** створити slash mesh, ring або beam, simple debris і reusable procedural texture без готових вихідних ресурсів.
 - **Troubleshooting/performance, 10 балів:** виправити неправильний pivot/scale/normals/UV та перевірити mesh/texture у UE material.
 - **Self-review, 10 балів:** export checklist, source organization і коротке пояснення, чому кожний asset потрібен ефекту.
 
 **Mastery gate G06:** geometry і textures коректно імпортуються, реагують на UV/Vertex Color material controls і не мають зайвої для VFX задачі складності.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 5 lesson deliverables;
 - assessment ≥80/100;
@@ -302,7 +302,7 @@
 **M/S practice:** 4 години на renderer materials і bindings.  
 **Результат блока:** студент із чистої системи створює керовані Sprite, Mesh і Ribbon Emitters та розуміє execution stack і data flow.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 07.01 | `01_niagara_system_emitter_module_and_stack.md` | System, Emitter, Module, Parameter і execution stack | 2.5/4.5 | G06 | Annotated Niagara System із Spawn/Update stages, namespaces та Parameter Map trace |
 | 07.02 | `02_spawn_lifetime_normalized_age_and_curves.md` | Spawn, lifetime, normalized age і curves | 2/5 | 07.01 | Deterministic Burst/Rate timing study |
@@ -317,12 +317,12 @@
 
 - **Тест, 20 балів:** System/Emitter/Module/Parameter, stack order, namespaces, Parameter Map, lifetime, normalized age, spawn methods, curves, attributes, forces, spaces і renderers.
 - **Практична робота, 60 балів:** за письмовим brief побудувати один System із Sprite, Mesh і Ribbon Emitters, deterministic seed і exposed User controls.
-- **Troubleshooting/performance, 10 балів:** виправити stack-order, space, facing або binding issue; встановити bounds і перевірити particle count.
+- **Troubleshooting/performance, 10 балів:** виправити stack-order, space, facing або binding issue; встановити bounds і перевірити кількість частинок.
 - **Self-review, 10 балів:** надати stack map, parameter table і пояснення CPU/GPU choice.
 
 **Mastery gate G07:** multi-renderer System відтворює brief, усі modules стоять у логічних stages, bindings працюють, а student може пояснити рух одного particle від spawn до death.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 8 lesson deliverables;
 - assessment ≥80/100;
@@ -338,9 +338,9 @@
 **M/S practice:** 2 години.  
 **Результат блока:** студент обґрунтовано вибирає simulation type, працює з collision/data inputs, створює reusable Niagara logic і налаштовує bounds/scalability.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
-| 08.01 | `01_cpu_gpu_simulation_and_collision_choices.md` | CPU/GPU simulation, collisions і distance fields | 2/4 | G07 | Порівняльний CPU/GPU collision prototype і decision record |
+| 08.01 | `01_cpu_gpu_simulation_and_collision_choices.md` | CPU/GPU simulation, collisions і distance fields | 2/4 | G07 | Порівняльний CPU/GPU collision prototype і журнал рішень |
 | 08.02 | `02_events_data_interfaces_and_skeletal_sampling.md` | Events, Data Interfaces і skeletal mesh sampling | 1.5/4.5 | 08.01 | Skeletal/data-driven emitter та документовані Events limitations |
 | 08.03 | `03_user_parameters_renderer_bindings_and_blueprint_data.md` | User Parameters, renderer bindings і Blueprint data | 1.5/4.5 | 08.02 | Один System, керований direction/color/scale/target inputs |
 | 08.04 | `04_scratch_pad_reusable_modules_and_simulation_stages.md` | Scratch Pad, reusable Modules і Simulation Stages | 1.5/3.5 | 08.03 | Reusable custom module з validation cases |
@@ -349,13 +349,13 @@
 ### `08_NIAGARA_ADVANCED/BLOCK_ASSESSMENT.md`
 
 - **Тест, 20 балів:** CPU/GPU tradeoffs, collision types, distance fields, Events limitations, Data Interfaces, skeletal sampling, User Parameters, Scratch Pad, Simulation Stages, bounds і culling.
-- **Практична робота, 60 балів:** створити data-driven System з обґрунтованим simulation type, одним Data Interface, reusable module і runtime controls.
+- **Практична робота, 60 балів:** створити data-driven System з обґрунтованим simulation type, одним Data Interface, reusable module та елементами керування під час виконання.
 - **Troubleshooting/performance, 10 балів:** виправити collision/data/bounds issue та продемонструвати culling/scalability behavior.
-- **Self-review, 10 балів:** decision record, limitations і reusable-module documentation.
+- **Self-review, 10 балів:** журнал рішень, limitations і reusable-module documentation.
 
 **Mastery gate G08:** система отримує зовнішні дані, коректно реагує на них, має reusable logic, стабільні bounds і зафіксовані performance assumptions. Optional Niagara Fluids не впливає на проходження.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 5 core lesson deliverables;
 - assessment ≥80/100;
@@ -377,7 +377,7 @@
 2. Reference study тільки з власними assets.
 3. Оригінальна самостійна варіація.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 09.01 | `01_fire_impact_language.md` | Fire language: hit spark і melee impact | 1.5/5.5 | G08; 02.04 | Триетапний проєкт **Stylized Impact** |
 | 09.02 | `02_water_projectile_language.md` | Water language: projectile і projectile trail | 1.5/5.5 | 09.01 | Триетапний **Elemental Projectile Kit** prototype |
@@ -391,19 +391,19 @@
 
 ### `09_EFFECT_ARCHETYPES/BLOCK_ASSESSMENT.md`
 
-- **Тест, 20 балів:** layer functions, timing phases, gameplay readability, elemental shape/motion distinctions і archetype-specific requirements.
+- **Тест, 20 балів:** layer functions, timing phases, читабельність під час гри, elemental shape/motion distinctions і archetype-specific requirements.
 - **Практична робота, 60 балів:** за випадковою комбінацією `стихія + два archetypes` пройти три етапи й створити оригінальний effect без покрокового туторіалу.
-- **Troubleshooting/performance, 10 балів:** gameplay-camera pass, particle/system count, overdraw/material check, bounds і performance correction.
+- **Troubleshooting/performance, 10 балів:** перевірка з ігрової камери, particle/system count, overdraw/material check, bounds і performance correction.
 - **Self-review, 10 балів:** coverage ledger 19/19, reference ethics statement і порівняння технічної та оригінальної версій.
 
-**Mastery gate G09:** усі 19 archetypes позначено завершеними, дев’ять elemental languages відрізняються не лише кольором, а контрольний effect читається в реальній gameplay camera.
+**Mastery gate G09:** усі 19 archetypes позначено завершеними, дев’ять elemental languages відрізняються не лише кольором, а контрольний effect читається в реальній ігровій камері.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 9 lesson deliverables;
 - assessment ≥80/100;
 - виконані Stylized Impact, Slash Combo, Elemental Projectile Kit prototype і Aura/Transformation study;
-- кожний великий effect має performance pass;
+- кожний великий effect пройшов перевірку продуктивності;
 - 9 годин effect-material iteration зафіксовано в M/S ledger.
 
 ---
@@ -415,7 +415,7 @@
 **M/S practice:** 4 години.  
 **Результат блока:** студент інтегрує effects у gameplay, передає параметри, синхронізує їх з animation і створює production-friendly High/Medium/Low variants.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 10.01 | `01_niagara_components_spawning_and_lifecycle.md` | Niagara Component, spawning і lifecycle | 2/6 | G09 | Spawn System at Location/Attached demo з activation, deactivation і looping |
 | 10.02 | `02_sockets_animation_notifies_and_attachment.md` | Sockets, Animation Notifies і attachment | 1.5/6.5 | 10.01 | Weapon/character effect, синхронізований з animation |
@@ -427,12 +427,12 @@
 
 - **Тест, 20 балів:** Niagara Component, spawn/attach methods, lifecycle, sockets, Animation Notifies, parameter passing, pooling concepts, profiling, Effect Types і scalability.
 - **Практична робота, 60 балів:** інтегрувати великий effect у character action, передати target/direction/color/scale data та створити High/Medium/Low profiles.
-- **Troubleshooting/performance, 10 балів:** надати captures particle count, active System count, CPU/GPU cost, translucency, overdraw, Shader Complexity, texture memory, mesh/ribbon/collision/light cost, sorting, bounds і culling.
-- **Self-review, 10 балів:** platform budget table, gameplay-camera notes і список компромісів між High/Medium/Low.
+- **Troubleshooting/performance, 10 балів:** надати captures particle count, active System count, CPU/GPU cost, translucency, overdraw, Shader Complexity, памʼять текстур, mesh/ribbon/collision/light cost, sorting, bounds і culling.
+- **Self-review, 10 балів:** platform budget table, нотатки про перевірку з ігрової камери і список компромісів між High/Medium/Low.
 
-**Mastery gate G10:** effect запускається в gameplay context, прив’язаний до правильних sockets/notifies, отримує runtime parameters, не ламається в gameplay camera й має перевірені H/M/L profiles.
+**Mastery gate G10:** effect запускається в ігровому контексті, прив’язаний до правильних sockets/notifies, отримує параметри під час виконання, не ламається в ігровій камері й має перевірені H/M/L profiles.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
 - завершені 5 lesson deliverables;
 - assessment ≥80/100;
@@ -447,7 +447,7 @@
 **Папка:** `11_PORTFOLIO_PROJECTS/`  
 **Обсяг:** 5 уроків, 46 годин — 6 T / 40 P.  
 **M/S practice:** 6 годин.  
-**Результат блока:** чотири завершені, оригінальні, gameplay-tested portfolio pieces із breakdown, performance evidence і presentation package.
+**Результат блока:** чотири завершені, оригінальні, gameplay-tested portfolio pieces із розбором і доказами продуктивності і presentation package.
 
 Кожний portfolio project 11.01–11.04 обов’язково містить:
 
@@ -463,28 +463,28 @@
 - список обов’язкових breakdown materials;
 - Definition of Done.
 
-| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий deliverable |
+| ID | Файл | Назва уроку | T/P | Prerequisites | Ключовий результат |
 |---|---|---|---:|---|---|
 | 11.01 | `01_stylized_melee_combo_portfolio_piece.md` | Portfolio Piece 1: Stylized melee combo | 1/9 | G10; 09.01; 09.05; 09.06 | Impact + slashes + trail + ground response, інтегровані в gameplay |
 | 11.02 | `02_elemental_projectile_kit_portfolio_piece.md` | Portfolio Piece 2: Elemental projectile kit | 1/9 | G10; 09.02–09.04 | Cohesive kit із launch, projectile, trail, impact і трьома відмінними element variants |
-| 11.03 | `03_character_aura_transformation_portfolio_piece.md` | Portfolio Piece 3: Aura, transformation або buff | 1/9 | G10; 09.07; 09.09 | Character-bound looping/transition piece із gameplay readability |
-| 11.04 | `04_character_ultimate_boss_ability_portfolio_piece.md` | Portfolio Piece 4: Character ultimate або boss ability | 1/9 | G10; 09.08; 09.09 | Оригінальна багатофазна ability і фінальний performance pass |
-| 11.05 | `05_portfolio_breakdowns_reel_and_case_studies.md` | Breakdown, reel і case studies | 2/4 | 11.01–11.04 | Чотири breakdown packages, captures, reel edit і текстові case studies |
+| 11.03 | `03_character_aura_transformation_portfolio_piece.md` | Portfolio Piece 3: Aura, transformation або buff | 1/9 | G10; 09.07; 09.09 | Character-bound looping/transition piece із читабельністю під час гри |
+| 11.04 | `04_character_ultimate_boss_ability_portfolio_piece.md` | Portfolio Piece 4: Character ultimate або boss ability | 1/9 | G10; 09.08; 09.09 | Оригінальна багатофазна ability і фінальна перевірка продуктивності |
+| 11.05 | `05_portfolio_breakdowns_reel_and_case_studies.md` | Breakdown, reel і описи проєктів | 2/4 | 11.01–11.04 | Чотири breakdown packages, captures, reel edit і текстові описи проєктів |
 
 ### `11_PORTFOLIO_PROJECTS/BLOCK_ASSESSMENT.md`
 
 - **Тест, 20 балів:** production planning, reference ethics, readability, integration, optimization, breakdown і presentation decisions.
-- **Практична робота, 60 балів:** фінальний cross-project polish pass і презентація всіх чотирьох pieces у gameplay та neutral test scene.
+- **Практична робота, 60 балів:** фінальний cross-project polish pass і презентація всіх чотирьох pieces у gameplay та нейтральній тестовій сцені.
 - **Troubleshooting/performance, 10 балів:** усунути щонайменше одну documented weakness кожної роботи й надати фінальні H/M/L та profiling captures.
-- **Self-review, 10 балів:** чотири case studies з design intent, layer breakdown, material/Niagara architecture, iteration history і чесними limitations.
+- **Self-review, 10 балів:** чотири описи проєктів з design intent, layer breakdown, material/Niagara architecture, iteration history і чесними limitations.
 
 **Mastery gate G11:** кожна робота окремо набрала не менше 80/100, не має критичної gameplay або performance помилки, використовує власні assets і містить повний breakdown.
 
-**Completion criteria блока:**
+**Критерії завершення блока:**
 
-- завершені 4 portfolio pieces і 4 case studies;
+- завершені 4 portfolio pieces і 4 описи проєктів;
 - assessment ≥80/100;
-- кожний piece має gameplay capture, neutral-view capture, layer breakdown, material graph breakdown, Niagara stack breakdown і performance evidence;
+- кожний piece має gameplay capture, neutral-view capture, layer breakdown, material graph breakdown, Niagara stack breakdown і докази продуктивності;
 - 6 годин фінального material/shader polish зафіксовано в M/S ledger.
 
 ---
@@ -589,7 +589,7 @@
 |---|---|---|
 | Stylized melee combo | 11.01 | Anticipation, slash arcs, ribbon/weapon trail, impacts, ground response, gameplay synchronization, H/M/L |
 | Elemental projectile kit | 11.02 | Launch, projectile body, trail, impact, три distinct elemental variants, runtime direction/target data, H/M/L |
-| Character aura/transformation/buff | 11.03 | Character attachment, readable loop, activation/deactivation або transition, material/parameter control, gameplay-camera pass |
+| Character aura/transformation/buff | 11.03 | Character attachment, readable loop, activation/deactivation або transition, material/parameter control, перевірка з ігрової камери |
 | Character ultimate/boss ability | 11.04 | Multi-phase timing, telegraph, main action, contact/impact, dissipation/residue, gameplay integration, final profiling |
 
 # Критерії завершення всього курсу
@@ -604,12 +604,12 @@
 6. Створено власні Photoshop/Krita textures, Blender meshes і Substance procedural textures.
 7. Створено Sprite, Mesh і Ribbon Niagara Systems; продемонстровано runtime data flow між Niagara, Materials і Blueprint.
 8. Coverage ledger містить 9/9 elemental languages і 19/19 archetypes.
-9. Кожний великий effect має gameplay-camera та performance pass.
+9. Кожний великий effect має перевірку з ігрової камери та перевірку продуктивності.
 10. Один effect повністю інтегровано через Niagara Component, sockets/Animation Notifies і runtime parameters.
 11. Для production effects існують High/Medium/Low profiles.
 12. Завершено чотири portfolio pieces; кожний окремо отримав не менше 80/100.
-13. Кожний portfolio piece має creative brief, constraints, original reference analysis, milestones, checklist, rubric, performance evidence, presentation captures і повний breakdown.
-14. У портфоліо немає вилучених або повторно використаних proprietary assets.
+13. Кожний portfolio piece має creative brief, constraints, оригінальний аналіз референсів, milestones, checklist, rubric, докази продуктивності, presentation captures і повний breakdown.
+14. У портфоліо немає вилучених або повторно використаних пропрієтарних ресурсів.
 15. Студент може пояснити власні material graphs, Niagara stacks, optimization decisions і відомі обмеження без підглядання в solution.
 
 Завершення курсу формує набір навичок і портфоліо для подання на junior-позиції, але не є гарантією працевлаштування.

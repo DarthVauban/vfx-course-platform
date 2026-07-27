@@ -38,7 +38,7 @@ D:\UEProjects\Recovery_Rehearsal\
 9. Відкрий `.uproject` restored copy в тому самому UE 5.8 build.
 10. Відкрий `L_Startup_Check`, закрий Editor і відкрий карту ще раз.
 11. Переконайся, що `L_Startup_Check_Copy` відсутня, а original map працює.
-12. Познач rehearsal `PASS`; disposable copy можна архівувати як evidence або видалити після завершення self-review.
+12. Познач rehearsal `PASS`; disposable copy можна архівувати як evidence або видалити після завершення самооцінювання.
 
 ### Чому це працює
 

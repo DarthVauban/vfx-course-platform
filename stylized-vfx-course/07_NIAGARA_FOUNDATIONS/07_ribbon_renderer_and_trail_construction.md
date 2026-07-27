@@ -41,7 +41,7 @@
 - **Tessellation** — додаткові вершини між particle points для згладження кривої.
 - **Curve Tension** — керує гостротою та поведінкою дотичних кривої ribbon.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Ribbon лежить в основі projectile trails, weapon slashes, magic streams і energy arcs. Типова помилка — очікувати trail від одного sprite particle. Інша — збільшувати tessellation, коли проблема насправді в низькому spawn rate або нестабільному link order. VFX artist має окремо контролювати дискретизацію points, linking, width, UV і згладжування.
 

@@ -66,5 +66,5 @@
 ## Manual verification
 
 - [ ] Exact node names і pins звірено у встановленому UE 5.8.x.
-- [ ] Platform-specific behavior перевірено на target build.
+- [ ] Platform-specific behavior перевірено у цільовій збірці.
 

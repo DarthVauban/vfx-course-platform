@@ -198,7 +198,7 @@ Color лише уточнює identity. Якщо зробити boards white-on-
 
 ### 11. Performance
 
-- Speed має найменший expected screen coverage, але thin shape потребує anti-alias/readability check.
+- Speed має найменший expected покриття екрана, але thin shape потребує anti-alias/readability check.
 - Weight має найбільший risk `S/O/D`; ground crescent і dust треба скорочувати першими.
 - Precision може вимагати кількох geometric layers, але їх слід звести до мінімальної кількості materials/draw structures на implementation stage.
 - Жоден board не отримує довільного millisecond budget; він отримує список майбутніх tests.

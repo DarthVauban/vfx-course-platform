@@ -251,9 +251,9 @@ IntersectionFade.Output → MaterialOutput.Opacity
 
 ### Оптимізація, 2
 
-Повний бал нараховується лише за before/after і опис trade-off. Приклад: зменшити geometry card або particle size до зайнятої mask області, знижуючи overlap зі збереженням silhouette; або вилучити Two Sided після доказу, що backface не використовується.
+Повний бал нараховується лише за до й після і опис trade-off. Приклад: зменшити geometry card або particle size до зайнятої mask області, знижуючи overlap зі збереженням silhouette; або вилучити Two Sided після доказу, що backface не використовується.
 
-## Частина 4 — ключ до self-review/documentation
+## Частина 4 — ключ до самооцінювання/documentation
 
 - 4: пріоритети підкріплені доказами, а не загальною похвалою.
 - 3: точні naming/folders і parameter hygiene.

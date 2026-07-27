@@ -89,7 +89,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.1 Project/version safety — 8
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Окремий `G01_Assessment_58`, correct UE 5.8 build recorded | 3 |
 | Course/UE 5.5 backup untouched | 3 |
@@ -99,7 +99,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.2 Content structure й naming — 10
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Один project root `/Game/G01` | 1 |
 | Maps/Materials/Textures/Meshes/Blueprints/TestAssets розділені | 3 |
@@ -111,7 +111,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.3 Test level і camera — 12
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Floor, scale reference, curved reference, import station | 4 |
 | CameraActor охоплює required objects | 2 |
@@ -123,7 +123,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.4 Texture import — 10
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Source 512×256 RGBA й pattern contract | 2 |
 | Canonical name/path і source association | 1 |
@@ -135,7 +135,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.5 Mesh import — 10
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Blender/source/export record | 2 |
 | Один Cylinder, dimensions й UV contract | 2 |
@@ -148,7 +148,7 @@ FPS ≈ 1000 / 20 = 50
 
 ## 2.6 Persistence/reproducibility — 10
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Project і Level відкрилися після restart | 3 |
 | Imported assets відкрилися | 2 |
@@ -186,7 +186,7 @@ FPS ≈ 1000 / 20 = 50
 
 ### Scoring baseline — 4
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Build/mode/resolution/scalability/camera/warm-up recorded | 1 |
 | Три raw `stat unit` samples | 1 |
@@ -197,14 +197,14 @@ FPS ≈ 1000 / 20 = 50
 
 # 4. Self-review/documentation — 10 балів
 
-| Evidence | Бали |
+| Докази | Бали |
 |---|---:|
 | Safety/migration note пояснює roles копій | 2 |
 | Audit має ≥12 entries і concrete actions | 3 |
 | Screenshots підписані й пов’язані з records | 3 |
 | Self-review називає weak skill і конкретну remediation | 2 |
 
-Фрази “все добре” або “треба більше практики” без actionable next task не отримують self-review points.
+Фрази “все добре” або “треба більше практики” без actionable next task не отримують бали за самооцінювання.
 
 # 5. Підсумкове рішення
 

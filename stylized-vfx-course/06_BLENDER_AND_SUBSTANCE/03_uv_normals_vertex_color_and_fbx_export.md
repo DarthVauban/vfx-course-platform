@@ -18,7 +18,7 @@
 - імпортувати й перевірити Static Meshes у UE 5.8;
 - довести, що scale, orientation, UV, normals, pivot і Vertex Color реально збереглися.
 
-Ключовий deliverable — `VFX_Geometry_Kit.fbx`, UE validation map і delivery report для всього kit.
+Ключовий результат — `VFX_Geometry_Kit.fbx`, UE validation map і delivery report для всього kit.
 
 # 3. Орієнтовний час
 
@@ -61,7 +61,7 @@
 | **Import validation** | Перевірка asset після фактичного UE import |
 | **Round-trip evidence** | Доказ Blender → FBX → UE, а не лише screenshot Blender |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Mesh може виглядати правильно в Blender і бути непридатним у UE:
 
@@ -394,7 +394,7 @@ Ring із 16 quads:
 
 **Очікування:** orientation/scale pipeline підтверджено емпірично.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Збережи source/delivery
 
@@ -566,7 +566,7 @@ Vertex Color RGB → Emissive Color
 |---|---|---|---|---|---|---|---:|---|
 |  |  |  |  |  |  |  |  |  |
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 ### Blender
 
@@ -764,7 +764,7 @@ Labels/defaults importer/nodes:
 10. Неправильний import scale виправляється окремо для кожного asset.
 11. Інструкції legacy FBX та Interchange змішано.
 12. Two Sided приховує помилку normal.
-13. Збереження Vertex Color припускається без debug material.
+13. Збереження Vertex Color припускається без діагностичного матеріалу.
 
 # 19. Усунення несправностей
 

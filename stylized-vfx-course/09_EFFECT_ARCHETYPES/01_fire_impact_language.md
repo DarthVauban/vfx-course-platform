@@ -7,7 +7,7 @@
 | Реєстр архетипів | #01 hit spark; #02 melee impact |
 | Elemental language | Fire: звужені язики, вибухове розширення, підйом, гаряче ядро → помаранчевий край → темний післяслід |
 | Артефакт | Триетапний проєкт **Stylized Impact**, `NS_L09_Fire_Impact` |
-| Mastery gate | Reference-informed, але повністю original impact із gameplay/performance evidence |
+| Mastery gate | Reference-informed, але повністю original impact з доказами з гри та даними про продуктивність |
 
 ## 2. Результат уроку
 
@@ -15,7 +15,7 @@
 
 - реконструювати технічний hit spark і layered melee impact;
 - розкласти impact на flash, directional sparks, expanding ring, fire body та residue;
-- провести ethical reference study без extraction, tracing або копіювання assets;
+- провести етичний аналіз референсів без extraction, tracing або копіювання assets;
 - створити original variation, де змінені shape, timing, motion і color, а не лише palette;
 - зібрати Niagara stacks, materials, textures, mesh/data contracts і bindings;
 - підготувати High/Medium/Low variants без втрати contact cue;
@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Аналіз impact/Fire | 1.0 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
-| Stage 2 — етичне reference study | 0.25 | 1.5 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 2.0 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.25 | 1.5 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Gameplay/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.5** | **5.5** | **1.0** |
 
@@ -55,7 +55,7 @@
 | Reference abstraction | Вимірювання відносин, не копіювання pixels/assets |
 | Provenance record | Таблиця походження кожного texture/mesh/reference |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Impact є найкоротшим тестом усієї VFX дисципліни: contact має збігтися з gameplay, silhouette читатися за кілька frames, а overdraw не повинен перекривати персонажів. Fire додає rise й thermal breakup, але не скасовує directional force удару.
 
@@ -159,9 +159,9 @@ flowchart LR
 - Порівняйте generic radial і fire variant.
 - Fire має лишатися впізнаваним через tapered sparks, upward body, curl і dark residue timing.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Fire_Impact` і five emitters: `NE_Flash`, `NE_CoreFire`, `NE_Sparks`, `NE_Ring`, `NE_Smoke`.
 2. Відкрийте `User.ImpactNormal`, `User.AttackDirection`, `User.ImpactScale`, `User.PrimaryColor`, `User.SecondaryColor`, `User.RandomSeed`.
@@ -173,15 +173,15 @@ flowchart LR
 8. Smoke: burst 8 після `0.08 s`, lifetime `0.6–1.0`, speed `50–120`, curl/noise strength `35`.
 9. Прив’яжіть colors/material parameters і перевірте на black/gray/bright backgrounds та gameplay camera.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть назву reference, source link, власника й дату спостереження.
-2. Створіть таблицю timing/layer на п’ять рядків; screenshots не додавайте до source assets, extraction заборонено.
+2. Створіть таблицю timing/layer на п’ять рядків; screenshots не додавайте до вихідних ресурсів, extraction заборонено.
 3. Запишіть три абстрактні спостереження, наприклад `spark cone ≈ 70°`, `ring peak ≈ 1.4× character torso`, `residue lasts ≈ 3× flash`.
 4. Відтворіть відносини зі своїми textures/mesh/material.
 5. Додайте provenance table: кожний asset посилається на ваш course source.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Duplicate-ніть як `NS_L09_Fire_Impact_Forge`.
 2. Shape: замініть round core трьома forked slash sprites.
@@ -192,7 +192,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Niagara module names, stack categories, renderer properties, bindings, Blueprint spawn pins і deterministic seed controls звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Дані System/User
 
@@ -286,7 +286,7 @@ Assets: власні `T_Spark_Star_512`, `T_Smoke_Seamless_512`, `T_Ramp_Energy_
 
 ## 14. Очікуваний результат кожного етапу
 
-| Етап | Evidence |
+| Етап | Докази |
 |---|---|
 | Technical hit spark | Contact читається ≤0.1 s, direction obvious |
 | Technical melee impact | П’ять functions нашаровано без opaque blob |
@@ -363,7 +363,7 @@ Assets: власні `T_Spark_Star_512`, `T_Smoke_Seamless_512`, `T_Ramp_Energy_
 | Random result заважає A/B | Seed/restart | Determinism і записаний seed |
 | Reference надто схожий | Silhouette/timing overlay | Забезпечте four-axis delta |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Emitters/counts | Збережений візуальний зміст |
 |---|---|---|
@@ -412,7 +412,7 @@ Assets: власні `T_Spark_Star_512`, `T_Smoke_Seamless_512`, `T_Ramp_Energy_
 - [ ] Gameplay camera й 60 fps capture готові.
 - [ ] User data/bindings документовано.
 - [ ] H/M/L variants compile-яться й зберігають contact.
-- [ ] Bounds/performance evidence збережено.
+- [ ] Bounds/докази продуктивності збережено.
 - [ ] M/S worklog містить 1.0 годину.
 
 ## 24. Критерії опанування
@@ -423,8 +423,8 @@ Assets: власні `T_Spark_Star_512`, `T_Smoke_Seamless_512`, `T_Ramp_Energy_
 4. Reference ethics/provenance пройдено.
 5. Original variation відрізняється по four axes.
 6. Exact stacks, assets, data і bindings задокументовано.
-7. H/M/L зберігають gameplay cue.
-8. Щонайменше 7/8 self-check answers правильні.
+7. H/M/L зберігають ігрову підказку.
+8. Щонайменше 7/8 відповіді самоперевірки правильні.
 
 ## 25. Підсумок
 

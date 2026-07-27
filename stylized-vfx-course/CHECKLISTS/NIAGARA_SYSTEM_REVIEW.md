@@ -7,7 +7,7 @@
 - [ ] Sprite/Mesh/Ribbon Renderer обрано через shape/motion need.
 - [ ] Зайві Emitters/Renderers видалено.
 - [ ] CPU або GPU `Sim Target` обґрунтовано й виміряно.
-- [ ] `Local Space`/world space choice перевірено рухом owning component.
+- [ ] `Local Space`/світовий простір choice перевірено рухом owning component.
 
 ## Execution stack
 

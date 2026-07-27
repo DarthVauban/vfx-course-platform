@@ -8,7 +8,7 @@ Sword ribbon і released arc мають різні функції та lifecycle
 
 1. Передавайте `BladeBase`, `BladeTip`, `AttackActive`, `BladeWidth`.
 2. На початку атаки очистьте й повторно ініціалізуйте історію ribbon.
-3. Поки атака активна, spawn 60/s, lifetime `.16`, positions у world space.
+3. Поки атака активна, spawn 60/s, lifetime `.16`, positions у світовому просторі.
 4. Position candidate = midpoint Base/Tip; width = measured distance або authored 12 cm contract depending renderer strategy.
 5. Крива Alpha `0→1 at .08 normalized→0`; width `.2→1→0`.
 6. Наприкінці атаки задайте spawn 0; дозвольте fade протягом `.16 s`.
@@ -29,7 +29,7 @@ Active gating запобігає idle particles; reset — застарілим 
 ### Типові неправильні рішення
 
 - Постійно увімкнений Spawn Rate.
-- Trail у local space рухається з персонажем після swing.
+- Trail у локальному просторі рухається з персонажем після swing.
 - Порядок Base/Tip змінюється між кадрами.
 - Висока alpha ховає animation.
 - Миттєвий kill обрізає fade.

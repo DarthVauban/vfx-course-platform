@@ -51,7 +51,7 @@
 - **Sorting** — order drawing translucent primitives.
 - **Overdraw** — кілька shaded transparent layers над тими самими screen pixels.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Один і той самий mask може бути дешевим crisp Masked slash або soft Translucent smoke. Неправильний Blend Mode спричиняє black quads, sorting pops, excessive overdraw або invisible opacity. DepthFade прибирає hard card intersection, але translucency все одно має cost.
 
@@ -117,7 +117,7 @@ DepthFade.Output → MaterialOutput.Opacity
 
 ### SceneDepth і PixelDepth
 
-- `PixelDepth` повертає representation current pixel distance або depth.
+- `PixelDepth` повертає значення відстані або глибини для поточного пікселя.
 - `SceneDepth` бере sample depth scene за screen UV або current location залежно від input.
 
 Units, mapping і support translucency треба перевірити. Використовуйте їх як measured data, а не grayscale art до remap.
@@ -154,7 +154,7 @@ finalOpacity = baseMask × fade
 5. Проведіть card крізь opaque cube; порівняйте без DepthFade і з `5`, `20`, `100`.
 6. Масштабуйте card, доки edge не стане subpixel; порівняйте Masked hard edge і soft Translucent edge у motion.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Scene для comparison
 
@@ -275,7 +275,7 @@ flowchart LR
     DF --> OP["Opacity"]
 ```
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `DepthFade`, `SceneDepth`, `PixelDepth`
 - Main Material Node inputs `Emissive Color`, `Opacity`, `Opacity Mask`

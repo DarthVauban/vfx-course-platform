@@ -15,11 +15,11 @@
 - прогнозувати behavior one-shot і infinite loop;
 - обрати re-entry policy: ignore, restart, refresh або stack;
 - пояснити pooling як reuse components, а не автоматичне прискорення будь-якого effect;
-- скидати transform і runtime parameters перед повторною активацією;
+- скидати transform і параметри під час виконання перед повторною активацією;
 - знайти leaked, prematurely destroyed або stale reused effect;
 - побудувати `BP_VFX_LifecycleLab` із world, attached і persistent cases.
 
-Ключовий deliverable — lifecycle demo з журналом станів та 20-кратним re-entry test.
+Ключовий результат — lifecycle demo з журналом станів та 20-кратним re-entry test.
 
 # 3. Орієнтовний час
 
@@ -62,7 +62,7 @@
 | **Ownership policy** | Хто зберігає reference, оновлює, завершує й чистить component |
 | **Pre-cull check** | Spawn-time visibility/scalability check, якщо підтримується обраним path |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Niagara effect у preview може бути правильним, але gameplay integration ламається, якщо:
 
@@ -85,7 +85,7 @@ Lifecycle — частина візуального дизайну. Anticipation
 - власний transform;
 - стан active/inactive;
 - поточний simulation age;
-- значення runtime parameters;
+- значення параметрів під час виконання;
 - attachment і owner;
 - шлях completion та cleanup.
 
@@ -111,8 +111,8 @@ Lifecycle — частина візуального дизайну. Anticipation
 |---|---|---|
 | `In` | exec | виклик |
 | `System Template` | Niagara System | вихідний asset |
-| `Location` | Vector | позиція у world space |
-| `Rotation` | Rotator | обертання у world space |
+| `Location` | Vector | позиція у світовому просторі |
+| `Rotation` | Rotator | обертання у світовому просторі |
 | `Scale` | Vector | масштаб instance |
 | `Auto Destroy` | Boolean | cleanup після completion |
 | `Auto Activate` | Boolean | негайно активувати instance |
@@ -225,7 +225,7 @@ Looping effect потребує явного exit:
 - deactivate + reactivate: чи reset відбувається для age і spawn burst;
 - natural completion: без ручного stop.
 
-Не вважай ці paths equivalent. Вибір залежить від art/gameplay contract.
+Не вважай ці paths equivalent. Вибір залежить від художнього й ігрового контракту.
 
 ## 8.7 Re-entry policies
 
@@ -301,7 +301,7 @@ Destroyed / Returned to Pool / Inactive Persistent
 active instances через t секунд = 5 × t
 ```
 
-Через 60 секунд: 300 active instances. Це не performance budget, а логічний доказ leak.
+Через 60 секунд: 300 active instances. Це не бюджет продуктивності, а логічний доказ leak.
 
 ## Stale value
 
@@ -352,7 +352,7 @@ Reset contract повинен set і Color, і Scale.
 
 Якщо будь-який run має попереднє значення, reset contract не спрацював.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## A. Підготуй test assets
 
@@ -504,7 +504,7 @@ ObservedFinish
 
 Запиши peak кількість active instances і фінальну кількість instances, що лишилися після визначеного cooldown. Ці числа є спостереженнями, а не універсальними budgets.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 - `NiagaraComponent`
 - `Spawn System at Location`
@@ -552,7 +552,7 @@ Blueprint display names/defaults: **Потребує ручної перевір
 
 | Етап | Очікуваний результат |
 |---|---|
-| World spawn | лишається на заданому world transform |
+| World spawn | лишається із заданою трансформацією у світовому просторі |
 | Attached spawn | слідує за parent або socket |
 | Auto Activate off | effect невидимий до виклику `Activate` |
 | Parameter-before-activate | перший видимий frame використовує передані data |
@@ -601,7 +601,7 @@ Blueprint display names/defaults: **Потребує ручної перевір
 
 ## EX-L10-01-B — Pool/re-entry fault injection
 
-**Завдання:** побудуй reusable impact path, інжектуй stale color, lost reference і infinite-loop leak, потім виправ кожний root cause.
+**Завдання:** побудуй reusable impact path, інжектуй stale color, lost reference і infinite-loop leak, потім виправ кожну першопричину.
 
 **Обмеження:**
 
@@ -622,7 +622,7 @@ Blueprint display names/defaults: **Потребує ручної перевір
 **Acceptance criteria:**
 
 - усі три failures відтворено;
-- root causes розрізнено;
+- першопричини розрізнено;
 - фінальний run із 50 cycles не має stale values;
 - active count повертається до очікуваного baseline;
 - висновок щодо pooling спирається на evidence.

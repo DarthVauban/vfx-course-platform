@@ -114,7 +114,7 @@ Socket owner правильний, contact і trail мають різні spatia
 
 Rapid re-entry test записує active systems і trail particle count. Correct attachment не доводить cost; profiling потребує representative gameplay capture.
 
-### 12. Перевірка acceptance criteria
+### 12. Перевірка критеріїв приймання
 
 Усі сім criteria виконано.
 

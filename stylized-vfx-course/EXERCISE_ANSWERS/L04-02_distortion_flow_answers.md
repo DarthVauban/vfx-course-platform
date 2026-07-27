@@ -119,5 +119,5 @@ Preview RG remapped, B, A окремо. Replace FlowRG із `(0.5,0.5)` — dire
 
 ### Performance
 
-Packing може зменшити кількість source textures, але two pattern samples лишаються. Перевірте compression artifacts кожного channel і memory format на target platform.
+Packing може зменшити кількість source textures, але two pattern samples лишаються. Перевірте compression artifacts кожного channel і memory format на цільовій платформі.
 

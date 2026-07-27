@@ -15,14 +15,14 @@
 - пояснити `GPU Emitter Dispatch [RT]` і renderer preparation costs;
 - відкрити `ProfileGPU`/GPU Visualizer і відрізнити simulation від rendering;
 - застосувати `Shader Complexity` та `Quad Overdraw` як diagnostic views, а не millisecond budget;
-- перевірити texture memory/resource evidence;
+- перевірити памʼять текстур/resource evidence;
 - окремо оцінити sprite, mesh, ribbon, collision, light, sorting, bounds і culling costs;
 - врахувати overhead profiling tools;
 - створити optimization ledger «baseline → hypothesis → one change → result → quality»;
 - виконати performance pass для кожного великого effect;
 - зафіксувати 4 години M/S shader/overdraw optimization practice.
 
-Ключовий deliverable — `L10_BIG_EFFECT_PERFORMANCE_LEDGER.md` з Niagara Debugger, Insights, GPU, view-mode та texture evidence.
+Ключовий результат — `L10_BIG_EFFECT_PERFORMANCE_LEDGER.md` з Niagara Debugger, Insights, GPU, view-mode та texture evidence.
 
 # 3. Орієнтовний час
 
@@ -67,11 +67,11 @@
 | **Exclusive time** | timer без child time |
 | **Overdraw** | один screen pixel проходить shading або blending кілька разів |
 | **Quad overdraw** | зайва робота від sprite quads і coverage, особливо transparent empty regions |
-| **Resource size** | runtime-oriented indicator texture memory, залежний від platform і format |
+| **Resource size** | runtime-oriented indicator памʼять текстур, залежний від platform і format |
 | **Optimization ledger** | ланцюг evidence до і після зміни |
 | **Diagnostic overhead** | cost самих HUD, trace, named events, GPU readback і capture |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Optimization без measurement часто погіршує art і не змінює bottleneck.
 
@@ -286,7 +286,7 @@ Color legend/threshold configuration: **Потребує ручної перев
 - LOD group і streaming behavior;
 - indicator resource size;
 - кількість unique textures у effect;
-- чи всі packed channels використовуються;
+- чи всі упаковані канали використовуються;
 - evidence residency, якщо доступне.
 
 File size на disk не дорівнює runtime texture memory. Fields і tools Texture Asset Editor: **Потребує ручної перевірки в Unreal Engine 5.8.**
@@ -441,7 +441,7 @@ Decision: прийняти для Medium; зберегти High лише якщ�
 
 Задокументуй, чому diagnostic capture потрібен для inspection, але не для final timing.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## A. Створи protocol test
 
@@ -576,7 +576,7 @@ Visual risk of reduction
 - познач результат як `Pass`, `Conditional` або `Fail`;
 - перенеси actions зі статусами failed або conditional у 10.05.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 - `Niagara Debugger`
 - `Debug HUD`
@@ -638,7 +638,7 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 | Texture ledger | memory candidates відомі |
 | Feature isolation | dominant layer або feature визначено |
 | Change | response domain profiler відповідає hypothesis |
-| Quality | gameplay readability збережено й задокументовано |
+| Quality | читабельність під час гри збережено й задокументовано |
 | Big-effect ledger | немає hero effect без profiling |
 
 # 15. Самостійна вправа
@@ -719,7 +719,7 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 
 ## EX-L10-04-B
 
-- **Hint 1:** сам particle count не розрізняє CPU, GPU і render bottleneck.
+- **Hint 1:** сама кількість частинок не розрізняє CPU, GPU і render bottleneck.
 - **Hint 2:** збільш instances, collision або update для CPU candidate; збільш translucent coverage або material layers для GPU candidate.
 - **Hint 3:** використай GT/CNC timers для першого case, ProfileGPU разом із Shader Complexity і Quad Overdraw — для другого; потім застосуй controls на протилежній axis, щоб довести causality.
 
@@ -738,7 +738,7 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 | Color Shader Complexity прирівняно до ms | diagnostic не є прямим timing |
 | Particles зменшено до пошуку cost | проблему material або instances можна пропустити |
 | Universal budget table | ігнорує hardware, build і scenario |
-| Немає quality check | optimization може зламати gameplay readability |
+| Немає quality check | optimization може зламати читабельність під час гри |
 
 # 19. Troubleshooting
 
@@ -774,8 +774,8 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 - count emitters має fixed overhead;
 - GPU simulation усе одно містить CPU work system і emitter;
 - mesh, ribbon, light, collision або sorting можуть домінувати;
-- translucent screen coverage може домінувати навіть за малої кількості particles;
-- texture memory і streaming можуть бути окремим constraint;
+- покриття екрана прозорими елементами може домінувати навіть за малої кількості particles;
+- памʼять текстур і streaming можуть бути окремим constraint;
 - великі bounds послаблюють culling, а малі спричиняють popping;
 - pooling працює лише з allocation і GC;
 - overhead profiler та debugger треба прибрати з clean capture;
@@ -824,7 +824,7 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 - [ ] A/B змінює одну variable.
 - [ ] Clean capture після diagnostics виконано.
 - [ ] Visual readability перевірено.
-- [ ] Кожен big effect має performance pass.
+- [ ] Кожен big effect пройшов перевірку продуктивності.
 - [ ] 4 години M/S записано.
 - [ ] Універсальний budget не вигадано.
 
@@ -843,7 +843,7 @@ Availability/labels: **Потребує ручної перевірки в Unrea
 
 # 25. Підсумок
 
-Optimization — не список магічних limits. Це controlled experiment на target hardware/build/scenario. Niagara Debugger описує активний workload, Insights — CPU path, GPU tools — render/compute, view modes — material/coverage symptoms, а ledger пов’язує change з доказом і gameplay quality.
+Optimization — не список магічних limits. Це контрольований експеримент на цільовому обладнанні/build/scenario. Niagara Debugger описує активний workload, Insights — CPU path, GPU tools — render/compute, view modes — material/coverage symptoms, а ledger пов’язує change з доказом і gameplay quality.
 
 # 26. Зв’язок із наступними уроками
 

@@ -1,4 +1,4 @@
-# Повні рішення — L11.05 Portfolio breakdowns, reel and case studies
+# Повні рішення — L11.05 Portfolio breakdowns, reel and описи проєктів
 
 Рішення використовують умовні filenames і порядок. Замініть їх власними actual versions, contacts, licensed audio/font та measured evidence. Не копіюйте claims, яких ваші artifacts не доводять.
 
@@ -10,7 +10,7 @@
 
 У прикладі `Rift Crown` відкриває reel, бо найшвидше показує gameplay telegraph, large-scale timing і technical depth. Далі:
 
-1. `Rift Crown` — найсильніша gameplay readability/scale;
+1. `Rift Crown` — найсильніша читабельність під час гри/scale;
 2. `Resonant Edge` — швидкий contact/timing контраст;
 3. `Triune Relay` — reuse і три distinct variants;
 4. `Glassbloom Ward` — persistent state, materials і lifecycle.
@@ -22,7 +22,7 @@
 | Час | Shot | Мета caption/evidence |
 |---|---|---|
 | `0–3` | name + one-frame-safe contact slate | identity/contact без довгого logo |
-| `3–13` | повний real-time gameplay Rift Crown | gameplay radius/timing |
+| `3–13` | повний real-time gameplay Rift Crown | ігровий радіус і таймінг |
 | `13–18` | top neutral + debug boundary + H/M/L triptych | technical truth |
 | `18–28` | повне three-hit gameplay Resonant Edge | contact rhythm |
 | `28–33` | side neutral + Notify/BP/layer panel | synchronization/reuse |
@@ -132,7 +132,7 @@ Limitation: назване actual limitation; наступний experiment і �
 | «AAA-quality» | undefined/unverifiable | вилучити; показати rubric, gameplay і breakdown |
 | «console optimized» | немає platform/config | `measured on [actual target/profile]` + report |
 | «all assets mine» | character/environment third-party | exact authored list + source/license |
-| «zero performance cost» | impossible/unmeasured | actual captured before/after і limitation |
+| «zero performance cost» | impossible/unmeasured | actual captured до й після і limitation |
 | «production ready» | scope не визначено | назвати пройдені lifecycle, tier, packaging і target tests |
 
 Якщо evidence немає, claim вилучається, а не маскується менш конкретним superlative.
@@ -171,7 +171,7 @@ Broken absolute workstation links замінено на relative package links �
 
 - у `Triune Relay` відсутній mixed H/M/L capture;
 - у `Resonant Edge` graph text unreadable;
-- у `Rift Crown` before/after має різний exposure;
+- у `Rift Crown` до й після має різний exposure;
 - у `Glassbloom Ward` character credit нечіткий.
 
 Виправлення:
@@ -183,4 +183,4 @@ Broken absolute workstation links замінено на relative package links �
 
 ### 5. Критерій приймання
 
-Після перерви відкрийте package у clean session лише через README, без editor context, і пройдіть deterministic checklist: знайдіть reel і чотири case studies, перевірте роль та playback, відкрийте кожен link/file, зіставте performance claims із target evidence та перевірте відсутність confidential/unlicensed material. Walkthrough вкладається у 5 хв, а кожен claim веде до artifact або limitation. Optional peer може повторити той самий checklist, але не є умовою приймання.
+Після перерви відкрийте package у clean session лише через README, без editor context, і пройдіть deterministic checklist: знайдіть reel і чотири описи проєктів, перевірте роль та playback, відкрийте кожен link/file, зіставте performance claims із target evidence та перевірте відсутність confidential/unlicensed material. Walkthrough вкладається у 5 хв, а кожен claim веде до artifact або limitation. Optional peer може повторити той самий checklist, але не є умовою приймання.

@@ -30,13 +30,13 @@
 
 Дайте короткі точні відповіді, по 2 бали кожна.
 
-1. Чим grayscale value відрізняється від alpha coverage?
+1. Чим значення у градаціях сірого відрізняється від alpha coverage?
 2. Що робить half-size Offset і чому потрібен Wrap Around?
 3. Чим border seam відрізняється від tile signature?
 4. Чому data masks і packed textures зазвичай мають `sRGB=Off`?
 5. Назвіть три frequency bands smoke texture та їхню роль.
 6. Який neutral value використовує unsigned RG distortion і як його decode-ити?
-7. Які шість compatibility питань треба поставити перед channel packing?
+7. Які шість compatibility питань треба поставити перед пакування каналів?
 8. Для 4×4 row-major atlas де знаходиться frame 11: zero-based row і column?
 9. Чим cell bleeding відрізняється від alpha halo?
 10. Скільки raw memory має 1024² RGBA8 atlas без mips і приблизно з full mip chain?
@@ -130,7 +130,7 @@ Distortion має neutral background `128/255`; R/G independent; manifest міс
 
 1. capture симптому;
 2. ізольований diagnostic view;
-3. зазначену root cause;
+3. зазначену першопричину;
 4. виправлення;
 5. capture після виправлення за тієї самої умови.
 
@@ -192,7 +192,7 @@ Assessment не проходить незалежно від загальног�
 - final exports не відкриваються або не імпортуються;
 - відсутня UE material validation;
 - flipbook order неможливо перевірити;
-- packed channels не мають contract;
+- упаковані канали не мають contract;
 - Ledger M/S має менше 14.0 задокументованих годин;
 - роботу створено шляхом копіювання файлів solutions.
 

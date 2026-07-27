@@ -6,7 +6,7 @@
 
 ## 2. Результат уроку
 
-Ви створите `NS_L07_06_MeshBurst` з `SM_VFX_Debris_A`, перевірите Mesh Renderer material compatibility, initial/update orientation, motion in world space, full bindings і bounded deterministic burst. Ви також порівняєте `Facing Mode=Default` із `Velocity` та поясните, коли renderer facing замінює або доповнює `Particles.MeshOrientation`.
+Ви створите `NS_L07_06_MeshBurst` з `SM_VFX_Debris_A`, перевірите Mesh Renderer material compatibility, initial/update orientation, motion у світовому просторі, full bindings і bounded deterministic burst. Ви також порівняєте `Facing Mode=Default` із `Velocity` та поясните, коли renderer facing замінює або доповнює `Particles.MeshOrientation`.
 
 ## 3. Орієнтовний час
 
@@ -15,7 +15,7 @@
 - 45 хв — Mesh Renderer instancing/material;
 - 45 хв — orientation, scale, facing і spaces;
 - 60 хв — M/S practice: mesh material compatibility/Particle Color;
-- 90 хв — controlled experiments;
+- 90 хв — контрольовані експерименти;
 - 210 хв — guided mesh burst;
 - 90 хв — exercises A/B.
 
@@ -41,7 +41,7 @@ M/S practice блока: **ще 1 година; cumulative 3/4**.
 - **Facing Mode Default** — використовує orientation/transform particle та ігнорує camera.
 - **Facing Mode Velocity** — вирівнює local X-axis mesh уздовж velocity particle.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Mesh particles дають real silhouette, volume, normals і faceted rotation для debris, shards, projectiles та magical fragments. Вони також швидко викривають поганий pivot/axis/import scale. Niagara artist має відокремити mesh asset defect від renderer binding чи simulation-space defect.
 
@@ -94,7 +94,7 @@ Particles.Velocity = (300,0,0)
 Facing Mode Velocity → +X mesh follows +X motion
 ```
 
-Rotation rate example `180°/s`: за `.5 s` expected conceptual rotation `90°` around selected axis, subject to module representation/integration.
+Rotation rate example `180°/s`: за `.5 s` expected conceptual rotation `90°` around selected axis, subject to реалізації та інтеграції модуля.
 
 ## 10. Контрольовані експерименти
 
@@ -107,7 +107,7 @@ Rotation rate example `180°/s`: за `.5 s` expected conceptual rotation `90°`
 7. Duplicate World/local; перемістіть component після birth.
 8. Перемикайте Override Material on/off; запишіть результат slot.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Повний stack
 
@@ -158,7 +158,7 @@ NS_L07_06_MeshBurst
 - Рівномірна крива Scale Mesh Size `(0,.4),(.1,1),(.8,1),(1,.2)`.
 - Alpha Scale Color `(0,1),(.8,1),(1,0)`.
 
-Rotation representation/units shown by installed module **потребують ручної перевірки в Unreal Engine 5.8.** Record whether UI expects degrees, normalized turns or vector dynamic input.
+Спосіб подання й одиниці Rotation, які показує встановлений модуль, **потребують ручної перевірки в Unreal Engine 5.8.** Запишіть, чи UI очікує degrees, normalized turns or vector dynamic input.
 
 ### Налаштування Mesh Renderer
 
@@ -185,7 +185,7 @@ Dynamic Material 1–3 зберігають відповідні defaults без
 
 Створіть duplicate actor System. Для copy B задайте emitter Local Space true. Виконайте Reset обох і перемістіть actors після `.3 s`. Потім поверніть production asset у world. Окремо створіть duplicate emitter і задайте Facing Mode Velocity з вимкненим rotational velocity; перевірте local X axis mesh.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 `Mesh Renderer`; `Particle Mesh`; `Override Materials`; `Facing Mode`; `Default`; `Velocity`; `Initial Mesh Orientation`; `Add Rotational Velocity`; `Update Mesh Orientation`; `Scale Mesh Size`; `Mesh Orientation Binding`; `Scale Binding`; `Dynamic Material Binding`; material flag `Niagara Mesh Particles`.
 
@@ -269,7 +269,7 @@ Installed module category paths/rotation units **потребують ручно
 | несподівано слідує за source | Local Space | world false для debris |
 | ранній cull | bounds/WPO | перевірте повну траєкторію й displacement material |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Вартість Mesh містить instance count × mesh complexity, material, shadow і overdraw/opaque fill.
 - Вимикайте непотрібні shadows на VFX meshes лише після перевірки візуальних вимог.

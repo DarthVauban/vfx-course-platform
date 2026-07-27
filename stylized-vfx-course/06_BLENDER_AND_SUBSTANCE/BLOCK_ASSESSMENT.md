@@ -300,7 +300,7 @@ Slash material читає breakup, streak і fade разом. Spark emitter чи
 |---|---:|
 | Правдоподібні hypotheses | 2 |
 | Упорядковані single-variable tests | 2 |
-| Коректне розрізнення та виправлення root cause | 2 |
+| Коректне розрізнення та усунення першопричини | 2 |
 | Рішення щодо packing/resolution/mip | 2 |
 | План вимірювань в UE | 2 |
 | **Разом** | **10** |

@@ -148,7 +148,7 @@ A: можливі ALU + Masked alias. B/C: імовірно домінує trans
 ### Коректні варіації без switches
 
 - A instance: Radius `.4`, HalfWidth `.025`, Color — синій HDR, та сама architecture.
-- B instance: Tiling `(1,4)`, Speed `(.2,0)`, Power `4`, менший screen coverage.
+- B instance: Tiling `(1,4)`, Speed `(.2,0)`, Power `4`, менше покриття екрана.
 - C instance: FadeDistance `60`, OpacityScale `.6`, теплий колір диму.
 
 ### Перевірка

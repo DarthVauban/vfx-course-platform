@@ -91,14 +91,14 @@ Textures перевірено за dimensions, compression/mips, resource eviden
 
 ### 9. Чому рішення працює
 
-Scenario зафіксований, змінюється лише один renderer, а observed profiler domain відповідає hypothesis. Visual quality оцінюється з gameplay camera, а не за isolated complexity color.
+Scenario зафіксований, змінюється лише один renderer, а observed profiler domain відповідає hypothesis. Visual quality оцінюється з ігрової камери, а не за isolated complexity color.
 
 ### 10. Допустимі альтернативи
 
 - Tighten sprite/mesh silhouette замість disable layer.
 - Reduce overlap/count, якщо layer семантично потрібний.
-- Simplify material branch або texture sampling, якщо GPU evidence вказує на shader work.
-- Відхилити change, якщо gameplay readability fails.
+- Simplify material branch або вибірка текстури, якщо GPU evidence вказує на shader work.
+- Відхилити change, якщо читабельність під час гри fails.
 
 ### 11. Поширені неправильні рішення
 
@@ -206,7 +206,7 @@ Reducing shader work не виправляє system-instance/GT activation root 
 
 ### 11. Перевірка
 
-Обидва corrected variants повторно запускаються через identical protocol і clean capture. Predicted domain покращується, а gameplay readability constraints зберігаються.
+Обидва corrected variants повторно запускаються через identical protocol і clean capture. Predicted domain покращується, а читабельність під час гри constraints зберігаються.
 
 ### 12. Висновок щодо продуктивності
 

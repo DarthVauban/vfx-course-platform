@@ -43,7 +43,7 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Практичний приклад | Glossary |
+| Англійський термін | Українське пояснення | Практичний приклад | Glossary |
 |---|---|---|---|
 | Asset | Збережений об’єкт проєкту в `Content` | `M_Diagnostic_Surface` | [Asset](../02_GLOSSARY.md#asset) |
 | Actor | Екземпляр, розміщений у Level | `StaticMeshActor` на сцені | [Actor](../02_GLOSSARY.md#actor) |
@@ -54,7 +54,7 @@
 | Outliner | Список actors поточного world/level | Пошук `CameraActor` у карті | [Outliner](../02_GLOSSARY.md#outliner) |
 | Details | Panel властивостей поточного selection | Transform вибраного actor | [Details](../02_GLOSSARY.md#details) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Один gameplay effect може використовувати Niagara System, кілька Emitters, Materials, Material Instances, Textures, Static Meshes і Blueprint integration. Якщо names на кшталт `NewMaterial`, `NewMaterial_2`, `final_final` нічого не пояснюють, artist витрачає час не на VFX, а на пошук.
 
@@ -188,7 +188,7 @@ SM_Diagnostic_Cube (asset у Content)
 - Очисть пошук і відфільтруй за asset type.
 - **Контроль:** кожен спосіб приводить до того самого package path.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L01-02 — Content architecture й audit
 
@@ -241,7 +241,7 @@ SM_Diagnostic_Cube (asset у Content)
 14. **Закрий і повторно відкрий `L_Asset_Workflow_Audit`.**  
     **Очікувано:** references на actors і assets не втрачені.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Material Graph і Niagara stack не створюються. Технічні елементи уроку:
 
@@ -289,7 +289,7 @@ Material Graph і Niagara stack не створюються. Технічні е
 - класифікуй type і purpose;
 - дай semantic names;
 - перемісти в canonical folders;
-- склади before/after table;
+- склади до й після table;
 - закрий і повторно відкрий проєкт.
 
 **Acceptance criteria:** жодного випадкового numeric suffix; path відповідає type; старі names не використовуються в audit result; проєкт відкривається без missing references.
@@ -316,19 +316,19 @@ Material Graph і Niagara stack не створюються. Технічні е
 ### EX-L01-02-A
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Спочатку визнач type, потім production purpose, лише потім path і name.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 Content Browser folders, type filters, Rename, Move, Duplicate, audit table і reopen test.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Для кожного asset заповни `old name → type → purpose → prefix → canonical path → new name → reopen result`. Якщо purpose невідомий, asset лишається в `TestAssets`, а не маскується production name.
 </details>
@@ -338,19 +338,19 @@ Content Browser folders, type filters, Rename, Move, Duplicate, audit table і r
 ### EX-L01-02-B
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Хороший retrieval test перевіряє не пам’ять про folder tree, а інформацію в name, prefix і type.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 Search field, asset type filter, current folder scope, timer і results table.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Змішай 4 name queries, 4 type queries і 4 purpose queries. Для помилки не повторюй пошук одразу: спочатку визнач, чого бракує — prefix, semantic word чи canonical path.
 </details>

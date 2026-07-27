@@ -1,4 +1,4 @@
-# Рішення до L01-03 — VFX test level та import pipeline
+# Рішення до L01-03 — тестова VFX-сцена та import pipeline
 
 ## EX-L01-03-A — Другий import contract
 
@@ -88,7 +88,7 @@ Texture contract має ознаки, які однозначно перевір
 
 - Pyramid замість cone, якщо height, base, origin і UV contract так само задокументовані.
 - 8- або 16-sided cone; side count записується, але не є mastery threshold.
-- Border іншого grayscale value, якщо він контрастує з gradient і точне значення відоме.
+- Border іншого значення у градаціях сірого, якщо він контрастує з gradient і точне значення відоме.
 
 ### Неправильні рішення
 

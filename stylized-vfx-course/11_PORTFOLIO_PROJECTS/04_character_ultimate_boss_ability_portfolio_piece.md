@@ -9,14 +9,14 @@
 Ви завершите четверту portfolio piece:
 
 - п’ять фаз `Telegraph → Charge → Execute → Impact → Residue`;
-- VFX boundary, що точно відповідає переданому gameplay radius;
+- VFX boundary, що точно відповідає переданому ігровому радіусу;
 - reusable Blueprint orchestration і Niagara User Parameter contract;
 - окремі Niagara systems/stacks для кожної функціональної фази;
 - High/Medium/Low variants зі збереженою telegraph/contact truth;
 - перевірку readability проти персонажів, оточення та інших combat effects;
-- виміряне performance evidence у baseline і stress-сценарії;
+- зібрані докази продуктивності у baseline і stress-сценарії;
 - gameplay, neutral-view та обов’язковий technical breakdown;
-- чесний 100-point self-review із category floors.
+- чесне 100-бальне самооцінювання із category floors.
 
 Результати: `NS_P11_Ult_Telegraph`, `NS_P11_Ult_Charge`, `NS_P11_Ult_Execute`, `NS_P11_Ult_Impact`, `NS_P11_Ult_Residue`, `M_P11_Ult_Master`, `BP_P11_UltimateController`, `L_P11_Ult_Portfolio`, `LS_P11_Ult_Capture`.
 
@@ -30,7 +30,7 @@
 - 75 хв — Blueprint phase/data integration;
 - 90 хв — M/S practice: telegraph, shock-front і residue material polish;
 - 75 хв — H/M/L, overlap readability і target profiling;
-- 75 хв — captures, breakdown і self-review.
+- 75 хв — captures, breakdown і самооцінювання.
 
 M/S ledger: **1.5 години; cumulative 5/6 годин блоку**.
 
@@ -55,7 +55,7 @@ M/S ledger: **1.5 години; cumulative 5/6 годин блоку**.
 - **Cue preservation** — обов’язкові telegraph, direction, contact і end-state залишаються в кожному quality tier.
 - **Critical gameplay error** — VFX повідомляє неправильний radius, timing, direction або active state.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Ultimate/boss ability — це перевірка візуальної ієрархії, gameplay truth, orchestration і cost під піковим overlap. Великий ефект легко зробити гучним, але складно зробити чесним: гравець повинен завчасно прочитати межу, момент удару та кінець небезпеки, а команда — мати можливість змінити radius, duration, colors і tier без ручного перебудовування.
 
@@ -84,7 +84,7 @@ Ultimate/boss ability — це перевірка візуальної ієра�
 - `Execute .25 s`: вертикальний compression streak і коротка пауза перед contact;
 - `Impact .4 s`: низький radial shock front, central column і directional shards;
 - `Residue 2.0 s`: розломи/іскри згасають; якщо gameplay hazard завершився, residue візуально не виглядає активною damage zone;
-- gameplay intent: radius і contact читаються з 5–20 m camera distance на темному, середньому й світлому фоні.
+- ігровий задум: radius і contact читаються з 5–20 m camera distance на темному, середньому й світлому фоні.
 
 ### Technical requirements
 
@@ -185,7 +185,7 @@ In scope: five visual phases, radius/timing/data contract, Blueprint VFX orchest
 - real-time phase capture; slow playback лише з label `slowed`;
 - dark/mid/bright background і combat-overlap proof;
 - default plus H/M/L comparison;
-- performance before/after за однакових умов;
+- показники продуктивності до й після за однакових умов;
 - captions: name, engine build, target, role, tools, gameplay radius, third-party assets;
 - cinematic close-up — додатковий, не gameplay/performance proof.
 
@@ -197,13 +197,13 @@ In scope: five visual phases, radius/timing/data contract, Blueprint VFX orchest
 4. material graphs/functions/instances і radius/phase parameter contract;
 5. повні Niagara stacks кожної phase;
 6. Blueprint gameplay-data, state, spawn і reset diagram;
-7. performance before/after за однакових умов;
+7. показники продуктивності до й після за однакових умов;
 8. High/Medium/Low table зі збереженими cues;
 9. limitations, accessibility notes і next iteration.
 
 ### Completion criteria / Definition of Done
 
-Piece завершена лише коли три casts поспіль відповідають gameplay radius/timing, cancel/reset працює, residue чесно показує end-state, combat stack і H/M/L pass critical-cue parity, declared target виміряно, score `≥80/100` з усіма floors, assets/claims attributable, а mandatory breakdown повний.
+Piece завершена лише коли три casts поспіль відповідають ігровому радіусу/timing, cancel/reset працює, residue чесно показує end-state, combat stack і H/M/L pass critical-cue parity, declared target виміряно, score `≥80/100` з усіма floors, assets/claims attributable, а mandatory breakdown повний.
 
 ## 9. Візуальні або математичні приклади
 
@@ -231,7 +231,7 @@ Phase01 = clamp(Elapsed / TelegraphDuration, 0, 1)
 tickFrequency = lerp(StartFrequency, EndFrequency, Phase01²)
 ```
 
-Числа — starting profile цього проєкту; gameplay contract і measured target мають пріоритет.
+Числа — starting profile цього проєкту; ігровий контракт і measured target мають пріоритет.
 
 ## 10. Controlled experiments
 
@@ -242,9 +242,9 @@ tickFrequency = lerp(StartFrequency, EndFrequency, Phase01²)
 5. Нахиліть surface normal; boundary/impact мають лягти на surface відповідно до contract.
 6. Додайте вісім combat effects; telegraph і exit route лишаються видимими.
 7. Порівняйте residue з active hazard debug; при неактивній hazard воно не повинно виглядати небезпечним.
-8. Порівняйте H/M/L та before/after із тією самою camera/spawn schedule.
+8. Порівняйте H/M/L та до й після із тією самою camera/spawn schedule.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Blueprint phase architecture
 
@@ -306,7 +306,7 @@ Emitter DirectionStreaks
   Burst 12 → initialize along AbilityDirection/normal → velocity → Drag/Solve → Sprite
 ```
 
-Duration `.25 s`; long opaque flash відсутній. Direction і commit frame чітко читаються з gameplay camera.
+Duration `.25 s`; long opaque flash відсутній. Direction і commit frame чітко читаються з ігрової камери.
 
 ### `NS_P11_Ult_Impact`
 
@@ -350,13 +350,13 @@ Emitter SmokeWisps
 
 Остаточні reductions визначайте profiling; таблиця не є universal budget.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - Blueprint: `Spawn System at Location`, `Spawn System Attached`, `Activate`, `Deactivate`, `Reset System`, `Set Niagara Variable (Float/Linear Color/Vector3/Int32)`, `Line Trace by Channel` за contract;
 - Niagara: `Emitter State`, `Spawn Rate`, `Spawn Burst Instantaneous`, `Initialize Particle`, `Shape Location`, `Add Velocity`, `Add Velocity in Cone`, `Point Attraction Force`, `Vortex Force`, `Curl Noise Force`, `Gravity Force`, `Drag`, `Solve Forces and Velocity`, `Initial Mesh Orientation`, `Update Mesh Orientation`, `Scale Color`, `Scale Sprite Size`, `Scale Mesh Size`, `Dynamic Material Parameters`;
 - renderers: `Sprite Renderer`, `Mesh Renderer`, `Ribbon Renderer` за обґрунтованої потреби;
 - profiling: `Niagara Debugger`, `stat unit`, `stat gpu`, `ProfileGPU`, `Unreal Insights`, Shader Complexity/Quad Overdraw;
-- scalability: Niagara Effect Type/System scalability, culling і fixed bounds після вимірювання.
+- scalability: Niagara Effect Type/System scalability, culling і фіксовані межі після вимірювання.
 
 Exact labels, typed parameter setters, trace pins, orientation bindings і Effect Type options: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
@@ -387,7 +387,7 @@ Radius, durations і counts — project starting profile, не універса�
 - Residue: location лишається, active-state truth не спотворюється.
 - Integration: cast/cancel/reset повторюються без stale phases.
 - H/M/L: однакові radius, timing і critical cues.
-- Presentation: gameplay, neutral, breakdown і performance evidence узгоджені.
+- Presentation: gameplay, neutral, breakdown і докази продуктивності узгоджені.
 
 ## 15. Самостійна вправа
 
@@ -401,7 +401,7 @@ Radius, durations і counts — project starting profile, не універса�
 
 ### `EX-L11-04-B` — Hazard/readability/performance remediation
 
-Відтворіть або знайдіть чотири weaknesses: boundary mismatch, late contact, exit-route occlusion і High-tier overlap bottleneck. Виправте root causes, не змінюючи gameplay data для красивішого capture. Надайте debug parity, identical before/after, final H/M/L і оновлений rubric.
+Відтворіть або знайдіть чотири weaknesses: boundary mismatch, late contact, exit-route occlusion і High-tier overlap bottleneck. Усуньте першопричини, не змінюючи ігрові дані для красивішого capture. Надайте debug parity, зіставні матеріали до й після, final H/M/L і оновлений rubric.
 
 [Повне рішення B](../EXERCISE_ANSWERS/L11-04_character_ultimate_boss_ability_portfolio_piece_answers.md#ex-l11-04-b)
 
@@ -416,7 +416,7 @@ Radius, durations і counts — project starting profile, не універса�
 ### Для `EX-L11-04-B`
 
 - **Hint 1:** overlay debug geometry поверх VFX із fixed top/front views.
-- **Hint 2:** timing перевіряйте від gameplay event, а occlusion — desaturated gameplay camera.
+- **Hint 2:** timing перевіряйте від ігрової події, а occlusion — desaturated gameplay camera.
 - **Hint 3:** ізолюйте phase у profiler; спочатку зменшіть coverage/lifetime/redundant renderer, зберігши boundary/contact.
 
 ## 18. Типові помилки
@@ -446,7 +446,7 @@ Radius, durations і counts — project starting profile, не універса�
 
 ## 20. Performance considerations
 
-- Велика translucent screen coverage може домінувати над particle count.
+- Велике покриття екрана прозорими елементами може домінувати над particle count.
 - Impact створює короткий concurrency peak; residue створює overlap tail.
 - Mesh shard cost включає triangles, materials, shadows, orientation update і lifetime.
 - Rate×Lifetime для residue визначає live count; finite emitter duration обов’язкова.
@@ -483,20 +483,20 @@ Radius, durations і counts — project starting profile, не універса�
 
 ## 23. Self-check checklist
 
-- [ ] Creative brief, constraints, ethical reference board і gameplay contract існують.
+- [ ] Creative brief, constraints, етична добірка референсів і ігровий контракт існують.
 - [ ] Five phases читаються без color.
 - [ ] Boundary відповідає debug radius на трьох значеннях.
 - [ ] Commit/contact/end-state синхронні з gameplay.
 - [ ] Cancel/reset не залишають stale phase.
 - [ ] Gameplay camera й exit route читабельні в combat stack.
 - [ ] H/M/L зберігають усі critical cues.
-- [ ] Baseline/stress і before/after виміряні.
+- [ ] Baseline/stress і до й після виміряні.
 - [ ] Mandatory breakdown повний.
 - [ ] Rubric `≥80`, усі floors, жодного critical fail.
 
 ## 24. Mastery criteria
 
-Ви можете перетворити gameplay ability contract на читабельну багатоетапну VFX orchestration, довести radius/timing truth, знайти й виправити overlap bottleneck, зберегти critical cues у H/M/L і представити complete honest case study на `≥80/100` з category floors.
+Ви можете перетворити gameplay ability contract на читабельну багатоетапну VFX orchestration, довести radius/timing truth, знайти й виправити overlap bottleneck, зберегти critical cues у H/M/L і представити complete чесний опис проєкту на `≥80/100` з category floors.
 
 ## 25. Підсумок
 
@@ -504,7 +504,7 @@ Radius, durations і counts — project starting profile, не універса�
 
 ## 26. Зв’язок із наступними уроками
 
-[11.05](05_portfolio_breakdowns_reel_and_case_studies.md) перетворює всі чотири завершені pieces на перевірювані case studies, reel і delivery package, а також містить block assessment без додаткових годин.
+[11.05](05_portfolio_breakdowns_reel_and_case_studies.md) перетворює всі чотири завершені pieces на перевірювані описи проєктів, reel і delivery package, а також містить block assessment без додаткових годин.
 
 ## 27. Офіційні джерела
 
@@ -528,5 +528,5 @@ URL перевірено 2026-07-27. **Потребує ручної перев�
 5. Material graphs/instances і parameter table.
 6. Повні Niagara stacks для всіх phases.
 7. Blueprint diagram gameplay-data/state/reset.
-8. Gameplay combat-stack, H/M/L і before/after captures.
+8. Gameplay combat-stack, H/M/L і знімки до й після.
 9. Authorship, limitations, accessibility notes і final case-study layout.

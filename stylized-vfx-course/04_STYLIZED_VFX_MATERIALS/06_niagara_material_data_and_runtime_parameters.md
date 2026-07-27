@@ -56,7 +56,7 @@
 | Parameter scope | Хто бачить одне й те саме value | Particle, instance, component, global |
 | Fallback default | Value, яке зберігає readable effect, якщо runtime writer не спрацював | На receiving side |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Production effect рідко має одну фіксовану версію. Gameplay передає:
 
@@ -274,7 +274,7 @@ User.Charge per Niagara component:
 3. змініть MPC;
 4. доведіть: local colors різні, global intensity спільна.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Підготуйте material
 
@@ -497,7 +497,7 @@ Value = 0.25 або 2.0
 | Local mesh color | BP | Component | On spawn | — | DMI API | VectorParameter | authored |
 | Storm intensity | BP/world | Global | Event | — | MPC | CollectionParameter | 1 |
 
-## 12. Точні назви nodes, modules, settings і connections
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 ### Material connections
 
@@ -722,7 +722,7 @@ Exact debugger/material binding UI:
 - [ ] DMI створюється один раз і reference збережено.
 - [ ] MPC використано лише для global value.
 - [ ] Static values не оновлюються через Tick.
-- [ ] Усі receivers мають safe defaults.
+- [ ] Усі receivers мають безпечні початкові значення.
 - [ ] Data-path log завершений.
 
 ## 24. Mastery criteria
@@ -750,7 +750,7 @@ Exact debugger/material binding UI:
 
 ## 26. Зв’язок із наступними уроками
 
-У [L04-07](07_material_laboratory_capstone.md) усі data paths входять до production-ready Material Laboratory. У L07-05–L07-07 renderer bindings будуть відпрацьовані в повних Sprite/Mesh/Ribbon systems; у блоці 10 Blueprint lifecycle і gameplay data отримають production integration.
+У [L04-07](07_material_laboratory_capstone.md) усі data paths входять до готової до виробництва Material Laboratory. У L07-05–L07-07 renderer bindings будуть відпрацьовані в повних Sprite/Mesh/Ribbon systems; у блоці 10 Blueprint lifecycle і ігрові дані отримають production integration.
 
 ## 27. Офіційні джерела
 

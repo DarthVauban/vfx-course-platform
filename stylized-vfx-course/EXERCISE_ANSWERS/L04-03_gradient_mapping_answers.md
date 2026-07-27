@@ -114,5 +114,5 @@ Body-only, Edge-only, Combined debug; dark/mid/white backgrounds; no bloom captu
 
 ### Performance
 
-Two mapping branches додають ALU/function logic. Найбільший risk лишається translucent coverage. Medium може лишити single body ramp + constant edge color; Low — two-color body й narrower/removed cosmetic edge, якщо gameplay cue збережено.
+Two mapping branches додають ALU/function logic. Найбільший risk лишається translucent coverage. Medium може лишити single body ramp + constant edge color; Low — two-color body й narrower/removed cosmetic edge, якщо ігрову підказку збережено.
 

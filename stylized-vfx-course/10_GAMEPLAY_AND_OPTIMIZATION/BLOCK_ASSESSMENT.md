@@ -110,7 +110,7 @@ Exact node/pin/UI behavior: **Потребує ручної перевірки �
 
 - Blueprint і request schema;
 - timeline socket і notifies;
-- normal, cancel і re-entry з gameplay camera;
+- normal, cancel і re-entry з ігрової камери;
 - variants parameters;
 - target loss;
 - count у Debugger після cooldown.
@@ -144,7 +144,7 @@ Exact node/pin/UI behavior: **Потребує ручної перевірки �
 
 Виконай один fixed scenario для baseline і comparison після однієї change. Запиши:
 
-- target hardware і platform;
+- цільове обладнання й платформа;
 - build і configuration;
 - resolution і profile;
 - map і camera;
@@ -191,7 +191,7 @@ symptom → hypotheses → ordered tests → root cause → one change → fresh
 2. Contract lifecycle, re-entry і target loss.
 3. Таблицю trade-offs H/M/L.
 4. Таблицю platform і profile.
-5. Notes із gameplay camera.
+5. Notes з ігрової камери.
 6. Index performance evidence.
 7. Найсильніше decision.
 8. Найслабший remaining risk.
@@ -217,7 +217,7 @@ symptom → hypotheses → ordered tests → root cause → one change → fresh
 | Correctness position, direction і space | 4 |
 | Typed parameters color, scale і target | 4 |
 | Target loss і stale reset | 4 |
-| Evidence із gameplay camera | 3 |
+| Evidence з ігрової камери | 3 |
 | Active count після cooldown | 3 |
 
 ## Practical B — 20
@@ -249,7 +249,7 @@ symptom → hypotheses → ordered tests → root cause → one change → fresh
 | Texture memory | 1 |
 | Mesh/ribbon/collision/light/sorting | 1 |
 | Bounds/culling | 1 |
-| Rerun після однієї change, спрямованої на root cause | 1 |
+| Rerun після однієї change, спрямованої на першопричину | 1 |
 
 ## Self-review — 10
 
@@ -304,7 +304,7 @@ Valid remediation має:
 
 1. назвати failed item rubric;
 2. відтворити fault;
-3. визначити root cause відповідним tool;
+3. визначити першопричину відповідним tool;
 4. змінити одну controlled variable або policy;
 5. повторити той самий scenario;
 6. показати performance і gameplay result.

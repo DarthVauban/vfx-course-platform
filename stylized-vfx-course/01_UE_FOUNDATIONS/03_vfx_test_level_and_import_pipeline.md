@@ -1,4 +1,4 @@
-# 1. L01-03 — VFX test level, камера та pipeline імпорту
+# 1. L01-03 — тестова VFX-сцена, камера та pipeline імпорту
 
 | Поле | Значення |
 |---|---|
@@ -47,7 +47,7 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Практичний приклад | Glossary |
+| Англійський термін | Українське пояснення | Практичний приклад | Glossary |
 |---|---|---|---|
 | Test level | Контрольована карта для повторюваного огляду assets/effects | `L_VFX_Test` | [Test level](../02_GLOSSARY.md#test-level) |
 | Camera station | Зафіксований Transform і lens state для порівнянь | `CameraActor` у `L_VFX_Test` | [Camera station](../02_GLOSSARY.md#camera-station) |
@@ -57,9 +57,9 @@
 | Mip | Зменшена версія texture для sampling на меншому screen size | Mip chain у Texture Asset Editor | [Mip](../02_GLOSSARY.md#mip) |
 | Pivot | Опорна точка mesh для Transform, rotation і attachment | Центр diagnostic cube | [Pivot](../02_GLOSSARY.md#pivot) |
 | Normal | Напрям поверхні, що впливає на shading і culling | Cube faces спрямовані назовні | [Normal](../02_GLOSSARY.md#normal) |
-| UV channel | 2D coordinates mesh для texture sampling | UV channel 0 у diagnostic cube | [UV channel](../02_GLOSSARY.md#uv-channel) |
+| UV channel | 2D coordinates mesh для вибірки текстури | UV channel 0 у diagnostic cube | [UV channel](../02_GLOSSARY.md#uv-channel) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX часто “виглядає неправильно” не через Niagara або shader math, а через source data:
 
@@ -70,7 +70,7 @@ VFX часто “виглядає неправильно” не через Nia
 - normals спрямовані не туди;
 - порівняння виконано з іншої camera distance.
 
-Test level перетворює суб’єктивне “щось не так” на контрольоване питання: що змінилося — asset, import settings, placement чи камера? Ця звичка надалі використовується для Material, Niagara, gameplay readability і performance.
+Test level перетворює суб’єктивне “щось не так” на контрольоване питання: що змінилося — asset, import settings, placement чи камера? Ця звичка надалі використовується для Material, Niagara, читабельність під час гри і performance.
 
 ## 7. Теорія простими словами
 
@@ -227,12 +227,12 @@ correction factor for source investigation = 1 / 0.1 = 10
 ### CE-L01-03-03 — Mesh scale comparison
 
 - Розмісти reference й imported cube з actor Scale `(1,1,1)`.
-- Оціни width у world space або за однаковою grid.
+- Оціни width у світовому просторі або за однаковою grid.
 - Запиши ratio.
 - Поверни imported actor до заданої station.
 - **Висновок:** “виглядає приблизно однаково” не замінює ratio й screenshot.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L01-03 — Стандартизований import sandbox
 
@@ -309,7 +309,7 @@ correction factor for source investigation = 1 / 0.1 = 10
 18. **Заверши import record.**  
     Verdict для кожного: `PASS`, `PASS WITH OBSERVATION` або `FAIL`; додай один конкретний next action для failure.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Material Graph і Niagara stack не створюються.
 
@@ -336,7 +336,7 @@ Exact property locations, active importer і dialog defaults: **Потребує
 | P01 | Diagnostic texture | Dimensions | 256×256 | 512×512 збільшує pixel count у 4 рази |
 | P02 | Diagnostic texture | Bit depth | 8 bit/channel | Інший bit depth змінює precision/size й потребує окремої перевірки |
 | P03 | Reference actors | Scale | `(1,1,1)` | Інша actor Scale псує import-size comparison |
-| P04 | CameraActor | Location | `(-800,0,220)` | Distance змінює screen coverage |
+| P04 | CameraActor | Location | `(-800,0,220)` | Distance змінює покриття екрана |
 | P05 | CameraActor | Rotation | `(-12,0,0)` | Інший angle змінює silhouette й floor visibility |
 | P06 | Imported mesh actor | Location | `(0,200,50)` | Інша station ускладнює side-by-side |
 | P07 | Source Cube | Dimensions | 1 m each axis | Інший source size змінює expected ratio |
@@ -380,26 +380,26 @@ Exact property locations, active importer і dialog defaults: **Потребує
 
 Імпортуй усі чотири files з різними semantic suffixes `_Probe` і `_Corrected`. Не називай probe “broken”, доки UE validation не покаже конкретну проблему.
 
-**Acceptance criteria:** before/after table описує фактичні mips/resource/scale/pivot observations; жодного універсального твердження “NPOT завжди не працює”; corrected pair обрана на основі цільового use, а не ритуалу.
+**Acceptance criteria:** до й після table описує фактичні mips/resource/scale/pivot observations; жодного універсального твердження “NPOT завжди не працює”; corrected pair обрана на основі цільового use, а не ритуалу.
 
 ## 17. Три рівні підказок
 
 ### EX-L01-03-A
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Визнач expected evidence до import: dimensions, visible pattern, scale ratio, pivot і UV presence.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 Photoshop/Krita New Document і Gradient/Border; Blender primitive, Dimensions, origin, UV, export selected; UE Import, Texture Asset Editor, Static Mesh Editor, CameraActor.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Source contract → export record → canonical import → editor inspection → placement at fixed station → side-by-side screenshot → verdict → reopen test.
 </details>
@@ -409,19 +409,19 @@ Source contract → export record → canonical import → editor inspection →
 ### EX-L01-03-B
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Не шукай “правильний preset”. Зміни одну source property і виміряй, що реально змінилося після import.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні інструменти</summary>
+<summary>Підказка 2 — потрібні інструменти</summary>
 
 Дві texture dimensions, дві mesh transform states, однаковий importer per pair, Texture/Static Mesh editors, actor Scale `(1,1,1)`, A/B table.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Для texture зафіксуй dimensions, mip chain і resource info; для mesh — source Dimensions/Scale, imported size ratio і pivot. Verdict окремо для Probe й Corrected, без зміни camera або station.
 </details>
@@ -457,7 +457,7 @@ Source contract → export record → canonical import → editor inspection →
 - Resource size залежить не лише від file size, а від imported format, compression, mips і platform.
 - Non-power-of-two texture не оголошується автоматично “помилкою”; перевіряй mip/streaming behavior і target use.
 - Mesh cost не визначається лише triangle count; material, overdraw, instance count і renderer path важливіші в багатьох VFX.
-- Camera distance визначає screen coverage, тому однаковий asset може мати різний practical cost у різних shots.
+- Camera distance визначає покриття екрана, тому однаковий asset може мати різний practical cost у різних shots.
 - Не запускай benchmark під час import, shader compilation або thumbnail generation.
 - Запиши texture resource information і mesh triangle/vertex counts як baseline, без універсального pass/fail budget.
 

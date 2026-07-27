@@ -48,7 +48,7 @@
 - **Aspect correction** — compensation, щоб normalized UV shape не розтягувалась.
 - **Tau** — `2π`, full turn у radians.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Procedural shapes дають art-directable telegraphs, rings, shockwaves, beams і magic-circle elements без окремої texture для кожної width/angle. Навіть коли фінальний effect texture-driven, procedural masks керують erosion, edge, timing і variation.
 
@@ -172,7 +172,7 @@ Composition shapes для normalized masks:
 5. **Polar:** preview angle до і після normalization або Frac; знайдіть seam.
 6. **Repetition:** `Repeats=1,4,8,32`; рухайте camera і занотуйте aliasing.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph — `M_L03_05_ShapeLab`
 
@@ -289,11 +289,11 @@ Colorize.Output → MaterialOutput.Emissive Color
 6. Ring × angular window = arc.
 7. ShowArc порівнює full ring і arc.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 `CenteredUV`, `ShapeP`, `RadiusDistance`, `RingDistance`, `RingMask`, `PolarAngleRad`, `Angle01`, `StartGate`, `EndGate`, `AngularWindow`, `ArcRing`.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `Length`, `Distance`, `DotProduct`, `Normalize`
 - `Arctangent2Fast` (or current documented equivalent)
@@ -453,7 +453,7 @@ Centered coordinates, distance, dot і polar angle утворюють компа
 
 ## 26. Зв’язок із наступними уроками
 
-[03.06](06_texture_sampling_channels_and_flipbooks.md) переносить ті ж masks у sampled textures, packed channels, mips і flipbook atlases.
+[03.06](06_texture_sampling_channels_and_flipbooks.md) переносить ті ж masks у sampled textures, упаковані канали, mips і flipbook atlases.
 
 ## 27. Офіційні джерела
 

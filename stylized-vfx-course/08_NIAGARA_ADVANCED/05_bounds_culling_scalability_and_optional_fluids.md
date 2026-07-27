@@ -6,7 +6,7 @@
 | Lesson ID | L08-05 |
 | Цільова версія | Unreal Engine 5.8 |
 | Артефакт уроку | Bounds/scalability-controlled advanced System, culling matrix і optional Fluids-to-flipbook dossier |
-| Mastery gate | Ефект не зникає в intended range, коректно cull-иться поза ним і зберігає gameplay cue на нижчих tiers |
+| Mastery gate | Ефект не зникає в intended range, коректно cull-иться поза ним і зберігає ігрову підказку на нижчих tiers |
 
 ## 2. Результат уроку
 
@@ -17,10 +17,10 @@
 - включати velocity, lifetime, component motion, mesh size та WPO у bounds envelope;
 - будувати camera-edge, off-screen, re-entry і fast-motion tests;
 - створювати High/Medium/Low Niagara renderer/emitter policy;
-- відокремлювати gameplay cue від cosmetic layers;
+- відокремлювати ігрову підказку від cosmetic layers;
 - підготувати Effect Type/scalability integration notes;
 - коректно трактувати Niagara Fluids як Beta й факультативну feature;
-- оцінити fluids-to-flipbook як можливий shipping representation без обіцянки універсального workflow.
+- оцінити fluids-to-flipbook як можливий спосіб подання для фінальної збірки без обіцянки універсального workflow.
 
 Доказ: bounds proof, tier comparison, culling/re-entry capture і Block 08 assessment.
 
@@ -63,9 +63,9 @@ Optional Fluids study замінює частину guided extension або ви
 | Spawn Count Scale | Tier multiplier для spawn amount |
 | Cue parity | Lower tier зберігає gameplay meaning/timing/area |
 | Niagara Fluids | Beta plugin/templates для grid-based simulations рідин |
-| Bake/flipbook | Перетворення simulation frames на texture atlas representation |
+| Bake/flipbook | Перетворення simulation frames на подання в атласі текстур |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Неправильні bounds дають дві протилежні проблеми:
 
@@ -248,7 +248,7 @@ Actual cost також залежить від stages/iterations/features.
 
 ### CE08-05-A — Too-small bounds
 
-1. Установіть навмисно малі fixed bounds.
+1. Установіть навмисно малі фіксовані межі.
 2. Перемістіть camera так, щоб origin вийшов із frustum, поки particles лишаються у visible region.
 3. Зафіксуйте pop.
 4. Відновіть calculated/validated bounds.
@@ -273,7 +273,7 @@ Actual cost також залежить від stages/iterations/features.
 
 ### CE08-05-D — Tier cue parity
 
-Зробіть captures High/Medium/Low з reference і far camera, приховайте labels та застосуйте детермінований циклічний порядок за номером спроби `A`; запишіть `A` і порядок. Після перерви пройдіть blind self-review без підказок і до розкриття labels запишіть відповіді:
+Зробіть captures High/Medium/Low з reference і far camera, приховайте labels та застосуйте детермінований циклічний порядок за номером спроби `A`; запишіть `A` і порядок. Після перерви пройдіть самооцінювання без підказок і до розкриття labels запишіть відповіді:
 
 - де danger area;
 - коли відбувається hit;
@@ -282,7 +282,7 @@ Actual cost також залежить від stages/iterations/features.
 
 Optional peer/reviewer може повторити той самий checklist, але не є умовою проходження.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Побудуйте `NS_AdvancedControl`
 
@@ -565,7 +565,7 @@ Universal numeric cull/budget threshold не задається.
 
 1. **Напрям:** вимірюйте maximum rendered extents, а не emitter origin.
 2. **Структура:** spread + motion + size/WPO + component motion; потім camera/re-entry tests.
-3. **Майже відповідь:** захистіть core ring/hit; зменште cosmetic count/layers; оберіть tight validated fixed або proven dynamic bounds; налаштуйте lifecycle так, щоб visibility return не повторював gameplay cue.
+3. **Майже відповідь:** захистіть core ring/hit; зменште cosmetic count/layers; оберіть tight validated fixed або proven dynamic bounds; налаштуйте lifecycle так, щоб visibility return не повторював ігрову підказку.
 
 ### EX08-05-B
 
@@ -708,7 +708,7 @@ Gate G08:
 
 - Bounds є correctness і performance contract.
 - Перевіряйте disappearance і return.
-- Scalability вилучає cosmetic cost, зберігаючи gameplay cue.
+- Scalability вилучає cosmetic cost, зберігаючи ігрову підказку.
 - Effect Type поширює policy; System override — explicit exception.
 - Niagara Fluids у UE 5.8 має status Beta й є optional.
 - Flipbook can be fallback, але його pipeline/memory/overdraw теж треба validate.

@@ -9,7 +9,7 @@
 1. **Milestone exit criterion.** Він визначає перевірюванний стан готовності/quality gate; дата сама не доводить, що risk або requirement закрито.
 2. **Ethical reference record.** Source/URL, creator, access date, lawful use/license за потреби, abstract principle, planned transformation і те, що не копіюється.
 3. **Неоригінальне bundled copying.** Exact/recognizable поєднання palette, silhouette/glyph, timing, motion і composition, навіть якщо texture technically перемальована.
-4. **Пріоритет gameplay cue.** Contact/telegraph повідомляє реальну timing/location/hazard information; decorative layer не може робити цю інформацію хибною або невидимою.
+4. **Пріоритет ігрової підказки.** Contact/telegraph повідомляє реальну timing/location/hazard information; decorative layer не може робити цю інформацію хибною або невидимою.
 5. **Category floor.** Мінімум у кожній компетенції; високий polish в іншій категорії не компенсує критичну слабкість.
 6. **Melee Low cue.** Усі contact timings і direction/slash/contact confirmation; прийнятна конкретна відповідь із mandatory cue set.
 7. **Не hue-only.** Color може зникнути/змішатися; variant identity потребує distinct shape, motion, timing, frequency й decay.
@@ -99,7 +99,7 @@ Full score: усі required groups є для всіх four pieces і читаб�
 - bottleneck/change названі;
 - actual measured values/ranges, без universal invented budgets.
 
-## Частина D — self-review anchors
+## Частина D — самооцінювання anchors
 
 ### Per case study `2 points`
 
@@ -142,7 +142,7 @@ Walkthrough має відповісти `чому`, `як`, `як вимірян
 
 ## Weak-topic remediation examples
 
-### Приклад 1 — gameplay readability
+### Приклад 1 — читабельність під час гри
 
 Failed topic: `Rift Crown` boundary `450 cm` не збігається з debug circle.
 

@@ -13,9 +13,9 @@
 - per-instance керування аурою та матеріалом персонажа через Blueprint;
 - безпечне переривання, повторний запуск і скидання pooled/reused state;
 - High/Medium/Low variants зі збереженою gameplay identity;
-- виміряне performance evidence для одного й кількох персонажів;
+- зібрані докази продуктивності для одного й кількох персонажів;
 - gameplay, neutral-view і повний technical breakdown;
-- чесний 100-point self-review із category floors.
+- чесне 100-бальне самооцінювання із category floors.
 
 Результати: `NS_P11_Aura_Activation`, `NS_P11_Aura_Loop`, `NS_P11_Aura_Deactivation`, `M_P11_Aura_Character`, `MI_P11_Aura_Character`, `BP_P11_AuraController`, `L_P11_Aura_Portfolio`, `LS_P11_Aura_Capture`.
 
@@ -54,7 +54,7 @@ M/S ledger: **1 година; cumulative 3.5/6 години блоку**.
 - **Cue parity** — однакова gameplay meaning у High/Medium/Low, навіть якщо декоративна складність різна.
 - **Neutral capture** — технічний ракурс без монтажу, що показує весь lifecycle і дефекти.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Character aura перевіряє не лише красу одного burst. Вона повинна коректно входити в стан, довго жити, не закривати персонажа й combat cues, реагувати на scale/team/state, переживати cancel/restart і масштабуватися на кількох actors. Це production-style задача на Niagara, materials, Blueprint lifecycle, readability і performance одночасно.
 
@@ -79,7 +79,7 @@ Character aura перевіряє не лише красу одного burst. �
 - activation: `0.9 s`, inward motes, одна expanding-to-lock ring, короткий character-edge reveal;
 - loop: спокійний `2.0 s` pulse cycle, sparse orbit motes, тонка ground boundary;
 - deactivation: `0.5 s`, collapse ring, inward pull і короткий edge fade;
-- gameplay intent: активний захисний state читається з 3–12 m і не маскує feet, weapon, face або hostile telegraphs;
+- ігровий задум: активний захисний state читається з 3–12 m і не маскує feet, weapon, face або hostile telegraphs;
 - visual language: faceted, pale cyan/amber accent, без копіювання впізнаваного franchise motif.
 
 ### Technical requirements
@@ -131,7 +131,7 @@ In scope: visual activation/loop/deactivation, per-character MID/User data, Blue
 | M2 Niagara | три systems мають різні roles і stable attachment |
 | M3 Integration | Blueprint, MID, parameters і cleanup стабільно працюють повторно |
 | M4 Art/readability | original assets, palette і gameplay silhouettes пройшли перевірку |
-| M5 Performance | fixed target tests, before/after і H/M/L завершені |
+| M5 Performance | fixed target tests, до й після і H/M/L завершені |
 | M6 Presentation | gameplay/neutral captures і mandatory breakdown завершені |
 
 ### Production checklist
@@ -140,7 +140,7 @@ In scope: visual activation/loop/deactivation, per-character MID/User data, Blue
 - [ ] controller дозволяє тільки визначені transitions;
 - [ ] cancel/restart не залишає дубльовану loop;
 - [ ] кожен character має окремий MID/state;
-- [ ] root/spine attachment і local/world space задокументовані;
+- [ ] root/spine attachment і локальний/світовий простір задокументовані;
 - [ ] ground cue не ковзає й не перебільшує gameplay radius;
 - [ ] weapon, feet, face і hostile cues залишаються видимими;
 - [ ] H/M/L зберігають active-state identity;
@@ -171,7 +171,7 @@ In scope: visual activation/loop/deactivation, per-character MID/User data, Blue
 - gameplay camera, close neutral camera, dark/mid/bright backgrounds;
 - warmed systems/shaders, той самий маршрут і тривалість.
 
-Зберіть `stat unit`, `stat gpu`/GPU profiler where available, Niagara Debugger counts, Shader Complexity/Quad Overdraw та Unreal Insights при CPU hitch. Покажіть range/representative frames, bottleneck і однаковий before/after. Pass — заявлений target виконано без state loss, visible culling, bounds pop або warning. **Не вигадуйте універсальні particle, draw-call чи millisecond budgets.**
+Зберіть `stat unit`, `stat gpu`/GPU profiler where available, Niagara Debugger counts, Shader Complexity/Quad Overdraw та Unreal Insights при CPU hitch. Покажіть range/representative frames, bottleneck і однаковий до й після. Pass — заявлений target виконано без state loss, visible culling, bounds pop або warning. **Не вигадуйте універсальні particle, draw-call чи millisecond budgets.**
 
 ### Presentation requirements
 
@@ -180,7 +180,7 @@ In scope: visual activation/loop/deactivation, per-character MID/User data, Blue
 - simultaneous two-character capture, що доводить per-instance color/state;
 - cancel/restart proof у real time;
 - default plus H/M/L comparison;
-- performance before/after за однакових умов;
+- показники продуктивності до й після за однакових умов;
 - captions: piece, engine build, target, role, tools, third-party assets;
 - slow playback позначається як slowed; cinematic shot не є performance proof.
 
@@ -192,8 +192,8 @@ In scope: visual activation/loop/deactivation, per-character MID/User data, Blue
 4. character/aura material graphs, functions, instances і parameter contract;
 5. повні Niagara stacks усіх трьох systems;
 6. Blueprint state-machine, attachment, MID і reset diagram;
-7. performance before/after evidence за однакових умов;
-8. High/Medium/Low table зі збереженими gameplay cues;
+7. дані про продуктивність до й після за однакових умов;
+8. High/Medium/Low table зі збереженими ігровими підказками;
 9. limitations, known edge cases і next iteration.
 
 ### Completion criteria / Definition of Done
@@ -238,7 +238,7 @@ gameplay state identity > character silhouette > transition accent > orbit detai
 7. Перевірте black/mid/white backgrounds, feet/weapon/face visibility.
 8. Порівняйте 1/4/8 actors і H/M/L за однакової camera route.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### State і Blueprint architecture
 
@@ -336,7 +336,7 @@ Emitter ResidualPin
 
 Остаточні values визначає target profiling; starting reductions не є budgets.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - Blueprint/material: `Create Dynamic Material Instance`, `Set Scalar Parameter Value`, `Set Vector Parameter Value`, `Set Niagara Variable (Float/Linear Color/Vector3/Int32)`, `Activate`, `Deactivate`, `Reset System`;
 - Niagara: `Emitter State`, `Spawn Rate`, `Spawn Burst Instantaneous`, `Initialize Particle`, `Shape Location`, `Skeletal Mesh Location`, `Add Velocity`, `Point Attraction Force`, `Vortex Force`, `Curl Noise Force`, `Drag`, `Solve Forces and Velocity`, `Initial Mesh Orientation`, `Scale Color`, `Scale Sprite Size`, `Scale Mesh Size`, `Dynamic Material Parameters`;
@@ -374,7 +374,7 @@ Character radius і timing мають походити з вашого gameplay 
 - Deactivation: візуально й технічно очищає state.
 - Integration: два characters незалежні; cancel/restart проходить десять циклів.
 - H/M/L: однакове state meaning, менша measured complexity.
-- Presentation: gameplay, neutral і performance evidence не суперечать одне одному.
+- Presentation: gameplay, neutral і докази продуктивності не суперечать одне одному.
 
 ## 15. Самостійна вправа
 
@@ -388,7 +388,7 @@ Character radius і timing мають походити з вашого gameplay 
 
 ### `EX-L11-03-B` — Cancellation, isolation and performance remediation
 
-Знайдіть або навмисно відтворіть чотири weaknesses: orphan loop після cancel, shared color між characters, silhouette occlusion і High-tier overdraw. Виправте root causes, проведіть 1/4/8-character test, надайте identical before/after і чесно оновіть rubric.
+Знайдіть або навмисно відтворіть чотири weaknesses: orphan loop після cancel, shared color між characters, silhouette occlusion і High-tier overdraw. Усуньте першопричини, проведіть 1/4/8-character test, надайте зіставні матеріали до й після і чесно оновіть rubric.
 
 [Повне рішення B](../EXERCISE_ANSWERS/L11-03_character_aura_transformation_portfolio_piece_answers.md#ex-l11-03-b)
 
@@ -433,7 +433,7 @@ Character radius і timing мають походити з вашого gameplay 
 
 ## 20. Performance considerations
 
-- Persistent Rate×Lifetime визначає live particle count; навіть низький rate накопичується при довгому lifetime.
+- Persistent Rate×Lifetime визначає кількість одночасно активних частинок; навіть низький rate накопичується при довгому lifetime.
 - Character-surface sampling, translucent coverage і multiple material passes можуть коштувати більше, ніж burst count.
 - Actor count множить components, emitters, parameter updates і bounds work.
 - Один persistent halo particle часто контрольованіший за repeated ring spawn.
@@ -469,7 +469,7 @@ Character radius і timing мають походити з вашого gameplay 
 
 ## 23. Self-check checklist
 
-- [ ] Creative brief, constraints і ethical reference board існують.
+- [ ] Creative brief, constraints і етична добірка референсів існують.
 - [ ] Three-system state lifecycle проходить три цикли.
 - [ ] Cancel/restart і generation token перевірено.
 - [ ] Два characters мають незалежні MID/User parameters.
@@ -482,7 +482,7 @@ Character radius і timing мають походити з вашого gameplay 
 
 ## 24. Mastery criteria
 
-Ви можете пояснити й побудувати persistent character effect як stateful system: розділити transitions/loop, передати per-instance data, безпечно обробити cancel/restart, зберегти gameplay readability, виміряти кілька actors і представити complete honest case study на `≥80/100` з category floors.
+Ви можете пояснити й побудувати persistent character effect як stateful system: розділити transitions/loop, передати per-instance data, безпечно обробити cancel/restart, зберегти читабельність під час гри, виміряти кілька actors і представити complete чесний опис проєкту на `≥80/100` з category floors.
 
 ## 25. Підсумок
 

@@ -1,4 +1,4 @@
-# 1. L05-04 — Gradient ramps, distortion і channel packing
+# 1. L05-04 — Gradient ramps, distortion і пакування каналів
 
 | Поле | Значення |
 |---|---|
@@ -52,9 +52,9 @@
 | Neutral point | Encoded value, що означає нульовий offset; тут 0.5 |
 | Signed remap | Перетворення 0–1 у −1–1: `x×2−1` або `(x−0.5)×2` |
 | Crosstalk | Небажана зміна/вплив channels через authoring, compression або sampling |
-| Shared fate | Усі packed channels мають однакові resolution, mips, addressing і compression |
+| Shared fate | Усі упаковані канали мають однакові resolution, mips, addressing і compression |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Ramps відділяють shape від palette: одна grayscale mask може стати fire, poison або ice без нового artwork. Packing може зменшити кількість texture assets і samples, але тільки коли channels мають сумісні runtime requirements.
 
@@ -161,7 +161,7 @@ flowchart LR
 - Reopen export і UE channel viewer.
 - Очікування: кожен channel лишається своїм; composite preview не є acceptance test.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L05-04-A — Ramp
 
@@ -193,7 +193,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Compression Settings labels such as `Masks (no sRGB)`, Texture Group values, alpha-related runtime format, Address controls, imported bit depth і resource-size reporting звірте у встановленому build.
 
-## 12. Точні назви nodes, modules, settings і connections
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 ### `M_PS_DistortionViewer`
 
@@ -227,7 +227,7 @@ TextureSample_Preview.RGB → MaterialOutput.Emissive Color
 
 ### `M_PS_ChannelViewer`
 
-Використайте exact graph із [L05-01 section 12](01_photoshop_vfx_texture_workflow.md#12-точні-назви-nodes-modules-settings-і-connections) і weights R/G/B/A.
+Використайте точну схему графа з [розділу 12 уроку L05-01](01_photoshop_vfx_texture_workflow.md#12-точні-назви-вузлів-модулів-налаштувань-і-зєднань) та ваги каналів R/G/B/A.
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact ComponentMask/TextureSample RG pin exposure та Material root UI звірте у встановленому build.
 
@@ -338,7 +338,7 @@ TextureSample_Preview.RGB → MaterialOutput.Emissive Color
 1. Коли ramp має `sRGB=On`, а коли Off?
 2. Яка formula кодує −1–1 у 0–1?
 3. Чому neutral для RG distortion близький до 0.5?
-4. Що означає shared fate packed channels?
+4. Що означає спільна доля упакованих каналів?
 5. Чому packing не гарантує меншу memory?
 6. Які settings мають бути сумісні до packing?
 7. Як перевірити channel integrity?

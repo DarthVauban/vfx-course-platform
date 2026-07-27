@@ -6,7 +6,7 @@
 | Lesson ID | L08-03 |
 | Цільова версія | Unreal Engine 5.8 |
 | Артефакт уроку | `NS_AbilityDataContract`, `BP_AbilityVFXProbe` і 12-instance reuse wall |
-| Mastery gate | Один Niagara System приймає typed direction/color/scale/target inputs, має safe defaults і не потребує asset duplication |
+| Mastery gate | Один Niagara System приймає typed direction/color/scale/target inputs, має безпечні початкові значення і не потребує asset duplication |
 
 ## 2. Результат уроку
 
@@ -60,7 +60,7 @@
 | Type-safe setter | Blueprint/API setter, type якого збігається з Niagara parameter |
 | Fallback | Safe value при missing/invalid writer |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Reusable effect повинен працювати для:
 
@@ -275,7 +275,7 @@ Material M_Charge01 = Charge01
 
 Активуйте red/large/left, деактивуйте, потім активуйте без explicit new values. Це навмисний failure. Виправте його повною initialization до white/1/+X/default target перед activation.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Запишіть public API
 
@@ -664,7 +664,7 @@ Target marker world position
 
 1. direction/color/scale/target/charge працюють незалежно;
 2. zero/near-zero input безпечний;
-3. world/local space правильний;
+3. світовий/локальний простір обрано правильно;
 4. один System обслуговує 12 instances;
 5. Blueprint contract typed і documented;
 6. material binding verified;

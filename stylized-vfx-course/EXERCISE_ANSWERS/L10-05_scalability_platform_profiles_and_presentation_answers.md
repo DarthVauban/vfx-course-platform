@@ -92,7 +92,7 @@ Profile changes наслідують measured contributors, захищаючи g
 - Прибрати telegraph у Low, але лишити smoke.
 - Назвати Editor Epic profile доказом High.
 - Зробити Sequencer єдиним trigger.
-- Задати huge fixed bounds, щоб припинити popping.
+- Задати надмірно великі фіксовані межі, щоб припинити popping.
 - Ігнорувати cull re-entry.
 
 ### 12. Висновок щодо продуктивності
@@ -136,7 +136,7 @@ H/M/L decisions чинні для named profiles і scenarios. Additional platfo
 
 **Симптом:** return to relevance створює другий contact burst.
 
-**Test:** log system age, ActionID, cull reason/reaction і spawn count before/after.
+**Test:** log system age, ActionID, cull reason/reaction і spawn count до й після.
 
 **Fix:** select tested cull reaction/re-entry behavior або залишити critical finite burst gameplay-owned замість sleep/reset.
 
@@ -172,7 +172,7 @@ H/M/L decisions чинні для named profiles і scenarios. Additional platfo
 
 ### 11. Перевірка
 
-Evidence містить чотири failure captures, cull logs, самостійну blind review після паузи й deterministic shuffle, before/after performance, clean gameplay camera і post-cooldown active count.
+Evidence містить чотири failure captures, cull logs, самостійну blind review після паузи й deterministic shuffle, дані про продуктивність до й після, clean gameplay camera і post-cooldown active count.
 
 ### 12. Висновок щодо продуктивності
 

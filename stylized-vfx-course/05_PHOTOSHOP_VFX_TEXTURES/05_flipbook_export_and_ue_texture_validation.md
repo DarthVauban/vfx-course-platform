@@ -58,7 +58,7 @@ Assessment hours уже включені в `4.5` practice цього уроку
 | Mip contamination | Змішування cells на нижчих mip levels |
 | Registration | Стабільний pivot/center між frames |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Flipbook переносить складну shape evolution у один sample: explosion, smoke puff, ring, slash trail або impact core. Але atlas створює нову межу — не texture border, а border кожної cell. Bilinear filtering і mips можуть читати сусідній frame, тому «чистий PNG» ще не означає чистий runtime.
 
@@ -161,7 +161,7 @@ flowchart LR
 - Порівняйте frame contact sheet at mip 0 і distant runtime.
 - Очікування: lower mips змішують tiny cells сильніше; рішення залежить від gameplay size, padding, resolution і mip policy.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L05-05-A — Frame sequence
 
@@ -201,7 +201,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact texture import defaults, alpha detection, Compression Settings, Mip Gen Settings, Texture Group, Texture Asset Editor mip controls, Material node/pin labels і row orientation звірте у встановленому build.
 
-## 12. Точні назви nodes, modules, settings і connections
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 Material properties: `Surface`, `Translucent`, `Unlit`, `Two Sided=On`.
 
@@ -378,7 +378,7 @@ TextureSample_Atlas.A → MaterialOutput.Opacity
 5. Bleeding бере pixels сусіднього frame; halo походить із RGB/alpha edge mismatch.
 6. Щоб однозначно виявити row orientation, swap і indexing errors.
 7. 4,194,304 bytes, тобто 4.00 MiB.
-8. Mips зменшують aliasing/minification cost; рішення треба виміряти на target platform/distance.
+8. Mips зменшують aliasing/minification cost; рішення треба виміряти на цільовій платформі/distance.
 
 ## 23. Self-check checklist
 
@@ -401,7 +401,7 @@ TextureSample_Atlas.A → MaterialOutput.Opacity
 4. Import contract і resource size recorded.
 5. Manual viewer graph відтворено з memory.
 6. Block assessment score ≥80/100 і category floors виконані.
-7. 7/8 self-check answers правильні.
+7. 7/8 відповіді самоперевірки правильні.
 8. G05 evidence не містить proprietary assets.
 
 ## 25. Підсумок

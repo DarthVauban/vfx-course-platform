@@ -54,7 +54,7 @@ Additive для світної енергії є коректним третім
 
 ### Продуктивність
 
-Masked часто інакше відкидає pixels/depth; overdraw у Translucent накопичується. Вимірюйте screen coverage і shader complexity, а не лише кількість вузлів матеріалу.
+Masked часто інакше відкидає pixels/depth; overdraw у Translucent накопичується. Вимірюйте покриття екрана і shader complexity, а не лише кількість вузлів матеріалу.
 
 ## EX-L03-07-B
 

@@ -22,7 +22,7 @@
 - 45 хв — Burst/Rate і emitter window;
 - 45 хв — Age/Lifetime/NormalizedAge;
 - 30 хв — curves і interpolation;
-- 60 хв — controlled experiments;
+- 60 хв — контрольовані експерименти;
 - 150 хв — guided study;
 - 90 хв — exercises A/B та evidence.
 
@@ -46,7 +46,7 @@
 - **Deterministic random stream** — random sequence, повторювана для того самого seed і compatible execution path.
 - **Reset protocol** — однакова процедура restart, capture time і test state.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Stylized impact читається через timing: швидкий onset, короткий hold, контрольований decay. Якщо curve прив’язана до секунд, зміна lifetime ламає форму. Якщо вона прив’язана до normalized age, короткий і довгий particle проходять ті самі фази у різному темпі. Spawn method окремо керує кількістю та ритмом, а lifetime — одночасною насиченістю.
 
@@ -132,7 +132,7 @@ Emitter Rate: `10/s`, active `2 s`, lifetime `1 s`.
 4. **Seconds trap:** підмініть curve input на `Particles.Age`; particle з lifetime `0.5` не дістанеться keys після `.5`.
 5. **Reset:** тричі виконайте Reset Simulation і capture на `t=.50`; random-free guided setup має збігтися в межах frame/capture protocol.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 Створіть `NS_L07_02_TimingStudy` з emitters `NE_Timing_Burst` і `NE_Timing_Rate`.
 
@@ -179,7 +179,7 @@ Stack ідентичний, окрім того, що `Spawn Rate` заміню�
 
 Capture Reset at `t≈0`, `.5`, `1`, `1.5`, `2`, `3 s`. Додайте theoretical table, observed count і tolerance explanation. Не редагуйте settings між captures.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `Emitter State`, `Spawn Burst Instantaneous`, `Spawn Rate`;
 - `Initialize Particle`, `Particle State`;
@@ -267,7 +267,7 @@ Dynamic-input menu path і curve template names можуть різнитися.
 | count різниться на boundary | frame/capture sampling | записуйте tolerance і час, не один screenshot |
 | curve читає не ту вісь | Age замість NormalizedAge | bind `Particles.NormalizedAge` |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Approx alive count `Rate×Lifetime` — перша budget estimate.
 - Збільшення lifetime може збільшити одночасний particle count без зміни Rate.

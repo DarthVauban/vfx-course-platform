@@ -22,8 +22,8 @@
 - 60 хв — арифметика та порядок operations;
 - 45 хв — normalized ranges і remap;
 - 45 хв — Lerp, Clamp/Saturate, shaping nodes;
-- 75 хв — controlled experiments;
-- 165 хв — guided practice;
+- 75 хв — контрольовані експерименти;
+- 165 хв — керована практика;
 - 90 хв — exercises A/B і review.
 
 ## 4. Prerequisites
@@ -44,7 +44,7 @@
 - **Signed value** — значення, що може бути negative, zero або positive.
 - **Branch** — логічна частина graph із конкретною функцією.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX artist постійно remap-ить lifetime, masks, distance, dot product і texture values. Без remap ефект прив’язаний до випадкового source range. Math дає art-directable controls:
 
@@ -175,7 +175,7 @@ t = 0.3 / 0.6 = 0.5
 
 Створіть два scalar gradients `U` і `V`. `Min(U,V)` показує лише value, що нижче в кожному pixel; `Max(U,V)` — вище. Намалюйте очікуваний diagonal pattern до preview.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph — `M_L03_02_RemapLab`
 
@@ -249,7 +249,7 @@ ScaleHDR.Output → MaterialOutput.Emissive Color
 5. **Color branch:** `LinearInterpolate` remap-ить scalar у HDR RGB.
 6. **Intensity branch:** final multiplier відокремлює color choice від brightness control.
 
-#### Проміжні checks
+#### Проміжні перевірки
 
 Тимчасово під’єднуйте кожен output до `Emissive Color`, потім повертайте final connection:
 
@@ -280,7 +280,7 @@ flowchart LR
     HDR --> OUT["Emissive"]
 ```
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `Add`
 - `Subtract`
@@ -397,7 +397,7 @@ flowchart LR
 
 ## 19. Troubleshooting
 
-| Симптом | Причина | Fix |
+| Симптом | Причина | Виправлення |
 |---|---|---|
 | Ramp reversed | `InMin-InMax` або swapped Lerp colors | перевірте exact connection order |
 | Усе black/white | `InMin≈InMax`, wrong U channel або Power extreme | debug source, numerator, denominator |

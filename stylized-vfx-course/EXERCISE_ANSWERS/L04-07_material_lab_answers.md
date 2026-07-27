@@ -180,7 +180,7 @@ Low:
 | Medium | record | record | record | measured | pass/fail |
 | Low | record | record | record | measured | pass/fail |
 
-Не вигадуйте milliseconds. Якщо target hardware недоступне:
+Не вигадуйте milliseconds. Якщо цільове обладнання недоступне:
 
 `Потребує ручної перевірки в Unreal Engine 5.8.`
 
@@ -188,7 +188,7 @@ Low:
 
 ### Wrong optimizations
 
-- Lower tier має менший gameplay radius.
+- Нижчий рівень має менший ігровий радіус.
 - Змінена camera віддаляє effect.
 - Exposure прибирає bloom і видається за shader gain.
 - Effect count reduced without disclosure.

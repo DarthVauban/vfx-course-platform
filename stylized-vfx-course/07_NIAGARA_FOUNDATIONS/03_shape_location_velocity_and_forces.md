@@ -2,7 +2,7 @@
 
 ## 1. Назва
 
-**Motion laboratory: spawn shape, initial velocity, accumulated forces, solver order і local/world space.**
+**Motion laboratory: spawn shape, initial velocity, accumulated forces, solver order і локальний/світовий простір.**
 
 ## 2. Результат уроку
 
@@ -22,8 +22,8 @@
 - 30 хв — position distribution і Shape Location;
 - 45 хв — velocity/acceleration/drag/gravity;
 - 30 хв — solver ordering;
-- 15 хв — coordinate spaces;
-- 90 хв — controlled experiments;
+- 15 хв — системи координат;
+- 90 хв — контрольовані експерименти;
 - 180 хв — guided lab;
 - 90 хв — exercises A/B.
 
@@ -46,7 +46,7 @@
 - **World Space** — coordinates відносно world origin.
 - **Local Space** — coordinates відносно owning Niagara Component.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Shape без velocity — лише хмара initial points. Velocity без shape — пучок з одного origin. Forces без правильного solver order не рухають particles як очікується. Space визначає, чи вже народжений effect «прилипає» до меча/персонажа, чи залишається у світі. Ці чотири decisions лежать під sparks, dust, debris, magic wisps і trails.
 
@@ -129,7 +129,7 @@ CPU дає просту low-count inspection і не потребує GPU fixed 
 6. **Wrong order:** тимчасово перенесіть Gravity нижче solver; capture dependency warning/result, потім виправте.
 7. **Space:** pause після spawn, move actor `+200 X`; порівняйте local/world emitters.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 Створіть `NS_L07_03_MotionLab` з emitters `NE_Motion_World` і `NE_Motion_Local`. Другий duplicate першого; змінюються seed, initial X та `Local Space`.
 
@@ -189,7 +189,7 @@ Material `MI_VFX_FoundationSprite`; Face Camera; Unaligned; Position/Color/Veloc
 4. Продовжте.
 5. Local cloud зміститься з component; world cloud зберігає world-space history. Запишіть transform до/після.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 `Initialize Particle`; `Shape Location`; `Add Velocity`; `Acceleration Force`; `Gravity Force`; `Drag`; `Solve Forces and Velocity`; `Particle State`; `Scale Color`; `Scale Sprite Size`; `Shape Primitive`; `Sphere Radius`; `Velocity Mode`; `From Point`; `Velocity Speed`; `Acceleration`; `Local Space`; `Sim Target`.
 
@@ -272,7 +272,7 @@ Epic також документує `Sphere Location`, `Box Location`, `Cone Lo
 | shape подвоєно | modules Shape + Sphere | залиште один location module |
 | dependency warning | порядок module | `Fix Issue`, потім порівняйте stack |
 
-## 20. Міркування про performance
+## 20. Міркування про продуктивність
 
 - Force modules виконуються для кожної живої частинки за кожний update; Rate×Lifetime оцінює workload.
 - Curl/noise ще немає; аналітичні gravity/drag є простішим baseline.

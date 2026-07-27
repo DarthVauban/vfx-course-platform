@@ -108,7 +108,7 @@ CONTACT:              |
 
 | Risk | Чому позначено | Майбутня перевірка |
 |---|---|---|
-| S | P1, A1, S1 і R1 можуть бути translucent | Shader Complexity/overdraw у gameplay camera |
+| S | P1, A1, S1 і R1 можуть бути translucent | Shader Complexity/overdraw в ігровій камері |
 | O | P1 і S1 overlap біля contact | Перевірити, чи можна скоротити P1 після frame 12 |
 | N | Fragment group | Перевірити мінімальну кількість, що зберігає scale cue |
 | D | Residue триває до кінця | Перевірити active System overlap під час combo |
@@ -148,7 +148,7 @@ secondary-shape logic і residue behavior.
 - Приховай SP1 та R1: основна дія залишається зрозумілою.
 - Приховай P1: напрямок до contact стає слабшим — отже P1 справді primary.
 - Зменш board до 25%: target marker не перекритий.
-- Приховай власні labels і пояснення, збережи sequence shapes з neutral filename, зроби паузу щонайменше на одну навчальну сесію та самостійно запиши перше прочитання; воно має містити «direction → contact → expansion → residue». Optional peer або LLM check може лише доповнити цей self-review.
+- Приховай власні labels і пояснення, збережи sequence shapes з neutral filename, зроби паузу щонайменше на одну навчальну сесію та самостійно запиши перше прочитання; воно має містити «direction → contact → expansion → residue». Optional peer або LLM check може лише доповнити це самооцінювання.
 
 ### Performance
 

@@ -48,10 +48,10 @@ M/S ledger: **1.5 години; cumulative 2.5/6 годин блоку**.
 - **Flight body** — стійкий читабельний core projectile.
 - **Impact phase** — world-space response у registered collision/hit.
 - **Runtime data contract** — точні names/types/owners для direction, speed, element і hit data.
-- **Variant parity** — порівнювані gameplay cues та виміряний cost між variants.
+- **Variant parity** — порівнювані ігрові підказки та виміряний cost між variants.
 - **Projectile visibility envelope** — camera distances/angles, де body лишається читабельним.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Reusable kit доводить системне мислення: один gameplay actor має керувати кількома phases і visual identities без copy-pasted Blueprints. Робота з variants показує, чи architecture справді параметризована й чи performance/presentation claims витримують одночасну роботу кількох effects.
 
@@ -103,7 +103,7 @@ launch announces → flight tracks → trail explains path → impact confirms c
 
 ### Constraints
 
-- real-time PC/console gameplay camera має пріоритет;
+- ігрова камера реального часу для PC/консолей має пріоритет;
 - усі три variants використовують shared gameplay actor і parameter schema;
 - жоден variant не може бути hue-only duplicate;
 - немає proprietary/ripped textures, meshes, sounds або effects;
@@ -138,7 +138,7 @@ In scope: shared projectile VFX actor contract, три elemental visual variants
 | M3 Variants | три silhouettes/motions/decays відрізняються |
 | M4 Materials | shared function і element instances перевірені |
 | M5 Performance | завершені parity, H/M/L, pooling і stress captures |
-| M6 Presentation | готові 3× phase matrix, gameplay/neutral clips і case study |
+| M6 Presentation | готові 3× phase matrix, gameplay/neutral clips і опис проєкту |
 
 ### Production checklist
 
@@ -149,7 +149,7 @@ In scope: shared projectile VFX actor contract, три elemental visual variants
 - [ ] pooling скидає кожен User parameter;
 - [ ] gameplay radius відповідає visible impact;
 - [ ] H/M/L cue parity перевірено;
-- [ ] усі source assets original/credited;
+- [ ] усі вихідні ресурси original/credited;
 - [ ] case study розрізняє shared і variant logic.
 
 ### 100-point self-review rubric and category floors
@@ -176,7 +176,7 @@ Critical fail: відсутня хоча б одна phase, hue-only variant, mi
 - однакові route, camera, resolution, build і warmed state;
 - High/Medium/Low.
 
-Зберіть Niagara Debugger instance/particle counts, `stat unit`, `stat gpu`/GPU profiler, overdraw і Unreal Insights для CPU/pooling hitch. Порівняйте before/after за однакових умов. Усі variants мають виконати declared project target без hitch/cull/stale state. **Не вигадуйте universal millisecond, particle або draw-call budget.**
+Зберіть Niagara Debugger instance/particle counts, `stat unit`, `stat gpu`/GPU profiler, overdraw і Unreal Insights для CPU/pooling hitch. Порівняйте до й після за однакових умов. Усі variants мають виконати declared project target без hitch/cull/stale state. **Не вигадуйте universal millisecond, particle або draw-call budget.**
 
 ### Presentation requirements
 
@@ -184,7 +184,7 @@ Critical fail: відсутня хоча б одна phase, hue-only variant, mi
 - один neutral side/top view з однаковими distance/exposure;
 - phase freeze frames: launch/body/trail/impact;
 - table `shared architecture vs variant`;
-- before/after і H/M/L captures;
+- до й після і H/M/L captures;
 - captions містять element, phase, engine build, role та measured scenario;
 - prerecorded cinematic не використовується як proof real-time gameplay performance.
 
@@ -196,7 +196,7 @@ Critical fail: відсутня хоча б одна phase, hue-only variant, mi
 4. shared material functions, material graphs і три instances;
 5. повні Niagara stacks/bindings та variant parameter table;
 6. Blueprint projectile/hit/pooling integration diagram;
-7. performance before/after і parity evidence;
+7. показники продуктивності до й після і parity evidence;
 8. High/Medium/Low table;
 9. limitations і rejected design paths.
 
@@ -230,11 +230,11 @@ impact local Z = User.HitNormal
 3. Вимкніть trail; projectile body має лишитися читабельним.
 4. Використайте wall/floor/slope hits; impact orientation має слідувати normal.
 5. Чергуйте elements на одному pooled actor десять разів.
-6. Порівняйте actual gameplay radius із visible impact boundary.
+6. Порівняйте фактичний ігровий радіус із visible impact boundary.
 7. Проведіть stress кожного element окремо для cost parity.
 8. Перемикайте H/M/L у test/instance setup і перевірте core cues.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Blueprint/runtime architecture
 
@@ -292,7 +292,7 @@ Emitter Shards: Frost profile Burst8 → Initialize/Velocity/Orientation → Sta
 Emitter Residue: profile-specific Rate/Burst → Initialize → State/Curves → Sprite
 ```
 
-Impact працює у world space та орієнтується за `HitNormal`. Visible boundary перевіряється проти actual gameplay hit/radius debug.
+Impact працює у світовому просторі та орієнтується за `HitNormal`. Visible boundary перевіряється проти actual gameplay hit/radius debug.
 
 ### Variant values
 
@@ -315,7 +315,7 @@ Impact працює у world space та орієнтується за `HitNormal
 
 Exact Blueprint display/pin names and Niagara parameter setters: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - Blueprint: `Spawn System at Location`, `Spawn System Attached`, Niagara Component `Activate`/`Deactivate`, `Set Niagara Variable Vector3` і відповідні typed setters; labels projectile hit/event залежать від actor setup.
 - Niagara modules/renderers із блоків 07–09: `Emitter State`, `Spawn Burst Instantaneous`, `Spawn Rate`, `Initialize Particle`, `Initialize Ribbon`, `Shape Location`, `Add Velocity`, `Curl Noise Force`, `Drag`, `Gravity Force`, `Solve Forces and Velocity`, orientation/scale/color modules, Sprite/Mesh/Ribbon Renderers.
@@ -362,7 +362,7 @@ Projectile speed — gameplay starting value, а не універсальна �
 
 ### `EX-L11-02-B` — Audit variant parity і pooling
 
-Виміряйте кожен variant окремо й у mixed test. Виправте один highest-cost layer, один stale pooled parameter і один gameplay-radius mismatch без зменшення required cues. Подайте identical before/after captures і оновлені category scores.
+Виміряйте кожен variant окремо й у mixed test. Виправте один highest-cost layer, один stale pooled parameter і один gameplay-radius mismatch без зменшення required cues. Подайте зіставні знімки до й після і оновлені category scores.
 
 [Повне рішення B](../EXERCISE_ANSWERS/L11-02_elemental_projectile_kit_portfolio_piece_answers.md#ex-l11-02-b)
 
@@ -378,7 +378,7 @@ Projectile speed — gameplay starting value, а не універсальна �
 
 - **Hint 1:** запустіть той самий route `12-flight/6-impact` для кожного variant.
 - **Hint 2:** чергуйте `ElementIndex` під час кожної activation, щоб виявити stale values.
-- **Hint 3:** порівняйте actual gameplay radius debug із ring/particle boundary; виправляйте VFX scale/data, а не приховано collision.
+- **Hint 3:** порівняйте фактичний ігровий радіус debug із ring/particle boundary; виправляйте VFX scale/data, а не приховано collision.
 
 ## 18. Типові помилки
 
@@ -455,7 +455,7 @@ Projectile speed — gameplay starting value, а не універсальна �
 
 ## 24. Mastery criteria
 
-Ви можете пояснити shared і variant architecture, простежити gameplay data через кожну phase, довести три non-hue identities, виправити pooling/hit/performance defects і подати повний чесний kit case study на `≥80/100` із category floors.
+Ви можете пояснити shared і variant architecture, простежити ігрові дані через кожну phase, довести три non-hue identities, виправити pooling/hit/performance defects і подати повний чесний опис набору на `≥80/100` із category floors.
 
 ## 25. Підсумок
 
@@ -486,5 +486,5 @@ URL перевірено 2026-07-27. **Потребує ручної перев�
 5. Повні Niagara stacks і variant parameter table.
 6. Blueprint launch/hit/pooling/data diagram.
 7. Grayscale і gameplay-camera variant comparison.
-8. H/M/L і before/after performance captures.
+8. H/M/L і дані про продуктивність до й після captures.
 9. Authorship/limitations і final case-study layout.

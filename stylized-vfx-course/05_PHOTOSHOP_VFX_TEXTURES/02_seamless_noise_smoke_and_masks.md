@@ -53,7 +53,7 @@ M/S practice входить у 5.0 практичних годин.
 | Tile signature | Повторюваний унікальний mark, що видає pattern |
 | Utility mask | Дані для breakup, distortion, erosion або timing, а не фінальний color |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Noise розбиває ідеальні gradients, smoke mask формує volume impression, а seamless texture може pan-итися без стрибка. Навіть якщо seam математично закритий, великий bright blob біля center створює tile signature. Тому технічна і художня перевірки різні: borders мають збігатися, а pattern — не видавати період.
 
@@ -144,7 +144,7 @@ flowchart LR
 - Порівняйте близько, далеко й під рухом.
 - Очікування: агресивний contrast може тримати silhouette, але втрачати soft hierarchy.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L05-02-A — Noise
 
@@ -178,7 +178,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact labels Address X/Y, Compression Settings, Texture Group, mip controls і sampler behavior звірте у встановленому build.
 
-## 12. Точні назви nodes, modules, settings і connections
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 Material properties: `Surface`, `Opaque`, `Unlit`, `Two Sided=Off`.
 
@@ -300,7 +300,7 @@ TextureSample_Seamless.R → MaterialOutput.Emissive Color
 - Повторне використання однієї tileable texture у двох UV scales економить asset memory, але не обов’язково texture-sample cost.
 - 1024 master не має імпортуватися автоматично, якщо 512 export достатній у gameplay.
 - Noise high-frequency detail швидко втрачається у mips і може shimmer-ити; менша кількість значущих forms краща за випадкову різкість.
-- Для translucent smoke головні ризики — overlap, screen coverage і overdraw. Texture memory є лише одним budget.
+- Для translucent smoke головні ризики — overlap, покриття екрана і overdraw. Texture memory є лише одним budget.
 
 ## 21. Запитання для самоперевірки
 
@@ -361,7 +361,7 @@ TextureSample_Seamless.R → MaterialOutput.Emissive Color
 | Урок | Що передається |
 |---|---|
 | [L05-03](03_slash_spark_and_magic_circle_textures.md) | Noise/smoke breakup для combat shapes |
-| [L05-04](04_ramps_distortion_and_channel_packing.md) | Noise та smoke як R/G packed channels |
+| [L05-04](04_ramps_distortion_and_channel_packing.md) | Noise та smoke як R/G упаковані канали |
 | [L05-05](05_flipbook_export_and_ue_texture_validation.md) | Border/mip tests і export manifest |
 
 ## 27. Офіційні джерела

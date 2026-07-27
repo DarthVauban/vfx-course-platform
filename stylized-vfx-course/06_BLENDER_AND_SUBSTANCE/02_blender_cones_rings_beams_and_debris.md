@@ -15,7 +15,7 @@
 - організувати modular VFX geometry kit;
 - підготувати assets до UV/normals/export уроку 06.03.
 
-Ключовий deliverable — `SM_VFX_Cone_01`, `SM_VFX_Ring_01`, `SM_VFX_Beam_01` і три `SM_VFX_Debris_*` meshes.
+Ключовий результат — `SM_VFX_Cone_01`, `SM_VFX_Ring_01`, `SM_VFX_Beam_01` і три `SM_VFX_Debris_*` meshes.
 
 # 3. Орієнтовний час
 
@@ -53,7 +53,7 @@
 | **Profile** | Зміна radius/width уздовж axis |
 | **Geometry kit** | Невелика бібліотека reusable meshes із чіткими use cases |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Sprite не вирішує всі задачі. Mesh потрібен, коли effect має:
 
@@ -312,7 +312,7 @@ Material/UV may later animate source→target, але geometry already avoids re
 
 Зроби three cube variants і подивись solid black на 25%. Якщо silhouettes однакові — object-scale-only variation недостатня.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Частина A — Cone
 
@@ -390,7 +390,7 @@ Save:
 L06_02_vfx_geometry_kit.blend
 ```
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 ### Blender
 

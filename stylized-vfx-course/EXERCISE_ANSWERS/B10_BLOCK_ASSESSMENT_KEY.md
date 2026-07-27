@@ -10,7 +10,7 @@ Niagara System — asset/template з emitters, modules, renderers і parameters.
 
 ## 2. At Location і Attached
 
-`Spawn System at Location` створює component у заданому world transform; impact/residue може лишитися після movement owner. `Spawn System Attached` додає component до parent hierarchy/socket і використовує attach-point/transform interpretation, тому effect слідує. Pins/defaults: **Потребує ручної перевірки в Unreal Engine 5.8.**
+`Spawn System at Location` створює component із заданою трансформацією у світовому просторі; impact/residue може лишитися після movement owner. `Spawn System Attached` додає component до parent hierarchy/socket і використовує attach-point/transform interpretation, тому effect слідує. Pins/defaults: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## 3. Infinite loop і Auto Destroy
 
@@ -112,7 +112,7 @@ Types і spaces:
 → Activate
 ```
 
-Impact лишається у world space, коли персонаж продовжує рух. Він завершується natural, а cleanup path зафіксовано.
+Impact лишається у світовому просторі, коли персонаж продовжує рух. Він завершується natural, а cleanup path зафіксовано.
 
 ## 2.4 Attached/persistent window
 
@@ -134,7 +134,7 @@ Impact лишається у world space, коли персонаж продов
     graceful Deactivate або complete
 ```
 
-П’ять швидких requests дотримуються задокументованої policy Restart або Refresh. Stack не виникає, якщо його явно не включено до gameplay contract.
+П’ять швидких requests дотримуються задокументованої policy Restart або Refresh. Stack не виникає, якщо його явно не включено до ігрового контракту.
 
 ## 2.5 Direction/target
 
@@ -354,7 +354,7 @@ Effect проходить toggle і isolation test без зміни camera.
 
 Це повна causal form, а не універсальний numeric result.
 
-# 6. Зразок self-review — 10/10
+# 6. Зразок самооцінювання — 10/10
 
 ## 6.1 Metadata
 
@@ -384,7 +384,7 @@ Pool або reuse: повний reset до activation
 
 ## 6.4 Gameplay notes
 
-Views front, side і back, distances near і far, cases normal, cancel і re-entry та representative concurrency перевірено. Readability Low оцінюють із gameplay camera, а не beauty camera.
+Views front, side і back, distances near і far, cases normal, cancel і re-entry та representative concurrency перевірено. Readability Low оцінюють з ігрової камери, а не beauty camera.
 
 ## 6.5 Найсильніше decision
 
@@ -487,7 +487,7 @@ Gameplay: telegraph, core і contact розпізнаються; signature зб�
 - [ ] Shader Complexity і Quad Overdraw надано.
 - [ ] Texture memory перевірено.
 - [ ] Mesh, ribbon, collision, light і sorting перевірено.
-- [ ] Rerun із one-change, спрямованою на root cause, виконано.
+- [ ] Rerun із one-change, спрямованою на першопричину, виконано.
 - [ ] Gameplay capture передує Sequencer.
 - [ ] Усі Big effects мають rows performance pass.
 - [ ] Ledger 4 годин M/S присутній.

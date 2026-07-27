@@ -17,7 +17,7 @@
 - налаштувати `Output` contract;
 - підготувати graph до standard bitmap export у 06.05.
 
-Ключовий deliverable — package `P_VFX_TextureLab.sbs` із graph `G_VFX_SmokeMask` та двома outputs: `smoke_mask` і `breakup_mask`.
+Ключовий результат — package `P_VFX_TextureLab.sbs` із graph `G_VFX_SmokeMask` та двома outputs: `smoke_mask` і `breakup_mask`.
 
 # 3. Орієнтовний час
 
@@ -59,7 +59,7 @@
 | **Clipping** | Втрата detail, коли values remap у pure 0 або 1 |
 | **Output Identifier** | Stable name output для bitmap export contract |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Substance Designer корисний не як заміна Photoshop, а як:
 
@@ -417,7 +417,7 @@ flowchart LR
 
 **Очікування:** breakup має повторюватися без seam; directional smoke gradient може навмисно не мати tiling уздовж осі fade.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Етап 1 — Створи package
 
@@ -546,7 +546,7 @@ Checklist:
 
 Поки не виконуй export, крім опційного preview; стандартний workflow export розглянуто в 06.05.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 ### Substance 3D Designer
 

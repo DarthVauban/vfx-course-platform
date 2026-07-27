@@ -14,7 +14,7 @@
 - debug-ите intermediate outputs;
 - порівнюєте mode/cost/aliasing;
 - створюєте reusable instances без зайвих switches;
-- доводите готовність до mastery gate `G03`.
+- доводите готовність пройти критерій переходу `G03`.
 
 Матеріали до здачі:
 
@@ -22,7 +22,7 @@
 - `M_CP03_AnimatedTexture`;
 - `M_CP03_DepthCard`;
 - test map `L_CP03_MaterialFoundations`;
-- evidence package й self-review.
+- evidence package й самооцінювання.
 
 ## 3. Орієнтовний час
 
@@ -51,7 +51,7 @@
 - **Regression** — behavior, який працював раніше, ламається після change.
 - **Control project** — integration task зі зменшеним guidance.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Production task рідко надає готовий node graph. Artist отримує бажану поведінку, reference, constraints і target platform. Ключова навичка — перетворити задум на математику, яку можна перевірити, а не запам'ятати wiring зі screenshot.
 
@@ -147,7 +147,7 @@ flowchart TD
 
 Під час prediction на папері UE graph не відкривається.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Етап 1 — test map
 
@@ -202,7 +202,7 @@ flowchart TD
 
 Створіть один Material Instance для кожного parent і змініть кожен exposed parameter. Відновіть defaults і перевірте, що original captures усе ще збігаються.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 Дозволені й очікувані exact nodes:
 
@@ -353,11 +353,11 @@ No Static Switch is needed. Exact version-sensitive pins/settings: **Потре�
 ## 20. Performance considerations
 
 - A Masked: aliasing, coverage, Two Sided і procedural ALU.
-- B Additive: texture sample + panner + overdraw; black areas усе ще можуть бути covered.
+- B Additive: вибірка текстури + panner + overdraw; black areas усе ще можуть бути covered.
 - C Translucent: operation texture або depth + overdraw і sorting.
 - Instances не зменшують parent shader cost.
 - Відсутність Static Switch означає, що урок не створює Boolean permutation explosion.
-- Для comparison використовуйте ту саму screen coverage.
+- Для comparison використовуйте те саме покриття екрана.
 - Final pass є evidence, а не передчасною target-platform certification.
 
 ## 21. Запитання для самоперевірки
@@ -401,7 +401,7 @@ No Static Switch is needed. Exact version-sensitive pins/settings: **Потре�
 
 ## 24. Mastery criteria
 
-Підготовка до mastery gate проходить, коли:
+Підготовка до критерію переходу проходить, коли:
 
 - усі три graphs працюють за written specs;
 - кожну operation і range пояснено;
@@ -410,7 +410,7 @@ No Static Switch is needed. Exact version-sensitive pins/settings: **Потре�
 - evidence Shader Complexity і overdraw надано;
 - A/B прийнято;
 - щонайменше 8/10 answers правильні;
-- self-review називає одне technical і одне artistic improvement.
+- самооцінювання називає одне technical і одне artistic improvement.
 
 ## 25. Підсумок
 

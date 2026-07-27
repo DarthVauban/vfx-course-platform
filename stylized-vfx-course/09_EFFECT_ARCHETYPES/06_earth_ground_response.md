@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель ground response/earth | 0.75 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
-| Stage 2 — етичне reference study | 0.0 | 1.25 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.0 | 1.25 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Surface/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.0** | **5.0** | **1.0** |
 
@@ -55,7 +55,7 @@
 | Fault line | Асиметричний домінантний напрямок crack |
 | Terrain conformity | Наскільки projection/mesh слідує uneven surface |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Ground response прив’язує airborne effects до world scale і material. Crack, що floats, z-fights або проходить крізь stairs, руйнує illusion. Secondary wave показує impact propagation; debris/dust показують weight. Ground mark може persist довше за інші layers, тому його readability і cost важливі.
 
@@ -73,7 +73,7 @@ Crack є ledger archetype. Secondary wave потрібна для показу f
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** radial crack plane, expanding secondary ring, debris і dust.
 2. **Reference study:** normalized radius, reveal speed, chunk scale, delay і residue; лише own assets.
@@ -135,9 +135,9 @@ flowchart LR
 - Порівняйте 16 debris із visual collision та детермінованим ballistic fade.
 - Виміряйте цільовий build; оцініть, чи bounce додає видиму цінність.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Earth_GroundResponse`: `NE_Heave`, `NE_Crack`, `NE_Wave`, `NE_Debris`, `NE_Dust`.
 2. Відкрийте center/normal/direction/radius/colors/ground offset.
@@ -148,14 +148,14 @@ flowchart LR
 7. `NE_Dust`: 10 sprites у `.25`, life `1.0–1.8`, size `80–220`, speed `30–100`, drag/curl.
 8. Перевірте surface alignment, перетин terrain, bounds та ігровий радіус.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть лише референс і спостереження.
 2. Виміряйте length/radius основного fault, щільність branching, затримку debris й тривалість dust:action.
 3. Відбудуйте власну crack mask із геометричних/procedural lines; використайте власний debris mesh.
 4. Запишіть provenance і три відхилення.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Earth_GroundResponse_Tectonic`.
 2. Замініть radial mask трьома зміщеними rectangular plates і одним diagonal fault.
@@ -166,7 +166,7 @@ flowchart LR
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact Decal Renderer availability/status, mesh/decal orientation, surface-normal basis, collision modules, normal offset and material parameter bindings звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -307,7 +307,7 @@ NoiseTexture.R panned slowly → edge variation
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Plane зависоко або занизько | Float/z-fight | Контрольована перевірка bias |
 | Перевірено лише площину | Перетинає схили | Basis normal і межі conformity |
@@ -330,7 +330,7 @@ NoiseTexture.R panned slowly → edge variation
 | Dust робить view muddy | Solo/alpha/size | Delay/lower contrast |
 | Culling на debris apex | Bounds view | Include ballistic max |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Шари Ground | Debris | Dust/collision |
 |---|---|---:|---|

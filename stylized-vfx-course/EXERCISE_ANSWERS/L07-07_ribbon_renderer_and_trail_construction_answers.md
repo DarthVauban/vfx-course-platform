@@ -1,6 +1,6 @@
 # Рішення вправ — 07.07 Ribbon trail construction
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-07-A
 
@@ -48,7 +48,7 @@ Bindings: Position, Color, Velocity, NormalizedAge, RibbonTwist, RibbonWidth, Ri
 
 Оцінка point spacing `|V0|/40≈12.1 cm`; живі points `40×.8≈32`; order не перевертається, коли path проходить вершину; обидва кінці звужуються; texture повторюється приблизно кожні 40 cm. Один раз вимкніть Automatic, щоб довести достатність фактичної щільності points.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Rate `50` допустимий, якщо задокументований, але змінює workload. Неправильно: burst усіх points одночасно; lifetime дорівнює age emitter; Initialize Particle; LinkOrder прив’язано до NormalizedAge; max tessellation 16 або collision. За ~32 points simulation мала; ribbon tessellation/width/overdraw потребують інспекції render.
 
@@ -80,6 +80,6 @@ Rate `50` допустимий, якщо задокументований, ал�
 
 У Solo кожного emitter є один connected ribbon. Увімкніть обидва: дві strips лишаються незалежними, дзеркаляться за Y, мають спільні length/taper і ніколи не створюють bridge. Peak living points ≈30 для кожного. Bounds охоплюють обидва offsets і path.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
 Один emitter із явним RibbonID може створити дві strips, але потребує правильного authoring ID/order, не потрібного для цього foundation solution. Неправильно: два Ribbon Renderers на одному dataset; ідентичні spawn location/direction, що спричиняють z-fighting; спільний custom ID; різні lifetimes, приховані як style. Два emitters подвоюють setup point simulation/render; загальна кількість живих ≈60 і має бути записана.

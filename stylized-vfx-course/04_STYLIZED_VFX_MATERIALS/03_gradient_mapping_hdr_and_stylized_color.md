@@ -6,20 +6,20 @@
 | Lesson ID | L04-03 |
 | Цільова версія | Unreal Engine 5.8 |
 | Артефакт уроку | `MF_VFX_ThreeColorRamp`, texture-ramp variant і bright-background A/B |
-| Mastery gate | Перетворити grayscale energy field на керовану value/color hierarchy без втрати readability |
+| Mastery gate | Перетворити grayscale energy field на керовану ієрархію світлоти й кольору без втрати readability |
 
 ## 2. Результат уроку
 
 Ви навчитеся:
 
-- використовувати grayscale value як координату color mapping;
+- використовувати значення у градаціях сірого як координату color mapping;
 - будувати analytic three-color ramp без texture;
 - sample-ити 1D gradient ramp texture із clamp behavior;
 - відокремлювати hue/color від HDR intensity;
 - порівнювати `Additive`, `Translucent` і `AlphaComposite` behavior на різних backgrounds;
 - створювати stylized stepped palette, не руйнуючи silhouette.
 
-Доказ: два ramp methods, три background tests, independent stepped palette й art/technical decision record.
+Доказ: два ramp methods, три background tests, independent stepped palette й art/technical журнал рішень.
 
 ## 3. Орієнтовний час
 
@@ -44,7 +44,7 @@
 
 ## 5. Нові терміни
 
-| English term | Пояснення | Приклад | Glossary |
+| Англійський термін | Пояснення | Приклад | Glossary |
 |---|---|---|---|
 | Gradient mapping | Перетворення scalar 0–1 на color уздовж ramp | 0=violet, .5=cyan, 1=white | [Gradient ramp](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 | Color stop | Color у визначеній position ramp | MidStop=.4 | [Glossary](../02_GLOSSARY.md) |
@@ -52,7 +52,7 @@
 | HDR intensity | Множник, що дозволяє output перевищити 1 | EdgeIntensity=8 | [HDR](../02_GLOSSARY.md#material-editor-і-shader-math) |
 | Stepped palette | Дискретні color/value bands замість безперервного gradient | 4 anime-style bands | [Glossary](../02_GLOSSARY.md) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Color picker сам по собі не створює hierarchy. У сильному stylized effect color прив’язаний до energy/value structure:
 
@@ -174,7 +174,7 @@ flowchart LR
 - **Очікувано:** Additive найслабше читається на bright panel; результати інших залежать від alpha/color.
 - **Запис:** не оголошуйте переможця загалом; оберіть через gameplay need.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L04-03 — Three-color ramp function і renderer material
 
@@ -380,7 +380,7 @@ MidPoint поза 0.01–0.99 не допускайте без denominator guard
 
 ### EX-L04-03-A
 
-<details><summary>Hint 1 — напрямок</summary>
+<details><summary>Підказка 1 — напрямок</summary>
 Спочатку quantize scalar, потім color-map. Не quantize opacity.
 </details>
 <details><summary>Hint 2 — nodes</summary>
@@ -394,7 +394,7 @@ MidPoint поза 0.01–0.99 не допускайте без denominator guard
 
 ### EX-L04-03-B
 
-<details><summary>Hint 1 — напрямок</summary>
+<details><summary>Підказка 1 — напрямок</summary>
 Body і Edge — незалежні masks; кожна mask має власний mapped color, але opacity об’єднується.
 </details>
 <details><summary>Hint 2 — nodes</summary>
@@ -420,7 +420,7 @@ Body і Edge — незалежні masks; кожна mask має власний
 
 ## 19. Troubleshooting
 
-| Симптом | Test | Cause | Fix | Verification |
+| Симптом | Test | Cause | Виправлення | Verification |
 |---|---|---|---|---|
 | Ramp лише 2 colors | Preview LowerT/UpperT | Upper remap wrong | `(v-m)/(1-m)` | Sweep 0→1 |
 | Hard seam at MidPoint | Compare values around m | Segment mismatch | Lower ends at Mid; upper starts from Mid | No discontinuity |

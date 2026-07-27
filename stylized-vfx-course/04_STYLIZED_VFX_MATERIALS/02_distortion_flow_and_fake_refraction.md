@@ -36,7 +36,7 @@
 
 | Навичка | Де отримано | Перевірка |
 |---|---|---|
-| UV, Panner, Frac і coordinate spaces | [L03-04](../03_MATERIAL_FOUNDATIONS/04_uv_coordinates_and_coordinate_spaces.md) | Побудуйте `Frac(UV*4)` |
+| UV, Panner, Frac і системи координат | [L03-04](../03_MATERIAL_FOUNDATIONS/04_uv_coordinates_and_coordinate_spaces.md) | Побудуйте `Frac(UV*4)` |
 | Texture channels і sRGB/data distinction | [L03-06](../03_MATERIAL_FOUNDATIONS/06_texture_sampling_channels_and_flipbooks.md) | Preview RG окремо |
 | Translucency/depth/overdraw | [L03-07](../03_MATERIAL_FOUNDATIONS/07_material_domains_blending_depth_and_overdraw.md) | Назвіть cost driver |
 | Reusable functions | [L03-08](../03_MATERIAL_FOUNDATIONS/08_instances_functions_switches_and_debugging.md) | Створіть float2 function input |
@@ -44,7 +44,7 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Приклад | Glossary |
+| Англійський термін | Українське пояснення | Приклад | Glossary |
 |---|---|---|---|
 | Distortion field | Vector2 field, що зміщує sample coordinates | RG керує U/V offset | [Distortion](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 | Flow map | Texture, де RG кодує 2D direction | `(0.75,0.5)` → рух праворуч | [Flow map](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
@@ -52,7 +52,7 @@
 | Phase | Нормалізована позиція в повторюваному циклі | `Frac(Time*Speed)` | [Glossary](../02_GLOSSARY.md) |
 | Fake refraction | Керований artistic screen offset, не повна фізична simulation світла | Heat haze | [Fake refraction](../02_GLOSSARY.md#stylized-vfx-materials-і-runtime-data) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Distortion дає відчуття heat, water, force field, speed, magical pressure й void-space. Але це один із найчастіших джерел:
 
@@ -196,7 +196,7 @@ flowchart LR
 - **Спостерігати:** frames біля phase 0/1.
 - **Висновок:** dual phase приймається лише якщо pop зменшився без неприйнятного blur.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L04-02 — `MF_VFX_DualPhaseFlow`
 
@@ -442,7 +442,7 @@ OpacityMul.Output → MaterialOutput.Opacity
 
 - **Завдання:** створіть narrow rising heat distortion із stronger center і zero edge.
 - **Assets:** власна grayscale plume mask і flow map або procedural constant direction.
-- **Обмеження:** `ScreenStrength ≤ 0.02`; edge fade обов’язковий; одна distortion card у gameplay camera.
+- **Обмеження:** `ScreenStrength ≤ 0.02`; edge fade обов’язковий; одна distortion card в ігровій камері.
 - **Elements:** signed direction, animated phase, center mask, screen offset/refraction configuration.
 - **Deliverables:** beauty capture на grid background, signed-flow debug, edge-mask debug, performance note.
 - **Acceptance:** screen edge не дає obvious jump; silhouette не читається як opaque smoke.
@@ -461,15 +461,15 @@ OpacityMul.Output → MaterialOutput.Opacity
 
 ### EX-L04-02-A
 
-<details><summary>Hint 1 — напрямок мислення</summary>
+<details><summary>Підказка 1 — напрямок мислення</summary>
 Відокремте direction від strength. Direction може бути constant `(0,1)`, strength має йти від center/plume mask.
 </details>
 
-<details><summary>Hint 2 — потрібні nodes</summary>
+<details><summary>Підказка 2 — потрібні nodes</summary>
 `Constant2Vector`, `Time`, `Frac`, `Multiply`, plume Texture Sample, `MF_VFX_DualPhaseFlow` або simplified offset, Refraction/2D Offset.
 </details>
 
-<details><summary>Hint 3 — майже повна структура</summary>
+<details><summary>Підказка 3 — майже повна структура</summary>
 FlowRG neutral+up direction → unpack; SignedFlow × ScreenStrength × plume mask; phase animation змінює distortion noise; final offset множиться на edge-faded mask.
 </details>
 
@@ -477,15 +477,15 @@ FlowRG neutral+up direction → unpack; SignedFlow × ScreenStrength × plume ma
 
 ### EX-L04-02-B
 
-<details><summary>Hint 1 — напрямок мислення</summary>
+<details><summary>Підказка 1 — напрямок мислення</summary>
 RG — vector data, B/A — scalar masks. Не пропускайте весь float4 в operation, яка очікує float2.
 </details>
 
-<details><summary>Hint 2 — потрібні nodes</summary>
+<details><summary>Підказка 2 — потрібні nodes</summary>
 `Texture Sample Parameter 2D`, RG/B/A outputs, dual-phase function, `Lerp`, `Multiply`, `Add`, `Saturate`.
 </details>
 
-<details><summary>Hint 3 — майже повна структура</summary>
+<details><summary>Підказка 3 — майже повна структура</summary>
 Packed.RG → flow function; flowing pattern controls body; Packed.B × FoamIntensity × FoamColor adds emissive; opacity = saturate(body×Packed.A + foam×Packed.B).
 </details>
 
@@ -505,7 +505,7 @@ Packed.RG → flow function; flowing pattern controls body; Packed.B × FoamInte
 
 ## 19. Troubleshooting
 
-| Симптом | Тест | Причина | Fix | Перевірка |
+| Симптом | Тест | Причина | Виправлення | Перевірка |
 |---|---|---|---|---|
 | Neutral area рухається | Set FlowRG=.5,.5 | Unpack missing/wrong | ×2−1 | SignedFlow=(0,0) |
 | Direction reversed | Arrow constant test | Add/Sub convention | Swap sign once, document | Arrow follows field |
@@ -519,7 +519,7 @@ Packed.RG → flow function; flowing pattern controls body; Packed.B × FoamInte
 
 - Dual-phase flow двічі sample-ить pattern; для швидкого noise без помітного reset часто достатньо одного Panner.
 - Screen distortion/refraction читає або зміщує scene data через renderer-specific paths і може коштувати дорожче за internal UV distortion.
-- Translucent screen coverage і overlap лишаються основними ризиками.
+- Translucent покриття екрана і overlap лишаються основними ризиками.
 - Одна packed flow/mask texture може зменшити кількість окремих texture samples, але конфлікти precision/compression потрібно перевірити.
 - Medium:
   - internal UV flow instead of screen refraction;

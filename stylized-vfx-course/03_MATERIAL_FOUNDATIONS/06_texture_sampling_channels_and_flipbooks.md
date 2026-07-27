@@ -51,7 +51,7 @@
 - **Noise** — irregular pattern values.
 - **Directional noise** — pattern із dominant orientation/flow.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Textures несуть hand-painted shapes, noise, flipbooks і multiple masks. Неправильний sRGB псує mask math, compression додає blocks, mips змішують сусідні frames, а atlas UV error показує неправильний кадр. Це production correctness, не cosmetic setup.
 
@@ -67,7 +67,7 @@ sample.r/g/b/a → окремі masks
 
 Filtering може змішувати сусідні texels. Mips допомагають далекому/малому object, але atlas frames потребують padding, щоб сусіди не bleeding.
 
-Channel packing економить sample count/storage opportunities, але всі packed channels поділяють resolution, mips, compression і sRGB setting.
+Channel packing економить sample count/storage opportunities, але всі упаковані канали поділяють resolution, mips, compression і sRGB setting.
 
 ## 8. Детальні технічні пояснення
 
@@ -169,7 +169,7 @@ offset = (0.5,0.25)
 4. Створіть дві adjacent high-contrast cells atlas без padding, потім padded copy; порівняйте distant sample.
 5. Виконайте pan regular noise і directional noise вздовж X та Y.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Graph A — `M_L03_06_PackedTextureLab`
 
@@ -291,7 +291,7 @@ AtlasTexture.RGB → MaterialOutput.Emissive Color
 
 Перевірте Frame `0,1,3,4,6,15`. Якщо rows виглядають vertically inverted відносно labels, не виконуйте мовчазний flip source: задокументуйте convention atlas і додайте explicit inversion row лише за потреби.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 - `TextureSampleParameter2D`, `TextureCoordinate`
 - outputs `RGB`, `R`, `G`, `B`, `A`
@@ -331,7 +331,7 @@ Columns і Rows мають бути додатними; очікуваний Fra
 
 Імпортуйте діагностичну texture з чотирма channels. Побудуйте channel viewer і final composite: внесок R=red, G=green, B=blue; A множить усе як master mask.
 
-**Обмеження:** decision sRGB задокументовано; один texture sample; точні channel connections; Surface/Opaque/Unlit.
+**Обмеження:** decision sRGB задокументовано; одну вибірку текстури; точні channel connections; Surface/Opaque/Unlit.
 
 **Матеріали до здачі:** source channel contract, settings Texture Editor, graph, RGB composite, composite з A-mask і mip-distance captures.
 
@@ -402,9 +402,9 @@ Columns і Rows мають бути додатними; очікуваний Fra
 
 ## 21. Запитання для самоперевірки
 
-1. Що потрібно texture sample, крім texture?
+1. Що потрібно для вибірки текстури, крім texture?
 2. Чому для masks зазвичай sRGB Off?
-3. Який trade-off channel packing?
+3. Який trade-off пакування каналів?
 4. Навіщо існують mips?
 5. Що спричиняє bleeding atlas?
 6. Для Frame 9 в atlas із 8 columns які column і row?
@@ -430,7 +430,7 @@ Columns і Rows мають бути додатними; очікуваний Fra
 
 - [ ] Source channel contract існує.
 - [ ] Decision sRGB спирається на semantic.
-- [ ] Для packed channels використано один sample.
+- [ ] Для упакованих каналів використано один sample.
 - [ ] Compression і mips перевірено на duplicate.
 - [ ] Padding перевірено.
 - [ ] Indices atlas zero-based.

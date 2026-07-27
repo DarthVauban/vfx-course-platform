@@ -35,7 +35,7 @@
 - [ ] Performance pass пройдено.
 - [ ] User Parameters і renderer bindings документовано.
 - [ ] Bounds/culling/lifecycle правильні.
-- [ ] High/Medium/Low variants існують і зберігають gameplay cue.
+- [ ] High/Medium/Low variants існують і зберігають ігрову підказку.
 
 ## Presentation package
 
@@ -55,7 +55,7 @@
 
 - [ ] Робота набрала не менше 80/100 за project rubric.
 - [ ] Жодна critical category не нижче 60%.
-- [ ] Немає known blocker, crash, immortal system або broken gameplay cue.
+- [ ] Немає known blocker, crash, immortal system або неправдивої ігрової підказки.
 - [ ] Автор може пояснити кожен layer без course solution.
 - [ ] Усе, що потребує target-hardware confirmation, чесно позначено.
 

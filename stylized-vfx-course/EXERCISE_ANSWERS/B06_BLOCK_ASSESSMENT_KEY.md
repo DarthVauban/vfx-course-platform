@@ -458,7 +458,7 @@ Opacity/Opacity Mask according to debug blend mode
 ### Упорядковані тести
 
 1. Перевір окремі outputs Designer: установи source truth.
-2. Перевір packed channels TGA у зовнішньому viewer: це відділяє graph/export від UE.
+2. Перевір упаковані канали TGA у зовнішньому viewer: це відділяє graph/export від UE.
 3. Перевір timestamp/name файла й виконай правильний reimport, якщо файл застарів.
 4. Використай незмінений debug material UE й перевір labels R/G.
 5. Порівняй, змінюючи лише data intent color-space.
@@ -480,7 +480,7 @@ Opacity/Opacity Mask according to debug blend mode
 ### Докази
 
 - чотири source masks;
-- зовнішні captures packed channels;
+- зовнішні знімки упакованих каналів;
 - R/G в UE до/після;
 - зміна setting;
 - фінальна таблиця контракту.
@@ -572,7 +572,7 @@ Standard bitmap only
 | Packed G | sparks | відповідає PNG | Pass | збережено збільшені primary dots |
 | Packed B | streak | відповідає PNG | Pass | немає |
 | Packed A | fade | відповідає PNG | Pass | немає |
-| Far mip | ключова shape виживає | primary shapes виживають | Pass | контролювати цільову платформу |
+| Far mip | ключова shape виживає | основні форми зберігаються | Pass | контролювати цільову платформу |
 
 ## Найсильніше рішення
 

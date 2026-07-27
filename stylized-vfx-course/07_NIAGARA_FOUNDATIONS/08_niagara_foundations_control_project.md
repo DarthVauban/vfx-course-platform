@@ -14,7 +14,7 @@
 - експонує `User.EffectColor`, `User.Intensity`, `User.Scale`, `User.Direction`;
 - відтворюється за fixed seeds і reset protocol;
 - має робочі material/render bindings;
-- має виміряні fixed bounds і таблицю peak count;
+- має виміряні фіксовані межі і таблицю peak count;
 - проходить внесення faults, самоперевірку й Gate `G07`.
 
 Це інтеграційний проєкт, а не вступ до даних, керованих через Blueprint. Архітектура runtime/Blueprint для user parameters системно вивчається у 08.03.
@@ -50,7 +50,7 @@
 - **CPU/GPU rationale** — обґрунтування simulation target на основі features, count і вимірювань.
 - **Gate evidence** — assets, схеми stack, таблиці parameters, captures і пояснення, достатні для pass/fail.
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Production brief зазвичай вимагає один виразний effect, а не окремий demo renderer. Sprite дає glow/streak detail, mesh — silhouette і mass, ribbon — continuity. Складність виникає на стиках: спільні timing, direction, scale, palette, bounds і performance. Контрольний проєкт перевіряє, чи можете ви організувати систему, а не лише повторити послідовність modules.
 

@@ -9,7 +9,7 @@
 - побудувати texture-driven animated material;
 - побудувати depth-aware VFX material;
 - ізолювати помилку через intermediate outputs;
-- надати connection contracts і performance evidence.
+- надати connection contracts і докази продуктивності.
 
 Орієнтир — 6–8 годин. Щоб не подвоювати заявлені 70 годин блока, assessment є формальною контрольною фазою/повторним незалежним проходом навичок 03.09, а не додатковими M/S hours.
 
@@ -49,7 +49,7 @@ Evidence:
 - щонайменше чотири intermediate outputs на кожен material;
 - captures normal, complexity і overlap із fixed camera;
 - запис troubleshooting;
-- self-review і список sources.
+- самооцінювання і список sources.
 
 ## Оцінка зі 100
 
@@ -83,7 +83,7 @@ Evidence:
 14. Чому `UV*Tiling+Offset` не дорівнює `(UV+Offset)*Tiling`; що таке pivot?
 15. Порівняйте UV, world, object-related і screen coordinates при русі object/camera.
 16. Як із centered UV отримати radius і normalized polar angle; де seam/singularity?
-17. Які trade-offs channel packing, compression, mips і atlas padding?
+17. Які trade-offs пакування каналів, compression, mips і atlas padding?
 18. Порівняйте Opaque, Masked, Translucent, Additive для VFX.
 19. Що роблять `PixelDepth`, `SceneDepth`, `DepthFade`; чого DepthFade не виправляє?
 20. Розрізніть Material Instance, Dynamic Material Instance, Material Function, Static Switch; скільки theoretical variants дають 4 independent Boolean switches?
@@ -167,7 +167,7 @@ Evidence:
 
 ## Частина 3 — troubleshooting і performance, 10 балів
 
-### Запис root cause — 4
+### Запис першопричини — 4
 
 Створіть duplicate B як `M_A03_TextureMotion_Fault`. Навмисно:
 
@@ -211,7 +211,7 @@ Evidence:
 
 Evidence до і після та trade-off обов’язкові.
 
-## Частина 4 — self-review, naming, documentation, 10 балів
+## Частина 4 — самооцінювання, naming, documentation, 10 балів
 
 ### Self-review — 4
 

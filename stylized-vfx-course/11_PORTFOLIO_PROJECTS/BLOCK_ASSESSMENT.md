@@ -6,10 +6,10 @@
 
 - block total лишається **46 годин: 6 theory / 40 practice**;
 - M/S practice лишається **6 годин**;
-- assessment evidence — фінальні versions, captures, case studies і delivery package, які створюються у L11.05;
+- assessment evidence — фінальні versions, captures, описи проєктів і delivery package, які створюються у L11.05;
 - threshold assessment: **`≥80/100`** плюс усі category і project gates.
 
-Результат: чотири оригінальні production-friendly PC/console gameplay VFX pieces, чотири повні case studies, reel і доказовий delivery package. Завершення assessment або курсу **не гарантує працевлаштування, interview чи offer**.
+Результат: чотири оригінальні production-friendly PC/console gameplay VFX pieces, чотири повні описи проєктів, reel і доказовий delivery package. Завершення assessment або курсу **не гарантує працевлаштування, interview чи offer**.
 
 ## Умови допуску
 
@@ -23,7 +23,7 @@
 - власні VFX textures, meshes, materials, Niagara й Blueprint integration;
 - lawful third-party character/animation/environment/audio assets із точним disclosure.
 
-Якщо piece має відомий critical gameplay error, proprietary/uncredited asset або не запускається у target build, спочатку виправте це й лише потім починайте assessment.
+Якщо piece має відомий critical gameplay error, proprietary/uncredited asset або не запускається у цільовій збірці, спочатку виправте це й лише потім починайте assessment.
 
 ## Дозволені й заборонені ресурси
 
@@ -48,7 +48,7 @@
 - unverifiable claims: `AAA quality`, `zero cost`, `console optimized`, `production ready`, `solo/original` без точного scope/evidence;
 - Beta/Experimental dependency.
 
-Перед відкриттям ключа студент самостійно записує `AttemptID`, локальний час і file timestamp в assessment log та додає capture цього запису. Якщо key/tutorial використано до зафіксованого завершення self-review спроби, спроба не зараховується; виконується нова variation/capture після remediation. Optional peer може пізніше перевірити log, але не є умовою проходження.
+Перед відкриттям ключа студент самостійно записує `AttemptID`, локальний час і file timestamp в assessment log та додає capture цього запису. Якщо key/tutorial використано до зафіксованого завершення самооцінювання спроби, спроба не зараховується; виконується нова variation/capture після remediation. Optional peer може пізніше перевірити log, але не є умовою проходження.
 
 ## Submission manifest
 
@@ -92,7 +92,7 @@ B11_Assessment_Submission/
 4. Перевірте всі чотири pieces у gameplay і neutral views.
 5. Для кожної задокументуйте одну реальну weakness, root cause, correction і regression evidence.
 6. Повторіть final H/M/L та profiling за fixed conditions.
-7. Зберіть чотири case studies, reel, credits і delivery package.
+7. Зберіть чотири описи проєктів, reel, credits і delivery package.
 8. Проведіть 3–5-хвилинний walkthrough випадково обраної piece.
 9. Застосуйте rubric і gates. Не округлюйте score вгору, щоб пройти threshold.
 10. Відкрийте key лише після зафіксованої оцінки.
@@ -117,13 +117,13 @@ Exact UE 5.8 UI, profiler availability і typed Niagara/Blueprint labels **По�
 10. Для чого потрібен generation token у stateful effect?
 11. Як перевірити `Rift Crown` hazard boundary parity?
 12. Чому residue після завершення damage не повинно виглядати як active hazard?
-13. Які умови мають бути однаковими у performance before/after?
+13. Які умови мають бути однаковими у показники продуктивності до й після?
 14. Чому MRQ/beauty capture не є gameplay performance proof?
 15. Що обов’язково зберігають H/M/L variants?
 16. Які дані має містити first reel caption?
 17. Що має показати authorship table?
 18. Що робити з claim, для якого немає вимірювання/artifact?
-19. Які чотири technical groups обов’язково пояснює кожен case study?
+19. Які чотири technical groups обов’язково пояснює кожен опис проєкту?
 20. Чому overall score не може компенсувати critical error або category нижче floor?
 
 **Floor частини A: `12/20`.**
@@ -139,9 +139,9 @@ Exact UE 5.8 UI, profiler availability і typed Niagara/Blueprint labels **По�
 | Criterion per piece | Points |
 |---|---:|
 | Final real-time gameplay і neutral view показують повний timing/state | 2 |
-| Critical gameplay cues, silhouette, contact/radius/end-state правильні | 2 |
+| критичні ігрові підказки, silhouette, contact/radius/end-state правильні | 2 |
 | Own textures/materials/Niagara і reusable Blueprint/data architecture читабельні | 2 |
-| H/M/L та target performance evidence завершені | 2 |
+| H/M/L та target докази продуктивності завершені | 2 |
 | Case-study evidence, authorship і limitation повні | 2 |
 
 `4 × 10 = 40`.
@@ -177,7 +177,7 @@ Exact UE 5.8 UI, profiler availability і typed Niagara/Blueprint labels **По�
 
 Для кожної з чотирьох pieces, `2 points`:
 
-- `1` — weakness відтворена й root cause доведений evidence;
+- `1` — weakness відтворена й першопричину підтверджено доказами;
 - `1` — correction перевірено regression capture/test без втрати critical cue.
 
 Weakness повинна бути реальною й конкретною, наприклад:
@@ -200,7 +200,7 @@ Weakness повинна бути реальною й конкретною, на�
 
 ## D1. Four case studies — 8 points
 
-Кожна case study, `2 points`, стисло й конкретно містить:
+Кожен опис проєкту, `2 points`, стисло й конкретно містить:
 
 - design/gameplay intent і constraints;
 - layer/timing breakdown;
@@ -243,7 +243,7 @@ Assessment пройдено лише коли **всі** умови викона
 7. third-party assets lawful і credited; немає proprietary/confidential assets;
 8. кожна piece має gameplay і neutral capture;
 9. кожна piece має reference/layer/material/Niagara/Blueprint/performance/HML breakdown;
-10. завершені чотири case studies, reel і organized delivery;
+10. завершені чотири описи проєктів, reel і organized delivery;
 11. M/S ledger дорівнює `6/6 h`;
 12. жодного unverifiable claim або прихованого playback/performance condition.
 
@@ -261,12 +261,12 @@ Remediation повторює **слабку тему**, а не весь block �
 
 1. Збережіть failed submission, rubric і raw evidence без перезапису.
 2. Назвіть weak topic, criterion, symptom, reproduction і root-cause hypothesis.
-3. Перегляньте лише official documentation і власні notes; tutorial/solution/key лишаються забороненими до завершення retake.
-4. Створіть correction у новій version; не змінюйте camera/gameplay data для маскування.
+3. Перегляньте лише офіційну документацію і власні notes; tutorial/solution/key лишаються забороненими до завершення retake.
+4. Створіть correction у новій version; не змінюйте камеру або ігрові дані для маскування.
 5. Додайте новий test/variant, якого не було у першій спробі.
 6. Повторіть identical target capture й regression check critical cues.
 7. Перездайте тільки affected assessment part **і** пов’язаний project/category gate.
-8. Старий і новий evidence зберігаються поруч; студент самостійно заповнює той самий deterministic before/after checklist і фіксує різницю. Optional peer може повторити перевірку, але не є умовою перездачі.
+8. Старий і новий evidence зберігаються поруч; студент самостійно заповнює той самий deterministic до й після checklist і фіксує різницю. Optional peer може повторити перевірку, але не є умовою перездачі.
 
 ## Remediation matrix
 
@@ -277,7 +277,7 @@ Remediation повторює **слабку тему**, а не весь block �
 | integration/lifecycle | reproduce stale/cancel/hit/data bug і fix | event/state log + ten-cycle regression | B/C affected piece |
 | material/Niagara architecture | isolate opaque coupling/coverage/stack issue і refactor | graph/stack before-after + visual parity | B affected piece/category |
 | performance/HML | profile bottleneck, change responsible layer, preserve cues | identical profiler before-after + HML grid | C + affected piece gate |
-| breakdown/authorship | rebuild missing evidence/credits без нового beauty-only montage | corrected case study/manifest/link audit | B4/D + presentation category |
+| breakdown/authorship | rebuild missing evidence/credits без нового beauty-only montage | виправлений опис проєкту/manifest/link audit | B4/D + presentation category |
 | knowledge test | explain each missed concept на новому project scenario | new answers without key/tutorial | only missed topic set, max recorded separately |
 
 ## Retake acceptance
@@ -287,7 +287,7 @@ Remediation повторює **слабку тему**, а не весь block �
 - new variation доводить understanding, а не memorized solution;
 - failed artifact лишається в audit trail;
 - overall і всі project/category gates перераховані;
-- якщо та сама topic знову нижче floor, збережіть evidence, зробіть паузу щонайменше 24 години, повторіть self-review за rubric і виконайте новий controlled experiment; optional peer feedback дозволений, але викладач/ментор не є обов’язковим.
+- якщо та сама topic знову нижче floor, збережіть evidence, зробіть паузу щонайменше 24 години, повторіть самооцінювання за rubric і виконайте новий контрольований експеримент; optional peer feedback дозволений, але викладач/ментор не є обов’язковим.
 
 ## Офіційні джерела
 

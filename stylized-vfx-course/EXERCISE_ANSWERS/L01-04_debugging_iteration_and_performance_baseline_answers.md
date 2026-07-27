@@ -229,7 +229,7 @@ INCONCLUSIVE — потрібні довший capture, representative build
 - Не повторити warm-up після відкриття B.
 - Додати 50 actors з різними Materials/Lights.
 - Сказати “кожен cube коштує 0.01 ms” шляхом простого ділення total difference.
-- Назвати Editor capture console-performance budget.
+- Назвати Editor capture console-бюджет продуктивності.
 
 ### Verification
 

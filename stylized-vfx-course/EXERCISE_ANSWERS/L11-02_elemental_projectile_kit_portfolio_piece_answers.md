@@ -56,7 +56,7 @@ Body/path/contact зберігаються.
 
 ### Performance, rubric і presentation
 
-Виконайте той самий target scenario `one/12-flight/6-impact`. Порівняйте з Ember/Frost/Storm за fixed conditions. Подайте source sheet, material/Niagara/Blueprint breakdown, H/M/L, before/after і category scores. Pass вимагає `≥80` та всіх floors.
+Виконайте той самий target scenario `one/12-flight/6-impact`. Порівняйте з Ember/Frost/Storm за fixed conditions. Подайте source sheet, material/Niagara/Blueprint breakdown, H/M/L, до й після і category scores. Pass вимагає `≥80` та всіх floors.
 
 ### Неправильні рішення
 
@@ -82,7 +82,7 @@ same path/camera/warm-up
 
 1. **Highest-cost layer:** Storm ribbon `Rate=56/lifetime=.5` створює приблизно 28 points і broad translucent width. Спочатку зменште width, потім Rate до 44 лише якщо path sampling лишається stable; повторіть capture того самого route.
 2. **Stale pooled value:** Frost launch після Ember зберігає `SecondaryColor` Ember через conditional setter. Установлюйте кожен shared і variant parameter до `Activate`; чергуйте 12 activations.
-3. **Radius mismatch:** Frost impact ring візуально досягає 260 cm, тоді як gameplay debug radius дорівнює 200 cm. Прив’яжіть ring scale до documented gameplay radius або зменште base mesh scale; збережіть inner contact flash.
+3. **Radius mismatch:** Frost impact ring візуально досягає 260 cm, тоді як gameplay debug radius дорівнює 200 cm. Прив’яжіть ring scale до задокументованого ігрового радіуса або зменште base mesh scale; збережіть inner contact flash.
 
 ### Regression і presentation
 
@@ -90,7 +90,7 @@ same path/camera/warm-up
 - body/path/contact зберігаються в H/M/L;
 - hit normals проходять floor/wall/slope;
 - mixed stress виконує declared target;
-- before/after використовує identical settings;
+- до й після використовує identical settings;
 - limitations описують remaining close-camera translucent overlap.
 
 ### Неприпустимі виправлення

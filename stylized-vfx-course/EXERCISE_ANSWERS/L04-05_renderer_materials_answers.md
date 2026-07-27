@@ -148,9 +148,9 @@ Low:
 - одна production camera;
 - 1, 4 і representative concurrent telegraphs;
 - Shader Complexity/overdraw screenshots;
-- GPU timing capture на target hardware;
+- GPU timing capture на цільовому обладнанні;
 - High/Low visual comparison;
-- gameplay radius і countdown однакові.
+- ігровий радіус і countdown однакові.
 
 ### Неправильні рішення
 
@@ -172,4 +172,4 @@ Low:
 | Failure/fix evidence | 10 |
 | Performance evidence | 10 |
 
-Mastery: ≥80; decal containment, gameplay readability і tier parity не можуть мати 0.
+Mastery: ≥80; decal containment, читабельність під час гри і tier parity не можуть мати 0.

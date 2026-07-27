@@ -46,7 +46,7 @@
 
 ## 5. Нові терміни
 
-| English term | Українське пояснення | Практичний приклад | Glossary |
+| Англійський термін | Українське пояснення | Практичний приклад | Glossary |
 |---|---|---|---|
 | Engine version | Версія Unreal Engine, якою створено або відкривається проєкт | UE 5.5 і UE 5.8 не вважаються одним середовищем | [Engine version](../02_GLOSSARY.md#engine-version) |
 | Project | Папка з `.uproject`, `Content`, configuration та залежностями | `StylizedVFXCourse58.uproject` | [Project](../02_GLOSSARY.md#project) |
@@ -56,7 +56,7 @@
 | Plugin | Додатковий модуль, від якого можуть залежати assets або Editor workflow | Niagara увімкнений у навчальному проєкті | [Plugin](../02_GLOSSARY.md#plugin) |
 | Build | Конкретна збірка в межах версії Engine | У журналі записано видимий номер 5.8.x | [Build](../02_GLOSSARY.md#build) |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX assets мають багато зв’язків: Material посилається на Texture, Niagara Renderer — на Material, Blueprint — на Niagara System. Якщо оновлення версії змінює asset або залежність, наслідок може проявитися не одразу. VFX artist повинен уміти відокремити:
 
@@ -152,7 +152,7 @@ UE55_ORIGINAL
 - **Контроль:** одна й та сама Engine version, без зміни plugins між запусками.
 - **Очікування:** результат не зобов’язаний відрізнятися; важлива здатність назвати, який warning належить якому проєкту.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L01-01 — Безпечний UE 5.8 sandbox
 
@@ -200,7 +200,7 @@ UE55_ORIGINAL
 13. **Повернися до `StylizedVFXCourse58`.**  
     Саме він є робочим проєктом курсу. Migration probe зберігається лише як доказ перевірки.
 
-## 12. Точні назви UE nodes, modules і settings
+## 12. Точні назви вузлів, модулів і налаштувань UE
 
 У цьому уроці Material Graph і Niagara stack не створюються. Нормативні технічні елементи:
 
@@ -255,7 +255,7 @@ UE55_ORIGINAL
 
 ### EX-L01-01-B — Migration decision record
 
-На копії невеликого UE 5.5 проєкту виконай migration probe й склади decision record:
+На копії невеликого UE 5.5 проєкту виконай migration probe й склади журнал рішень:
 
 - source і target versions;
 - контрольна карта;
@@ -274,19 +274,19 @@ UE55_ORIGINAL
 ### EX-L01-01-A
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Відновлення перевіряється не наявністю папки, а успішним відкриттям конкретного контрольного asset.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні елементи</summary>
+<summary>Підказка 2 — потрібні елементи</summary>
 
 Потрібні untouched source, disposable working copy, контрольна карта, журнал paths і фінальний reopen test.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Зафіксуй source → створи copy → зміни тільки copy → закрий Editor → відклади пошкоджену/змінену copy → створи нову working copy зі source → відкрий контрольну карту → запиши результат.
 </details>
@@ -296,19 +296,19 @@ UE55_ORIGINAL
 ### EX-L01-01-B
 
 <details>
-<summary>Hint 1 — напрямок мислення</summary>
+<summary>Підказка 1 — напрямок мислення</summary>
 
 Migration decision має відповідати на “чи можна продовжувати?” і “який один ризик перевіряємо далі?”.
 </details>
 
 <details>
-<summary>Hint 2 — потрібні елементи</summary>
+<summary>Підказка 2 — потрібні елементи</summary>
 
 Версії, paths, контрольна карта, 3 assets різних типів, plugins, warnings, classification і next action.
 </details>
 
 <details>
-<summary>Hint 3 — майже повна структура</summary>
+<summary>Підказка 3 — майже повна структура</summary>
 
 Спочатку baseline у 5.5, потім копія, потім відкриття в 5.8, потім той самий набір контрольних assets, порівняння й один із трьох verdicts. Для warning наведи exact asset і isolated next test.
 </details>

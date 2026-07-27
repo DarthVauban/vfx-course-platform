@@ -1,6 +1,6 @@
 # 1. Назва
 
-## Урок 06.05 — Procedural texture library, channel packing та перевірка в Unreal Engine
+## Урок 06.05 — Procedural texture library, пакування каналів та перевірка в Unreal Engine
 
 # 2. Результат уроку
 
@@ -18,7 +18,7 @@
 - обґрунтувати resolution, color-space, mip та compression choices;
 - пройти підсумкову атестацію блоку 06.
 
-Ключовий deliverable — `T_VFX_Utility_RGBA.tga`, де R = breakup, G = sparks, B = streak, A = soft fade, а також UE evidence sheet із перевіркою кожного каналу.
+Ключовий результат — `T_VFX_Utility_RGBA.tga`, де R = breakup, G = sparks, B = streak, A = soft fade, а також UE evidence sheet із перевіркою кожного каналу.
 
 # 3. Орієнтовний час
 
@@ -62,7 +62,7 @@
 | **Channel bleed** | Небажаний вплив compression одного packed channel на інший |
 | **Evidence sheet** | Набір скриншотів і коротких висновків, що доводить correctness delivery |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX texture має пройти три різні контексти:
 
@@ -74,7 +74,7 @@ VFX texture має пройти три різні контексти:
 
 - mask стає світлішим через color-space conversion;
 - alpha зникає через неправильний file/export contract;
-- channel packing читається не тим каналом;
+- пакування каналів читається не тим каналом;
 - mip знищує дрібні sparks;
 - compression спотворює плавний gradient;
 - texture коштує більше пам’яті, ніж потрібно.
@@ -144,7 +144,7 @@ Graph working resolution: **1024×1024, Relative to Parent**. Це старто�
 3. `Distance` створює контрольовану зону навколо shapes.
 4. `Levels` повертає потрібну sharpness.
 
-Якщо installed Designer version використовує інші назви properties у `Tile Generator`/`Distance`, зафіксуй фактичні labels у journal; логіка branch та acceptance criteria не змінюються.
+Якщо installed Designer version використовує інші назви properties у `Tile Generator`/`Distance`, зафіксуй фактичні labels у journal; логіка branch та критерії приймання не змінюються.
 
 ## 8.4 Streak branch
 
@@ -278,7 +278,7 @@ stored ≈ round(value × 255) / 255
 
 # 10. Controlled experiments
 
-Виконай experiments до guided practice. Змінюй лише одну variable.
+Виконай experiments до керованої практики. Змінюй лише одну variable.
 
 ## Experiment A — Warp strength
 
@@ -315,7 +315,7 @@ stored ≈ round(value × 255) / 255
 
 Точне розташування `sRGB` у Texture Editor: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## Частина A — Організація library
 
@@ -358,7 +358,7 @@ stored ≈ round(value × 255) / 255
    - Position Random ≈ 0.45;
    - Scale Random ≈ 0.55;
    - Rotation Random = 0 для discs.
-4. Зменш pattern density так, щоб у viewport лишалися large negative spaces.
+4. Зменш pattern density так, щоб у viewport лишалися великі вільні ділянки.
 5. Додай `Distance`; почни з Maximum Distance ≈ 12–20 px-equivalent at 1024.
 6. Додай `Levels` і створи small bright core із narrow soft edge.
 7. Якщо sparks зливаються, спочатку зменш scale/count, а не crush `Levels`.
@@ -467,7 +467,7 @@ stored ≈ round(value × 255) / 255
 
 Після цього переходь до [Block 06 assessment](BLOCK_ASSESSMENT.md). Його 2 години вже включені в цей урок.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 ## Substance 3D Designer
 
@@ -523,7 +523,7 @@ stored ≈ round(value × 255) / 255
 | Export | Packed resolution | 1024² |
 | UE | sRGB intent | Off |
 
-Це baselines для навчального graph, не magic numbers. Якщо property range відрізняється, нормалізуй результат за acceptance criteria, а не копіюй число всліпу.
+Це baselines для навчального graph, не magic numbers. Якщо property range відрізняється, нормалізуй результат за критерії приймання, а не копіюй число всліпу.
 
 # 14. Очікуваний результат кожного етапу
 

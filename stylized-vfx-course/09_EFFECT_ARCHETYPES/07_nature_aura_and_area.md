@@ -26,9 +26,9 @@
 | Частина | Теорія | Практика | M/S practice |
 |---|---:|---:|---:|
 | Модель aura/state/area | 0.75 | 0.0 | 0.0 |
-| Stage 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
-| Stage 2 — етичне reference study | 0.0 | 1.25 | 0.0 |
-| Stage 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
+| Етап 1 — технічна реконструкція | 0.25 | 1.75 | 0.5 |
+| Етап 2 — етичний аналіз референсів | 0.0 | 1.25 | 0.0 |
+| Етап 3 — оригінальна варіація | 0.0 | 1.5 | 0.5 |
 | Persistence/performance перевірка | 0.0 | 0.5 | 0.0 |
 | **Разом** | **1.0** | **5.0** | **1.0** |
 
@@ -49,14 +49,14 @@
 | Aura | Persistent character-centered effect, що повідомляє state |
 | Buff | Positive state cue; тут open/upward/growing |
 | Debuff | Negative state cue; тут constricting/downward/wilting |
-| Lingering area | Тривала ігрова область у world space |
+| Lingering area | Тривала ігрова область у світовому просторі |
 | Enter/loop/exit | Lifecycle phases для activation, steady state і removal |
 | Boundary cue | Чіткий outer radius gameplay area |
 | Interior density | Activity усередині boundary, secondary до radius |
 | Breathing cycle | Повільний intensity/scale pulse, що нагадує living growth |
 | State-safe readability | Meaning зберігається у color-blind/grayscale view |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Persistent effects довго конкурують із characters, environment і combat cues. Aura не повинна приховувати animation. Buff/debuff мають лишатися distinguishable без reliance на green/red. Lingering area має показувати exact safe/danger radius і state changes.
 
@@ -76,7 +76,7 @@ Buff opens і rises. Debuff closes і sinks. Area boundary відповідає 
 
 ## 8. Детальні технічні пояснення
 
-### Три stages
+### Три етапи
 
 1. **Технічна реконструкція:** attached leaf aura, buff/debuff mode і world-space lingering circle.
 2. **Reference study:** лише phase ratios, density, boundary contrast і state motion; own assets.
@@ -148,9 +148,9 @@ stateDiagram-v2
 - Створіть 1, 5, 12 areas і 8 auras персонажів.
 - Запишіть overdraw, кількість частинок, bounds/culling і читабельність.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
-### Stage 1 — технічна реконструкція
+### Етап 1 — технічна реконструкція
 
 1. Створіть `NS_L09_Nature_Aura`: `NE_EnterPulse`, `NE_OrbitLeaves`, `NE_StateMotes`, `NE_Exit`.
 2. Відкрийте owner radius, state sign, intensity, phase і colors.
@@ -162,7 +162,7 @@ stateDiagram-v2
 8. Interior 20/s, life 1.5, рівномірна дискретизація disc; sprouts — burst 8 кожні 1.8 s.
 9. Exit зупиняє безперервний spawn, виконує reverse/constrict і fade `.4 s`.
 
-### Stage 2 — етичне reference study
+### Етап 2 — етичний аналіз референсів
 
 1. Запишіть доступний для законного перегляду референс і дату.
 2. Запишіть співвідношення enter:loop:exit, contrast boundary і density.
@@ -170,7 +170,7 @@ stateDiagram-v2
 4. Заборонено extracted glyph, точний дизайн ring, flipbook або shader graph.
 5. Запишіть provenance і навмисні відхилення.
 
-### Stage 3 — оригінальна варіація
+### Етап 3 — оригінальна варіація
 
 1. Створіть дублікат `NS_L09_Nature_Mycelium`.
 2. Boundary стає п’ятилопатевими petal/mycelial cells.
@@ -181,7 +181,7 @@ stateDiagram-v2
 
 Потребує ручної перевірки в Unreal Engine 5.8. Exact attached-component lifecycle, parameter enum/bool handling, torus/cylinder sampling modules, persistent loop/deactivation, renderer bindings and Blueprint parameter update pins звірте у встановленому build.
 
-## 12. Точні Niagara stacks, materials, assets, data і bindings
+## 12. Точна структура Niagara: стеки, матеріали, ресурси, дані й привʼязки
 
 ### Контракт User
 
@@ -325,7 +325,7 @@ Bindings: position/local-space для attached aura; AreaRadius/StateSign/Intens
 
 ## 18. Типові помилки
 
-| Помилка | Симптом | Fix |
+| Помилка | Симптом | Виправлення |
 |---|---|---|
 | Buff/debuff різняться лише кольором | Невдача без кольору | Стан через shape/motion |
 | Aura ховає персонажа | Animation нечитабельна | Зменшити height/opacity/density |
@@ -348,7 +348,7 @@ Bindings: position/local-space для attached aura; AreaRadius/StateSign/Intens
 | Interior clumps | Sampling distribution/seed | Uniform disc і controlled seed |
 | Culling через bounds | Рух owner/radius області | Окремі точні політики |
 
-## 20. Performance і High/Medium/Low
+## 20. Продуктивність і рівні High/Medium/Low
 
 | Рівень | Aura | Interior області | Boundary/state |
 |---|---|---|---|

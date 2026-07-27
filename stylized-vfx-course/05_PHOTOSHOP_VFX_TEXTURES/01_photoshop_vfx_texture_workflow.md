@@ -14,7 +14,7 @@
 
 - створити production document із безпечними color/bit-depth settings;
 - будувати VFX-shape через layers, masks, Levels, Curves, Brush, Transform і Warp;
-- розрізняти grayscale value та alpha coverage;
+- розрізняти значення у градаціях сірого та alpha coverage;
 - експортувати PNG/TGA і перевіряти їх після повторного відкриття;
 - імпортувати data mask в UE, вимкнути color decoding і переглянути кожен канал;
 - зберігати reproducible source, export manifest і validation evidence.
@@ -55,7 +55,7 @@ M/S practice — обов’язкова material/shader-перевірка в U
 | Halo | Світлий або темний fringe біля alpha edge | Перевірити на чорному, білому й saturated background |
 | Export manifest | Таблиця purpose, format, channels, settings і destination | Один рядок на кожен export |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 VFX texture рідко є просто картинкою. Один pixel може бути opacity, intensity, distortion, timing або чотирма різними utility masks. Якщо автор дивиться лише composite preview, прихований alpha, gamma decode або fringe проявляться вже у Material, на mip-рівнях чи в additive/translucent overlap.
 
@@ -70,7 +70,7 @@ Layered source і manifest роблять texture повторюваною. Че
 
 Вони можуть збігатися, але не зобов’язані. Для soft glow часто intensity і coverage однакові. Для hard symbol із м’яким glow RGB може містити широкий gradient, а alpha — чіткіший silhouette.
 
-Працюйте від великих мас до дрібних: background check, primary silhouette, secondary breakup, value remap, alpha cleanup, export. Adjustment Layers і masks лишають рішення оборотними.
+Працюйте від великих мас до дрібних: background check, основний силует, secondary breakup, value remap, alpha cleanup, export. Adjustment Layers і masks лишають рішення оборотними.
 
 ## 8. Детальні технічні пояснення
 
@@ -158,7 +158,7 @@ flowchart LR
 - Очікування: немає кольорового/темного кільця, edge не рветься.
 - Якщо fringe видно лише після UE import, перевіряйте mips, compression і RGB transparent border.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### GP-L05-01 — `T_PS_Foundation_Mask_512`
 
@@ -177,9 +177,11 @@ flowchart LR
 13. **UE import.** `/Game/SVFX/Textures/SourceExercises/`; `sRGB=Off`; для mask candidate `Compression Settings=Masks (no sRGB)`, Mip Gen Settings лишіть project default і запишіть фактичне значення.
 14. **Validate.** Призначте texture в `MI_PS_ChannelViewer`; перевірте R, G, B, A й compare з reopened export.
 
-Потребує ручної перевірки в Unreal Engine 5.8. Exact назви `Compression Settings`, `Texture Group`, `Mip Gen Settings`, вигляд Texture Asset Editor та auto-detected alpha звірте у встановленому build.
+Потребує ручної перевірки в Unreal Engine 5.8. Точні назви параметрів `Compression Settings`, `Texture Group`, `Mip Gen Settings`, вигляд Texture Asset Editor та автоматично визначений альфа-канал звірте у встановленій версії програми.
 
-## 12. Точні назви nodes, modules, settings і connections
+<a id="12-точні-назви-вузлів-модулів-налаштувань-і-зєднань"></a>
+
+## 12. Точні назви вузлів, модулів, налаштувань і зʼєднань
 
 ### Photoshop/Krita operations
 
@@ -329,11 +331,11 @@ A = (0,0,0,1)
 - PNG/TGA file size на диску не дорівнює GPU memory.
 - Реальний ресурс залежить від compression format, platform, streaming і cooked build; дивіться UE resource size/statistics.
 - Не зберігайте однакову mask у RGB і A без причини. У наступних уроках packing зменшить sample/asset overhead, але ускладнить contract.
-- Для прозорого VFX texture cost матеріалу часто визначає screen coverage/overdraw; менша file size не виправляє великий translucent quad.
+- Для прозорого VFX texture cost матеріалу часто визначає покриття екрана/overdraw; менша file size не виправляє великий translucent quad.
 
 ## 21. Запитання для самоперевірки
 
-1. Чим grayscale value відрізняється від alpha coverage?
+1. Чим значення у градаціях сірого відрізняється від alpha coverage?
 2. Чому `72 ppi` не зменшує texture resolution?
 3. Навіщо використовувати Adjustment Layers?
 4. Що робить стартовий Levels `20 / 1.00 / 235`?
@@ -370,7 +372,7 @@ A = (0,0,0,1)
 
 Урок пройдено, якщо ви за 45 хв із clean document:
 
-1. створюєте layered grayscale/alpha mask без proprietary assets;
+1. створюєте layered grayscale/alpha mask без пропрієтарних ресурсів;
 2. пояснюєте кожен Levels/Curves decision;
 3. отримуєте PNG і TGA з однаковими dimensions/channels;
 4. не маєте halo на test board;

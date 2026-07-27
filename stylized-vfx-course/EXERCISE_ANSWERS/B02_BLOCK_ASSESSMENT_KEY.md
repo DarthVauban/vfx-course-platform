@@ -395,9 +395,9 @@ Ice змінює 6 structural categories, має інший causal sequence й r
 
 Універсальний budget particles або milliseconds не призначається.
 
-# 7. Model self-review, 10 балів
+# 7. Зразок самооцінювання, 10 балів
 
-> Під час самостійної blind-перевірки без labels і color я спершу маю прочитати direction Wind crescent та локальний contact edge; Ice має спершу показати ordered faceted lock, після якого contact викликає fracture. У Wind можна прибрати одну trailing wisp без втрати function; в Ice — fine frost. Найсильніша hierarchy Wind — crisp leading edge проти open dark center; Ice — bright facet edges і compact fracture accent проти darker inner plates. Після tests я виправив Wind plane collapse at 35° і Ice occlusion of target. Ice не є recolor, бо змінено silhouette, edge, motion, timing, space і residue. Ice має potential mesh/shard count risk; Wind — broad translucent/ribbon overlap risk. Перед implementation я перевірю, чи open Wind shape потребує camera-facing macro layer, а Ice — скільки major shards достатньо. Вилучені або traced proprietary assets не використовувалися. Optional peer review може доповнити, але не замінює цю self-review процедуру.
+> Під час самостійної blind-перевірки без labels і color я спершу маю прочитати direction Wind crescent та локальний contact edge; Ice має спершу показати ordered faceted lock, після якого contact викликає fracture. У Wind можна прибрати одну trailing wisp без втрати function; в Ice — fine frost. Найсильніша hierarchy Wind — crisp leading edge проти open dark center; Ice — bright facet edges і compact fracture accent проти darker inner plates. Після tests я виправив Wind plane collapse at 35° і Ice occlusion of target. Ice не є recolor, бо змінено silhouette, edge, motion, timing, space і residue. Ice має potential mesh/shard count risk; Wind — broad translucent/ribbon overlap risk. Перед implementation я перевірю, чи open Wind shape потребує camera-facing macro layer, а Ice — скільки major shards достатньо. Вилучені або traced proprietary assets не використовувалися. Optional peer review може доповнити, але не замінює цю самооцінювання процедуру.
 
 Повний score вимагає власних конкретних failures, а не копіювання цього тексту.
 
@@ -441,7 +441,7 @@ Total 84 → NOT YET
 | Wind/Ice лише recolor | D не більше 8/16; elemental remediation |
 | Немає real-time preview | C не більше 10/16 |
 | Немає reference attribution | A source/ethics 0/2; виправити до gate |
-| Немає failures before/after | Troubleshooting не більше 4/10 |
+| Немає failures до й після | Troubleshooting не більше 4/10 |
 | Вигадані numerical budgets | Performance evidence переглянути; замінити measurement plan |
 | Target прихований і failure не визнано | Negative-space та troubleshooting remediation |
 
@@ -491,6 +491,6 @@ Change 5+ structural categories.
 - немає automatic remediation trigger;
 - Wind та Ice читаються без color;
 - assessment package повний;
-- self-review підписано датою.
+- самооцінювання підписано датою.
 
 Після `G02 = PASS` переходь до `03_MATERIAL_FOUNDATIONS/01_shader_mental_model_and_value_types.md`.

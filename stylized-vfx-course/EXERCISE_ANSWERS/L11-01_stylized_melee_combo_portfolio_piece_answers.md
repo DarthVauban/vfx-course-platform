@@ -63,7 +63,7 @@ User defaults: primary `(.08,.8,1,1)`, accent `(1,.2,.03,1)`, `Scale=1`, `Intens
 - Medium: ribbon `40/s`, sparks 70%, shards 4, один accent.
 - Low: збережені ribbon/mesh slash, sparks 40%, shards лише на heavy, ground ring + 6 dust.
 
-Перевірте одне комбо та stress із трьома overlaps на declared PC/console profile. Зафіксуйте Niagara counts, overdraw і profiler before/after; не вигадуйте target values.
+Перевірте одне комбо та stress із трьома overlaps на declared PC/console profile. Зафіксуйте Niagara counts, overdraw і profiler до й після; не вигадуйте target values.
 
 ### Presentation і verification
 
@@ -75,7 +75,7 @@ User defaults: primary `(.08,.8,1,1)`, accent `(1,.2,.03,1)`, `Scale=1`, `Intens
 
 ## EX-L11-01-B
 
-### Набір defects і виправлення root cause
+### Набір defects і усунення першопричини
 
 | Weakness | Відтворення | Root cause | Мінімальне виправлення | Regression |
 |---|---|---|---|---|

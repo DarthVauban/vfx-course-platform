@@ -26,7 +26,7 @@
 6. **Сигнали Low:** контакт, endpoint/path, radius/boundary, активний таймінг/стан та основні форма й рух стихії, яких вимагає бриф.
 7. **Spawn/transform/ultimate:** поява й місце; тривала зміна стану; багатофазні попередження, заряд і release високої важливості.
 8. **Білий матеріал/відтінки сірого:** доводять, що стихія та архетип читаються не лише завдяки палітрі чи bloom.
-9. **Докази performance:** lifetime/live count, кількість systems/emitters/renderers, material samples, overdraw, screen coverage, meshes, simulation/collision, bounds, concurrency, умови платформи й профілю.
+9. **Докази performance:** lifetime/live count, кількість systems/emitters/renderers, material samples, overdraw, покриття екрана, meshes, simulation/collision, bounds, concurrency, умови платформи й профілю.
 10. **Підрахунок:** shatter є обов’язковою реакцією всередині #05 shockwave; secondary wave — всередині #10 ground crack; загалом лишається 19.
 
 ## Категорія B — Рубрика практики

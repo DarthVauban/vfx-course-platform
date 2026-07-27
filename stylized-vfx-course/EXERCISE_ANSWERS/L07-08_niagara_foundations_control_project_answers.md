@@ -1,6 +1,6 @@
 # Рішення вправ — 07.08 Niagara Foundations Control Project
 
-Version-sensitive labels: **Потребує ручної перевірки в Unreal Engine 5.8.**
+Назви, залежні від версії: **Потребує ручної перевірки в Unreal Engine 5.8.**
 
 ## EX-L07-08-A
 
@@ -60,7 +60,7 @@ Once `1.2`; Rate `32/s`; lifetime `.75`; width `9×Scale`; velocity `D×340+(0,0
 
 ### Чому це працює, альтернативи й неправильні рішення
 
-Кожне значення User прив’язане на input module; renderers і далі читають `Particles.*`. Допустимі варіанти motion/palette лишаються в межах brief. Неправильно: змінено лише tint renderer; User.Scale не застосовано до ribbon; GPU додано без причини; coordinate spaces різні; Direction дорівнює нулю; custom module/Event.
+Кожне значення User прив’язане на input module; renderers і далі читають `Particles.*`. Допустимі варіанти motion/palette лишаються в межах brief. Неправильно: змінено лише tint renderer; User.Scale не застосовано до ribbon; GPU додано без причини; системи координат різні; Direction дорівнює нулю; custom module/Event.
 
 ### Перевірка/performance
 
@@ -98,6 +98,6 @@ Default fixed bounds можуть бути консервативними. Пе�
 
 Scale змінює size/coverage, а не count. Якщо WPO material розширює mesh, включіть виміряне displacement до bounds.
 
-### Альтернативи / неправильні рішення / performance
+### Альтернативи / неправильні рішення / продуктивність
 
-Не «виправляйте» color через hardcoding material tint, space через зупинку руху actor, LinkOrder через збільшення tessellation або gravity через подвоєння initial downward velocity. Такі дії маскують першопричини. Для порівняння coverage використовуйте однакові camera/quality/resolution; сам particle count не є повною вартістю.
+Не «виправляйте» color через hardcoding material tint, space через зупинку руху actor, LinkOrder через збільшення tessellation або gravity через подвоєння initial downward velocity. Такі дії маскують першопричини. Для порівняння coverage використовуйте однакові camera/quality/resolution; сама кількість частинок не є повною вартістю.

@@ -5,7 +5,7 @@
 | Блок | 08 — Niagara Advanced |
 | ID уроку | L08-01 |
 | Цільова версія | Unreal Engine 5.8 |
-| Артефакт уроку | Paired CPU/GPU collision prototype, limitation captures і simulation decision record |
+| Артефакт уроку | Paired CPU/GPU collision prototype, limitation captures і simulation журнал рішень |
 | Mastery gate | Вибрати simulation target та collision source з вимог ефекту, а не з правила «GPU завжди швидше» |
 
 ## 2. Результат уроку
@@ -17,8 +17,8 @@
 - будувати однаковий motion brief у CPU/GPU emitters;
 - порівнювати CPU collision із GPU scene-depth/distance-field approaches;
 - розрізняти visual collision і gameplay collision;
-- виявляти off-screen, thin-geometry, distance-field і bounds failure cases;
-- створювати decision record з evidence та fallback.
+- виявляти off-screen, thin-geometry, distance-field і bounds випадки відмови;
+- створювати журнал рішень з evidence та fallback.
 
 Доказ: одна scene з paired emitters, controlled collision matrix і письмове рішення для чотирьох briefs.
 
@@ -30,7 +30,7 @@
 | Теорія джерел collision | 0.75 | 0 |
 | Керований paired prototype | 2.0 | 2.0 |
 | Контрольовані тести відмов | 1.0 | 1.0 |
-| Вправи, profiling і decision record | 1.0 | 1.0 |
+| Вправи, profiling і журнал рішень | 1.0 | 1.0 |
 | **Разом** | **6.0** | **4.0 (66.7%)** |
 
 ## 4. Передумови
@@ -57,13 +57,13 @@
 | Visual collision | Cosmetic response particles, не authoritative gameplay |
 | Authoritative collision | Gameplay hit/collision, яку визначає gameplay/physics logic |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Simulation target впливає не лише на performance:
 
 - CPU Events мають обмеження, яких GPU emitter не підтримує;
 - деякі Data Interfaces або operations доступні лише певному target;
-- GPU collision sources мають camera/representation limitations;
+- GPU collision sources мають обмеження камери й способу подання;
 - high particle count може перевантажити CPU;
 - GPU simulation може бути невигідною, якщо bottleneck уже GPU/overdraw;
 - target platform може мати інший баланс.
@@ -125,7 +125,7 @@ GPU може паралельно оновлювати багато particles, �
 
 - GPU може вже бути bottleneck;
 - readback/CPU interaction обмежена або дорога;
-- collision approximations мають failure cases;
+- collision approximations мають випадки відмови;
 - debugging/profile workflow відрізняється;
 - feature/platform support треба перевіряти.
 
@@ -151,7 +151,7 @@ Module dependency warnings можуть запропонувати інший pl
 
 Scene depth описує surfaces з perspective поточної view. Типові limitations:
 
-- geometry поза camera/frustum не має корисного current depth representation;
+- geometry поза camera/frustum не має корисних актуальних даних глибини;
 - objects можуть бути occluded або не представлені як очікується;
 - thin/off-screen surfaces можуть пропускати particles;
 - result залежить від view.
@@ -165,7 +165,7 @@ Distance fields дають volumetric approximation scene geometry. Потріб
 - thin geometry/holes/details представлені грубо;
 - non-uniform scale, unsupported/moving geometry cases треба перевірити;
 - global field resolution/coverage не дорівнює triangle-accurate collision;
-- memory/performance cost існує.
+- існують витрати памʼяті та продуктивності.
 
 Exact requirements для Mesh/Global Distance Fields у project і Niagara collision mode:
 
@@ -267,7 +267,7 @@ Counts: `100`, `1,000`, `10,000` або lower safe levels для вашого ha
 
 Spawn VFX projectile поруч із Blueprint collision sphere. Навмисно змініть particle path noise. Gameplay collision sphere має лишатися authoritative; VFX only follows/represents it.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Крок 1 — Створіть test level
 
@@ -413,7 +413,7 @@ Invalid/penetrating test marker = magenta
 
 Використовуйте representative duration і перезапускайте systems між runs.
 
-### Крок 9 — Запишіть decision record
+### Крок 9 — Запишіть журнал рішень
 
 ```text
 Effect brief:
@@ -560,7 +560,7 @@ CPU і GPU variants мають близький art intent, але limitations d
 |---|---|---|
 | «GPU завжди швидше» | GPU bottleneck/overdraw | Профілювати весь effect |
 | Events на GPU | Handler не працює | CPU + Persistent IDs або інший data path |
-| SceneDepth для off-screen | Penetration/misses | DF, інше representation або fallback |
+| SceneDepth для off-screen | Penetration/misses | DF, інший спосіб подання або fallback |
 | Thin mesh + DF | Collision misses | Перевірити field, thicker proxy або alternate source |
 | Visual particle = gameplay hit | Desync/false hits | Gameplay authority поза VFX |
 | Різні materials/counts у A/B | Invalid comparison | Зафіксувати non-sim variables |
@@ -579,7 +579,7 @@ CPU і GPU variants мають близький art intent, але limitations d
 | CPU hitch | count/lifetime → частота collision → events/data → profiler |
 | Високий GPU cost | count → collision source → overdraw/material → bounds/draw |
 | Раннє зникнення | bounds на всій trajectory/WPO |
-| Moving object ігнорується | source support/representation; задокументувати limitation |
+| Moving object ігнорується | підтримка джерела/спосіб подання; задокументувати limitation |
 
 Точний UI Niagara Debugger/profiling:
 
@@ -609,7 +609,7 @@ CPU і GPU variants мають близький art intent, але limitations d
 7. Що таке visual collision?
 8. Як restitution відрізняється від friction?
 9. Чому A/B CPU/GPU має однаковий material/count?
-10. Що має містити decision record?
+10. Що має містити журнал рішень?
 
 ## 22. Відповіді
 
@@ -645,8 +645,8 @@ CPU і GPU variants мають близький art intent, але limitations d
 2. collision choice відповідає off-screen/geometry requirements;
 3. Events limitation пояснена правильно;
 4. visual/gameplay collision розділені;
-5. мінімум два collision failure cases captured;
-6. performance evidence з locked conditions;
+5. мінімум два collision випадки відмови captured;
+6. докази продуктивності з locked conditions;
 7. EX08-01-A ≥80/100;
 8. choice має fallback і target verification plan.
 
@@ -655,7 +655,7 @@ CPU і GPU variants мають близький art intent, але limitations d
 - Sim Target — рішення щодо data/performance architecture.
 - GPU підходить багатьом high-count cosmetic tasks, але не автоматично.
 - CPU потрібен для CPU-only workflows, зокрема Niagara Events.
-- SceneDepth і distance fields мають різні approximations/failure cases.
+- SceneDepth і distance fields мають різні approximations/випадки відмови.
 - Gameplay collision лишається authoritative gameplay system.
 - Висновок робиться з requirements і target profile.
 

@@ -20,7 +20,7 @@
 - використовувати Sequencer лише для presentation після gameplay approval;
 - пройти Block 10 assessment і mastery gate G10.
 
-Ключовий deliverable — один gameplay-tested Big effect із Effect Type, H/M/L profile matrix, PC/console evidence та коротким presentation capture.
+Ключовий результат — один gameplay-tested Big effect із Effect Type, H/M/L profile matrix, PC/console evidence та коротким presentation capture.
 
 # 3. Орієнтовний час
 
@@ -63,13 +63,13 @@
 | **Platform Set** | вибір applicability для platforms і quality configurations |
 | **H/M/L profile** | delivery variants курсу High, Medium і Low, mapped на project settings |
 | **Signature layer** | element, завдяки якому identity effect лишається впізнаваною |
-| **Core gameplay layer** | telegraph, contact або shape, потрібні для gameplay readability |
+| **Core gameplay layer** | telegraph, contact або shape, потрібні для читабельності під час гри |
 | **Secondary layer** | додає richness, але може бути зменшений |
 | **Optional layer** | видаляється першим у constrained profile |
 | **Device Profile** | джерело configuration, specific для platform або hardware |
 | **Presentation capture** | polished camera і edit після підтвердження gameplay correctness |
 
-# 6. Навіщо ця тема потрібна VFX artist
+# 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Optimization однієї instance недостатньо. Реальні scenes відрізняються:
 
@@ -105,7 +105,7 @@ optional decoration
 → ніколи не прибирати essential telegraph, core або contact без gameplay approval
 ```
 
-Numbers походять з evidence уроку 10.04 на target hardware.
+Numbers походять з evidence уроку 10.04 на цільовому обладнанні.
 
 # 8. Детальні технічні пояснення
 
@@ -346,9 +346,9 @@ Distance near → threshold region → far
 
 ## Experiment F — gameplay vs Sequencer
 
-Порівняй approved take з gameplay camera і presentation take. Будь-який behavior, видимий лише в Sequencer, є failure.
+Порівняй approved take з ігрової камери і presentation take. Будь-який behavior, видимий лише в Sequencer, є failure.
 
-# 11. Покрокова guided practice
+# 11. Покрокова керована практика
 
 ## A. Обери Big effect
 
@@ -455,7 +455,7 @@ Exact Sequencer UI/tracks: **Потребує ручної перевірки в
 
 Виконай [BLOCK_ASSESSMENT.md](BLOCK_ASSESSMENT.md) за **2 год 45 хв**. Цей час уже включено у practice уроку.
 
-# 12. Точні назви nodes, modules і settings
+# 12. Точні назви вузлів, модулів і налаштувань
 
 - `Niagara Effect Type`
 - `Effect Type`
@@ -535,7 +535,7 @@ Exact display names/options: **Потребує ручної перевірки 
 - matrix H/M/L;
 - таблиця platform;
 - captures Debugger, CPU, GPU і memory;
-- H/M/L з gameplay camera;
+- H/M/L з ігрової камери;
 - presentation sequence або capture.
 
 **Acceptance criteria:**
@@ -567,13 +567,13 @@ Exact display names/options: **Потребує ручної перевірки 
 - чотири failures;
 - logs cull і state;
 - виправлені matrix і settings;
-- result відкладеного blind self-review readability;
-- performance evidence до і після;
+- result відкладеного самооцінювання без підказок readability;
+- докази продуктивності до і після;
 - limitation, що лишилася.
 
 **Acceptance criteria:**
 
-- кожну root cause визначено;
+- кожну першопричину визначено;
 - bounds tight і охоплюють повний motion;
 - Low зберігає gameplay;
 - significance зберігає правильну instance;
@@ -621,7 +621,7 @@ Exact display names/options: **Потребує ручної перевірки 
 
 ## Low profile нечитабельний
 
-Віднови telegraph, core і contact; зменш optional чи secondary layers або implementation cost. Повтори відкладений blind gameplay self-review з `Seed=A`, прихованими labels і тим самим deterministic checklist.
+Віднови telegraph, core і contact; зменш optional чи secondary layers або implementation cost. Повтори відкладений самооцінювання ігрової читабельності без підказок з `Seed=A`, прихованими labels і тим самим deterministic checklist.
 
 ## Effect повторно виконує fire після повернення
 
@@ -648,7 +648,7 @@ Exact display names/options: **Потребує ручної перевірки 
 - Bounds визначають relevance visibility.
 - Platform profiles потребують evidence CPU, GPU, memory і quality.
 - Зміни Global Project Settings впливають на unrelated systems; використовуй scoped ownership.
-- Presentation capture із Sequencer не є gameplay performance evidence.
+- Presentation capture із Sequencer не є доказом продуктивності в ігрових умовах.
 - Універсальних budget для distance, instances, ms, particles або memory тут немає.
 
 # 21. Запитання для самоперевірки
@@ -675,7 +675,7 @@ Exact display names/options: **Потребує ручної перевірки 
 7. Hardware, build, resolution, bottleneck і memory відрізняються; сам label не є evidence.
 8. Essential self-feedback може потребувати іншого retention, ніж remote decoration.
 9. Після approval gameplay integration, profiling, H/M/L і culling; лише для presentation.
-10. Із evidence 10.04 на target hardware, build і scenario та з gameplay review.
+10. Із evidence 10.04 на цільовому обладнанні, build і scenario та з gameplay review.
 
 # 23. Self-check checklist
 
@@ -705,7 +705,7 @@ Exact display names/options: **Потребує ручної перевірки 
 3. Effect Type і culling дають predictable behavior;
 4. H/M/L зберігають gameplay semantics;
 5. два named profiles мають evidence;
-6. кожен Big effect має performance pass;
+6. кожен Big effect пройшов перевірку продуктивності;
 7. ledger 4 годин M/S завершено;
 8. assessment має результат ≥80/100 і проходить category floors.
 

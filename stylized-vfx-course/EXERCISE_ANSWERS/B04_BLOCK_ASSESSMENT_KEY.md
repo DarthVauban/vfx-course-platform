@@ -99,7 +99,7 @@ Shape = Texture(U,V).R × WidthMask
 1. відтворює симптом у зафіксованих умовах;
 2. показує preview проміжного value;
 3. визначає перший неправильний hop;
-4. виправляє root cause, а не приховує симптом;
+4. усуває першопричину, а не приховує симптом;
 5. повторює перевірку на релевантних backgrounds/cameras;
 6. надає валідні докази cost/readability до/після.
 
@@ -118,7 +118,7 @@ Reference roots:
 
 - Dependency diagram має відповідати фактичним assets.
 - Таблиця даних потребує owner/source, scope, type/range, receiver і fallback.
-- Tier Low має зберігати primary silhouette, timing, gameplay area і team/element cue.
+- Tier Low має зберігати основний силует, timing, gameplay area і team/element cue.
 - «Немає limitations» earns 0 for limitations.
 - Непройдені пункти checklist допустимі лише разом із remediation/retest.
 

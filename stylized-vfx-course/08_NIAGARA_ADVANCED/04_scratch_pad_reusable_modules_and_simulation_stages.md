@@ -14,7 +14,7 @@
 
 - читати Niagara script graph через Parameter Map Get/Set;
 - створювати Scratch Pad Module з explicit stage/usage;
-- проєктувати typed inputs, safe defaults, units і spaces;
+- проєктувати typed inputs, безпечні початкові значення, units і spaces;
 - будувати `Safe Directional Acceleration` без NaN;
 - тестувати module як маленьку функцію;
 - переносити local Scratch Pad logic у reusable Module Script asset;
@@ -60,14 +60,14 @@
 | In-place update | Наступна iteration читає result попередньої |
 | Convergence | Наближення до stable/target value через iterations |
 
-## 6. Навіщо ця тема потрібна VFX artist
+## 6. Навіщо ця тема потрібна VFX-фахівцю
 
 Built-in modules покривають багато задач, але production потребує:
 
 - однакового remap/validation у багатьох Systems;
 - studio-specific motion;
 - компактні art-facing controls;
-- encapsulated math із debug output;
+- encapsulated math із діагностичним результатом;
 - iterative operations над grid/particles.
 
 Copy-paste Scratch Pad graph у десять Systems створює десять implementations. Непротестований reusable module, навпаки, поширює один bug на весь project. Тому шлях:
@@ -266,7 +266,7 @@ Iterations фундаментально змінюють response, якщо Alph
 
 Виконайте stage iterations `1`, `2`, `4`, `8` з однаковим Alpha `.25`. Зафіксуйте final distance й обчисліть expected trend.
 
-## 11. Покрокова guided practice
+## 11. Покрокова керована практика
 
 ### Частина A — Scratch Pad
 
